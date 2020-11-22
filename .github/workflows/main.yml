@@ -1,5 +1,6 @@
 name: CI
 on: [push, pull_request]
+    
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -31,3 +32,5 @@ jobs:
     - name: Run tests
       run: |
         nbdev_test_nbs
+      env:
+        FASTRELEASE_TOKEN: "${{ secrets.FASTRELEASE_TOKEN }}"  
