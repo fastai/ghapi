@@ -6,23 +6,23 @@ __all__ = ['GH_HOST', 'GhApi']
 from fastcore.utils import *
 from fastcore.foundation import *
 from fastcore.meta import *
-from urllib import request
-import pprint,inspect
+
+import pprint,inspect,json
 from inspect import signature,Parameter
-from .build_lib import build_funcs, GH_DOC_URL
 from .metadata import funcs
+from urllib.request import Request
 
 # Cell
 GH_HOST = "https://api.github.com"
-_DOC_URL = GH_DOC_URL
+_DOC_URL = 'https://docs.github.com/'
 
 # Cell
 class GhApi:
-    def __init__(self, owner, repo, token):
+    def __init__(self, owner, repo, token=None):
         funcs_ = L(funcs).starmap(GhVerb, client=self)
         self._fs = {k:_GhVerbGroup(v) for k,v in groupby(funcs_, 'tag').items()}
-        self._headers = { 'Authorization' : 'token ' + token,
-                         'Accept': 'application/vnd.github.v3+json'}
+        self._headers = { 'Accept': 'application/vnd.github.v3+json' }
+        if token: self._headers['Authorization'] = 'token ' + token
         self.owner,self.repo = owner,repo
         self.repo_url = f"{GH_HOST}/repos/{owner}/{repo}"
 
@@ -32,7 +32,7 @@ class GhApi:
         if k in self._fs: return self._fs[k]
         raise AttributeError(k)
 
-    def __call__(self, path, **data):
+    def __call__(self, path, verb, **data):
         "Call GitHub API `path`"
         path = f"{self.repo_url}{path}"
-        return dict2obj(do_request(path, headers=self._headers, **data))
+        return dict2obj(_send(path, verb.upper(), headers=self._headers, **data))
