@@ -3,7 +3,6 @@
 __all__ = ['GH_HOST', 'GhApi']
 
 # Cell
-import jsonref,json
 from fastcore.utils import *
 from fastcore.foundation import *
 from fastcore.meta import *
