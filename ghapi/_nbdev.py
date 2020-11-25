@@ -12,7 +12,7 @@ index = {"GH_HOST": "00_core.ipynb",
 modules = ["core.py",
            "build_lib.py"]
 
-doc_url = "https://fastai.github.io/ghapi/"
+doc_url = "https://ghapi.fast.ai/"
 
 git_url = "https://github.com/fastai/ghapi/tree/master/"
 
