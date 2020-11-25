@@ -1,7 +1,7 @@
 {
   "ghapi": {
     "Overview": "/",
-    "Title": "core.html",
+    "API details": "core.html",
     "Internal use - Parse Open API Spec": "build_lib.html"
   }
 }
