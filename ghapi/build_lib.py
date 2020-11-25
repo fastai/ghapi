@@ -17,7 +17,7 @@ _DOC_URL = 'https://docs.github.com/'
 
 # Cell
 def build_funcs(nm='ghapi/metadata.py', url=GH_OPENAPI_URL, docurl=_DOC_URL):
-    "Build module funcs.py from an Open API spec and optionally filter by a path `pre`"
+    "Build module metadata.py from an Open API spec and optionally filter by a path `pre`"
     def _get_detls(o):
         data = nested_idx(o, *'requestBody content application/json schema properties'.split()) or {}
         url = o['externalDocs']['url'][len(docurl):]
