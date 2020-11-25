@@ -1262,14 +1262,13 @@ h4.panel-title {
         padding-bottom: 3px;
         margin: 0px;
         background-color: #f5f1e0;
-        /*border: 0px;*/
 }
 .output_area pre {
         padding-top: 3px;
         padding-bottom: 3px;
         padding-left: 2em;
         margin: 0px;
-        /*border: 0px;*/
+        border-left: 1px solid grey;
 }
 .pytest_card {
     padding: 10px 1em 4px 1em;
