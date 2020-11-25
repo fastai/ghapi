@@ -73,33 +73,21 @@ api.git
 ```
 
 
-    ---------------------------------------------------------------------------
-
-    AttributeError                            Traceback (most recent call last)
-
-    ~/anaconda3/lib/python3.7/site-packages/IPython/core/formatters.py in __call__(self, obj)
-        343             method = get_real_method(obj, self.print_method)
-        344             if method is not None:
-    --> 345                 return method()
-        346             return None
-        347         else:
 
 
-    ~/git/ghapi/ghapi/core.py in _repr_markdown_(self)
-         58     def __init__(self, verbs):
-         59         for o in verbs: setattr(self, o.name, o)
-    ---> 60     def _repr_markdown_(self): return "\n".join(f'- [{k}]({_DOC_URL}{v.url})' for k,v in self.items())
-         61 
-         62 # Cell
-
-
-    AttributeError: '_GhVerbGroup' object has no attribute 'items'
-
-
-
-
-
-    <ghapi.core._GhVerbGroup at 0x7f69b871e8d0>
+- [create_blob](https://docs.github.com/rest/reference/git#create-a-blob)
+- [get_blob](https://docs.github.com/rest/reference/git#get-a-blob)
+- [create_commit](https://docs.github.com/rest/reference/git#create-a-commit)
+- [get_commit](https://docs.github.com/rest/reference/git#get-a-commit)
+- [list_matching_refs](https://docs.github.com/rest/reference/git#list-matching-references)
+- [get_ref](https://docs.github.com/rest/reference/git#get-a-reference)
+- [create_ref](https://docs.github.com/rest/reference/git#create-a-reference)
+- [update_ref](https://docs.github.com/rest/reference/git#update-a-reference)
+- [delete_ref](https://docs.github.com/rest/reference/git#delete-a-reference)
+- [create_tag](https://docs.github.com/rest/reference/git#create-a-tag-object)
+- [get_tag](https://docs.github.com/rest/reference/git#get-a-tag)
+- [create_tree](https://docs.github.com/rest/reference/git#create-a-tree)
+- [get_tree](https://docs.github.com/rest/reference/git#get-a-tree)
 
 
 

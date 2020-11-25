@@ -1,13 +1,13 @@
 ---
 
-title: Core API
+title: Title
 
 
 keywords: fastai
 sidebar: home_sidebar
 
-summary: "Details of the `GhApi` API"
-description: "Details of the `GhApi` API"
+
+
 nb_path: "00_core.ipynb"
 ---
 <!--
@@ -373,32 +373,24 @@ nb_path: "00_core.ipynb"
 
 <div class="output_area">
 
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">AttributeError</span>                            Traceback (most recent call last)
-<span class="ansi-green-fg">~/anaconda3/lib/python3.7/site-packages/IPython/core/formatters.py</span> in <span class="ansi-cyan-fg">__call__</span><span class="ansi-blue-fg">(self, obj)</span>
-<span class="ansi-green-intense-fg ansi-bold">    343</span>             method <span class="ansi-blue-fg">=</span> get_real_method<span class="ansi-blue-fg">(</span>obj<span class="ansi-blue-fg">,</span> self<span class="ansi-blue-fg">.</span>print_method<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    344</span>             <span class="ansi-green-fg">if</span> method <span class="ansi-green-fg">is</span> <span class="ansi-green-fg">not</span> <span class="ansi-green-fg">None</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">--&gt; 345</span><span class="ansi-red-fg">                 </span><span class="ansi-green-fg">return</span> method<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    346</span>             <span class="ansi-green-fg">return</span> <span class="ansi-green-fg">None</span>
-<span class="ansi-green-intense-fg ansi-bold">    347</span>         <span class="ansi-green-fg">else</span><span class="ansi-blue-fg">:</span>
 
-<span class="ansi-green-fg">&lt;ipython-input-5-f3a303c27d67&gt;</span> in <span class="ansi-cyan-fg">_repr_markdown_</span><span class="ansi-blue-fg">(self)</span>
-<span class="ansi-green-intense-fg ansi-bold">     31</span>     <span class="ansi-green-fg">def</span> __init__<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">,</span> verbs<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">     32</span>         <span class="ansi-green-fg">for</span> o <span class="ansi-green-fg">in</span> verbs<span class="ansi-blue-fg">:</span> setattr<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">,</span> o<span class="ansi-blue-fg">.</span>name<span class="ansi-blue-fg">,</span> o<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg">---&gt; 33</span><span class="ansi-red-fg">     </span><span class="ansi-green-fg">def</span> _repr_markdown_<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span> <span class="ansi-green-fg">return</span> <span class="ansi-blue-fg">&#34;\n&#34;</span><span class="ansi-blue-fg">.</span>join<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">f&#39;- [{k}]({_DOC_URL}{v.url})&#39;</span> <span class="ansi-green-fg">for</span> k<span class="ansi-blue-fg">,</span>v <span class="ansi-green-fg">in</span> self<span class="ansi-blue-fg">.</span>items<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
+<div class="output_markdown rendered_html output_subarea output_execute_result">
+<ul>
+<li><a href="https://docs.github.com/rest/reference/git#create-a-blob">create_blob</a></li>
+<li><a href="https://docs.github.com/rest/reference/git#get-a-blob">get_blob</a></li>
+<li><a href="https://docs.github.com/rest/reference/git#create-a-commit">create_commit</a></li>
+<li><a href="https://docs.github.com/rest/reference/git#get-a-commit">get_commit</a></li>
+<li><a href="https://docs.github.com/rest/reference/git#list-matching-references">list_matching_refs</a></li>
+<li><a href="https://docs.github.com/rest/reference/git#get-a-reference">get_ref</a></li>
+<li><a href="https://docs.github.com/rest/reference/git#create-a-reference">create_ref</a></li>
+<li><a href="https://docs.github.com/rest/reference/git#update-a-reference">update_ref</a></li>
+<li><a href="https://docs.github.com/rest/reference/git#delete-a-reference">delete_ref</a></li>
+<li><a href="https://docs.github.com/rest/reference/git#create-a-tag-object">create_tag</a></li>
+<li><a href="https://docs.github.com/rest/reference/git#get-a-tag">get_tag</a></li>
+<li><a href="https://docs.github.com/rest/reference/git#create-a-tree">create_tree</a></li>
+<li><a href="https://docs.github.com/rest/reference/git#get-a-tree">get_tree</a></li>
+</ul>
 
-<span class="ansi-red-fg">AttributeError</span>: &#39;_GhVerbGroup&#39; object has no attribute &#39;items&#39;</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>&lt;__main__._GhVerbGroup at 0x7fd95080ea90&gt;</pre>
 </div>
 
 </div>

@@ -10,7 +10,7 @@ entries:
       title: Overview
       url: /
     - output: web,pdf
-      title: Core API
+      title: Title
       url: core.html
     - output: web,pdf
       title: Internal use - Parse Open API Spec

@@ -54,10 +54,10 @@ class GhVerb:
     __repr__ = _repr_markdown_
 
 class _GhVerbGroup:
-#     def __init__(self, verbs): super().__init__(**{o.name:o for o in verbs})
     def __init__(self, verbs):
+        self.verbs = verbs
         for o in verbs: setattr(self, o.name, o)
-    def _repr_markdown_(self): return "\n".join(f'- [{k}]({_DOC_URL}{v.url})' for k,v in self.items())
+    def _repr_markdown_(self): return "\n".join(f'- [{v.name}]({_DOC_URL}{v.url})' for v in self.verbs)
 
 # Cell
 _docroot = 'https://docs.github.com/en/free-pro-team@latest/rest/reference/'
