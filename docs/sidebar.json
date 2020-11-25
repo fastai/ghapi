@@ -2,6 +2,6 @@
   "ghapi": {
     "Overview": "/",
     "API details": "core.html",
-    "Internal use - Parse Open API Spec": "build_lib.html"
+    "Internal - OpenAPI Parser": "build_lib.html"
   }
 }

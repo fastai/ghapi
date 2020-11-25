@@ -19,6 +19,23 @@ Either `pip install ghapi` or `conda install -c fastai ghapi`.
 
 ## How to use
 
+Throughout this documentation, you will see code inputs and outputs shown in this format:
+
+```python
+1+1
+```
+
+
+
+
+    2
+
+
+
+We recommend reading the documentation on the [official site](https://ghapi.fast.ai/), rather than on GitHub, since not all the functionality described on this page is available through the GitHub viewer.
+
+All of the documentation is available directly as Jupyter Notebooks, for instance the current page you're reading is available as a notebook [here](https://github.com/fastai/ghapi/blob/master/index.ipynb). To open any page as an interactive notebook in Google Colab, click the *Colab* badge at the top of the page.
+
 First, create a `GhApi` object:
 
 ```python

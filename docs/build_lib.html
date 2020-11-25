@@ -1,6 +1,6 @@
 ---
 
-title: Internal use - Parse Open API Spec
+title: Internal - OpenAPI Parser
 
 
 keywords: fastai
@@ -46,30 +46,6 @@ nb_path: "90_build_lib.ipynb"
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># s = urlread(GH_OPENAPI_URL)</span>
-<span class="c1"># js = loads(s)[&#39;paths&#39;]</span>
-<span class="c1"># t = js[&#39;/repos/{owner}/{repo}/hooks&#39;]</span>
-<span class="c1"># nested_idx(t, *&#39;post requestBody content application/json schema properties&#39;.split())</span>
-
-<span class="c1"># t = js[&#39;/repos/{owner}/{repo}/hooks&#39;]</span>
-<span class="c1"># params = nested_idx(t, &#39;get&#39;,&#39;parameters&#39;)</span>
-<span class="c1"># [o[&#39;name&#39;] for o in params if o[&#39;in&#39;]==&#39;query&#39;]</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
 
 </div>
     {% endraw %}

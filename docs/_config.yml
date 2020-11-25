@@ -31,6 +31,9 @@ kramdown:
  hard_wrap: false
  syntax_highlighter: rouge
 
+default_badges:
+  colab: true
+
 collections:
   tooltips:
     output: false
