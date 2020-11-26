@@ -550,7 +550,7 @@ nb_path: "00_core.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="GhApi.create_release" class="doc_header"><code>GhApi.create_release</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/core.py#L97" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>GhApi.create_release</code>(<strong><code>tag_name</code></strong>, <strong><code>branch</code></strong>=<em><code>'master'</code></em>, <strong><code>name</code></strong>=<em><code>None</code></em>, <strong><code>body</code></strong>=<em><code>''</code></em>, <strong><code>draft</code></strong>=<em><code>False</code></em>, <strong><code>prerelease</code></strong>=<em><code>False</code></em>, <strong><code>files</code></strong>=<em><code>None</code></em>)</p>
+<h4 id="GhApi.create_release" class="doc_header"><code>GhApi.create_release</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/core.py#L98" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>GhApi.create_release</code>(<strong><code>tag_name</code></strong>, <strong><code>branch</code></strong>=<em><code>'master'</code></em>, <strong><code>name</code></strong>=<em><code>None</code></em>, <strong><code>body</code></strong>=<em><code>''</code></em>, <strong><code>draft</code></strong>=<em><code>False</code></em>, <strong><code>prerelease</code></strong>=<em><code>False</code></em>, <strong><code>files</code></strong>=<em><code>None</code></em>)</p>
 </blockquote>
 <p>Wrapper for <a href="/core.html#GhApi.repos.create_release"><code>GhApi.repos.create_release</code></a> which also uploads <code>files</code></p>
 
@@ -585,7 +585,7 @@ nb_path: "00_core.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">rel</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">create_release</span><span class="p">(</span><span class="s1">&#39;0.0.1&#39;</span><span class="p">,</span> <span class="n">files</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;README.md&#39;</span><span class="p">])</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">rel</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">create_release</span><span class="p">(</span><span class="s1">&#39;0.0.1&#39;</span><span class="p">,</span> <span class="n">files</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;docs/index.html&#39;</span><span class="p">])</span>
 <span class="n">test_eq</span><span class="p">(</span><span class="n">rel</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="s1">&#39;v0.0.1&#39;</span><span class="p">)</span>
 </pre></div>
 
@@ -629,8 +629,8 @@ nb_path: "00_core.ipynb"
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">assets</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">repos</span><span class="o">.</span><span class="n">list_release_assets</span><span class="p">(</span><span class="n">rels</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
-<span class="n">test_eq</span><span class="p">(</span><span class="n">assets</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="s1">&#39;README.md&#39;</span><span class="p">)</span>
-<span class="n">test_eq</span><span class="p">(</span><span class="n">assets</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">content_type</span><span class="p">,</span> <span class="s1">&#39;text/markdown&#39;</span><span class="p">)</span>
+<span class="n">test_eq</span><span class="p">(</span><span class="n">assets</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="s1">&#39;index.html&#39;</span><span class="p">)</span>
+<span class="n">test_eq</span><span class="p">(</span><span class="n">assets</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">content_type</span><span class="p">,</span> <span class="s1">&#39;text/html&#39;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -651,7 +651,7 @@ nb_path: "00_core.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="GhApi.list_tags" class="doc_header"><code>GhApi.list_tags</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/core.py#L109" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>GhApi.list_tags</code>(<strong><code>prefix</code></strong>:<code>str</code>=<em><code>''</code></em>)</p>
+<h4 id="GhApi.list_tags" class="doc_header"><code>GhApi.list_tags</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/core.py#L110" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>GhApi.list_tags</code>(<strong><code>prefix</code></strong>:<code>str</code>=<em><code>''</code></em>)</p>
 </blockquote>
 <p>List all tags, optionally filtered to those starting with <code>prefix</code></p>
 
@@ -731,7 +731,7 @@ nb_path: "00_core.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="GhApi.list_branches" class="doc_header"><code>GhApi.list_branches</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/core.py#L115" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>GhApi.list_branches</code>(<strong><code>prefix</code></strong>:<code>str</code>=<em><code>''</code></em>)</p>
+<h4 id="GhApi.list_branches" class="doc_header"><code>GhApi.list_branches</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/core.py#L116" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>GhApi.list_branches</code>(<strong><code>prefix</code></strong>:<code>str</code>=<em><code>''</code></em>)</p>
 </blockquote>
 <p>List all branches, optionally filtered to those starting with <code>prefix</code></p>
 
