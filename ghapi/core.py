@@ -76,3 +76,33 @@ class GhApi:
     def __dir__(self): return super().__dir__() + list(self._fs)
     def _repr_markdown_(self): return "\n".join(f'- [{o}]({_docroot+o})' for o in self._fs)
     def __getattr__(self,k): return self._fs[k] if k in self._fs else stop(AttributeError(k))
+
+# Cell
+@patch
+def _upload_file(self:GhApi, url:str, fn:str):
+    "Upload `fn` to endpoint `url`"
+    mime = mimetypes.guess_type(fn, False)[0] or 'application/octet-stream'
+    headers = {**api.headers, 'Content-Type':mime}
+    data = Path(fn).read_bytes()
+    return urlsend(url, 'POST', headers=headers, query = {'name':fn}, data=data)
+
+# Cell
+@patch
+def create_release(self:GhApi, tag_name, branch='master', name=None, body='',
+                   draft=False, prerelease=False, files=None):
+    "Wrapper for `api.repos.create_release` which also uploads `files`"
+    if name is None: name = 'v'+tag_name
+    rel = api.repos.create_release(tag_name, target_commitish=branch, name=name, body=body,
+                                   draft=draft, prerelease=prerelease)
+    url = rel.upload_url.replace('{?name,label}','')
+    for file in listify(files): self._upload_file(url, file)
+    return rel
+
+# Cell
+@patch
+def delete_release(self:GhApi, release):
+    "Delete a release and its associated tag"
+    ref = f'tags/{release.tag_name}'
+    tag = api.git.list_matching_refs(ref)
+    api.repos.delete_release(rel.id)
+    api.git.delete_ref(ref)
