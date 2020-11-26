@@ -546,7 +546,23 @@ nb_path: "00_core.ipynb"
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">rel</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">create_release</span><span class="p">(</span><span class="s1">&#39;0.0.1&#39;</span><span class="p">,</span> <span class="n">files</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;README.md&#39;</span><span class="p">])</span>
 <span class="n">test_eq</span><span class="p">(</span><span class="n">rel</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="s1">&#39;v0.0.1&#39;</span><span class="p">)</span>
-<span class="n">rels</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">repos</span><span class="o">.</span><span class="n">list_releases</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">rels</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">repos</span><span class="o">.</span><span class="n">list_releases</span><span class="p">()</span>
 <span class="n">test_eq</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">rels</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>
 </pre></div>
 

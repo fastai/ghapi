@@ -114,5 +114,5 @@ def list_branches(self:GhApi, prefix:str=''):
 @patch
 def delete_release(self:GhApi, release):
     "Delete a release and its associated tag"
-    self.repos.delete_release(rel.id)
-    self.git.delete_ref(ref)
+    self.repos.delete_release(release.id)
+    self.git.delete_ref(f'tags/{release.tag_name}')
