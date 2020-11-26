@@ -92,19 +92,19 @@ api.git
 
 
 
-- [create_blob](https://docs.github.com/rest/reference/git#create-a-blob)
-- [get_blob](https://docs.github.com/rest/reference/git#get-a-blob)
-- [create_commit](https://docs.github.com/rest/reference/git#create-a-commit)
-- [get_commit](https://docs.github.com/rest/reference/git#get-a-commit)
-- [list_matching_refs](https://docs.github.com/rest/reference/git#list-matching-references)
-- [get_ref](https://docs.github.com/rest/reference/git#get-a-reference)
-- [create_ref](https://docs.github.com/rest/reference/git#create-a-reference)
-- [update_ref](https://docs.github.com/rest/reference/git#update-a-reference)
-- [delete_ref](https://docs.github.com/rest/reference/git#delete-a-reference)
-- [create_tag](https://docs.github.com/rest/reference/git#create-a-tag-object)
-- [get_tag](https://docs.github.com/rest/reference/git#get-a-tag)
-- [create_tree](https://docs.github.com/rest/reference/git#create-a-tree)
-- [get_tree](https://docs.github.com/rest/reference/git#get-a-tree)
+- [git/create_blob](https://docs.github.com/rest/reference/git#create-a-blob)(owner, repo, content, encoding): *Create a blob*
+- [git/get_blob](https://docs.github.com/rest/reference/git#get-a-blob)(owner, repo, file_sha): *Get a blob*
+- [git/create_commit](https://docs.github.com/rest/reference/git#create-a-commit)(owner, repo, message, tree, parents, author, committer, signature): *Create a commit*
+- [git/get_commit](https://docs.github.com/rest/reference/git#get-a-commit)(commit_sha, owner, repo): *Get a commit*
+- [git/list_matching_refs](https://docs.github.com/rest/reference/git#list-matching-references)(ref, owner, repo, per_page, page): *List matching references*
+- [git/get_ref](https://docs.github.com/rest/reference/git#get-a-reference)(ref, owner, repo): *Get a reference*
+- [git/create_ref](https://docs.github.com/rest/reference/git#create-a-reference)(owner, repo, ref, sha, key): *Create a reference*
+- [git/update_ref](https://docs.github.com/rest/reference/git#update-a-reference)(ref, owner, repo, sha, force): *Update a reference*
+- [git/delete_ref](https://docs.github.com/rest/reference/git#delete-a-reference)(ref, owner, repo): *Delete a reference*
+- [git/create_tag](https://docs.github.com/rest/reference/git#create-a-tag-object)(owner, repo, tag, message, object, type, tagger): *Create a tag object*
+- [git/get_tag](https://docs.github.com/rest/reference/git#get-a-tag)(owner, repo, tag_sha): *Get a tag*
+- [git/create_tree](https://docs.github.com/rest/reference/git#create-a-tree)(owner, repo, tree, base_tree): *Create a tree*
+- [git/get_tree](https://docs.github.com/rest/reference/git#get-a-tree)(tree_sha, owner, repo, recursive): *Get a tree*
 
 
 

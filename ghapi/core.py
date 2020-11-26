@@ -74,11 +74,11 @@ class GhApi:
         self.groups = {k.replace('-','_'):_GhVerbGroup(v) for k,v in groupby(funcs_, 'tag').items()}
 
     def __dir__(self): return super().__dir__() + list(self.groups)
-    def _repr_markdown_(self): return "\n".join(f'- [{o}]({_docroot+o})' for o in self.groups)
+    def _repr_markdown_(self): return "\n".join(f'- [{o}]({_docroot+o})' for o in sorted(self.groups))
     def __getattr__(self,k): return self.groups[k] if 'groups' in vars(self) and k in self.groups else stop(AttributeError(k))
 
     def full_docs(self):
-        return '\n'.join(f'## {gn}\n\n{group._repr_markdown_()}\n' for gn,group in self.groups.items())
+        return '\n'.join(f'## {gn}\n\n{group._repr_markdown_()}\n' for gn,group in sorted(self.groups.items()))
 
 # Cell
 @patch
