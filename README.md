@@ -4,7 +4,7 @@
 
 `GhApi` provides 100% always-updated coverage of the entire [GitHub API](https://docs.github.com/en/free-pro-team@latest/rest). Because we automatically convert the [OpenAPI spec](https://docs.github.com/en/free-pro-team@latest/rest/overview/openapi-description) to a Pythonic API, `GhApi` is always up to date with the latest changes to GitHub APIs.
 
-Using `GhApi`, you can automated just about anything that you can do through the GitHub web interface or through the `git` client, such as:
+Using `GhApi`, you can do anything that you can do through the GitHub web interface or through the `git` client, such as:
 
 - Open, list, comment on, or modify [issues](https://guides.github.com/features/issues/) or [pull requests](https://docs.github.com/en/free-pro-team@latest/github/collaborating-with-issues-and-pull-requests/about-pull-requests)
 - Create, list, or modify [git tags](https://git-scm.com/book/en/v2/Git-Basics-Tagging) or [GitHub releases](https://docs.github.com/en/free-pro-team@latest/github/administering-a-repository/managing-releases-in-a-repository), including uploading release assets
@@ -36,7 +36,7 @@ We recommend reading the documentation on the [official site](https://ghapi.fast
 
 All of the documentation is available directly as Jupyter Notebooks, for instance the current page you're reading is available as a notebook [here](https://github.com/fastai/ghapi/blob/master/index.ipynb). To open any page as an interactive notebook in Google Colab, click the *Colab* badge at the top of the page.
 
-First, create a `GhApi` object:
+To access the GitHub API, first create a `GhApi` object:
 
 ```python
 api = GhApi()
