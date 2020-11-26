@@ -2,7 +2,7 @@
   "ghapi": {
     "Overview": "/",
     "API details": "core.html",
-    "Internal - OpenAPI Parser": "build_lib.html",
-    "Full GitHub API reference": "fullapi.html"
+    "Full GitHub API reference": "fullapi.html",
+    "Internal - OpenAPI Parser": "build_lib.html"
   }
 }
