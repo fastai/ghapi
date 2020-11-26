@@ -86,12 +86,13 @@ def delete_release(self:GhApi, release):
 
 # Cell
 @patch
-def _upload_file(self:GhApi, url:str, fn:str):
+def _upload_file(self:GhApi, url:str, fn):
     "Upload `fn` to endpoint `url`"
+    fn = Path(fn)
     mime = mimetypes.guess_type(fn, False)[0] or 'application/octet-stream'
     headers = {**self.headers, 'Content-Type':mime}
-    data = Path(fn).read_bytes()
-    return urlsend(url, 'POST', headers=headers, query = {'name':fn}, data=data)
+    data = fn.read_bytes()
+    return urlsend(url, 'POST', headers=headers, query = {'name':fn.name}, data=data)
 
 # Cell
 @patch
