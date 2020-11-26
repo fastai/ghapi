@@ -1271,12 +1271,8 @@ h4.panel-title {
         background-color: #f5f5f5;
         border: 1px solid #ccc;
         border-radius: 4px;
-        padding-top: 3px;
-        padding-bottom: 0px;
-        padding-left: 1em;
-        margin: 0px;
-        margin-bottom: 3px;
-        #border-left: 1px solid grey;
+        padding: 3px 1em 0px 1em;
+        margin: 0 0 3px 0;
 }
 
 .pytest_card {
