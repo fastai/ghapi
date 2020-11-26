@@ -1263,13 +1263,20 @@ h4.panel-title {
         margin: 0px;
         background-color: #f5f1e0;
 }
+.output_area pre {
+        border: 0px;
+        padding-left: 0em;
+}
 .output_area {
+        background-color: #f5f5f5;
+        border: 1px solid #ccc;
+        border-radius: 4px;
         padding-top: 3px;
         padding-bottom: 0px;
-        padding-left: 2em;
+        padding-left: 1em;
         margin: 0px;
         margin-bottom: 3px;
-        border-left: 1px solid grey;
+        #border-left: 1px solid grey;
 }
 
 .pytest_card {
