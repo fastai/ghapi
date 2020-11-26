@@ -3,7 +3,6 @@
 __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
 index = {"GH_HOST": "00_core.ipynb",
-         "__GhVerbGroup": "00_core.ipynb",
          "GhApi": "00_core.ipynb",
          "GH_OPENAPI_URL": "90_build_lib.ipynb",
          "build_funcs": "90_build_lib.ipynb",
