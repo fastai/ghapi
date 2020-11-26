@@ -82,7 +82,7 @@ class GhApi:
 def _upload_file(self:GhApi, url:str, fn:str):
     "Upload `fn` to endpoint `url`"
     mime = mimetypes.guess_type(fn, False)[0] or 'application/octet-stream'
-    headers = {**api.headers, 'Content-Type':mime}
+    headers = {**self.headers, 'Content-Type':mime}
     data = Path(fn).read_bytes()
     return urlsend(url, 'POST', headers=headers, query = {'name':fn}, data=data)
 
@@ -90,9 +90,9 @@ def _upload_file(self:GhApi, url:str, fn:str):
 @patch
 def create_release(self:GhApi, tag_name, branch='master', name=None, body='',
                    draft=False, prerelease=False, files=None):
-    "Wrapper for `api.repos.create_release` which also uploads `files`"
+    "Wrapper for `GhApi.repos.create_release` which also uploads `files`"
     if name is None: name = 'v'+tag_name
-    rel = api.repos.create_release(tag_name, target_commitish=branch, name=name, body=body,
+    rel = self.repos.create_release(tag_name, target_commitish=branch, name=name, body=body,
                                    draft=draft, prerelease=prerelease)
     url = rel.upload_url.replace('{?name,label}','')
     for file in listify(files): self._upload_file(url, file)
@@ -100,9 +100,19 @@ def create_release(self:GhApi, tag_name, branch='master', name=None, body='',
 
 # Cell
 @patch
+def list_tags(self:GhApi, prefix:str=''):
+    "List all tags, optionally filtered to those starting with `prefix`"
+    return self.git.list_matching_refs(f'tags/{prefix}')
+
+# Cell
+@patch
+def list_branches(self:GhApi, prefix:str=''):
+    "List all branches, optionally filtered to those starting with `prefix`"
+    return self.git.list_matching_refs(f'heads/{prefix}')
+
+# Cell
+@patch
 def delete_release(self:GhApi, release):
     "Delete a release and its associated tag"
-    ref = f'tags/{release.tag_name}'
-    tag = api.git.list_matching_refs(ref)
-    api.repos.delete_release(rel.id)
-    api.git.delete_ref(ref)
+    self.repos.delete_release(rel.id)
+    self.git.delete_ref(ref)
