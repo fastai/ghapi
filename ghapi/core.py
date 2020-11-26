@@ -79,6 +79,13 @@ class GhApi:
 
 # Cell
 @patch
+def delete_release(self:GhApi, release):
+    "Delete a release and its associated tag"
+    self.repos.delete_release(release.id)
+    self.git.delete_ref(f'tags/{release.tag_name}')
+
+# Cell
+@patch
 def _upload_file(self:GhApi, url:str, fn:str):
     "Upload `fn` to endpoint `url`"
     mime = mimetypes.guess_type(fn, False)[0] or 'application/octet-stream'
@@ -109,10 +116,3 @@ def list_tags(self:GhApi, prefix:str=''):
 def list_branches(self:GhApi, prefix:str=''):
     "List all branches, optionally filtered to those starting with `prefix`"
     return self.git.list_matching_refs(f'heads/{prefix}')
-
-# Cell
-@patch
-def delete_release(self:GhApi, release):
-    "Delete a release and its associated tag"
-    self.repos.delete_release(release.id)
-    self.git.delete_ref(f'tags/{release.tag_name}')
