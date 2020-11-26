@@ -75,7 +75,7 @@ class GhApi:
 
     def __dir__(self): return super().__dir__() + list(self._fs)
     def _repr_markdown_(self): return "\n".join(f'- [{o}]({_docroot+o})' for o in self._fs)
-    def __getattr__(self,k): return self._fs[k] if k in self._fs else stop(AttributeError(k))
+    def __getattr__(self,k): return self._fs[k] if '_fs' in vars(self) and k in self._fs else stop(AttributeError(k))
 
 # Cell
 @patch
