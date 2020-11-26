@@ -97,7 +97,9 @@ nb_path: "00_core.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Operation-groups">Operation groups<a class="anchor-link" href="#Operation-groups"> </a></h3>
+<p>If you provide <code>owner</code> and/or <code>repo</code> to the constructor, they will be automatically inserted into any calls which use them. You can also pass any other arbitrary keyword arguments you like to have them used as defaults for any relevant calls.</p>
+<p>You must include a GitHub API token if you need to access any authenticated endpoints.</p>
+
 </div>
 </div>
 </div>
@@ -118,6 +120,12 @@ nb_path: "00_core.ipynb"
 </div>
     {% endraw %}
 
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Operation-groups">Operation groups<a class="anchor-link" href="#Operation-groups"> </a></h3>
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The following groups of endpoints are provided, which you can list at any time along with a link to documentation for all endpoints in that group, by displaying the <a href="/core.html#GhApi"><code>GhApi</code></a> object:</p>
