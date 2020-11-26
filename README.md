@@ -52,10 +52,10 @@ api
 
 
 - [apps](https://docs.github.com/en/free-pro-team@latest/rest/reference/apps)
-- [oauth-authorizations](https://docs.github.com/en/free-pro-team@latest/rest/reference/oauth-authorizations)
-- [codes-of-conduct](https://docs.github.com/en/free-pro-team@latest/rest/reference/codes-of-conduct)
+- [oauth_authorizations](https://docs.github.com/en/free-pro-team@latest/rest/reference/oauth_authorizations)
+- [codes_of_conduct](https://docs.github.com/en/free-pro-team@latest/rest/reference/codes_of_conduct)
 - [emojis](https://docs.github.com/en/free-pro-team@latest/rest/reference/emojis)
-- [enterprise-admin](https://docs.github.com/en/free-pro-team@latest/rest/reference/enterprise-admin)
+- [enterprise_admin](https://docs.github.com/en/free-pro-team@latest/rest/reference/enterprise_admin)
 - [billing](https://docs.github.com/en/free-pro-team@latest/rest/reference/billing)
 - [activity](https://docs.github.com/en/free-pro-team@latest/rest/reference/activity)
 - [gists](https://docs.github.com/en/free-pro-team@latest/rest/reference/gists)
@@ -72,9 +72,9 @@ api
 - [repos](https://docs.github.com/en/free-pro-team@latest/rest/reference/repos)
 - [teams](https://docs.github.com/en/free-pro-team@latest/rest/reference/teams)
 - [reactions](https://docs.github.com/en/free-pro-team@latest/rest/reference/reactions)
-- [rate-limit](https://docs.github.com/en/free-pro-team@latest/rest/reference/rate-limit)
+- [rate_limit](https://docs.github.com/en/free-pro-team@latest/rest/reference/rate_limit)
 - [checks](https://docs.github.com/en/free-pro-team@latest/rest/reference/checks)
-- [code-scanning](https://docs.github.com/en/free-pro-team@latest/rest/reference/code-scanning)
+- [code_scanning](https://docs.github.com/en/free-pro-team@latest/rest/reference/code_scanning)
 - [git](https://docs.github.com/en/free-pro-team@latest/rest/reference/git)
 - [pulls](https://docs.github.com/en/free-pro-team@latest/rest/reference/pulls)
 - [scim](https://docs.github.com/en/free-pro-team@latest/rest/reference/scim)
@@ -117,7 +117,7 @@ api.git.get_ref
 
 
 
-[git/get_ref](https://docs.github.com/rest/reference/git#get-a-reference)(ref, repo, owner): *Get a reference*
+[git/get_ref](https://docs.github.com/rest/reference/git#get-a-reference)(owner, repo, ref): *Get a reference*
 
 
 
@@ -134,9 +134,9 @@ api.git.get_ref(owner='fastai', repo='fastcore', ref='heads/master')
 - node_id: MDM6UmVmMjI1NDYwNTk5OnJlZnMvaGVhZHMvbWFzdGVy
 - url: https://api.github.com/repos/fastai/fastcore/git/refs/heads/master
 - object: 
-  - sha: 0b188e9a4f200c5ad93c692bb10aa6e7ceb10d4c
+  - sha: 8eff3dade0d66a86a331c47987ab695b226613b2
   - type: commit
-  - url: https://api.github.com/repos/fastai/fastcore/git/commits/0b188e9a4f200c5ad93c692bb10aa6e7ceb10d4c
+  - url: https://api.github.com/repos/fastai/fastcore/git/commits/8eff3dade0d66a86a331c47987ab695b226613b2
 
 
 
@@ -159,9 +159,9 @@ api.git.get_ref('heads/master')
 - node_id: MDM6UmVmMjI1NDYwNTk5OnJlZnMvaGVhZHMvbWFzdGVy
 - url: https://api.github.com/repos/fastai/fastcore/git/refs/heads/master
 - object: 
-  - sha: 0b188e9a4f200c5ad93c692bb10aa6e7ceb10d4c
+  - sha: 8eff3dade0d66a86a331c47987ab695b226613b2
   - type: commit
-  - url: https://api.github.com/repos/fastai/fastcore/git/commits/0b188e9a4f200c5ad93c692bb10aa6e7ceb10d4c
+  - url: https://api.github.com/repos/fastai/fastcore/git/commits/8eff3dade0d66a86a331c47987ab695b226613b2
 
 
 

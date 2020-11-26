@@ -1,3 +1,4 @@
+conda/
 .sass-cache/
 api.json
 *.bak
