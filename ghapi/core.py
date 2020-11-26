@@ -51,7 +51,7 @@ class _GhVerb:
 
     def _repr_markdown_(self):
         params = ', '.join(self.route_ps+self.params+self.data)
-        return f'[{self.tag}/{self.name}]({_DOC_URL}{self.url.replace(" ","_")})({params}): *{self.summary}*'
+        return f'[{self.tag}.{self.name}]({_DOC_URL}{self.url.replace(" ","_")})({params}): *{self.summary}*'
     __repr__ = _repr_markdown_
 
 class _GhVerbGroup:

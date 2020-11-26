@@ -51,34 +51,34 @@ api
 
 
 
+- [actions](https://docs.github.com/en/free-pro-team@latest/rest/reference/actions)
+- [activity](https://docs.github.com/en/free-pro-team@latest/rest/reference/activity)
 - [apps](https://docs.github.com/en/free-pro-team@latest/rest/reference/apps)
-- [oauth_authorizations](https://docs.github.com/en/free-pro-team@latest/rest/reference/oauth_authorizations)
+- [billing](https://docs.github.com/en/free-pro-team@latest/rest/reference/billing)
+- [checks](https://docs.github.com/en/free-pro-team@latest/rest/reference/checks)
+- [code_scanning](https://docs.github.com/en/free-pro-team@latest/rest/reference/code_scanning)
 - [codes_of_conduct](https://docs.github.com/en/free-pro-team@latest/rest/reference/codes_of_conduct)
 - [emojis](https://docs.github.com/en/free-pro-team@latest/rest/reference/emojis)
 - [enterprise_admin](https://docs.github.com/en/free-pro-team@latest/rest/reference/enterprise_admin)
-- [billing](https://docs.github.com/en/free-pro-team@latest/rest/reference/billing)
-- [activity](https://docs.github.com/en/free-pro-team@latest/rest/reference/activity)
 - [gists](https://docs.github.com/en/free-pro-team@latest/rest/reference/gists)
+- [git](https://docs.github.com/en/free-pro-team@latest/rest/reference/git)
 - [gitignore](https://docs.github.com/en/free-pro-team@latest/rest/reference/gitignore)
+- [interactions](https://docs.github.com/en/free-pro-team@latest/rest/reference/interactions)
 - [issues](https://docs.github.com/en/free-pro-team@latest/rest/reference/issues)
 - [licenses](https://docs.github.com/en/free-pro-team@latest/rest/reference/licenses)
 - [markdown](https://docs.github.com/en/free-pro-team@latest/rest/reference/markdown)
 - [meta](https://docs.github.com/en/free-pro-team@latest/rest/reference/meta)
-- [orgs](https://docs.github.com/en/free-pro-team@latest/rest/reference/orgs)
-- [actions](https://docs.github.com/en/free-pro-team@latest/rest/reference/actions)
-- [interactions](https://docs.github.com/en/free-pro-team@latest/rest/reference/interactions)
 - [migrations](https://docs.github.com/en/free-pro-team@latest/rest/reference/migrations)
+- [oauth_authorizations](https://docs.github.com/en/free-pro-team@latest/rest/reference/oauth_authorizations)
+- [orgs](https://docs.github.com/en/free-pro-team@latest/rest/reference/orgs)
 - [projects](https://docs.github.com/en/free-pro-team@latest/rest/reference/projects)
-- [repos](https://docs.github.com/en/free-pro-team@latest/rest/reference/repos)
-- [teams](https://docs.github.com/en/free-pro-team@latest/rest/reference/teams)
-- [reactions](https://docs.github.com/en/free-pro-team@latest/rest/reference/reactions)
-- [rate_limit](https://docs.github.com/en/free-pro-team@latest/rest/reference/rate_limit)
-- [checks](https://docs.github.com/en/free-pro-team@latest/rest/reference/checks)
-- [code_scanning](https://docs.github.com/en/free-pro-team@latest/rest/reference/code_scanning)
-- [git](https://docs.github.com/en/free-pro-team@latest/rest/reference/git)
 - [pulls](https://docs.github.com/en/free-pro-team@latest/rest/reference/pulls)
+- [rate_limit](https://docs.github.com/en/free-pro-team@latest/rest/reference/rate_limit)
+- [reactions](https://docs.github.com/en/free-pro-team@latest/rest/reference/reactions)
+- [repos](https://docs.github.com/en/free-pro-team@latest/rest/reference/repos)
 - [scim](https://docs.github.com/en/free-pro-team@latest/rest/reference/scim)
 - [search](https://docs.github.com/en/free-pro-team@latest/rest/reference/search)
+- [teams](https://docs.github.com/en/free-pro-team@latest/rest/reference/teams)
 - [users](https://docs.github.com/en/free-pro-team@latest/rest/reference/users)
 
 
@@ -92,19 +92,19 @@ api.git
 
 
 
-- [git/create_blob](https://docs.github.com/rest/reference/git#create-a-blob)(owner, repo, content, encoding): *Create a blob*
-- [git/get_blob](https://docs.github.com/rest/reference/git#get-a-blob)(owner, repo, file_sha): *Get a blob*
-- [git/create_commit](https://docs.github.com/rest/reference/git#create-a-commit)(owner, repo, message, tree, parents, author, committer, signature): *Create a commit*
-- [git/get_commit](https://docs.github.com/rest/reference/git#get-a-commit)(commit_sha, owner, repo): *Get a commit*
-- [git/list_matching_refs](https://docs.github.com/rest/reference/git#list-matching-references)(ref, owner, repo, per_page, page): *List matching references*
-- [git/get_ref](https://docs.github.com/rest/reference/git#get-a-reference)(ref, owner, repo): *Get a reference*
-- [git/create_ref](https://docs.github.com/rest/reference/git#create-a-reference)(owner, repo, ref, sha, key): *Create a reference*
-- [git/update_ref](https://docs.github.com/rest/reference/git#update-a-reference)(ref, owner, repo, sha, force): *Update a reference*
-- [git/delete_ref](https://docs.github.com/rest/reference/git#delete-a-reference)(ref, owner, repo): *Delete a reference*
-- [git/create_tag](https://docs.github.com/rest/reference/git#create-a-tag-object)(owner, repo, tag, message, object, type, tagger): *Create a tag object*
-- [git/get_tag](https://docs.github.com/rest/reference/git#get-a-tag)(owner, repo, tag_sha): *Get a tag*
-- [git/create_tree](https://docs.github.com/rest/reference/git#create-a-tree)(owner, repo, tree, base_tree): *Create a tree*
-- [git/get_tree](https://docs.github.com/rest/reference/git#get-a-tree)(tree_sha, owner, repo, recursive): *Get a tree*
+- [git.create_blob](https://docs.github.com/rest/reference/git#create-a-blob)(owner, repo, content, encoding): *Create a blob*
+- [git.get_blob](https://docs.github.com/rest/reference/git#get-a-blob)(owner, file_sha, repo): *Get a blob*
+- [git.create_commit](https://docs.github.com/rest/reference/git#create-a-commit)(owner, repo, message, tree, parents, author, committer, signature): *Create a commit*
+- [git.get_commit](https://docs.github.com/rest/reference/git#get-a-commit)(owner, commit_sha, repo): *Get a commit*
+- [git.list_matching_refs](https://docs.github.com/rest/reference/git#list-matching-references)(ref, owner, repo, per_page, page): *List matching references*
+- [git.get_ref](https://docs.github.com/rest/reference/git#get-a-reference)(ref, owner, repo): *Get a reference*
+- [git.create_ref](https://docs.github.com/rest/reference/git#create-a-reference)(owner, repo, ref, sha, key): *Create a reference*
+- [git.update_ref](https://docs.github.com/rest/reference/git#update-a-reference)(ref, owner, repo, sha, force): *Update a reference*
+- [git.delete_ref](https://docs.github.com/rest/reference/git#delete-a-reference)(ref, owner, repo): *Delete a reference*
+- [git.create_tag](https://docs.github.com/rest/reference/git#create-a-tag-object)(owner, repo, tag, message, object, type, tagger): *Create a tag object*
+- [git.get_tag](https://docs.github.com/rest/reference/git#get-a-tag)(owner, repo, tag_sha): *Get a tag*
+- [git.create_tree](https://docs.github.com/rest/reference/git#create-a-tree)(owner, repo, tree, base_tree): *Create a tree*
+- [git.get_tree](https://docs.github.com/rest/reference/git#get-a-tree)(tree_sha, owner, repo, recursive): *Get a tree*
 
 
 
