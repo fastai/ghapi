@@ -16,6 +16,18 @@ GH_OPENAPI_URL = 'https://github.com/github/rest-api-description/raw/main/descri
 _DOC_URL = 'https://docs.github.com/'
 
 # Cell
+_lu_type = dict(zip(
+    'NA string object array boolean integer'.split(),
+    map(PrettyString,'object str dict list bool int'.split())
+))
+
+def _detls(k,v):
+    res = [_lu_type[v.get('type', 'NA')]]
+    try: res.append(v['default'])
+    except KeyError: pass
+    return [k]+res
+
+# Cell
 def build_funcs(nm='ghapi/metadata.py', url=GH_OPENAPI_URL, docurl=_DOC_URL):
     "Build module metadata.py from an Open API spec and optionally filter by a path `pre`"
     def _get_detls(o):
@@ -23,7 +35,9 @@ def build_funcs(nm='ghapi/metadata.py', url=GH_OPENAPI_URL, docurl=_DOC_URL):
         url = o['externalDocs']['url'][len(docurl):]
         params = o.get('parameters',None)
         qparams = [p['name'] for p in params if p['in']=='query'] if params else []
-        return (o['operationId'], o['summary'], url, qparams, list(data.keys()))
+        d = [_detls(*o) for o in data.items()]
+        preview = nested_idx(o, 'x-github','previews',0,'name') or ''
+        return (o['operationId'], o['summary'], url, qparams, d, preview)
 
     js = loads(urlread(url))
     _funcs = [(path, verb) + _get_detls(detls)
@@ -32,4 +46,4 @@ def build_funcs(nm='ghapi/metadata.py', url=GH_OPENAPI_URL, docurl=_DOC_URL):
     Path(nm).write_text("funcs = " + pprint.pformat(_funcs, width=360))
 
 # Cell
-GhMeta = namedtuple('GhMeta', 'path verb oper_id summary doc_url params data'.split())
+GhMeta = namedtuple('GhMeta', 'path verb oper_id summary doc_url params data preview'.split())

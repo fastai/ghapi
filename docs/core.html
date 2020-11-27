@@ -44,6 +44,7 @@ nb_path: "00_core.ipynb"
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">nbdev</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
 </pre></div>
 
     </div>
@@ -92,7 +93,7 @@ nb_path: "00_core.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="GhApi" class="doc_header"><code>class</code> <code>GhApi</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/core.py#L67" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>GhApi</code>(<strong><code>owner</code></strong>=<em><code>None</code></em>, <strong><code>repo</code></strong>=<em><code>None</code></em>, <strong><code>token</code></strong>=<em><code>None</code></em>, <strong>**<code>kwargs</code></strong>)</p>
+<h2 id="GhApi" class="doc_header"><code>class</code> <code>GhApi</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/core.py#L72" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>GhApi</code>(<strong><code>owner</code></strong>=<em><code>None</code></em>, <strong><code>repo</code></strong>=<em><code>None</code></em>, <strong><code>token</code></strong>=<em><code>None</code></em>, <strong>**<code>kwargs</code></strong>)</p>
 </blockquote>
 
 </div>
@@ -550,7 +551,7 @@ nb_path: "00_core.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="GhApi.create_release" class="doc_header"><code>GhApi.create_release</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/core.py#L101" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>GhApi.create_release</code>(<strong><code>tag_name</code></strong>, <strong><code>branch</code></strong>=<em><code>'master'</code></em>, <strong><code>name</code></strong>=<em><code>None</code></em>, <strong><code>body</code></strong>=<em><code>''</code></em>, <strong><code>draft</code></strong>=<em><code>False</code></em>, <strong><code>prerelease</code></strong>=<em><code>False</code></em>, <strong><code>files</code></strong>=<em><code>None</code></em>)</p>
+<h4 id="GhApi.create_release" class="doc_header"><code>GhApi.create_release</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/core.py#L106" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>GhApi.create_release</code>(<strong><code>tag_name</code></strong>, <strong><code>branch</code></strong>=<em><code>'master'</code></em>, <strong><code>name</code></strong>=<em><code>None</code></em>, <strong><code>body</code></strong>=<em><code>''</code></em>, <strong><code>draft</code></strong>=<em><code>False</code></em>, <strong><code>prerelease</code></strong>=<em><code>False</code></em>, <strong><code>files</code></strong>=<em><code>None</code></em>)</p>
 </blockquote>
 <p>Wrapper for <a href="/core.html#GhApi.repos.create_release"><code>GhApi.repos.create_release</code></a> which also uploads <code>files</code></p>
 
@@ -651,7 +652,7 @@ nb_path: "00_core.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="GhApi.list_tags" class="doc_header"><code>GhApi.list_tags</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/core.py#L113" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>GhApi.list_tags</code>(<strong><code>prefix</code></strong>:<code>str</code>=<em><code>''</code></em>)</p>
+<h4 id="GhApi.list_tags" class="doc_header"><code>GhApi.list_tags</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/core.py#L118" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>GhApi.list_tags</code>(<strong><code>prefix</code></strong>:<code>str</code>=<em><code>''</code></em>)</p>
 </blockquote>
 <p>List all tags, optionally filtered to those starting with <code>prefix</code></p>
 
@@ -731,7 +732,7 @@ nb_path: "00_core.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="GhApi.list_branches" class="doc_header"><code>GhApi.list_branches</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/core.py#L119" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>GhApi.list_branches</code>(<strong><code>prefix</code></strong>:<code>str</code>=<em><code>''</code></em>)</p>
+<h4 id="GhApi.list_branches" class="doc_header"><code>GhApi.list_branches</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/core.py#L124" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>GhApi.list_branches</code>(<strong><code>prefix</code></strong>:<code>str</code>=<em><code>''</code></em>)</p>
 </blockquote>
 <p>List all branches, optionally filtered to those starting with <code>prefix</code></p>
 
@@ -787,7 +788,7 @@ nb_path: "00_core.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="GhApi.delete_release" class="doc_header"><code>GhApi.delete_release</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/core.py#L84" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>GhApi.delete_release</code>(<strong><code>release</code></strong>)</p>
+<h4 id="GhApi.delete_release" class="doc_header"><code>GhApi.delete_release</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/core.py#L89" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>GhApi.delete_release</code>(<strong><code>release</code></strong>)</p>
 </blockquote>
 <p>Delete a release and its associated tag</p>
 
@@ -834,18 +835,18 @@ nb_path: "00_core.ipynb"
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>GitHub's preview API functionality requires a special header to be passed to enable it. Pass <code>headers=preview_hdr</code> to an endpoint to send this special header.</p>
+<p>GitHub's preview API functionality requires a special header to be passed to enable it. This is added automatically for you.</p>
 
 </div>
 </div>
 </div>
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Note that you can pass <code>print_summary</code> to <code>debug</code> for any endpoint to view the request. Using this, we can see the preview header that is added for preview functionality, e.g.</p>
 
 </div>
-    {% endraw %}
-
+</div>
+</div>
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -853,7 +854,8 @@ nb_path: "00_core.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">api</span><span class="o">.</span><span class="n">codes_of_conduct</span><span class="o">.</span><span class="n">get_all_codes_of_conduct</span><span class="p">(</span><span class="n">headers</span><span class="o">=</span><span class="n">preview_hdr</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">_print</span><span class="p">(</span><span class="n">req</span><span class="p">):</span> <span class="n">pprint</span><span class="p">(</span><span class="n">req</span><span class="o">.</span><span class="n">summary</span><span class="p">(</span><span class="s1">&#39;Authorization&#39;</span><span class="p">))</span>
+<span class="n">api</span><span class="o">.</span><span class="n">codes_of_conduct</span><span class="o">.</span><span class="n">get_all_codes_of_conduct</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="n">_print</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
 </pre></div>
 
     </div>
@@ -862,6 +864,17 @@ nb_path: "00_core.ipynb"
 
 <div class="output_wrapper">
 <div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>{&#39;data&#39;: None,
+ &#39;full_url&#39;: &#39;https://api.github.com/codes_of_conduct&#39;,
+ &#39;headers&#39;: {&#39;Accept&#39;: &#39;application/vnd.github.scarlet-witch-preview+json&#39;},
+ &#39;method&#39;: &#39;GET&#39;}
+</pre>
+</div>
+</div>
 
 <div class="output_area">
 
