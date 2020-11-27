@@ -12,6 +12,7 @@ from inspect import signature,Parameter,Signature
 from urllib.parse import urlencode
 from .metadata import funcs
 from urllib.request import Request,urlretrieve
+from urllib.error import HTTPError
 
 # Cell
 GH_HOST = "https://api.github.com"
@@ -125,3 +126,19 @@ def list_tags(self:GhApi, prefix:str=''):
 def list_branches(self:GhApi, prefix:str=''):
     "List all branches, optionally filtered to those starting with `prefix`"
     return self.git.list_matching_refs(f'heads/{prefix}')
+
+# Cell
+@patch
+def enable_pages(self:GhApi, branch, path):
+    """Enable or update pages for a repo to point to a `branch` and `path`."""
+    assert path in ['/docs', '/'], "path can only be '/docs' or '/'."
+    if not self.repos.get().has_pages:
+        # if branch doesn't exist yet, temporarily enable pages on the default branch
+        newb = None
+        try: self.repos.get_branch(branch)
+        except HTTPError as e:
+            if e.code == 404: newb = self.repos.get().default_branch
+        self.repos.create_pages_site(source={"branch": f"{ifnone(newb, branch)}", "path": f"{path}"})
+
+    # you can update to a branch that doesn't yet exist ONLY if you have already enabled pages
+    self.repos.update_information_about_pages_site(source={"branch": f"{branch}", "path": f"{path}"})

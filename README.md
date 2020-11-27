@@ -21,7 +21,7 @@ Either `pip install ghapi` or `conda install -c fastai ghapi`.
 
 Throughout this documentation, you will see code inputs and outputs shown in this format:
 
-```python
+```
 1+1
 ```
 
@@ -38,13 +38,13 @@ All of the documentation is available directly as Jupyter Notebooks, for instanc
 
 To access the GitHub API, first create a `GhApi` object:
 
-```python
+```
 api = GhApi()
 ```
 
 Every part of the API includes documentation directly in the `api` object itself. For instance, here's how to explore the groups of functionality provided by the API by displaying the object:
 
-```python
+```
 api
 ```
 
@@ -85,7 +85,7 @@ api
 
 Then we can explore the endpoints provided by the API in each group, e.g. for the `git` group:
 
-```python
+```
 api.git
 ```
 
@@ -110,7 +110,7 @@ api.git
 
 Here's how to learn about an endpoint you want to use, e.g.:
 
-```python
+```
 api.git.get_ref
 ```
 
@@ -123,7 +123,7 @@ api.git.get_ref
 
 In Jupyter Notebook full tab completion, parameter lists, etc are provided for all endpoints. Endpoints are called as standard Python methods:
 
-```python
+```
 api.git.get_ref(owner='fastai', repo='fastcore', ref='heads/master')
 ```
 
@@ -142,13 +142,13 @@ api.git.get_ref(owner='fastai', repo='fastcore', ref='heads/master')
 
 For access to authenticated endpoints, pass a [GitHub token](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/creating-a-personal-access-token). You can also pass any parameters you want auto-inserted into relevant methods, such as `owner` and `repo`:
 
-```python
+```
 api = GhApi(owner='fastai', repo='fastcore', token=github_token)
 ```
 
 We can now repeat the previous method, but only need to pass `ref`:
 
-```python
+```
 api.git.get_ref('heads/master')
 ```
 
