@@ -77,7 +77,8 @@ class GhApi:
         self.groups = {k.replace('-','_'):_GhVerbGroup(v) for k,v in groupby(funcs_, 'tag').items()}
         self.debug = debug
 
-    def __call__(self, path, verb='GET', headers=None, route=None, query=None, data=None):
+    def __call__(self, path, verb=None, headers=None, route=None, query=None, data=None):
+        if verb is None: verb = 'POST' if data else 'GET'
         headers = {**self.headers,**(headers or {})}
         if path[:7] not in ('http://','https:/'): path = GH_HOST+path
         return dict2obj(urlsend(path, verb, headers=headers or None, debug=self.debug,
@@ -103,9 +104,7 @@ def _upload_file(self:GhApi, url:str, fn):
     "Upload `fn` to endpoint `url`"
     fn = Path(fn)
     mime = mimetypes.guess_type(fn, False)[0] or 'application/octet-stream'
-    headers = {**self.headers, 'Content-Type':mime}
-    data = fn.read_bytes()
-    return urlsend(url, 'POST', headers=headers, query = {'name':fn.name}, data=data)
+    return self(url, 'POST', headers={'Content-Type':mime}, query = {'name':fn.name}, data=fn.read_bytes())
 
 # Cell
 @patch
