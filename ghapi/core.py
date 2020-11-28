@@ -56,7 +56,7 @@ class _GhVerb:
                                  for o in (self.route_ps,self.params,d)]
         return self.client(self.path, self.verb, headers=headers, route=route_p, query=query_p, data=data_p)
 
-    def __str__(self): return f'{self.tag}.{self.name}({signature(self)})'
+    def __str__(self): return f'{self.tag}.{self.name}{signature(self)}'
     @property
     def __signature__(self): return _mk_sig(self.route_ps, dict.fromkeys(self.params), self.data)
     __call__.__signature__ = __signature__
