@@ -102,7 +102,7 @@ class GhApi:
     def __getattr__(self,k): return self.groups[k] if 'groups' in vars(self) and k in self.groups else stop(AttributeError(k))
     def __getitem__(self, k):
         a,b = k if isinstance(k,tuple) else (k,'GET')
-        return self.func_dict[f'{a}:{b}']
+        return self.func_dict[f'{a}:{b.upper()}']
 
     def full_docs(self):
         return '\n'.join(f'## {gn}\n\n{group._repr_markdown_()}\n' for gn,group in sorted(self.groups.items()))
