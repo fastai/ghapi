@@ -7,12 +7,13 @@ from fastcore.utils import *
 from fastcore.foundation import *
 from fastcore.meta import *
 
-import pprint,inspect,json,copy,urllib,mimetypes,base64
+import inspect,json,copy,urllib,mimetypes,base64
 from inspect import signature,Parameter,Signature
 from urllib.parse import urlencode
 from .metadata import funcs
 from urllib.request import Request,urlretrieve
 from urllib.error import HTTPError
+from pprint import pprint
 
 # Cell
 GH_HOST = "https://api.github.com"
@@ -39,7 +40,8 @@ class _GhVerb:
     def __init__(self, path, verb, oper, summary, url, params, data, preview, client, kwargs):
         tag,name = oper.split('/')
         name = name.replace('-','_')
-        path,route_ps,_ = partial_format(path, **kwargs)
+        path,_,_ = partial_format(path, **kwargs)
+        route_ps = stringfmt_names(path)
         __doc__ = summary
         data = {o[0]:o[1:] for o in data}
         store_attr()
@@ -54,7 +56,7 @@ class _GhVerb:
                                  for o in (self.route_ps,self.params,d)]
         return self.client(self.path, self.verb, headers=headers, route=route_p, query=query_p, data=data_p)
 
-    def __str__(self): return f'{self.tag}.{self.name}({signature(api.repos.create_webhook)})'
+    def __str__(self): return f'{self.tag}.{self.name}({signature(self)})'
     @property
     def __signature__(self): return _mk_sig(self.route_ps, dict.fromkeys(self.params), self.data)
     __call__.__signature__ = __signature__

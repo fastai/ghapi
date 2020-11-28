@@ -23,6 +23,7 @@ index = {"GH_HOST": "00_core.ipynb",
          "GhMeta": "90_build_lib.ipynb"}
 
 modules = ["core.py",
+           "cli.py",
            "build_lib.py"]
 
 doc_url = "https://ghapi.fast.ai/"
