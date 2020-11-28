@@ -56,14 +56,16 @@ class _GhVerb:
                                  for o in (self.route_ps,self.params,d)]
         return self.client(self.path, self.verb, headers=headers, route=route_p, query=query_p, data=data_p)
 
-    def __str__(self): return f'{self.tag}.{self.name}{signature(self)}'
+    def __str__(self): return f'{self.tag}.{self.name}{signature(self)}\n{self.doc_url}'
     @property
     def __signature__(self): return _mk_sig(self.route_ps, dict.fromkeys(self.params), self.data)
     __call__.__signature__ = __signature__
+    @property
+    def doc_url(self): return _DOC_URL + self.url.replace(" ","_")
 
     def _repr_markdown_(self):
         params = ', '.join(self.route_ps+self.params+list(self.data))
-        return f'[{self.tag}.{self.name}]({_DOC_URL}{self.url.replace(" ","_")})({params}): *{self.summary}*'
+        return f'[{self.tag}.{self.name}]({self.doc_url})({params}): *{self.summary}*'
     __repr__ = _repr_markdown_
 
 class _GhVerbGroup:

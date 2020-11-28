@@ -45,7 +45,7 @@ def ghapi():
     print(call(*pos, **kw))
 
 # Cell
-def _call(cmd):
+def _c(cmd):
     sys.argv = cmd.split()
     return globals()[sys.argv[0].replace('-','_')]()
 

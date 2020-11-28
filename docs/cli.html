@@ -126,7 +126,7 @@ nb_path: "01_cli.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">_call</span><span class="p">(</span><span class="n">cmd</span><span class="p">):</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">_c</span><span class="p">(</span><span class="n">cmd</span><span class="p">):</span>
     <span class="n">sys</span><span class="o">.</span><span class="n">argv</span> <span class="o">=</span> <span class="n">cmd</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
     <span class="k">return</span> <span class="nb">globals</span><span class="p">()[</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">,</span><span class="s1">&#39;_&#39;</span><span class="p">)]()</span>
 </pre></div>
@@ -142,8 +142,6 @@ nb_path: "01_cli.ipynb"
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>For instance, <a href="https://ghapi.fast.ai/fullapi.html#git">git.get_ref</a> takes three parameters: <code>owner</code>, <code>repo</code>, and <code>ref</code>. If we wish to pass the first two as positional parameters, and the last as a named argument, then we'd call:</p>
 
-<pre><code>ghapi git.get_ref fastai ghapi-test --ref heads/master</code></pre>
-
 </div>
 </div>
 </div>
@@ -154,44 +152,7 @@ nb_path: "01_cli.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">_call</span><span class="p">(</span><span class="s1">&#39;ghapi git.get_ref fastai ghapi-test --ref heads/master&#39;</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>- ref: refs/heads/master
-- node_id: MDM6UmVmMzE1NzEyNTg4OnJlZnMvaGVhZHMvbWFzdGVy
-- url: https://api.github.com/repos/fastai/ghapi-test/git/refs/heads/master
-- object: 
-  - sha: b89fa3b3443a552df12e8c16e35b06041552b764
-  - type: commit
-  - url: https://api.github.com/repos/fastai/ghapi-test/git/commits/b89fa3b3443a552df12e8c16e35b06041552b764
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">_call</span><span class="p">(</span><span class="s1">&#39;ghapi git.get_ref fastai ghapi-test --ref heads/master&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">_c</span><span class="p">(</span><span class="s1">&#39;ghapi git.get_ref fastai ghapi-test --ref heads/master&#39;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -223,7 +184,8 @@ nb_path: "01_cli.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>If you pass just <code>--help</code> after the method name, you'll see a full list of all parameters accepted.</p>
+<p>(NB: ignore the <code>_c()</code> surrounding the example above - that's just for calling from Python to show in the documentation.)</p>
+<p>If you pass just <code>--help</code> after the method name, you'll see a full list of all parameters accepted, and a link to the official GitHub documentation.</p>
 
 </div>
 </div>
@@ -235,7 +197,7 @@ nb_path: "01_cli.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">_call</span><span class="p">(</span><span class="s1">&#39;ghapi git.get_ref --help&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">_c</span><span class="p">(</span><span class="s1">&#39;ghapi git.get_ref --help&#39;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -249,6 +211,7 @@ nb_path: "01_cli.ipynb"
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>git.get_ref(owner, repo, ref)
+https://docs.github.com/rest/reference/git#get-a-reference
 </pre>
 </div>
 </div>
@@ -344,7 +307,7 @@ nb_path: "01_cli.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">_call</span><span class="p">(</span><span class="s1">&#39;completion-ghapi git&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">_c</span><span class="p">(</span><span class="s1">&#39;completion-ghapi git&#39;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -375,7 +338,7 @@ nb_path: "01_cli.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">_call</span><span class="p">(</span><span class="s1">&#39;completion-ghapi gi&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">_c</span><span class="p">(</span><span class="s1">&#39;completion-ghapi gi&#39;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -408,7 +371,7 @@ gitignore
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">_call</span><span class="p">(</span><span class="s1">&#39;completion-ghapi git.&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">_c</span><span class="p">(</span><span class="s1">&#39;completion-ghapi git.&#39;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -453,7 +416,7 @@ verbs
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">_call</span><span class="p">(</span><span class="s1">&#39;completion-ghapi git.g&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">_c</span><span class="p">(</span><span class="s1">&#39;completion-ghapi git.g&#39;</span><span class="p">)</span>
 </pre></div>
 
     </div>
