@@ -81,38 +81,6 @@ nb_path: "01_cli.ipynb"
 </div>
     {% endraw %}
 
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-<div class="output_markdown rendered_html output_subarea ">
-<h4 id="ghapi" class="doc_header"><code>ghapi</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/cli.py#L48" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>ghapi</code>()</p>
-</blockquote>
-<p>Python backend for the <a href="/cli.html#ghapi"><code>ghapi</code></a> command, which calls an endpoint by operation name</p>
-
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-
-</div>
-    {% endraw %}
-
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>To use <a href="/cli.html#ghapi"><code>ghapi</code></a>, pass the method name (exactly the same as you'd use in the Python API) as the first parameter, followed by any positional parameters required, and then keyword arguments with "<code>--</code>" before each parameter name.</p>
@@ -219,38 +187,6 @@ https://docs.github.com/rest/reference/git#get-a-reference
 </div>
     {% endraw %}
 
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-<div class="output_markdown rendered_html output_subarea ">
-<h4 id="ghpath" class="doc_header"><code>ghpath</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/cli.py#L56" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>ghpath</code>()</p>
-</blockquote>
-<p>Python backend for the <a href="/cli.html#ghpath"><code>ghpath</code></a> command, which calls an endpoint by path</p>
-
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-
-</div>
-    {% endraw %}
-
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Just like with <a href="/cli.html#ghapi"><code>ghapi</code></a>, <a href="/cli.html#ghpath"><code>ghpath</code></a> handles header, query, path and body parameters for you automatically.</p>
@@ -302,38 +238,6 @@ https://docs.github.com/rest/reference/git#get-a-reference
 </div>
 </div>
 </div>
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-<div class="output_markdown rendered_html output_subarea ">
-<h4 id="ghraw" class="doc_header"><code>ghraw</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/cli.py#L61" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>ghraw</code>()</p>
-</blockquote>
-<p>Python backend for the <a href="/cli.html#ghraw"><code>ghraw</code></a> command, which calls a fully-specified endpoint</p>
-
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-
-</div>
-    {% endraw %}
-
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Sometimes, you just want to call an exact path directly, handling the path and query parameters yourself. The <a href="/cli.html#ghraw"><code>ghraw</code></a> command provides that functionality. Like with <a href="/cli.html#ghpath"><code>ghpath</code></a>, you pass the path and verb as the first two arguments, but now you have to fill in all the path parameters yourself, plus construct the query string yourself (if one is required). If you need to pass body parameters, use the <code>--data</code> parameter, which requires that you encode the request body appropriately (which is JSON-encoded for most GitHub endpoints).</p>
@@ -392,38 +296,6 @@ https://docs.github.com/rest/reference/git#get-a-reference
 </div>
 </div>
 </div>
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-<div class="output_markdown rendered_html output_subarea ">
-<h4 id="completion_ghapi" class="doc_header"><code>completion_ghapi</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/cli.py#L68" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>completion_ghapi</code>()</p>
-</blockquote>
-<p>Python backend for <code>completion-ghapi</code> command</p>
-
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-
-</div>
-    {% endraw %}
-
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">

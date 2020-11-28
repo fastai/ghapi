@@ -45,6 +45,7 @@ def _ghapi(arg, api):
     return api
 
 # Cell
+#export
 def ghapi():
     "Python backend for the `ghapi` command, which calls an endpoint by operation name"
     print(_call_api(_ghapi))
@@ -53,11 +54,13 @@ def ghapi():
 def _ghpath(arg, api): return api[arg.pop(0),arg.pop(0)]
 
 # Cell
+#export
 def ghpath():
     "Python backend for the `ghpath` command, which calls an endpoint by path"
     print(_call_api(_ghpath))
 
 # Cell
+#export
 def ghraw():
     "Python backend for the `ghraw` command, which calls a fully-specified endpoint"
     api,pos,kw = _api()
@@ -65,6 +68,7 @@ def ghraw():
     print(api(*pos, **kw))
 
 # Cell
+#export
 def completion_ghapi():
     "Python backend for `completion-ghapi` command"
     *parts,final = (sys.argv[1] if len(sys.argv)>1 else '').split('.')
