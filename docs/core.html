@@ -95,14 +95,6 @@ nb_path: "00_core.ipynb"
 </div>
     {% endraw %}
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>If you provide <code>owner</code> and/or <code>repo</code> to the constructor, they will be automatically inserted into any calls which use them. You can also pass any other arbitrary keyword arguments you like to have them used as defaults for any relevant calls.</p>
-<p>You must include a GitHub API token if you need to access any authenticated endpoints.</p>
-
-</div>
-</div>
-</div>
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -110,7 +102,7 @@ nb_path: "00_core.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">api</span> <span class="o">=</span> <span class="n">GhApi</span><span class="p">(</span><span class="s1">&#39;fastai&#39;</span><span class="p">,</span> <span class="s1">&#39;ghapi-test&#39;</span><span class="p">,</span> <span class="n">token</span><span class="o">=</span><span class="n">github_token</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">api</span> <span class="o">=</span> <span class="n">GhApi</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -134,7 +126,8 @@ nb_path: "00_core.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">api</span><span class="p">(</span><span class="s1">&#39;/repos/fastai/ghapi-test/git/ref/</span><span class="si">{ref}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;GET&#39;</span><span class="p">,</span> <span class="n">route</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;ref&#39;</span><span class="p">:</span><span class="s1">&#39;heads/master&#39;</span><span class="p">})</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">api</span><span class="p">(</span><span class="s1">&#39;/repos/</span><span class="si">{owner}</span><span class="s1">/</span><span class="si">{repo}</span><span class="s1">/git/ref/</span><span class="si">{ref}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;GET&#39;</span><span class="p">,</span> <span class="n">route</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
+    <span class="n">owner</span><span class="o">=</span><span class="s1">&#39;fastai&#39;</span><span class="p">,</span> <span class="n">repo</span><span class="o">=</span><span class="s1">&#39;ghapi-test&#39;</span><span class="p">,</span> <span class="n">ref</span><span class="o">=</span><span class="s1">&#39;heads/master&#39;</span><span class="p">))</span>
 </pre></div>
 
     </div>
@@ -153,9 +146,9 @@ nb_path: "00_core.ipynb"
 <li>node_id: MDM6UmVmMzE1NzEyNTg4OnJlZnMvaGVhZHMvbWFzdGVy</li>
 <li>url: <a href="https://api.github.com/repos/fastai/ghapi-test/git/refs/heads/master">https://api.github.com/repos/fastai/ghapi-test/git/refs/heads/master</a></li>
 <li>object: <ul>
-<li>sha: 08a07baa05cd6a3d38f9d0cb124e80738f0e5812</li>
+<li>sha: 37b382c68ffc8a0f60723a2b2897c726aa5c21a5</li>
 <li>type: commit</li>
-<li>url: <a href="https://api.github.com/repos/fastai/ghapi-test/git/commits/08a07baa05cd6a3d38f9d0cb124e80738f0e5812">https://api.github.com/repos/fastai/ghapi-test/git/commits/08a07baa05cd6a3d38f9d0cb124e80738f0e5812</a></li>
+<li>url: <a href="https://api.github.com/repos/fastai/ghapi-test/git/commits/37b382c68ffc8a0f60723a2b2897c726aa5c21a5">https://api.github.com/repos/fastai/ghapi-test/git/commits/37b382c68ffc8a0f60723a2b2897c726aa5c21a5</a></li>
 </ul>
 </li>
 </ul>
@@ -164,6 +157,81 @@ nb_path: "00_core.ipynb"
 
 </div>
 
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>You can also access endpoints by indexing into the object. The second parameter is the HTTP verb, which defaults to <code>GET</code>. When using the API this way, you do not need to specify what type of parameter (route, query, or post data) is being used. This is, therefore, the same call as above:</p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">api</span><span class="p">[</span><span class="s1">&#39;/repos/</span><span class="si">{owner}</span><span class="s1">/</span><span class="si">{repo}</span><span class="s1">/git/ref/</span><span class="si">{ref}</span><span class="s1">&#39;</span><span class="p">](</span><span class="n">owner</span><span class="o">=</span><span class="s1">&#39;fastai&#39;</span><span class="p">,</span> <span class="n">repo</span><span class="o">=</span><span class="s1">&#39;ghapi-test&#39;</span><span class="p">,</span> <span class="n">ref</span><span class="o">=</span><span class="s1">&#39;heads/master&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea output_execute_result">
+<ul>
+<li>ref: refs/heads/master</li>
+<li>node_id: MDM6UmVmMzE1NzEyNTg4OnJlZnMvaGVhZHMvbWFzdGVy</li>
+<li>url: <a href="https://api.github.com/repos/fastai/ghapi-test/git/refs/heads/master">https://api.github.com/repos/fastai/ghapi-test/git/refs/heads/master</a></li>
+<li>object: <ul>
+<li>sha: 37b382c68ffc8a0f60723a2b2897c726aa5c21a5</li>
+<li>type: commit</li>
+<li>url: <a href="https://api.github.com/repos/fastai/ghapi-test/git/commits/37b382c68ffc8a0f60723a2b2897c726aa5c21a5">https://api.github.com/repos/fastai/ghapi-test/git/commits/37b382c68ffc8a0f60723a2b2897c726aa5c21a5</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>If you provide <code>owner</code> and/or <code>repo</code> to the constructor, they will be automatically inserted into any calls which use them. You can also pass any other arbitrary keyword arguments you like to have them used as defaults for any relevant calls.</p>
+<p>You must include a GitHub API token if you need to access any authenticated endpoints.</p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">api</span> <span class="o">=</span> <span class="n">GhApi</span><span class="p">(</span><span class="n">owner</span><span class="o">=</span><span class="s1">&#39;fastai&#39;</span><span class="p">,</span> <span class="n">repo</span><span class="o">=</span><span class="s1">&#39;ghapi-test&#39;</span><span class="p">,</span> <span class="n">token</span><span class="o">=</span><span class="n">github_token</span><span class="p">)</span>
+</pre></div>
+
+    </div>
 </div>
 </div>
 
@@ -618,7 +686,7 @@ nb_path: "00_core.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="GhApi.create_release" class="doc_header"><code>GhApi.create_release</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/core.py#L117" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>GhApi.create_release</code>(<strong><code>tag_name</code></strong>, <strong><code>branch</code></strong>=<em><code>'master'</code></em>, <strong><code>name</code></strong>=<em><code>None</code></em>, <strong><code>body</code></strong>=<em><code>''</code></em>, <strong><code>draft</code></strong>=<em><code>False</code></em>, <strong><code>prerelease</code></strong>=<em><code>False</code></em>, <strong><code>files</code></strong>=<em><code>None</code></em>)</p>
+<h4 id="GhApi.create_release" class="doc_header"><code>GhApi.create_release</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/core.py#L121" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>GhApi.create_release</code>(<strong><code>tag_name</code></strong>, <strong><code>branch</code></strong>=<em><code>'master'</code></em>, <strong><code>name</code></strong>=<em><code>None</code></em>, <strong><code>body</code></strong>=<em><code>''</code></em>, <strong><code>draft</code></strong>=<em><code>False</code></em>, <strong><code>prerelease</code></strong>=<em><code>False</code></em>, <strong><code>files</code></strong>=<em><code>None</code></em>)</p>
 </blockquote>
 <p>Wrapper for <a href="/core.html#GhApi.repos.create_release"><code>GhApi.repos.create_release</code></a> which also uploads <code>files</code></p>
 
@@ -719,7 +787,7 @@ nb_path: "00_core.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="GhApi.list_tags" class="doc_header"><code>GhApi.list_tags</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/core.py#L129" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>GhApi.list_tags</code>(<strong><code>prefix</code></strong>:<code>str</code>=<em><code>''</code></em>)</p>
+<h4 id="GhApi.list_tags" class="doc_header"><code>GhApi.list_tags</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/core.py#L133" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>GhApi.list_tags</code>(<strong><code>prefix</code></strong>:<code>str</code>=<em><code>''</code></em>)</p>
 </blockquote>
 <p>List all tags, optionally filtered to those starting with <code>prefix</code></p>
 
@@ -799,7 +867,7 @@ nb_path: "00_core.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="GhApi.list_branches" class="doc_header"><code>GhApi.list_branches</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/core.py#L135" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>GhApi.list_branches</code>(<strong><code>prefix</code></strong>:<code>str</code>=<em><code>''</code></em>)</p>
+<h4 id="GhApi.list_branches" class="doc_header"><code>GhApi.list_branches</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/core.py#L139" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>GhApi.list_branches</code>(<strong><code>prefix</code></strong>:<code>str</code>=<em><code>''</code></em>)</p>
 </blockquote>
 <p>List all branches, optionally filtered to those starting with <code>prefix</code></p>
 
@@ -855,7 +923,7 @@ nb_path: "00_core.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="GhApi.delete_release" class="doc_header"><code>GhApi.delete_release</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/core.py#L102" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>GhApi.delete_release</code>(<strong><code>release</code></strong>)</p>
+<h4 id="GhApi.delete_release" class="doc_header"><code>GhApi.delete_release</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/core.py#L106" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>GhApi.delete_release</code>(<strong><code>release</code></strong>)</p>
 </blockquote>
 <p>Delete a release and its associated tag</p>
 
@@ -912,7 +980,7 @@ nb_path: "00_core.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="GhApi.create_branch_empty" class="doc_header"><code>GhApi.create_branch_empty</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/core.py#L145" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>GhApi.create_branch_empty</code>(<strong><code>branch</code></strong>)</p>
+<h4 id="GhApi.create_branch_empty" class="doc_header"><code>GhApi.create_branch_empty</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/core.py#L149" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>GhApi.create_branch_empty</code>(<strong><code>branch</code></strong>)</p>
 </blockquote>
 
 </div>
@@ -961,7 +1029,7 @@ nb_path: "00_core.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="GhApi.delete_tag" class="doc_header"><code>GhApi.delete_tag</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/core.py#L151" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>GhApi.delete_tag</code>(<strong><code>tag</code></strong>:<code>str</code>)</p>
+<h4 id="GhApi.delete_tag" class="doc_header"><code>GhApi.delete_tag</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/core.py#L155" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>GhApi.delete_tag</code>(<strong><code>tag</code></strong>:<code>str</code>)</p>
 </blockquote>
 <p>Delete a tag</p>
 
@@ -993,7 +1061,7 @@ nb_path: "00_core.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="GhApi.delete_branch" class="doc_header"><code>GhApi.delete_branch</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/core.py#L157" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>GhApi.delete_branch</code>(<strong><code>branch</code></strong>:<code>str</code>)</p>
+<h4 id="GhApi.delete_branch" class="doc_header"><code>GhApi.delete_branch</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/core.py#L161" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>GhApi.delete_branch</code>(<strong><code>branch</code></strong>:<code>str</code>)</p>
 </blockquote>
 <p>Delete a branch</p>
 
@@ -1043,7 +1111,7 @@ nb_path: "00_core.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="GhApi.get_branch" class="doc_header"><code>GhApi.get_branch</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/core.py#L163" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>GhApi.get_branch</code>(<strong><code>branch</code></strong>=<em><code>None</code></em>)</p>
+<h4 id="GhApi.get_branch" class="doc_header"><code>GhApi.get_branch</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/core.py#L167" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>GhApi.get_branch</code>(<strong><code>branch</code></strong>=<em><code>None</code></em>)</p>
 </blockquote>
 
 </div>
@@ -1074,7 +1142,7 @@ nb_path: "00_core.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="GhApi.list_files" class="doc_header"><code>GhApi.list_files</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/core.py#L169" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>GhApi.list_files</code>(<strong><code>branch</code></strong>=<em><code>None</code></em>)</p>
+<h4 id="GhApi.list_files" class="doc_header"><code>GhApi.list_files</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/core.py#L173" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>GhApi.list_files</code>(<strong><code>branch</code></strong>=<em><code>None</code></em>)</p>
 </blockquote>
 
 </div>
@@ -1146,7 +1214,7 @@ nb_path: "00_core.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="GhApi.get_content" class="doc_header"><code>GhApi.get_content</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/core.py#L176" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>GhApi.get_content</code>(<strong><code>path</code></strong>)</p>
+<h4 id="GhApi.get_content" class="doc_header"><code>GhApi.get_content</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/core.py#L180" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>GhApi.get_content</code>(<strong><code>path</code></strong>)</p>
 </blockquote>
 
 </div>
@@ -1195,7 +1263,7 @@ nb_path: "00_core.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="GhApi.update_contents" class="doc_header"><code>GhApi.update_contents</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/core.py#L182" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>GhApi.update_contents</code>(<strong><code>path</code></strong>, <strong><code>message</code></strong>=<em><code>None</code></em>, <strong><code>content</code></strong>=<em><code>None</code></em>, <strong><code>sha</code></strong>=<em><code>None</code></em>, <strong><code>branch</code></strong>=<em><code>None</code></em>, <strong><code>committer</code></strong>=<em><code>None</code></em>, <strong><code>author</code></strong>=<em><code>None</code></em>)</p>
+<h4 id="GhApi.update_contents" class="doc_header"><code>GhApi.update_contents</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/core.py#L186" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>GhApi.update_contents</code>(<strong><code>path</code></strong>, <strong><code>message</code></strong>=<em><code>None</code></em>, <strong><code>content</code></strong>=<em><code>None</code></em>, <strong><code>sha</code></strong>=<em><code>None</code></em>, <strong><code>branch</code></strong>=<em><code>None</code></em>, <strong><code>committer</code></strong>=<em><code>None</code></em>, <strong><code>author</code></strong>=<em><code>None</code></em>)</p>
 </blockquote>
 
 </div>
@@ -1279,7 +1347,7 @@ nb_path: "00_core.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="GhApi.enable_pages" class="doc_header"><code>GhApi.enable_pages</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/core.py#L192" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>GhApi.enable_pages</code>(<strong><code>branch</code></strong>=<em><code>None</code></em>, <strong><code>path</code></strong>=<em><code>'/'</code></em>)</p>
+<h4 id="GhApi.enable_pages" class="doc_header"><code>GhApi.enable_pages</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/core.py#L196" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>GhApi.enable_pages</code>(<strong><code>branch</code></strong>=<em><code>None</code></em>, <strong><code>path</code></strong>=<em><code>'/'</code></em>)</p>
 </blockquote>
 <p>Enable or update pages for a repo to point to a <code>branch</code> and <code>path</code>.</p>
 
@@ -1367,7 +1435,7 @@ nb_path: "00_core.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="print_summary" class="doc_header"><code>print_summary</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/core.py#L204" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>print_summary</code>(<strong><code>req</code></strong>:<code>Request</code>)</p>
+<h4 id="print_summary" class="doc_header"><code>print_summary</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/core.py#L208" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>print_summary</code>(<strong><code>req</code></strong>:<code>Request</code>)</p>
 </blockquote>
 <p>Print <code>Request.summary</code> with the token (if any) removed</p>
 

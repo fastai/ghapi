@@ -13,6 +13,9 @@ entries:
       title: API details
       url: core.html
     - output: web,pdf
+      title: Command line interface
+      url: cli.html
+    - output: web,pdf
       title: Full GitHub API reference
       url: fullapi.html
     - output: web,pdf

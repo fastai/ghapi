@@ -81,6 +81,7 @@ class GhApi:
         if owner: kwargs['owner'] = owner
         if repo:  kwargs['repo' ] = repo
         funcs_ = L(funcs).starmap(_GhVerb, client=self, kwargs=kwargs)
+        self.func_dict = {f'{o.path}:{o.verb.upper()}':o for o in funcs_}
         self.groups = {k.replace('-','_'):_GhVerbGroup(v) for k,v in groupby(funcs_, 'tag').items()}
         self.debug = debug
 
@@ -94,6 +95,9 @@ class GhApi:
     def __dir__(self): return super().__dir__() + list(self.groups)
     def _repr_markdown_(self): return "\n".join(f'- [{o}]({_docroot+o})' for o in sorted(self.groups))
     def __getattr__(self,k): return self.groups[k] if 'groups' in vars(self) and k in self.groups else stop(AttributeError(k))
+    def __getitem__(self,k):
+        a,b = k if isinstance(k,tuple) else (k,'GET')
+        return self.func_dict[f'{a}:{b}']
 
     def full_docs(self):
         return '\n'.join(f'## {gn}\n\n{group._repr_markdown_()}\n' for gn,group in sorted(self.groups.items()))
