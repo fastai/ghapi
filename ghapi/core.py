@@ -22,10 +22,15 @@ _DOC_URL = 'https://docs.github.com/'
 def _preview_hdr(preview): return {'Accept': f'application/vnd.github.{preview}-preview+json'} if preview else {}
 
 def _mk_param(nm, **kwargs): return Parameter(nm, kind=Parameter.POSITIONAL_OR_KEYWORD, **kwargs)
-def _mk_sig(req_args, def_args):
-    "Create a signature object with required and default arguments"
+def _mk_sig_detls(o):
+    res = {}
+    if o[0]!=object: res['annotation']=o[0]
+    if len(o)>1: res['default']=o[1]
+    return res
+def _mk_sig(req_args, opt_args, anno_args):
     params =  [_mk_param(k) for k in req_args]
-    params += [_mk_param(k, default=v) for k,v in def_args.items()]
+    params += [_mk_param(k, default=v) for k,v in opt_args.items()]
+    params += [_mk_param(k, **_mk_sig_detls(v)) for k,v in anno_args.items()]
     return Signature(params)
 
 # Cell
@@ -36,24 +41,26 @@ class _GhVerb:
         name = name.replace('-','_')
         path,route_ps,_ = partial_format(path, **kwargs)
         __doc__ = summary
-        data = L(data).itemgot(0)
+        data = {o[0]:o[1:] for o in data}
         store_attr()
 
     def __call__(self, *args, headers=None, **kwargs):
         headers = {**_preview_hdr(self.preview),**(headers or {})}
-        flds = [o for o in self.route_ps+self.params+self.data if o not in kwargs]
+        d = list(self.data)
+        flds = [o for o in self.route_ps+self.params+d if o not in kwargs]
         for a,b in zip(args,flds): kwargs[b]=a
         kwargs = {k:v for k,v in kwargs.items() if v is not None}
         route_p,query_p,data_p = [{p:kwargs[p] for p in o if p in kwargs}
-                                 for o in (self.route_ps,self.params,self.data)]
+                                 for o in (self.route_ps,self.params,d)]
         return self.client(self.path, self.verb, headers=headers, route=route_p, query=query_p, data=data_p)
 
+    def __str__(self): return f'{self.tag}.{self.name}({signature(api.repos.create_webhook)})'
     @property
-    def __signature__(self): return _mk_sig(self.route_ps, dict.fromkeys(self.params+self.data))
+    def __signature__(self): return _mk_sig(self.route_ps, dict.fromkeys(self.params), self.data)
     __call__.__signature__ = __signature__
 
     def _repr_markdown_(self):
-        params = ', '.join(self.route_ps+self.params+self.data)
+        params = ', '.join(self.route_ps+self.params+list(self.data))
         return f'[{self.tag}.{self.name}]({_DOC_URL}{self.url.replace(" ","_")})({params}): *{self.summary}*'
     __repr__ = _repr_markdown_
 
