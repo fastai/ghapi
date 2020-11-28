@@ -53,16 +53,8 @@ nb_path: "01_cli.ipynb"
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="The-ghapi-command">The <a href="/cli.html#ghapi"><code>ghapi</code></a> command<a class="anchor-link" href="#The-ghapi-command"> </a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>To get started with the <a href="/cli.html#ghapi"><code>ghapi</code></a> command, first find the name of the operation you wish to perform. If you've used the Python API, then you already know the operation names - they're whatever you type in Python after "<code>api.</code>". To find the name of the operation you need, search the <a href="https://ghapi.fast.ai/fullapi.html">full API reference</a> which contains information about every endpoint in the entire GitHub API. For instance, if you want to work with GitHub Issues, then searching for "issues" on the full reference page will take you to <a href="https://ghapi.fast.ai/fullapi.html#issues">this section</a>.</p>
-<p>The first operation listed there is <a href="https://docs.github.com/en/free-pro-team@latest/rest/reference/issues#list-issues-assigned-to-the-authenticated-user">issues.list</a>, shown with a link to the official GitHub documentation, and a list of parameters that the command accepts. You'll see the official docs list some parameters, such as "<code>accept</code>", which aren't listed in the GhApi reference - that's because GhApi automatically set some parameters for you.</p>
-<p>You'll also see that the parameter list on the official docs includes a column marked "<strong>in</strong>", which can be "header", "query", "path", or "body". The <a href="/cli.html#ghapi"><code>ghapi</code></a> command handles that distinction for you, so you can ignore it for now.</p>
-<p>Note that the examples on this page all use the Python function version of the commands, instead of the CLI commands directly, so each one sets <code>sys.argv</code> before calling the function. We'll use this small helper function for testing:</p>
+<hr>
+<p>Note that the examples on this page all use the Python function version of the commands, instead of the CLI commands directly, so we need to set <code>sys.argv</code> before calling the function. We'll use this small helper function for the examples below:</p>
 
 </div>
 </div>
@@ -75,6 +67,7 @@ nb_path: "01_cli.ipynb"
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">_c</span><span class="p">(</span><span class="n">cmd</span><span class="p">):</span>
+    <span class="s2">&quot;Call CLI function `cli` as a python function&quot;</span>
     <span class="n">sys</span><span class="o">.</span><span class="n">argv</span> <span class="o">=</span> <span class="n">cmd</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
     <span class="k">return</span> <span class="nb">globals</span><span class="p">()[</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">,</span><span class="s1">&#39;_&#39;</span><span class="p">)]()</span>
 </pre></div>
@@ -86,6 +79,21 @@ nb_path: "01_cli.ipynb"
 </div>
     {% endraw %}
 
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="The-ghapi-command">The <a href="/cli.html#ghapi"><code>ghapi</code></a> command<a class="anchor-link" href="#The-ghapi-command"> </a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>To get started with the <a href="/cli.html#ghapi"><code>ghapi</code></a> command, first find the name of the operation you wish to perform. If you've used the Python API, then you already know the operation names - they're whatever you type in Python after "<code>api.</code>". To find the name of the operation you need, search the <a href="https://ghapi.fast.ai/fullapi.html">full API reference</a> which contains information about every endpoint in the entire GitHub API. For instance, if you want to work with GitHub Issues, then searching for "issues" on the full reference page will take you to <a href="https://ghapi.fast.ai/fullapi.html#issues">this section</a>.</p>
+<p>The first operation listed there is <a href="https://docs.github.com/en/free-pro-team@latest/rest/reference/issues#list-issues-assigned-to-the-authenticated-user">issues.list</a>, shown with a link to the official GitHub documentation, and a list of parameters that the command accepts. You'll see the official docs list some parameters, such as "<code>accept</code>", which aren't listed in the GhApi reference - that's because GhApi automatically set some parameters for you.</p>
+<p>You'll also see that the parameter list on the official docs includes a column marked "<strong>in</strong>", which can be "header", "query", "path", or "body". The <a href="/cli.html#ghapi"><code>ghapi</code></a> command handles that distinction for you, so you can ignore it for now.</p>
+
+</div>
+</div>
+</div>
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -104,7 +112,7 @@ nb_path: "01_cli.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="ghapi" class="doc_header"><code>ghapi</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/cli.py#L39" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>ghapi</code>()</p>
+<h4 id="ghapi" class="doc_header"><code>ghapi</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/cli.py#L40" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>ghapi</code>()</p>
 </blockquote>
 <p>Python backend for the <a href="/cli.html#ghapi"><code>ghapi</code></a> command. Reads from <code>sys.argv</code></p>
 
@@ -267,7 +275,7 @@ https://docs.github.com/rest/reference/git#get-a-reference
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="completion_ghapi" class="doc_header"><code>completion_ghapi</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/cli.py#L53" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>completion_ghapi</code>()</p>
+<h4 id="completion_ghapi" class="doc_header"><code>completion_ghapi</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/cli.py#L54" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>completion_ghapi</code>()</p>
 </blockquote>
 <p>Python backend for <code>completion-ghapi</code> command</p>
 

@@ -9,6 +9,7 @@ from collections import defaultdict
 
 # Cell
 def _c(cmd):
+    "Call CLI function `cli` as a python function"
     sys.argv = cmd.split()
     return globals()[sys.argv[0].replace('-','_')]()
 
