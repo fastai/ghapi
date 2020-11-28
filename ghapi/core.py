@@ -148,8 +148,8 @@ EMPTY_TREE_SHA = '4b825dc642cb6eb9a060e54bf8d69288fbee4904'
 # Cell
 @patch
 def create_branch_empty(self:GhApi, branch):
-    c = api.git.create_commit(f'create {branch}', EMPTY_TREE_SHA)
-    return api.git.create_ref(f'refs/heads/{branch}', c.sha)
+    c = self.git.create_commit(f'create {branch}', EMPTY_TREE_SHA)
+    return self.git.create_ref(f'refs/heads/{branch}', c.sha)
 
 # Cell
 @patch
