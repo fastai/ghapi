@@ -56,5 +56,5 @@ def completion_ghapi():
     call = GhApi()
     for part in parts: call = getattr(call,part)
     if hasattr(call,final): res = [final]
-    else: res = [o for o in dir(call) if o.startswith(final)]
+    else: res = [o for o in dir(call) if o.startswith(final) and not o.startswith('_')]
     print('\n'.join(res))
