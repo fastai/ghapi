@@ -45,6 +45,7 @@ def ghapi():
 
 # Cell
 def completion_ghapi():
+    "Python backend for `completion-ghapi` command"
     *parts,final = (sys.argv[1] if len(sys.argv)>1 else '').split('.')
     call = GhApi()
     for part in parts: call = getattr(call,part)
