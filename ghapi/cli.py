@@ -8,6 +8,11 @@ from .core import *
 from collections import defaultdict
 
 # Cell
+def _c(cmd):
+    sys.argv = cmd.split()
+    return globals()[sys.argv[0].replace('-','_')]()
+
+# Cell
 def _parse_args(a):
     pos,kw = [],{}
     i=1
@@ -43,11 +48,6 @@ def ghapi():
         print(call)
         return
     print(call(*pos, **kw))
-
-# Cell
-def _c(cmd):
-    sys.argv = cmd.split()
-    return globals()[sys.argv[0].replace('-','_')]()
 
 # Cell
 def completion_ghapi():

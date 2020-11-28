@@ -62,59 +62,7 @@ nb_path: "01_cli.ipynb"
 <p>To get started with the <a href="/cli.html#ghapi"><code>ghapi</code></a> command, first find the name of the operation you wish to perform. If you've used the Python API, then you already know the operation names - they're whatever you type in Python after "<code>api.</code>". To find the name of the operation you need, search the <a href="https://ghapi.fast.ai/fullapi.html">full API reference</a> which contains information about every endpoint in the entire GitHub API. For instance, if you want to work with GitHub Issues, then searching for "issues" on the full reference page will take you to <a href="https://ghapi.fast.ai/fullapi.html#issues">this section</a>.</p>
 <p>The first operation listed there is <a href="https://docs.github.com/en/free-pro-team@latest/rest/reference/issues#list-issues-assigned-to-the-authenticated-user">issues.list</a>, shown with a link to the official GitHub documentation, and a list of parameters that the command accepts. You'll see the official docs list some parameters, such as "<code>accept</code>", which aren't listed in the GhApi reference - that's because GhApi automatically set some parameters for you.</p>
 <p>You'll also see that the parameter list on the official docs includes a column marked "<strong>in</strong>", which can be "header", "query", "path", or "body". The <a href="/cli.html#ghapi"><code>ghapi</code></a> command handles that distinction for you, so you can ignore it for now.</p>
-
-</div>
-</div>
-</div>
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-<div class="output_markdown rendered_html output_subarea ">
-<h4 id="ghapi" class="doc_header"><code>ghapi</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/cli.py#L34" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>ghapi</code>()</p>
-</blockquote>
-<p>Python backend for the <a href="/cli.html#ghapi"><code>ghapi</code></a> command. Reads from <code>sys.argv</code></p>
-
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-
-</div>
-    {% endraw %}
-
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>To use <a href="/cli.html#ghapi"><code>ghapi</code></a>, pass the method name (exactly the same as you'd use in the Python API) as the first parameter, followed by any positional parameters required, and then keyword arguments with "<code>--</code>" before each parameter name.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The examples on this page all use the Python functions, instead of the CLI commands, so each one sets <code>sys.argv</code> before calling the function. We'll use this small helper function for testing:</p>
+<p>Note that the examples on this page all use the Python function version of the commands, instead of the CLI commands directly, so each one sets <code>sys.argv</code> before calling the function. We'll use this small helper function for testing:</p>
 
 </div>
 </div>
@@ -138,8 +86,48 @@ nb_path: "01_cli.ipynb"
 </div>
     {% endraw %}
 
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="ghapi" class="doc_header"><code>ghapi</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/cli.py#L39" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>ghapi</code>()</p>
+</blockquote>
+<p>Python backend for the <a href="/cli.html#ghapi"><code>ghapi</code></a> command. Reads from <code>sys.argv</code></p>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p>To use <a href="/cli.html#ghapi"><code>ghapi</code></a>, pass the method name (exactly the same as you'd use in the Python API) as the first parameter, followed by any positional parameters required, and then keyword arguments with "<code>--</code>" before each parameter name.</p>
 <p>For instance, <a href="https://ghapi.fast.ai/fullapi.html#git">git.get_ref</a> takes three parameters: <code>owner</code>, <code>repo</code>, and <code>ref</code>. If we wish to pass the first two as positional parameters, and the last as a named argument, then we'd call:</p>
 
 </div>
