@@ -26,7 +26,7 @@ def _mk_param(nm, **kwargs): return Parameter(nm, kind=Parameter.POSITIONAL_OR_K
 def _mk_sig_detls(o):
     res = {}
     if o[0]!=object: res['annotation']=o[0]
-    if len(o)>1: res['default']=o[1]
+    res['default'] = o[1] if len(o)>1 else None
     return res
 def _mk_sig(req_args, opt_args, anno_args):
     params =  [_mk_param(k) for k in req_args]
@@ -67,9 +67,10 @@ class _GhVerb:
     __repr__ = _repr_markdown_
 
 class _GhVerbGroup:
-    def __init__(self, verbs):
-        self.verbs = verbs
+    def __init__(self, name, verbs):
+        self.name,self.verbs = name,verbs
         for o in verbs: setattr(self, o.name, o)
+    def __str__(self): return "\n".join(str(v) for v in self.verbs)
     def _repr_markdown_(self): return "\n".join(f'- {v._repr_markdown_()}' for v in self.verbs)
 
 # Cell
@@ -84,7 +85,7 @@ class GhApi:
         if repo:  kwargs['repo' ] = repo
         funcs_ = L(funcs).starmap(_GhVerb, client=self, kwargs=kwargs)
         self.func_dict = {f'{o.path}:{o.verb.upper()}':o for o in funcs_}
-        self.groups = {k.replace('-','_'):_GhVerbGroup(v) for k,v in groupby(funcs_, 'tag').items()}
+        self.groups = {k.replace('-','_'):_GhVerbGroup(k,v) for k,v in groupby(funcs_, 'tag').items()}
         self.debug = debug
 
     def __call__(self, path, verb=None, headers=None, route=None, query=None, data=None):
@@ -97,7 +98,7 @@ class GhApi:
     def __dir__(self): return super().__dir__() + list(self.groups)
     def _repr_markdown_(self): return "\n".join(f'- [{o}]({_docroot+o})' for o in sorted(self.groups))
     def __getattr__(self,k): return self.groups[k] if 'groups' in vars(self) and k in self.groups else stop(AttributeError(k))
-    def __getitem__(self,k):
+    def __getitem__(self, k):
         a,b = k if isinstance(k,tuple) else (k,'GET')
         return self.func_dict[f'{a}:{b}']
 

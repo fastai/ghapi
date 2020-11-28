@@ -19,6 +19,7 @@ index = {"GH_HOST": "00_core.ipynb",
          "GhApi.enable_pages": "00_core.ipynb",
          "print_summary": "00_core.ipynb",
          "ghapi": "01_cli.ipynb",
+         "completion_ghapi": "01_cli.ipynb",
          "GH_OPENAPI_URL": "90_build_lib.ipynb",
          "build_funcs": "90_build_lib.ipynb",
          "GhMeta": "90_build_lib.ipynb"}

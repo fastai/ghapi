@@ -84,7 +84,7 @@ nb_path: "01_cli.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="ghapi" class="doc_header"><code>ghapi</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/cli.py#L36" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>ghapi</code>()</p>
+<h4 id="ghapi" class="doc_header"><code>ghapi</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/cli.py#L34" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>ghapi</code>()</p>
 </blockquote>
 
 </div>
@@ -139,9 +139,9 @@ nb_path: "01_cli.ipynb"
 - node_id: MDM6UmVmMzE1NzEyNTg4OnJlZnMvaGVhZHMvbWFzdGVy
 - url: https://api.github.com/repos/fastai/ghapi-test/git/refs/heads/master
 - object: 
-  - sha: 06b0b49f48b2a5a2b4e5672056fd28f930eab026
+  - sha: b89fa3b3443a552df12e8c16e35b06041552b764
   - type: commit
-  - url: https://api.github.com/repos/fastai/ghapi-test/git/commits/06b0b49f48b2a5a2b4e5672056fd28f930eab026
+  - url: https://api.github.com/repos/fastai/ghapi-test/git/commits/b89fa3b3443a552df12e8c16e35b06041552b764
 </pre>
 </div>
 </div>
@@ -180,7 +180,7 @@ nb_path: "01_cli.ipynb"
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>git.get_ref((owner, repo, ref))
+<pre>git.get_ref(owner, repo, ref)
 </pre>
 </div>
 </div>
@@ -224,6 +224,152 @@ nb_path: "01_cli.ipynb"
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Shell-completions">Shell completions<a class="anchor-link" href="#Shell-completions"> </a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Shell completions are provided for <a href="/cli.html#ghapi"><code>ghapi</code></a> behind the scenes by the <code>completion-ghapi</code> command (which is implemented with the <a href="/cli.html#completion_ghapi"><code>completion_ghapi</code></a> function). You probably won't need to call this yourself - it will be called for you as part by your shell.</p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="completion_ghapi" class="doc_header"><code>completion_ghapi</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/cli.py#L47" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>completion_ghapi</code>()</p>
+</blockquote>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span> <span class="o">=</span> <span class="s1">&#39;completion-ghapi git&#39;</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">completion_ghapi</span><span class="p">())</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>git
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span> <span class="o">=</span> <span class="s1">&#39;completion-ghapi gi&#39;</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">completion_ghapi</span><span class="p">())</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>gists
+git
+gitignore
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span> <span class="o">=</span> <span class="s1">&#39;completion-ghapi git.g&#39;</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">completion_ghapi</span><span class="p">())</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>get_blob
+get_commit
+get_ref
+get_tag
+get_tree
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
 </div>
  
 
