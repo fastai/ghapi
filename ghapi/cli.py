@@ -32,6 +32,7 @@ def _api(a):
 
 # Cell
 def ghapi():
+    "Python backend for the `ghapi` command. Reads from `sys.argv`"
     api,pos,kw = _api(sys.argv)
     if not pos: return print("Usage: `ghapi` operation {params}")
     op = pos.pop(0)
@@ -44,6 +45,11 @@ def ghapi():
     print(call(*pos, **kw))
 
 # Cell
+def _call(cmd):
+    sys.argv = cmd.split()
+    return globals()[sys.argv[0].replace('-','_')]()
+
+# Cell
 def completion_ghapi():
     "Python backend for `completion-ghapi` command"
     *parts,final = (sys.argv[1] if len(sys.argv)>1 else '').split('.')
@@ -51,4 +57,4 @@ def completion_ghapi():
     for part in parts: call = getattr(call,part)
     if hasattr(call,final): res = [final]
     else: res = [o for o in dir(call) if o.startswith(final)]
-    return '\n'.join(res)
+    print('\n'.join(res))
