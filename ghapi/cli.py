@@ -23,19 +23,19 @@ def _parse_args(a):
             kw[k] = y
         else: pos.append(a[i])
         i += 1
-    return pos,kw
+    return a[0],pos,kw
 
 def _api():
     "Result of `_parse_args` along with `GhApi`"
-    pos,kw = _parse_args(sys.argv)
+    cmd,pos,kw = _parse_args(sys.argv)
     token = kw.pop('token',None) or os.getenv('GITHUB_TOKEN')
     api = GhApi(token=token, debug=print_summary if kw.pop('debug',None) else None)
-    return api,pos,kw
+    return cmd,api,pos,kw
 
 def _call_api(f):
     "Call `f`, passing in args parsed from `sys.argv`"
-    api,pos,kw = _api()
-    if not pos: return print(f"Usage: `{pos[0]}` operation <params>")
+    cmd,api,pos,kw = _api()
+    if not pos: return print(f"Usage: `{cmd}` operation <params>")
     call = f(pos, api)
     return call if kw.get('help', None) else call(*pos, **kw)
 
@@ -63,8 +63,8 @@ def ghpath():
 #export
 def ghraw():
     "Python backend for the `ghraw` command, which calls a fully-specified endpoint"
-    api,pos,kw = _api()
-    if not pos: return print(f"Usage: `{pos[0]}` operation <params>")
+    cmd,api,pos,kw = _api()
+    if not pos: return print(f"Usage: `{cmd}` operation <params>")
     print(api(*pos, **kw))
 
 # Cell
