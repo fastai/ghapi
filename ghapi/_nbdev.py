@@ -5,6 +5,7 @@ __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 index = {"GH_HOST": "00_core.ipynb",
          "GhApi": "00_core.ipynb",
          "GhApi.delete_release": "00_core.ipynb",
+         "GhApi.upload_file": "00_core.ipynb",
          "GhApi.create_release": "00_core.ipynb",
          "GhApi.list_tags": "00_core.ipynb",
          "GhApi.list_branches": "00_core.ipynb",

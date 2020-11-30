@@ -35,7 +35,10 @@ def _mk_sig(req_args, opt_args, anno_args):
     return Signature(params)
 
 # Cell
-class _GhVerb:
+class _GhObj: pass
+
+# Cell
+class _GhVerb(_GhObj):
     __slots__ = 'path,verb,tag,name,summary,url,route_ps,params,data,preview,client,__doc__'.split(',')
     def __init__(self, path, verb, oper, summary, url, params, data, preview, client, kwargs):
         tag,name = oper.split('/')
@@ -68,7 +71,8 @@ class _GhVerb:
         return f'[{self.tag}.{self.name}]({self.doc_url})({params}): *{self.summary}*'
     __repr__ = _repr_markdown_
 
-class _GhVerbGroup:
+# Cell
+class _GhVerbGroup(_GhObj):
     def __init__(self, name, verbs):
         self.name,self.verbs = name,verbs
         for o in verbs: setattr(self, o.name, o)
@@ -79,7 +83,7 @@ class _GhVerbGroup:
 _docroot = 'https://docs.github.com/en/free-pro-team@latest/rest/reference/'
 
 # Cell
-class GhApi:
+class GhApi(_GhObj):
     def __init__(self, owner=None, repo=None, token=None, debug=None, **kwargs):
         self.headers = { 'Accept': 'application/vnd.github.v3+json' }
         if token: self.headers['Authorization'] = 'token ' + token
@@ -116,9 +120,10 @@ def delete_release(self:GhApi, release):
 
 # Cell
 @patch
-def _upload_file(self:GhApi, url:str, fn):
-    "Upload `fn` to endpoint `url`"
+def upload_file(self:GhApi, rel, fn):
+    "Upload `fn` to endpoint for release `rel`"
     fn = Path(fn)
+    url = rel.upload_url.replace('{?name,label}','')
     mime = mimetypes.guess_type(fn, False)[0] or 'application/octet-stream'
     return self(url, 'POST', headers={'Content-Type':mime}, query = {'name':fn.name}, data=fn.read_bytes())
 
@@ -130,8 +135,7 @@ def create_release(self:GhApi, tag_name, branch='master', name=None, body='',
     if name is None: name = 'v'+tag_name
     rel = self.repos.create_release(tag_name, target_commitish=branch, name=name, body=body,
                                    draft=draft, prerelease=prerelease)
-    url = rel.upload_url.replace('{?name,label}','')
-    for file in listify(files): self._upload_file(url, file)
+    for file in listify(files): self.upload_file(rel, file)
     return rel
 
 # Cell

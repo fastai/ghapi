@@ -129,7 +129,7 @@ nb_path: "01_cli.ipynb"
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>(NB: The "<code>!</code>" before the examples such as the one above is only needed when calling the commands from Jupyer Notebook. In your terminal, do not include the "<code>!</code>" prefix.)</p>
-<p>If you pass just <code>--help</code> after the method name, you'll see a full list of all parameters accepted, and a link to the official GitHub documentation.</p>
+<p>If you pass just <code>--help</code> after the operation name, you'll see a full list of all parameters accepted, and a link to the official GitHub documentation.</p>
 
 </div>
 </div>
@@ -156,6 +156,44 @@ nb_path: "01_cli.ipynb"
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>git.get_ref(owner, repo, ref)
 https://docs.github.com/rest/reference/git#get-a-reference
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Helper methods are also supported, e.g:</p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span> ghapi create_release --help
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>(tag_name, branch=&#39;master&#39;, name=None, body=&#39;&#39;, draft=False, prerelease=False, files=None)
 </pre>
 </div>
 </div>
@@ -347,9 +385,7 @@ https://docs.github.com/rest/reference/git#get-a-reference
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>gists
-git
-gitignore
+<pre>gists git gitignore
 </pre>
 </div>
 </div>
@@ -380,21 +416,7 @@ gitignore
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>create_blob
-create_commit
-create_ref
-create_tag
-create_tree
-delete_ref
-get_blob
-get_commit
-get_ref
-get_tag
-get_tree
-list_matching_refs
-name
-update_ref
-verbs
+<pre>git.create_blob git.create_commit git.create_ref git.create_tag git.create_tree git.delete_ref git.get_blob git.get_commit git.get_ref git.get_tag git.get_tree git.list_matching_refs git.name git.update_ref git.verbs
 </pre>
 </div>
 </div>
@@ -425,11 +447,7 @@ verbs
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>get_blob
-get_commit
-get_ref
-get_tag
-get_tree
+<pre>git.get_blob git.get_commit git.get_ref git.get_tag git.get_tree
 </pre>
 </div>
 </div>
