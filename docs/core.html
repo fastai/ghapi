@@ -1749,6 +1749,13 @@ https://docs.github.com/rest/reference/repos#create-a-repository-webhook
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p>If you use our recommended workflow template, you will have this included in your prebuild step (if you have any):
+<!-- {% raw %} --></p>
+<p><pre><code>
+outputs:
+  out: ${{ toJson(steps) }}
+</code></pre>
+<!-- {% endraw %} --></p>
 <p>You can access this content as a dictionary like so:</p>
 
 </div>
