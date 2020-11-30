@@ -222,5 +222,5 @@ def print_summary(req:Request):
     pprint(req.summary('Authorization'))
 
 # Cell
-github_context = AttrDict(loads(os.getenv("GITHUB_CONTEXT")))
-github_needs = AttrDict(loads(os.getenv("GITHUB_NEEDS")))
+github_context = AttrDict(loads(os.getenv("GITHUB_CONTEXT", "{}")))
+github_needs = AttrDict(loads(os.getenv("GITHUB_NEEDS", "{}")))
