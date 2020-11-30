@@ -93,18 +93,18 @@ api.git
 
 
 - [git.create_blob](https://docs.github.com/rest/reference/git#create-a-blob)(owner, repo, content, encoding): *Create a blob*
-- [git.get_blob](https://docs.github.com/rest/reference/git#get-a-blob)(owner, file_sha, repo): *Get a blob*
+- [git.get_blob](https://docs.github.com/rest/reference/git#get-a-blob)(owner, repo, file_sha): *Get a blob*
 - [git.create_commit](https://docs.github.com/rest/reference/git#create-a-commit)(owner, repo, message, tree, parents, author, committer, signature): *Create a commit*
-- [git.get_commit](https://docs.github.com/rest/reference/git#get-a-commit)(owner, commit_sha, repo): *Get a commit*
-- [git.list_matching_refs](https://docs.github.com/rest/reference/git#list-matching-references)(ref, owner, repo, per_page, page): *List matching references*
-- [git.get_ref](https://docs.github.com/rest/reference/git#get-a-reference)(ref, owner, repo): *Get a reference*
+- [git.get_commit](https://docs.github.com/rest/reference/git#get-a-commit)(owner, repo, commit_sha): *Get a commit*
+- [git.list_matching_refs](https://docs.github.com/rest/reference/git#list-matching-references)(owner, repo, ref, per_page, page): *List matching references*
+- [git.get_ref](https://docs.github.com/rest/reference/git#get-a-reference)(owner, repo, ref): *Get a reference*
 - [git.create_ref](https://docs.github.com/rest/reference/git#create-a-reference)(owner, repo, ref, sha, key): *Create a reference*
-- [git.update_ref](https://docs.github.com/rest/reference/git#update-a-reference)(ref, owner, repo, sha, force): *Update a reference*
-- [git.delete_ref](https://docs.github.com/rest/reference/git#delete-a-reference)(ref, owner, repo): *Delete a reference*
+- [git.update_ref](https://docs.github.com/rest/reference/git#update-a-reference)(owner, repo, ref, sha, force): *Update a reference*
+- [git.delete_ref](https://docs.github.com/rest/reference/git#delete-a-reference)(owner, repo, ref): *Delete a reference*
 - [git.create_tag](https://docs.github.com/rest/reference/git#create-a-tag-object)(owner, repo, tag, message, object, type, tagger): *Create a tag object*
 - [git.get_tag](https://docs.github.com/rest/reference/git#get-a-tag)(owner, repo, tag_sha): *Get a tag*
 - [git.create_tree](https://docs.github.com/rest/reference/git#create-a-tree)(owner, repo, tree, base_tree): *Create a tree*
-- [git.get_tree](https://docs.github.com/rest/reference/git#get-a-tree)(tree_sha, owner, repo, recursive): *Get a tree*
+- [git.get_tree](https://docs.github.com/rest/reference/git#get-a-tree)(owner, repo, tree_sha, recursive): *Get a tree*
 
 
 
@@ -117,7 +117,7 @@ api.git.get_ref
 
 
 
-[git/get_ref](https://docs.github.com/rest/reference/git#get-a-reference)(owner, repo, ref): *Get a reference*
+[git.get_ref](https://docs.github.com/rest/reference/git#get-a-reference)(owner, repo, ref): *Get a reference*
 
 
 
@@ -134,9 +134,9 @@ api.git.get_ref(owner='fastai', repo='fastcore', ref='heads/master')
 - node_id: MDM6UmVmMjI1NDYwNTk5OnJlZnMvaGVhZHMvbWFzdGVy
 - url: https://api.github.com/repos/fastai/fastcore/git/refs/heads/master
 - object: 
-  - sha: 8eff3dade0d66a86a331c47987ab695b226613b2
+  - sha: 28721554e0eab1f2974237c502912f8ba42a44a0
   - type: commit
-  - url: https://api.github.com/repos/fastai/fastcore/git/commits/8eff3dade0d66a86a331c47987ab695b226613b2
+  - url: https://api.github.com/repos/fastai/fastcore/git/commits/28721554e0eab1f2974237c502912f8ba42a44a0
 
 
 
@@ -159,9 +159,9 @@ api.git.get_ref('heads/master')
 - node_id: MDM6UmVmMjI1NDYwNTk5OnJlZnMvaGVhZHMvbWFzdGVy
 - url: https://api.github.com/repos/fastai/fastcore/git/refs/heads/master
 - object: 
-  - sha: 8eff3dade0d66a86a331c47987ab695b226613b2
+  - sha: 28721554e0eab1f2974237c502912f8ba42a44a0
   - type: commit
-  - url: https://api.github.com/repos/fastai/fastcore/git/commits/8eff3dade0d66a86a331c47987ab695b226613b2
+  - url: https://api.github.com/repos/fastai/fastcore/git/commits/28721554e0eab1f2974237c502912f8ba42a44a0
 
 
 
@@ -175,4 +175,12 @@ Since we've now checked out GhApi, let's close this issue. 😎
 
 ```python
 api.issues.update(issue.number, state='closed')
+```
+
+## Tab completion
+
+You can enable tab completion for `ghapi` by placing the following command at the end of your `~/.bashrc` or `~/.zshrc` file:
+
+```bash
+eval "$(completion-ghapi --install)"
 ```

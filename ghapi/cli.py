@@ -72,8 +72,23 @@ def ghraw():
 
 # Cell
 #export
+_TAB_COMPLETION="""
+_do_ghapi_completions()
+{
+    COMP="$(completion-ghapi "${COMP_WORDS[1]}")"
+    COMPREPLY=($COMP)
+}
+
+complete -F _do_ghapi_completions ghapi
+"""
+
+# Cell
+#export
 def completion_ghapi():
     "Python backend for `completion-ghapi` command"
+    if len(sys.argv) == 2 and sys.argv[1] == '--install':
+        print(_TAB_COMPLETION)
+        return
     *parts,final = (sys.argv[1] if len(sys.argv)>1 else '').split('.')
     call = GhApi()
     for part in parts: call = getattr(call,part)
