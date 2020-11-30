@@ -1706,7 +1706,7 @@ https://docs.github.com/rest/reference/repos#create-a-repository-webhook
 <p>If you use our recommended workflow template, you will have this included in your prebuild step (if you have any):</p>
 
 <pre><code>outputs:
-  out: ${{ toJson(steps) }}</code></pre>
+  out: ${\{ toJson(steps) }}</code></pre>
 <p>You can access this content as a dictionary like so:</p>
 
 </div>
