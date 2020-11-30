@@ -1701,13 +1701,6 @@ https://docs.github.com/rest/reference/repos#create-a-repository-webhook
 </div>
     {% endraw %}
 
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-
-</div>
-    {% endraw %}
-
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>If you use our recommended workflow template, you will have this included in your prebuild step (if you have any):
@@ -1717,6 +1710,17 @@ outputs:
   out: ${{ toJson(steps) }}
 </code></pre>
 <!-- {% endraw %} --></p>
+<p>You can access this content as a dictionary like so:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>If you use our recommended workflow template, you will have this included in your prebuild step (if you have any):</p>
+<div class="highlight"><pre><span></span>outputs:
+  out: <span class="si">${</span><span class="p">{ toJson(steps) </span><span class="si">}</span><span class="o">}</span>
+</pre></div>
 <p>You can access this content as a dictionary like so:</p>
 
 </div>
