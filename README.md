@@ -179,7 +179,7 @@ api.issues.update(issue.number, state='closed')
 
 ## Tab completion
 
-You can enable tab completion for `ghapi` by placing the following command in your `~/.bashrc` or `~/.zshrc` file:
+You can enable tab completion for `ghapi` by placing the following command at the end of your `~/.bashrc` or `~/.zshrc` file:
 
 ```bash
 eval "$(completion-ghapi --install)"
