@@ -184,3 +184,4 @@ You can enable tab completion for `ghapi` by placing the following command at th
 ```bash
 eval "$(completion-ghapi --install)"
 ```
+ 
