@@ -1771,6 +1771,79 @@ https://docs.github.com/rest/reference/repos#create-a-repository-webhook
 </div>
     {% endraw %}
 
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">example_payload</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+    <span class="s2">&quot;Get an example of the `name` JSON payload&quot;</span>
+    <span class="k">return</span> <span class="n">urljson</span><span class="p">(</span><span class="n">_example_url</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The possible payload names are available in <a href="/core.html#payload_names"><code>payload_names</code></a>.</p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">payload_names</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;page_build content_reference repository_import create workflow_run delete organization sponsorship project_column push context milestone project_card project package pull_request repository_dispatch team_add workflow_dispatch member meta code_scanning_alert public needs check_run security_advisory pull_request_review_comment org_block commit_comment watch marketplace_purchase star installation_repositories check_suite github_app_authorization team status repository_vulnerability_alert pull_request_review label installation release issues repository gollum membership deployment deploy_key issue_comment ping deployment_status fork&#39;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Workflow-helper-functions">Workflow helper functions<a class="anchor-link" href="#Workflow-helper-functions"> </a></h3>
@@ -1788,7 +1861,7 @@ https://docs.github.com/rest/reference/repos#create-a-repository-webhook
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="github_token" class="doc_header"><code>github_token</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/core.py#L236" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>github_token</code>()</p>
+<h4 id="github_token" class="doc_header"><code>github_token</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/core.py#L242" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>github_token</code>()</p>
 </blockquote>
 <p>Get GitHub token from <code>GITHUB_TOKEN</code> env var if available, or from <code>github</code> context</p>
 
@@ -1820,7 +1893,7 @@ https://docs.github.com/rest/reference/repos#create-a-repository-webhook
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="actions_output" class="doc_header"><code>actions_output</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/core.py#L241" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>actions_output</code>(<strong><code>name</code></strong>, <strong><code>value</code></strong>)</p>
+<h4 id="actions_output" class="doc_header"><code>actions_output</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/core.py#L247" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>actions_output</code>(<strong><code>name</code></strong>, <strong><code>value</code></strong>)</p>
 </blockquote>
 <p>Print the special GitHub Actions <code>::set-output</code> line for <code>name::value</code></p>
 
@@ -1859,7 +1932,7 @@ https://docs.github.com/rest/reference/repos#create-a-repository-webhook
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="actions_debug" class="doc_header"><code>actions_debug</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/core.py#L246" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>actions_debug</code>(<strong><code>message</code></strong>)</p>
+<h4 id="actions_debug" class="doc_header"><code>actions_debug</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/core.py#L252" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>actions_debug</code>(<strong><code>message</code></strong>)</p>
 </blockquote>
 <p>Print the special <code>::debug</code> line for <code>message</code></p>
 
@@ -1898,7 +1971,7 @@ https://docs.github.com/rest/reference/repos#create-a-repository-webhook
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="actions_warn" class="doc_header"><code>actions_warn</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/core.py#L251" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>actions_warn</code>(<strong><code>message</code></strong>, <strong><code>details</code></strong>=<em><code>''</code></em>)</p>
+<h4 id="actions_warn" class="doc_header"><code>actions_warn</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/core.py#L257" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>actions_warn</code>(<strong><code>message</code></strong>, <strong><code>details</code></strong>=<em><code>''</code></em>)</p>
 </blockquote>
 <p>Print the special <code>::warning</code> line for <code>message</code></p>
 
@@ -1937,7 +2010,7 @@ https://docs.github.com/rest/reference/repos#create-a-repository-webhook
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="actions_error" class="doc_header"><code>actions_error</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/core.py#L256" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>actions_error</code>(<strong><code>message</code></strong>, <strong><code>details</code></strong>=<em><code>''</code></em>)</p>
+<h4 id="actions_error" class="doc_header"><code>actions_error</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/core.py#L262" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>actions_error</code>(<strong><code>message</code></strong>, <strong><code>details</code></strong>=<em><code>''</code></em>)</p>
 </blockquote>
 <p>Print the special <code>::error</code> line for <code>message</code></p>
 
@@ -1976,7 +2049,7 @@ https://docs.github.com/rest/reference/repos#create-a-repository-webhook
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="actions_group" class="doc_header"><code>actions_group</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/core.py#L261" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>actions_group</code>(<strong><code>title</code></strong>)</p>
+<h4 id="actions_group" class="doc_header"><code>actions_group</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/core.py#L267" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>actions_group</code>(<strong><code>title</code></strong>)</p>
 </blockquote>
 <p>Print the special <code>::group</code> line for <code>title</code></p>
 
@@ -2008,7 +2081,7 @@ https://docs.github.com/rest/reference/repos#create-a-repository-webhook
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="actions_endgroup" class="doc_header"><code>actions_endgroup</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/core.py#L266" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>actions_endgroup</code>()</p>
+<h4 id="actions_endgroup" class="doc_header"><code>actions_endgroup</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/core.py#L272" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>actions_endgroup</code>()</p>
 </blockquote>
 <p>Print the special <code>::endgroup</code></p>
 
@@ -2047,7 +2120,7 @@ https://docs.github.com/rest/reference/repos#create-a-repository-webhook
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="actions_mask" class="doc_header"><code>actions_mask</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/core.py#L271" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>actions_mask</code>(<strong><code>value</code></strong>)</p>
+<h4 id="actions_mask" class="doc_header"><code>actions_mask</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/core.py#L277" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>actions_mask</code>(<strong><code>value</code></strong>)</p>
 </blockquote>
 <p>Print the special <code>::add-mask</code> line for <code>value</code></p>
 

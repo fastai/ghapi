@@ -21,6 +21,9 @@ entries:
     - output: web,pdf
       title: Internal - OpenAPI Parser
       url: build_lib.html
+    - output: web,pdf
+      title: Title
+      url: create_examples.html
     output: web
     title: ghapi
   output: web

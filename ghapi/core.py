@@ -2,8 +2,8 @@
 
 __all__ = ['GH_HOST', 'GhApi', 'EMPTY_TREE_SHA', 'print_summary', 'contexts', 'context_github', 'context_env',
            'context_job', 'context_steps', 'context_runner', 'context_secrets', 'context_strategy', 'context_matrix',
-           'context_needs', 'github_token', 'actions_output', 'actions_debug', 'actions_warn', 'actions_error',
-           'actions_group', 'actions_endgroup', 'actions_mask']
+           'context_needs', 'payload_names', 'github_token', 'actions_output', 'actions_debug', 'actions_warn',
+           'actions_error', 'actions_group', 'actions_endgroup', 'actions_mask']
 
 # Cell
 from fastcore.utils import *
@@ -231,6 +231,12 @@ for context in contexts:
 
 # Cell
 #nbdev_comment _all_ = ['context_github', 'context_env', 'context_job', 'context_steps', 'context_runner', 'context_secrets', 'context_strategy', 'context_matrix', 'context_needs']
+
+# Cell
+_example_url = 'https://raw.githubusercontent.com/fastai/ghapi/master/examples/{}.json'
+
+# Cell
+payload_names = 'page_build','content_reference','repository_import','create','workflow_run','delete','organization','sponsorship','project_column','push','context','milestone','project_card','project','package','pull_request','repository_dispatch','team_add','workflow_dispatch','member','meta','code_scanning_alert','public','needs','check_run','security_advisory','pull_request_review_comment','org_block','commit_comment','watch','marketplace_purchase','star','installation_repositories','check_suite','github_app_authorization','team','status','repository_vulnerability_alert','pull_request_review','label','installation','release','issues','repository','gollum','membership','deployment','deploy_key','issue_comment','ping','deployment_status','fork'
 
 # Cell
 def github_token():

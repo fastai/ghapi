@@ -4,6 +4,7 @@
     "API details": "core.html",
     "Command line interface": "cli.html",
     "Full GitHub API reference": "fullapi.html",
-    "Internal - OpenAPI Parser": "build_lib.html"
+    "Internal - OpenAPI Parser": "build_lib.html",
+    "Title": "create_examples.html"
   }
 }
