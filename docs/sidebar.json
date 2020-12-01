@@ -2,9 +2,12 @@
   "ghapi": {
     "Overview": "/",
     "API details": "core.html",
+    "GitHub Actions": "actions.html",
     "Command line interface": "cli.html",
     "Full GitHub API reference": "fullapi.html",
     "Internal - OpenAPI Parser": "build_lib.html",
-    "Title": "create_examples.html"
+    "Title": "create_examples.html",
+    "Getting started with GitHub Actions": "tutorial_actions.html",
+    "Getting started with the GitHub API": "tutorial_api.html"
   }
 }

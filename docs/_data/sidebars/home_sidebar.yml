@@ -13,6 +13,9 @@ entries:
       title: API details
       url: core.html
     - output: web,pdf
+      title: GitHub Actions
+      url: actions.html
+    - output: web,pdf
       title: Command line interface
       url: cli.html
     - output: web,pdf
@@ -24,6 +27,12 @@ entries:
     - output: web,pdf
       title: Title
       url: create_examples.html
+    - output: web,pdf
+      title: Getting started with GitHub Actions
+      url: tutorial_actions.html
+    - output: web,pdf
+      title: Getting started with the GitHub API
+      url: tutorial_api.html
     output: web
     title: ghapi
   output: web
