@@ -17,5 +17,5 @@ jobs:
       env:
         CONTEXT_GITHUB: ${{ toJson(github) }}
       run: |
-        pip install -q ghapi
+        pip install -q git+https://github.com/fastai/ghapi.git
         python .github/scripts/build-thankyou-pull_request.py

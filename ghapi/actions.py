@@ -23,7 +23,7 @@ if 'CONTEXT_GITHUB' not in os.environ:
 # Cell
 contexts = 'github', 'env', 'job', 'steps', 'runner', 'secrets', 'strategy', 'matrix', 'needs'
 for context in contexts:
-    globals()[f'context_{context}'] = AttrDict(loads(os.getenv(f"CONTEXT_{context.upper()}", "{}")))
+    globals()[f'context_{context}'] = dict2obj(loads(os.getenv(f"CONTEXT_{context.upper()}", "{}")))
 
 # Cell
 #nbdev_comment _all_ = ['context_github', 'context_env', 'context_job', 'context_steps', 'context_runner', 'context_secrets', 'context_strategy', 'context_matrix', 'context_needs']
@@ -69,7 +69,7 @@ _example_url = 'https://raw.githubusercontent.com/fastai/ghapi/master/examples/{
 # Cell
 def example_payload(event):
     "Get an example of a JSON payload for `event`"
-    return AttrDict(urljson(_example_url.format(event)))
+    return dict2obj(urljson(_example_url.format(event)))
 
 # Cell
 Event = str_enum('Event',
