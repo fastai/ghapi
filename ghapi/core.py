@@ -228,7 +228,7 @@ for context in contexts:
     globals()[f'context_{context}'] = AttrDict(loads(os.getenv(f"CONTEXT_{context.upper()}", "{}")))
 
 # Cell
-_all_ = 'github', 'env', 'job', 'steps', 'runner', 'secrets', 'strategy', 'matrix', 'needs'
+_all_ = 'context_github', 'context_env', 'context_job', 'context_steps', 'context_runner', 'context_secrets', 'context_strategy', 'context_matrix', 'context_needs'
 
 # Cell
 def github_token():
