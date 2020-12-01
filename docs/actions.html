@@ -73,6 +73,52 @@ nb_path: "01_actions.ipynb"
 </div>
     {% endraw %}
 
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="create_workflow" class="doc_header"><code>create_workflow</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/actions.py#L49" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>create_workflow</code>(<strong><code>name</code></strong>:<code>str</code>, <strong><code>event</code></strong>:<a href="/actions.html#Event"><code>Event</code></a>)</p>
+</blockquote>
+<p>Create a simple Ubuntu workflow that calls a Python <a href="/cli.html#ghapi"><code>ghapi</code></a> script</p>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>To create a basic skeleton of a <a href="/cli.html#ghapi"><code>ghapi</code></a> workflow, call <a href="/actions.html#create_workflow"><code>create_workflow</code></a>, passing in the event that you wish to respond to, and a name for your workflow.</p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Accessing-contexts-from-Python">Accessing contexts from Python<a class="anchor-link" href="#Accessing-contexts-from-Python"> </a></h2>
@@ -208,25 +254,38 @@ nb_path: "01_actions.ipynb"
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input">
 
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">example_payload</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
-    <span class="s2">&quot;Get an example of the `name` JSON payload&quot;</span>
-    <span class="k">return</span> <span class="n">urljson</span><span class="p">(</span><span class="n">_example_url</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
-</pre></div>
+<div class="output_wrapper">
+<div class="output">
 
-    </div>
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="example_payload" class="doc_header"><code>example_payload</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/actions.py#L63" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>example_payload</code>(<strong><code>event</code></strong>)</p>
+</blockquote>
+<p>Get an example of a JSON payload for <code>event</code></p>
+
+</div>
+
+</div>
+
 </div>
 </div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
 
 </div>
     {% endraw %}
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The possible payload names are available in <a href="/actions.html#payload_names"><code>payload_names</code></a>.</p>
+<p>The possible events are available in the <a href="/actions.html#Event"><code>Event</code></a> <code>enum</code>.</p>
 
 </div>
 </div>
@@ -245,7 +304,7 @@ nb_path: "01_actions.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">payload_names</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">Event</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -260,7 +319,7 @@ nb_path: "01_actions.ipynb"
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&#39;page_build content_reference repository_import create workflow_run delete organization sponsorship project_column push context milestone project_card project package pull_request repository_dispatch team_add workflow_dispatch member meta code_scanning_alert public needs check_run security_advisory pull_request_review_comment org_block commit_comment watch marketplace_purchase star installation_repositories check_suite github_app_authorization team status repository_vulnerability_alert pull_request_review label installation release issues repository gollum membership deployment deploy_key issue_comment ping deployment_status fork&#39;</pre>
+<pre>&#39;page_build, content_reference, repository_import, create, workflow_run, delete, organization, sponsorship, project_column, push, context, milestone, project_card, project, package, pull_request, repository_dispatch, team_add, workflow_dispatch, member, meta, code_scanning_alert, public, needs, check_run, security_advisory, pull_request_review_comment, org_block, commit_comment, watch, marketplace_purchase, star, installation_repositories, check_suite, github_app_authorization, team, status, repository_vulnerability_alert, pull_request_review, label, installation, release, issues, repository, gollum, membership, deployment, deploy_key, issue_comment, ping, deployment_status, fork&#39;</pre>
 </div>
 
 </div>
@@ -288,7 +347,7 @@ nb_path: "01_actions.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="github_token" class="doc_header"><code>github_token</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/actions.py#L29" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>github_token</code>()</p>
+<h4 id="github_token" class="doc_header"><code>github_token</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/actions.py#L78" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>github_token</code>()</p>
 </blockquote>
 <p>Get GitHub token from <code>GITHUB_TOKEN</code> env var if available, or from <code>github</code> context</p>
 
@@ -320,7 +379,7 @@ nb_path: "01_actions.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="actions_output" class="doc_header"><code>actions_output</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/actions.py#L34" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>actions_output</code>(<strong><code>name</code></strong>, <strong><code>value</code></strong>)</p>
+<h4 id="actions_output" class="doc_header"><code>actions_output</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/actions.py#L83" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>actions_output</code>(<strong><code>name</code></strong>, <strong><code>value</code></strong>)</p>
 </blockquote>
 <p>Print the special GitHub Actions <code>::set-output</code> line for <code>name::value</code></p>
 
@@ -359,7 +418,7 @@ nb_path: "01_actions.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="actions_debug" class="doc_header"><code>actions_debug</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/actions.py#L39" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>actions_debug</code>(<strong><code>message</code></strong>)</p>
+<h4 id="actions_debug" class="doc_header"><code>actions_debug</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/actions.py#L88" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>actions_debug</code>(<strong><code>message</code></strong>)</p>
 </blockquote>
 <p>Print the special <code>::debug</code> line for <code>message</code></p>
 
@@ -398,7 +457,7 @@ nb_path: "01_actions.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="actions_warn" class="doc_header"><code>actions_warn</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/actions.py#L44" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>actions_warn</code>(<strong><code>message</code></strong>, <strong><code>details</code></strong>=<em><code>''</code></em>)</p>
+<h4 id="actions_warn" class="doc_header"><code>actions_warn</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/actions.py#L93" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>actions_warn</code>(<strong><code>message</code></strong>, <strong><code>details</code></strong>=<em><code>''</code></em>)</p>
 </blockquote>
 <p>Print the special <code>::warning</code> line for <code>message</code></p>
 
@@ -437,7 +496,7 @@ nb_path: "01_actions.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="actions_error" class="doc_header"><code>actions_error</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/actions.py#L49" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>actions_error</code>(<strong><code>message</code></strong>, <strong><code>details</code></strong>=<em><code>''</code></em>)</p>
+<h4 id="actions_error" class="doc_header"><code>actions_error</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/actions.py#L98" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>actions_error</code>(<strong><code>message</code></strong>, <strong><code>details</code></strong>=<em><code>''</code></em>)</p>
 </blockquote>
 <p>Print the special <code>::error</code> line for <code>message</code></p>
 
@@ -476,7 +535,7 @@ nb_path: "01_actions.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="actions_group" class="doc_header"><code>actions_group</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/actions.py#L54" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>actions_group</code>(<strong><code>title</code></strong>)</p>
+<h4 id="actions_group" class="doc_header"><code>actions_group</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/actions.py#L103" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>actions_group</code>(<strong><code>title</code></strong>)</p>
 </blockquote>
 <p>Print the special <code>::group</code> line for <code>title</code></p>
 
@@ -508,7 +567,7 @@ nb_path: "01_actions.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="actions_endgroup" class="doc_header"><code>actions_endgroup</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/actions.py#L59" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>actions_endgroup</code>()</p>
+<h4 id="actions_endgroup" class="doc_header"><code>actions_endgroup</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/actions.py#L108" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>actions_endgroup</code>()</p>
 </blockquote>
 <p>Print the special <code>::endgroup</code></p>
 
@@ -547,7 +606,7 @@ nb_path: "01_actions.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="actions_mask" class="doc_header"><code>actions_mask</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/actions.py#L64" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>actions_mask</code>(<strong><code>value</code></strong>)</p>
+<h4 id="actions_mask" class="doc_header"><code>actions_mask</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/actions.py#L113" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>actions_mask</code>(<strong><code>value</code></strong>)</p>
 </blockquote>
 <p>Print the special <code>::add-mask</code> line for <code>value</code></p>
 

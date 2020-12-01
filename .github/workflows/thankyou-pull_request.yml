@@ -1,0 +1,21 @@
+
+name: thankyou
+on:
+  workflow_dispatch:
+  pull_request:
+defaults:
+  run: { shell: bash }
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - uses: actions/setup-python@v2
+      with: {python-version: '3.8'}
+    - name: Run script
+      env:
+        CONTEXT_GITHUB: ${{ toJson(github) }}
+      run: |
+        pip install -q ghapi
+        python .github/scripts/build-thankyou-pull_request.py
