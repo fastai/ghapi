@@ -147,45 +147,7 @@ However, workflows can be difficult to create and debug, because:</p>
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The initial skeleton just contains import statements:</p>
-
-</div>
-</div>
-</div>
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">files</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">read_text</span><span class="p">())</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>from fastcore.all import *
-from ghapi import *
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
+<p>The initial skeleton just contains import statements.</p>
 <p>It will be much easier for us to iterate on our script if we have a sample <em>context</em> that the GitHub workflow runner will provide to us. We can get one by calling <a href="/actions.html#example_payload"><code>example_payload</code></a>:</p>
 
 </div>
@@ -436,6 +398,7 @@ from ghapi import *
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">reply_thanks</span><span class="p">():</span>
     <span class="n">payload</span> <span class="o">=</span> <span class="n">context_github</span><span class="o">.</span><span class="n">event</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">payload</span><span class="o">.</span><span class="n">action</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">payload</span><span class="o">.</span><span class="n">action</span> <span class="o">!=</span> <span class="s1">&#39;opened&#39;</span><span class="p">:</span> <span class="k">return</span>
     <span class="n">api</span> <span class="o">=</span> <span class="n">GhApi</span><span class="p">(</span><span class="n">owner</span><span class="o">=</span><span class="s1">&#39;fastai&#39;</span><span class="p">,</span> <span class="n">repo</span><span class="o">=</span><span class="s1">&#39;ghapi&#39;</span><span class="p">,</span> <span class="n">token</span><span class="o">=</span><span class="n">github_token</span><span class="p">())</span>
     <span class="n">api</span><span class="o">.</span><span class="n">issues</span><span class="o">.</span><span class="n">create_comment</span><span class="p">(</span><span class="n">issue_number</span><span class="o">=</span><span class="n">payload</span><span class="o">.</span><span class="n">number</span><span class="p">,</span> <span class="n">body</span><span class="o">=</span><span class="s1">&#39;Thank you for your *valuable* contribution&#39;</span><span class="p">)</span>
@@ -457,15 +420,7 @@ from ghapi import *
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Initial-setup">Initial setup<a class="anchor-link" href="#Initial-setup"> </a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>on create PR</li>
-<li>create welcome reply</li>
 <li>only if new contrib</li>
 <li>binder link if NB</li>
 </ul>

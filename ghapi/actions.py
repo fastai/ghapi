@@ -60,8 +60,13 @@ def create_workflow(name:str, event:'Event'):
     scr_path = Path('.github/scripts')
     wf_path .mkdir(parents=True, exist_ok=True)
     scr_path.mkdir(parents=True, exist_ok=True)
-    (wf_path/f'{name}-{event}.yml').write_text(_wf_tmpl.replace('NAME',name).replace('EVENT',str(event)))
-    (scr_path/f'build-{name}-{event}.py').write_text("from fastcore.all import *\nfrom ghapi import *")
+    fname = f'{name}-{event}'
+    if not (wf_path/f'{fname}.yml').exists():
+        contents = _wf_tmpl.replace('NAME',name).replace('EVENT',str(event))
+        (wf_path/f'{fname}.yml').write_text(contents)
+    if not (scr_path/f'build-{fname}.py').exists():
+        py = "from fastcore.all import *\nfrom ghapi import *"
+        (scr_path/f'build-{fname}.py').write_text(py)
 
 # Cell
 _example_url = 'https://raw.githubusercontent.com/fastai/ghapi/master/examples/{}.json'
