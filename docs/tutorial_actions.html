@@ -119,7 +119,7 @@ However, workflows can be difficult to create and debug, because:</p>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">path_scr</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;.github/scripts/&#39;</span><span class="p">)</span>
-<span class="n">files</span> <span class="o">=</span> <span class="n">path_scr</span><span class="o">.</span><span class="n">ls</span><span class="p">();</span> <span class="n">files</span>
+<span class="n">files</span> <span class="o">=</span> <span class="n">path_scr</span><span class="o">.</span><span class="n">ls</span><span class="p">(</span><span class="n">file_exts</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;.py&#39;</span><span class="p">]);</span> <span class="n">files</span>
 </pre></div>
 
     </div>
@@ -381,47 +381,7 @@ from ghapi import *
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The payload will be available in the <a href="https://docs.github.com/en/free-pro-team@latest/actions/reference/context-and-expression-syntax-for-github-actions#github-context"><code>github</code> context</a>, which is provided automatically to you using the <code>context_github</code> function. When running locally, you can pull in an example of this as so:</p>
-
-</div>
-</div>
-</div>
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">context_github</span> <span class="o">=</span> <span class="n">example_payload</span><span class="p">(</span><span class="s1">&#39;context&#39;</span><span class="p">)</span>
-<span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">context_github</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>&#39;token job ref sha repository repository_owner repositoryUrl run_id run_number retention_days actor workflow head_ref base_ref event_name event server_url api_url graphql_url workspace action event_path action_repository action_ref path env&#39;</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
+<p>The payload will be available in the <a href="https://docs.github.com/en/free-pro-team@latest/actions/reference/context-and-expression-syntax-for-github-actions#github-context"><code>github</code> context</a>, which is provided automatically to you using the <code>context_github</code> function. When running locally, an example github context will be used instead.</p>
 <p>The <code>event</code> contains the actual payload:</p>
 
 </div>

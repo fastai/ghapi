@@ -14,6 +14,13 @@ from .core import *
 from enum import Enum
 
 # Cell
+# So we can run this outside of GitHub actions too, read from file if needed
+if 'CONTEXT_GITHUB' not in os.environ:
+    os.environ['CONTEXT_GITHUB'] = Path('examples/context.json').read_text()
+if 'CONTEXT_GITHUB' not in os.environ:
+    os.environ['CONTEXT_NEEDS'] = Path('examples/needs.json').read_text()
+
+# Cell
 contexts = 'github', 'env', 'job', 'steps', 'runner', 'secrets', 'strategy', 'matrix', 'needs'
 for context in contexts:
     globals()[f'context_{context}'] = AttrDict(loads(os.getenv(f"CONTEXT_{context.upper()}", "{}")))
