@@ -232,8 +232,8 @@ _all_ = 'github', 'env', 'job', 'steps', 'runner', 'secrets', 'strategy', 'matri
 
 # Cell
 def github_token():
-    "Get GitHub token from `GITHUB_TOKEN` env var or from `github` context if available"
-    token = os.getenv('GITHUB_TOKEN', context_github.get('token', None))
+    "Get GitHub token from `GITHUB_TOKEN` env var if available, or from `github` context"
+    return os.getenv('GITHUB_TOKEN', context_github.get('token', None))
 
 # Cell
 def actions_output(name, value):

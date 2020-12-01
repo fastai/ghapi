@@ -236,18 +236,18 @@ nb_path: "index.ipynb"
 <div class="output_markdown rendered_html output_subarea output_execute_result">
 <ul>
 <li><a href="https://docs.github.com/rest/reference/git#create-a-blob">git.create_blob</a>(owner, repo, content, encoding): <em>Create a blob</em></li>
-<li><a href="https://docs.github.com/rest/reference/git#get-a-blob">git.get_blob</a>(owner, file_sha, repo): <em>Get a blob</em></li>
+<li><a href="https://docs.github.com/rest/reference/git#get-a-blob">git.get_blob</a>(owner, repo, file_sha): <em>Get a blob</em></li>
 <li><a href="https://docs.github.com/rest/reference/git#create-a-commit">git.create_commit</a>(owner, repo, message, tree, parents, author, committer, signature): <em>Create a commit</em></li>
-<li><a href="https://docs.github.com/rest/reference/git#get-a-commit">git.get_commit</a>(owner, commit_sha, repo): <em>Get a commit</em></li>
-<li><a href="https://docs.github.com/rest/reference/git#list-matching-references">git.list_matching_refs</a>(ref, owner, repo, per_page, page): <em>List matching references</em></li>
-<li><a href="https://docs.github.com/rest/reference/git#get-a-reference">git.get_ref</a>(ref, owner, repo): <em>Get a reference</em></li>
+<li><a href="https://docs.github.com/rest/reference/git#get-a-commit">git.get_commit</a>(owner, repo, commit_sha): <em>Get a commit</em></li>
+<li><a href="https://docs.github.com/rest/reference/git#list-matching-references">git.list_matching_refs</a>(owner, repo, ref, per_page, page): <em>List matching references</em></li>
+<li><a href="https://docs.github.com/rest/reference/git#get-a-reference">git.get_ref</a>(owner, repo, ref): <em>Get a reference</em></li>
 <li><a href="https://docs.github.com/rest/reference/git#create-a-reference">git.create_ref</a>(owner, repo, ref, sha, key): <em>Create a reference</em></li>
-<li><a href="https://docs.github.com/rest/reference/git#update-a-reference">git.update_ref</a>(ref, owner, repo, sha, force): <em>Update a reference</em></li>
-<li><a href="https://docs.github.com/rest/reference/git#delete-a-reference">git.delete_ref</a>(ref, owner, repo): <em>Delete a reference</em></li>
+<li><a href="https://docs.github.com/rest/reference/git#update-a-reference">git.update_ref</a>(owner, repo, ref, sha, force): <em>Update a reference</em></li>
+<li><a href="https://docs.github.com/rest/reference/git#delete-a-reference">git.delete_ref</a>(owner, repo, ref): <em>Delete a reference</em></li>
 <li><a href="https://docs.github.com/rest/reference/git#create-a-tag-object">git.create_tag</a>(owner, repo, tag, message, object, type, tagger): <em>Create a tag object</em></li>
 <li><a href="https://docs.github.com/rest/reference/git#get-a-tag">git.get_tag</a>(owner, repo, tag_sha): <em>Get a tag</em></li>
 <li><a href="https://docs.github.com/rest/reference/git#create-a-tree">git.create_tree</a>(owner, repo, tree, base_tree): <em>Create a tree</em></li>
-<li><a href="https://docs.github.com/rest/reference/git#get-a-tree">git.get_tree</a>(tree_sha, owner, repo, recursive): <em>Get a tree</em></li>
+<li><a href="https://docs.github.com/rest/reference/git#get-a-tree">git.get_tree</a>(owner, repo, tree_sha, recursive): <em>Get a tree</em></li>
 </ul>
 
 </div>
@@ -288,7 +288,7 @@ nb_path: "index.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea output_execute_result">
-<p><a href="https://docs.github.com/rest/reference/git#get-a-reference">git/get_ref</a>(owner, repo, ref): <em>Get a reference</em></p>
+<p><a href="https://docs.github.com/rest/reference/git#get-a-reference">git.get_ref</a>(owner, repo, ref): <em>Get a reference</em></p>
 
 </div>
 
@@ -333,9 +333,9 @@ nb_path: "index.ipynb"
 <li>node_id: MDM6UmVmMjI1NDYwNTk5OnJlZnMvaGVhZHMvbWFzdGVy</li>
 <li>url: <a href="https://api.github.com/repos/fastai/fastcore/git/refs/heads/master">https://api.github.com/repos/fastai/fastcore/git/refs/heads/master</a></li>
 <li>object: <ul>
-<li>sha: 8eff3dade0d66a86a331c47987ab695b226613b2</li>
+<li>sha: 28721554e0eab1f2974237c502912f8ba42a44a0</li>
 <li>type: commit</li>
-<li>url: <a href="https://api.github.com/repos/fastai/fastcore/git/commits/8eff3dade0d66a86a331c47987ab695b226613b2">https://api.github.com/repos/fastai/fastcore/git/commits/8eff3dade0d66a86a331c47987ab695b226613b2</a></li>
+<li>url: <a href="https://api.github.com/repos/fastai/fastcore/git/commits/28721554e0eab1f2974237c502912f8ba42a44a0">https://api.github.com/repos/fastai/fastcore/git/commits/28721554e0eab1f2974237c502912f8ba42a44a0</a></li>
 </ul>
 </li>
 </ul>
@@ -407,9 +407,9 @@ nb_path: "index.ipynb"
 <li>node_id: MDM6UmVmMjI1NDYwNTk5OnJlZnMvaGVhZHMvbWFzdGVy</li>
 <li>url: <a href="https://api.github.com/repos/fastai/fastcore/git/refs/heads/master">https://api.github.com/repos/fastai/fastcore/git/refs/heads/master</a></li>
 <li>object: <ul>
-<li>sha: 8eff3dade0d66a86a331c47987ab695b226613b2</li>
+<li>sha: 28721554e0eab1f2974237c502912f8ba42a44a0</li>
 <li>type: commit</li>
-<li>url: <a href="https://api.github.com/repos/fastai/fastcore/git/commits/8eff3dade0d66a86a331c47987ab695b226613b2">https://api.github.com/repos/fastai/fastcore/git/commits/8eff3dade0d66a86a331c47987ab695b226613b2</a></li>
+<li>url: <a href="https://api.github.com/repos/fastai/fastcore/git/commits/28721554e0eab1f2974237c502912f8ba42a44a0">https://api.github.com/repos/fastai/fastcore/git/commits/28721554e0eab1f2974237c502912f8ba42a44a0</a></li>
 </ul>
 </li>
 </ul>
