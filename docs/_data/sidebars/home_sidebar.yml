@@ -10,6 +10,12 @@ entries:
       title: Overview
       url: /
     - output: web,pdf
+      title: Getting started with the GitHub API
+      url: tutorial_api.html
+    - output: web,pdf
+      title: Getting started with GitHub Actions
+      url: tutorial_actions.html
+    - output: web,pdf
       title: API details
       url: core.html
     - output: web,pdf
@@ -24,15 +30,6 @@ entries:
     - output: web,pdf
       title: Internal - OpenAPI Parser
       url: build_lib.html
-    - output: web,pdf
-      title: Title
-      url: create_examples.html
-    - output: web,pdf
-      title: Getting started with GitHub Actions
-      url: tutorial_actions.html
-    - output: web,pdf
-      title: Getting started with the GitHub API
-      url: tutorial_api.html
     output: web
     title: ghapi
   output: web
