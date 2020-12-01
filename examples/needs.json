@@ -2,7 +2,7 @@
   "prebuild": {
     "result": "success",
     "outputs": {
-      "out": "{\n  \"step1\": {\n    \"outputs\": {\n      \"action_fruit\": \"strawberry\"\n    },\n    \"outcome\": \"success\",\n    \"conclusion\": \"success\"\n  }\n}"
+      "out": "{\n  \"step1\": {\n    \"outputs\": {\n      \"tag\": \"v0.79.0\"\n    },\n    \"outcome\": \"success\",\n    \"conclusion\": \"success\"\n  }\n}"
     }
   }
 }
