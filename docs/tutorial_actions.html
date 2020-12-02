@@ -83,71 +83,9 @@ However, workflows can be difficult to create and debug, because:</p>
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>We're going to help you get started by building a simple workflow which will add a comment to all new pull requests, saying "thank you" to the contributor.</p>
 <p><a href="/core.html#GhApi"><code>GhApi</code></a> makes developing workflows easier, because your actual YAML file is created for you entirely automatically. To create the new workflow, run the <a href="/actions.html#create_workflow"><code>create_workflow</code></a> function, like so:</p>
-
-</div>
-</div>
-</div>
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">create_workflow</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;thankyou&#39;</span><span class="p">,</span> <span class="n">event</span><span class="o">=</span><span class="n">Event</span><span class="o">.</span><span class="n">pull_request</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><span class="n">create_workflow</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;thankyou&#39;</span><span class="p">,</span> <span class="n">event</span><span class="o">=</span><span class="n">Event</span><span class="o">.</span><span class="n">pull_request</span><span class="p">)</span>
 </pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Now it's time to create our python script. You'll find it in <code>.github/scripts</code>, named based on your <a href="/actions.html#create_workflow"><code>create_workflow</code></a> parameters:</p>
-
-</div>
-</div>
-</div>
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">path_scr</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;.github/scripts/&#39;</span><span class="p">)</span>
-<span class="n">files</span> <span class="o">=</span> <span class="n">path_scr</span><span class="o">.</span><span class="n">ls</span><span class="p">(</span><span class="n">file_exts</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;.py&#39;</span><span class="p">]);</span> <span class="n">files</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>(#1) [Path(&#39;.github/scripts/build-thankyou-pull_request.py&#39;)]</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The initial skeleton just contains import statements.</p>
+<p>Now it's time to create our python script. You'll find it in <code>.github/scripts</code>, named based on your <a href="/actions.html#create_workflow"><code>create_workflow</code></a> parameters. The initial skeleton just contains import statements.</p>
 <p>It will be much easier for us to iterate on our script if we have a sample <em>context</em> that the GitHub workflow runner will provide to us. We can get one by calling <a href="/actions.html#example_payload"><code>example_payload</code></a>:</p>
 
 </div>
@@ -394,7 +332,7 @@ However, workflows can be difficult to create and debug, because:</p>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&#39;https://api.github.com/repos/fastai/ghapi-test/issues/comments/737383236&#39;</pre>
+<pre>&#39;https://api.github.com/repos/fastai/ghapi-test/issues/comments/737393228&#39;</pre>
 </div>
 
 </div>
@@ -550,11 +488,11 @@ However, workflows can be difficult to create and debug, because:</p>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">reply_thanks</span><span class="p">():</span>
+    <span class="n">api</span> <span class="o">=</span> <span class="n">GhApi</span><span class="p">(</span><span class="n">owner</span><span class="o">=</span><span class="s1">&#39;fastai&#39;</span><span class="p">,</span> <span class="n">repo</span><span class="o">=</span><span class="s1">&#39;ghapi&#39;</span><span class="p">,</span> <span class="n">token</span><span class="o">=</span><span class="n">github_token</span><span class="p">())</span>
     <span class="n">payload</span> <span class="o">=</span> <span class="n">context_github</span><span class="o">.</span><span class="n">event</span>
     <span class="k">if</span> <span class="s1">&#39;workflow&#39;</span> <span class="ow">in</span> <span class="n">payload</span><span class="p">:</span> <span class="n">issue</span> <span class="o">=</span> <span class="mi">1</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">payload</span><span class="o">.</span><span class="n">action</span> <span class="o">!=</span> <span class="s1">&#39;opened&#39;</span><span class="p">:</span> <span class="k">return</span>
-        <span class="n">api</span> <span class="o">=</span> <span class="n">GhApi</span><span class="p">(</span><span class="n">owner</span><span class="o">=</span><span class="s1">&#39;fastai&#39;</span><span class="p">,</span> <span class="n">repo</span><span class="o">=</span><span class="s1">&#39;ghapi&#39;</span><span class="p">,</span> <span class="n">token</span><span class="o">=</span><span class="n">github_token</span><span class="p">())</span>
         <span class="n">issue</span> <span class="o">=</span> <span class="n">payload</span><span class="o">.</span><span class="n">number</span>
     <span class="n">api</span><span class="o">.</span><span class="n">issues</span><span class="o">.</span><span class="n">create_comment</span><span class="p">(</span><span class="n">issue_number</span><span class="o">=</span><span class="n">issue</span><span class="p">,</span> <span class="n">body</span><span class="o">=</span><span class="s1">&#39;Thank you for your *valuable* contribution&#39;</span><span class="p">)</span>
 </pre></div>
@@ -569,13 +507,90 @@ However, workflows can be difficult to create and debug, because:</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Finally, copy this to the script in <code>.github/scripts</code>, along with a line to run it (<code>reply_thanks()</code>), and commit it to GitHub.</p>
+<p>You can now test the workflow by going to GitHub, clicking the "Actions" tab, then clicking the workflow you just created, and then clicking the "Run workflow" button.</p>
+<p>Alternatively, you can run it using <a href="/core.html#GhApi"><code>GhApi</code></a>, which we'll do now:</p>
 
 </div>
 </div>
 </div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">wf</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">actions</span><span class="o">.</span><span class="n">get_workflow</span><span class="p">(</span><span class="s1">&#39;thankyou-pull_request.yml&#39;</span><span class="p">)</span>
+<span class="n">api</span><span class="o">.</span><span class="n">actions</span><span class="o">.</span><span class="n">create_workflow_dispatch</span><span class="p">(</span><span class="n">wf</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="n">ref</span><span class="o">=</span><span class="s1">&#39;master&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea output_execute_result">
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>, and try creating a pull request. Click on the "Actions" tab to watch your action run. If it doesn't work, try running the two lines at the end of the above function directly in a notebook or Python REPL, replacing <code>payload.number</code> with an actual issue or PR you create. You can also add <code>print(payload)</code> after the first line, and when GitHub runs your workflow you'll see the whole payload in your "Actions" panel.</p>
+<p>To find out if the dispatch succeeded, go to the Actions tab on your repo and look for a yellow circle, which means it's running, or a green tick, which means it succeeded. If you get a red cross, it failed - you can click the item for details. You can also get the results of the latest run through the API (but be sure to wait at least 30 seconds for the workflow to kick off):</p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">last_run</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">actions</span><span class="o">.</span><span class="n">list_workflow_runs</span><span class="p">(</span><span class="n">wf</span><span class="o">.</span><span class="n">id</span><span class="p">)</span><span class="o">.</span><span class="n">workflow_runs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">last_run</span><span class="o">.</span><span class="n">conclusion</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;success&#39;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>If it doesn't work, you can add <code>print(payload)</code> after the first line, and when GitHub runs your workflow you'll see the whole payload in your "Actions" panel.</p>
+<p>Once it's working OK using the manual workflow dispatch, try creating a pull request.</p>
 
 </div>
 </div>
