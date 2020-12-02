@@ -1,5 +1,5 @@
 # GhApi
-> A delightful and complete interface to GitHub's amazing API
+> The best Python library.  Ever.
 
 
 `GhApi` provides 100% always-updated coverage of the entire [GitHub API](https://docs.github.com/en/free-pro-team@latest/rest). Because we automatically convert the [OpenAPI spec](https://docs.github.com/en/free-pro-team@latest/rest/overview/openapi-description) to a Pythonic API, `GhApi` is always up to date with the latest changes to GitHub APIs. Furthermore, because this is all done dynamically, the entire package is only 35kB in size!
