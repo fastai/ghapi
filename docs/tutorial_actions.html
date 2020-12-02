@@ -398,7 +398,6 @@ However, workflows can be difficult to create and debug, because:</p>
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">reply_thanks</span><span class="p">():</span>
     <span class="n">payload</span> <span class="o">=</span> <span class="n">context_github</span><span class="o">.</span><span class="n">event</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">payload</span><span class="o">.</span><span class="n">action</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">payload</span><span class="o">.</span><span class="n">action</span> <span class="o">!=</span> <span class="s1">&#39;opened&#39;</span><span class="p">:</span> <span class="k">return</span>
     <span class="n">api</span> <span class="o">=</span> <span class="n">GhApi</span><span class="p">(</span><span class="n">owner</span><span class="o">=</span><span class="s1">&#39;fastai&#39;</span><span class="p">,</span> <span class="n">repo</span><span class="o">=</span><span class="s1">&#39;ghapi&#39;</span><span class="p">,</span> <span class="n">token</span><span class="o">=</span><span class="n">github_token</span><span class="p">())</span>
     <span class="n">api</span><span class="o">.</span><span class="n">issues</span><span class="o">.</span><span class="n">create_comment</span><span class="p">(</span><span class="n">issue_number</span><span class="o">=</span><span class="n">payload</span><span class="o">.</span><span class="n">number</span><span class="p">,</span> <span class="n">body</span><span class="o">=</span><span class="s1">&#39;Thank you for your *valuable* contribution&#39;</span><span class="p">)</span>
@@ -413,8 +412,14 @@ However, workflows can be difficult to create and debug, because:</p>
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Finally, copy this to the script in <code>.github/scripts</code>, commit it to GitHub, and try creating a pull request. Click on the "Actions" tab to watch your action run.</p>
+<p>Finally, copy this to the script in <code>.github/scripts</code>, commit it to GitHub, and try creating a pull request. Click on the "Actions" tab to watch your action run. If it doesn't work, try running the two lines at the end of the above function directly in a notebook or Python REPL, replacing <code>payload.number</code> with an actual issue or PR you create. You can also add <code>print(payload)</code> after the first line, and when GitHub runs your workflow you'll see the whole payload in your "Actions" panel.</p>
 
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="TODO">TODO<a class="anchor-link" href="#TODO"> </a></h4>
 </div>
 </div>
 </div>
