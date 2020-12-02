@@ -38,7 +38,6 @@ nb_path: "tutorial_api.ipynb"
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>To get started, you need a GitHub personal access token, which is a secret code used to access your account. If you don't have one, <a href="https://github.com/settings/tokens/new">click here</a> to create one. You'll be asked to enter a name -- choose anything you like, for instance "<em>ghapi</em>". You'll also be asked to choose "scopes"; this limits what you'll be able to do with the API using this token. If you're not sure, click "<em>repo</em>" "<em>gist</em>", "<em>notifications</em>", and "<em>workflow</em>". Then click "Generate Token" at the bottom of the screen, and copy the token (the long string of letters and numbers shown). You can easily do that by clicking the little clipboard icon next to the token.</p>
-<p>{% include image.html alt="Copying your token" caption="Copying your token" max-width="743" file="<a href="https://docs.fast.ai/images/att_00001.png">https://docs.fast.ai/images/att_00001.png</a>" %}</p>
 <p>You'll need to pass that token to <a href="/core.html#GhApi"><code>GhApi</code></a>. Rather than pasting it into every script, it's easiest to save it as an environment variable. If you save it as <code>$GITHUB_TOKEN</code> then it will be most convenient, so add this to the end of your <code>.bashrc</code> or <code>.zshrc</code> file:</p>
 
 <pre><code>export GITHUB_TOKEN=xxx
