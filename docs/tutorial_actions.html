@@ -244,7 +244,7 @@ However, workflows can be difficult to create and debug, because:</p>
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">api</span> <span class="o">=</span> <span class="n">GhApi</span><span class="p">(</span><span class="n">owner</span><span class="o">=</span><span class="s1">&#39;fastai&#39;</span><span class="p">,</span> <span class="n">repo</span><span class="o">=</span><span class="s1">&#39;ghapi&#39;</span><span class="p">,</span> <span class="n">token</span><span class="o">=</span><span class="n">github_token</span><span class="p">())</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">api</span> <span class="o">=</span> <span class="n">GhApi</span><span class="p">(</span><span class="n">owner</span><span class="o">=</span><span class="s1">&#39;fastai&#39;</span><span class="p">,</span> <span class="n">repo</span><span class="o">=</span><span class="s1">&#39;ghapi-test&#39;</span><span class="p">,</span> <span class="n">token</span><span class="o">=</span><span class="n">github_token</span><span class="p">())</span>
 </pre></div>
 
     </div>
@@ -343,7 +343,95 @@ However, workflows can be difficult to create and debug, because:</p>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The payload will be available in the <a href="https://docs.github.com/en/free-pro-team@latest/actions/reference/context-and-expression-syntax-for-github-actions#github-context"><code>github</code> context</a>, which is provided automatically to you using the <code>context_github</code> function. When running locally, an example github context will be used instead.</p>
+<p>To test this out, we'll first create a PR or issue, and then create our comment:</p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">com</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">issues</span><span class="o">.</span><span class="n">create_comment</span><span class="p">(</span><span class="n">issue_number</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">body</span><span class="o">=</span><span class="s1">&#39;Thank you for your *valuable* contribution&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We can view the comment by visiting its URL:</p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">com</span><span class="o">.</span><span class="n">url</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;https://api.github.com/repos/fastai/ghapi-test/issues/comments/737383236&#39;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>...and then delete it since we were just testing:</p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">com</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">issues</span><span class="o">.</span><span class="n">delete_comment</span><span class="p">(</span><span class="n">com</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The payload will be available in the <a href="https://docs.github.com/en/free-pro-team@latest/actions/reference/context-and-expression-syntax-for-github-actions#github-context"><code>github</code> context</a>, which is provided automatically to you using the <code>context_github</code> function. When running locally, an example github context will be used instead. (This example github context will not, in general, have the same payload as the event you're using, so use the <code>example payload</code> for that.)</p>
 <p>The <code>event</code> contains the actual payload:</p>
 
 </div>
@@ -384,7 +472,72 @@ However, workflows can be difficult to create and debug, because:</p>
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We can now write our function:</p>
+<p>When we called <a href="/actions.html#create_workflow"><code>create_workflow</code></a>, the workflow it created can also be triggered using <a href="https://github.blog/changelog/2020-07-06-github-actions-manual-triggers-with-workflow_dispatch/">workflow dispatch</a>, which is more convenient for testing. In this case, our payload will not have the same information, so we should write our function in a way that can handle workflow dispatch as well.</p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">dispatch</span> <span class="o">=</span> <span class="n">example_payload</span><span class="p">(</span><span class="n">Event</span><span class="o">.</span><span class="n">workflow_dispatch</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We can check what type of trigger we're responding to, by checking the keys of our payload:</p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="s1">&#39;workflow&#39;</span> <span class="ow">in</span> <span class="n">dispatch</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>True</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In that case, we'll use a fixed issue number, instead of using the actual payload number.</p>
+<p>We can now write our function.</p>
 
 </div>
 </div>
@@ -398,9 +551,12 @@ However, workflows can be difficult to create and debug, because:</p>
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">reply_thanks</span><span class="p">():</span>
     <span class="n">payload</span> <span class="o">=</span> <span class="n">context_github</span><span class="o">.</span><span class="n">event</span>
-    <span class="k">if</span> <span class="n">payload</span><span class="o">.</span><span class="n">action</span> <span class="o">!=</span> <span class="s1">&#39;opened&#39;</span><span class="p">:</span> <span class="k">return</span>
-    <span class="n">api</span> <span class="o">=</span> <span class="n">GhApi</span><span class="p">(</span><span class="n">owner</span><span class="o">=</span><span class="s1">&#39;fastai&#39;</span><span class="p">,</span> <span class="n">repo</span><span class="o">=</span><span class="s1">&#39;ghapi&#39;</span><span class="p">,</span> <span class="n">token</span><span class="o">=</span><span class="n">github_token</span><span class="p">())</span>
-    <span class="n">api</span><span class="o">.</span><span class="n">issues</span><span class="o">.</span><span class="n">create_comment</span><span class="p">(</span><span class="n">issue_number</span><span class="o">=</span><span class="n">payload</span><span class="o">.</span><span class="n">number</span><span class="p">,</span> <span class="n">body</span><span class="o">=</span><span class="s1">&#39;Thank you for your *valuable* contribution&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="s1">&#39;workflow&#39;</span> <span class="ow">in</span> <span class="n">payload</span><span class="p">:</span> <span class="n">issue</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">payload</span><span class="o">.</span><span class="n">action</span> <span class="o">!=</span> <span class="s1">&#39;opened&#39;</span><span class="p">:</span> <span class="k">return</span>
+        <span class="n">api</span> <span class="o">=</span> <span class="n">GhApi</span><span class="p">(</span><span class="n">owner</span><span class="o">=</span><span class="s1">&#39;fastai&#39;</span><span class="p">,</span> <span class="n">repo</span><span class="o">=</span><span class="s1">&#39;ghapi&#39;</span><span class="p">,</span> <span class="n">token</span><span class="o">=</span><span class="n">github_token</span><span class="p">())</span>
+        <span class="n">issue</span> <span class="o">=</span> <span class="n">payload</span><span class="o">.</span><span class="n">number</span>
+    <span class="n">api</span><span class="o">.</span><span class="n">issues</span><span class="o">.</span><span class="n">create_comment</span><span class="p">(</span><span class="n">issue_number</span><span class="o">=</span><span class="n">issue</span><span class="p">,</span> <span class="n">body</span><span class="o">=</span><span class="s1">&#39;Thank you for your *valuable* contribution&#39;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -412,7 +568,14 @@ However, workflows can be difficult to create and debug, because:</p>
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Finally, copy this to the script in <code>.github/scripts</code>, commit it to GitHub, and try creating a pull request. Click on the "Actions" tab to watch your action run. If it doesn't work, try running the two lines at the end of the above function directly in a notebook or Python REPL, replacing <code>payload.number</code> with an actual issue or PR you create. You can also add <code>print(payload)</code> after the first line, and when GitHub runs your workflow you'll see the whole payload in your "Actions" panel.</p>
+<p>Finally, copy this to the script in <code>.github/scripts</code>, along with a line to run it (<code>reply_thanks()</code>), and commit it to GitHub.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>, and try creating a pull request. Click on the "Actions" tab to watch your action run. If it doesn't work, try running the two lines at the end of the above function directly in a notebook or Python REPL, replacing <code>payload.number</code> with an actual issue or PR you create. You can also add <code>print(payload)</code> after the first line, and when GitHub runs your workflow you'll see the whole payload in your "Actions" panel.</p>
 
 </div>
 </div>
