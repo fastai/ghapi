@@ -20,7 +20,7 @@ jobs:
           gh"i"
       run: |
         echo a
-        echo $TESTING
+        echo "$TESTING"
         echo b
         pip install -q ghapi
         python .github/scripts/build-test.py
