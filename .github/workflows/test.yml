@@ -15,7 +15,6 @@ jobs:
       env:
         CONTEXT_GITHUB: ${{ toJson(github) }}
       run: |
-        env
         pip install -q ghapi
         python .github/scripts/build-test.py
 
