@@ -14,7 +14,14 @@ jobs:
     - name: Run script
       env:
         CONTEXT_GITHUB: ${{ toJson(github) }}
+        TESTING: |
+          abc
+          def
+          gh"i"
       run: |
+        echo a
+        echo $TESTING
+        echo b
         pip install -q ghapi
         python .github/scripts/build-test.py
 
