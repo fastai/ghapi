@@ -1,23 +1,45 @@
-wf_tmpl = """name: NAME
+wf_tmpl = """name: $NAME
 on:
   workflow_dispatch:
-EVENT
+$EVENT
 defaults:
   run: { shell: bash }
 
 jobs:
+$PREBUILD
   build:
-    runs-on: ubuntu-latest
+$NEEDS
+    strategy:
+      fail-fast: false
+      matrix: { os: $OPERSYS }
+    runs-on: ${{ matrix.os }}-latest
     steps:
     - uses: actions/checkout@v1
     - uses: actions/setup-python@v2
       with: {python-version: '3.8'}
     - name: Run script
       env:
-CONTEXTS
+$CONTEXTS
       run: |
-RUN
-        python .github/scripts/build-NAME.py
+$RUN
+        python .github/scripts/build-$NAME.py
+"""
+
+pre_tmpl = """prebuild:
+  runs-on: ubuntu-latest
+  outputs:
+    out: ${{ toJson(steps) }}
+  steps:
+  - uses: actions/checkout@v1
+  - uses: actions/setup-python@v2
+    with: {python-version: '3.8'}
+  - name: Create release
+    id: step1
+    env:
+      CONTEXT_GITHUB: ${{ toJson(github) }}
+    run: |
+      pip install -Uq ghapi
+      python .github/scripts/prebuild.py
 """
 
 context_example = """{
@@ -191,7 +213,7 @@ needs_example = """{
   "prebuild": {
     "result": "success",
     "outputs": {
-      "out": "{\n  \"step1\": {\n    \"outputs\": {\n      \"tag\": \"v0.79.0\"\n    },\n    \"outcome\": \"success\",\n    \"conclusion\": \"success\"\n  }\n}"
+      "out": "{  \\"step1\\": {    \\"outputs\\": {      \\"tag\\": \\"v0.79.0\\"    },    \\"outcome\\": \\"success\\",    \\"conclusion\\": \\"success\\"  }}"
     }
   }
 }"""

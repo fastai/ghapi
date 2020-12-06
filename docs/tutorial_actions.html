@@ -597,16 +597,281 @@ However, workflows can be difficult to create and debug, because:</p>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="TODO">TODO<a class="anchor-link" href="#TODO"> </a></h4>
+<h2 id="Advanced-multi-step-workflow">Advanced multi-step workflow<a class="anchor-link" href="#Advanced-multi-step-workflow"> </a></h2>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p>In this tutorial we're going to show how we created <a href="https://github.com/fastai/hugo-mathjax">hugo-mathjax</a>. The workflow in this project patches <a href="https://gohugo.io/">Hugo</a> to add <a href="https://www.mathjax.org/">Mathjax</a> support, then builds Mac, Ubuntu, and Windows versions of the software, creating a release which includes each of those builds as artifacts. It does the following:</p>
 <ul>
-<li>only if new contrib</li>
-<li>binder link if NB</li>
+<li>On a Ubuntu runner:<ul>
+<li>Find out what the latest release of Hugo is</li>
+<li>It we haven't yet built a patched version of this release, create a new release</li>
+<li>Output the release number for the next job to use</li>
 </ul>
+</li>
+<li>On Mac, Ubuntu, and Windows runners all running in parallel:<ul>
+<li>Get the release number output by the previous step</li>
+<li>Download this release from the Hugo repo, and untar it</li>
+<li>Patch, build, and tar this release</li>
+<li>Add the tarred release as an artifact of the release created in the first job</li>
+</ul>
+</li>
+</ul>
+<p>First, we'll create the workflow and script files:</p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">create_workflow</span><span class="p">(</span><span class="s1">&#39;create&#39;</span><span class="p">,</span> <span class="n">Event</span><span class="o">.</span><span class="n">schedule</span><span class="p">,</span> <span class="n">contexts</span><span class="o">=</span><span class="s1">&#39;needs&#39;</span><span class="p">,</span> <span class="n">opersys</span><span class="o">=</span><span class="s1">&#39;macos, ubuntu, windows&#39;</span><span class="p">,</span> <span class="n">prebuild</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This has some pieces we haven't seen before, so let's take a look at them now.</p>
+<p>The <code>prebuild</code> bool tells <a href="/cli.html#ghapi"><code>ghapi</code></a> to include a prebuild job (see <a href="/actions.html#create_workflow"><code>create_workflow</code></a> for the full workflow created). After you run the above, take a look at the YAML that was created, to see how it all works. We're going to need to modify the YAML, to add the <a href="https://docs.github.com/en/free-pro-team@latest/actions/reference/events-that-trigger-workflows#schedule">schedule</a> we want to run it on, using a <code>cron:</code> line. You can see the final YAML file <a href="https://github.com/fastai/hugo-mathjax/blob/master/.github/workflows/python.yml">here</a>.</p>
+<p>The prebuild job calls a prebuild script using a Ubuntu runner. We'll create the prebuild script now.</p>
+<p>The script needs to get the current Hugo release tag:</p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tag</span> <span class="o">=</span> <span class="n">GhApi</span><span class="p">()</span><span class="o">.</span><span class="n">repos</span><span class="o">.</span><span class="n">get_latest_release</span><span class="p">(</span><span class="s1">&#39;gohugoio&#39;</span><span class="p">,</span> <span class="n">repo</span><span class="o">=</span><span class="s1">&#39;hugo&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">name</span>
+<span class="n">tag</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;v0.79.0&#39;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>...and check whether we have released that patched version:</p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">api</span> <span class="o">=</span> <span class="n">GhApi</span><span class="p">(</span><span class="n">owner</span><span class="o">=</span><span class="s1">&#39;fastai&#39;</span><span class="p">,</span> <span class="n">repo</span><span class="o">=</span><span class="s1">&#39;hugo-mathjax&#39;</span><span class="p">,</span> <span class="n">token</span><span class="o">=</span><span class="n">github_token</span><span class="p">())</span>
+<span class="n">exists</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="k">try</span><span class="p">:</span> <span class="n">api</span><span class="o">.</span><span class="n">repos</span><span class="o">.</span><span class="n">get_release_by_tag</span><span class="p">(</span><span class="n">tag</span><span class="p">)</span>
+<span class="k">except</span> <span class="n">HTTP404NotFoundError</span><span class="p">:</span> <span class="n">exists</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">exists</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>True</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In the case that the release already exists, we'll want to just exit, otherwise we'll create a new release:</p>
+<div class="highlight"><pre><span></span><span class="n">rel</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">repos</span><span class="o">.</span><span class="n">create_release</span><span class="p">(</span><span class="n">tag</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">tag</span><span class="p">)</span>
+</pre></div>
+<p>The <code>build</code> job will run in a separate runner, so we need to create an output telling it the tag of the release we've created. The <a href="/actions.html#actions_output"><code>actions_output</code></a> function does that, but print a special format that GitHub Actions uses:</p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">actions_output</span><span class="p">(</span><span class="s1">&#39;tag&#39;</span><span class="p">,</span> <span class="n">tag</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>::set-output name=tag::v0.79.0
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>You can see the completed prebuild script <a href="https://github.com/fastai/hugo-mathjax/blob/master/.github/scripts/prebuild.py">here</a>.</p>
+<p>Now we can move on to creating the <code>build</code> script. First, we can get the outputs of the <code>prebuild</code> job as a <code>dict</code> by using <code>context_needs</code>, which contains information from any jobs in the <code>needs</code> section (which <a href="/cli.html#ghapi"><code>ghapi</code></a> will automatically set up for you if you enable <code>prebuild</code>):</p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">out</span> <span class="o">=</span> <span class="n">loads</span><span class="p">(</span><span class="n">nested_idx</span><span class="p">(</span><span class="n">context_needs</span><span class="p">,</span> <span class="s1">&#39;prebuild&#39;</span><span class="p">,</span> <span class="s1">&#39;outputs&#39;</span><span class="p">,</span> <span class="s1">&#39;out&#39;</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>To get the <code>tag</code> output of the job, we index into the <code>dict</code>:</p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tag</span> <span class="o">=</span> <span class="n">nested_idx</span><span class="p">(</span><span class="n">out</span><span class="p">,</span> <span class="s1">&#39;step1&#39;</span><span class="p">,</span> <span class="s1">&#39;outputs&#39;</span><span class="p">,</span> <span class="s1">&#39;tag&#39;</span><span class="p">)</span>
+<span class="n">tag</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We get the release details using the same approach as before, then download, untar, patch, and build it. We won't discuss those steps here since they're not specific to <a href="/cli.html#ghapi"><code>ghapi</code></a>.</p>
+<p>Once the software is built, we need to know the name of the created file, which depends on the operating system we're running on. We can use the following approach to check:</p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">platform</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">linux</span><span class="o">=</span><span class="s1">&#39;linux&#39;</span><span class="p">,</span> <span class="n">linux2</span><span class="o">=</span><span class="s1">&#39;linux&#39;</span><span class="p">,</span> <span class="n">win32</span><span class="o">=</span><span class="s1">&#39;win&#39;</span><span class="p">,</span> <span class="n">darwin</span><span class="o">=</span><span class="s1">&#39;mac&#39;</span><span class="p">)[</span><span class="n">sys</span><span class="o">.</span><span class="n">platform</span><span class="p">]</span>
+<span class="n">ext_nm</span> <span class="o">=</span> <span class="s1">&#39;hugo.exe&#39;</span> <span class="k">if</span> <span class="n">platform</span><span class="o">==</span><span class="s1">&#39;win&#39;</span> <span class="k">else</span> <span class="s1">&#39;hugo&#39;</span>
+<span class="n">ext_nm</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;hugo&#39;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Finally, we can upload our file as an artifact:</p>
+<div class="highlight"><pre><span></span><span class="n">api</span> <span class="o">=</span> <span class="n">GhApi</span><span class="p">(</span><span class="n">owner</span><span class="o">=</span><span class="s1">&#39;fastai&#39;</span><span class="p">,</span> <span class="n">repo</span><span class="o">=</span><span class="s1">&#39;hugo-mathjax&#39;</span><span class="p">,</span> <span class="n">token</span><span class="o">=</span><span class="n">github_token</span><span class="p">())</span>
+<span class="n">rel</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">repos</span><span class="o">.</span><span class="n">get_release_by_tag</span><span class="p">(</span><span class="n">tag</span><span class="p">)</span>
+<span class="n">api</span><span class="o">.</span><span class="n">upload_file</span><span class="p">(</span><span class="n">rel</span><span class="p">,</span> <span class="n">fn</span><span class="p">)</span>
+</pre></div>
+<p>You can see the complete script <a href="https://github.com/fastai/hugo-mathjax/blob/master/.github/scripts/build.py">here</a>.</p>
+<p>We've now successfully built a workflow that automatically patches, builds, and releases a mixed C/Go project, across multiple platforms, in parallel!</p>
 
 </div>
 </div>
