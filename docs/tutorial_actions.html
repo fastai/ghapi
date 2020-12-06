@@ -369,7 +369,7 @@ However, workflows can be difficult to create and debug, because:</p>
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The payload will be available in the <a href="https://docs.github.com/en/free-pro-team@latest/actions/reference/context-and-expression-syntax-for-github-actions#github-context"><code>github</code> context</a>, which is provided automatically to you using the <code>context_github</code> function. When running locally, an example github context will be used instead. (This example github context will not, in general, have the same payload as the event you're using, so use the <code>example payload</code> for that.)</p>
+<p>The payload will be available in the <a href="https://docs.github.com/en/free-pro-team@latest/actions/reference/context-and-expression-syntax-for-github-actions#github-context"><code>github</code> context</a>, which is provided automatically to you using the <code>context_github</code> variable. When running locally, an example github context will be used instead. (This example github context will not, in general, have the same payload as the event you're using, so use the <code>example payload</code> for that.)</p>
 <p>The <code>event</code> contains the actual payload:</p>
 
 </div>
@@ -597,12 +597,13 @@ However, workflows can be difficult to create and debug, because:</p>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Advanced-multi-step-workflow">Advanced multi-step workflow<a class="anchor-link" href="#Advanced-multi-step-workflow"> </a></h2>
+<h2 id="Advanced-multi-job-workflow">Advanced multi-job workflow<a class="anchor-link" href="#Advanced-multi-job-workflow"> </a></h2>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p>Sometimes, you need to join more than one <em>job</em> in a workflow. This isn't common, but one example it's absolutely needed is if you want to build software or run tests on multiple platforms, and then have some step that runs before or after all of them. For instance, building and releasing software that needs to be built on each platform requires one job to create a release, and then a separate job to do the builds and add artifacts to the release, since GitHub Actions runs all your steps in a job in a single platform. Furthermore, we need to set up <a href="https://docs.github.com/en/free-pro-team@latest/actions/learn-github-actions/managing-complex-workflows#creating-dependent-jobs">dependencies between jobs</a> using <code>needs</code>. <a href="/cli.html#ghapi"><code>ghapi</code></a> provides helpers to set up multi-job workflows with depedencies for you, which we'll show an example of here.</p>
 <p>In this tutorial we're going to show how we created <a href="https://github.com/fastai/hugo-mathjax">hugo-mathjax</a>. The workflow in this project patches <a href="https://gohugo.io/">Hugo</a> to add <a href="https://www.mathjax.org/">Mathjax</a> support, then builds Mac, Ubuntu, and Windows versions of the software, creating a release which includes each of those builds as artifacts. It does the following:</p>
 <ul>
 <li>On a Ubuntu runner:<ul>
@@ -814,6 +815,22 @@ However, workflows can be difficult to create and debug, because:</p>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;v0.79.0&#39;</pre>
+</div>
+
+</div>
+
 </div>
 </div>
 

@@ -86,6 +86,7 @@ _docroot = 'https://docs.github.com/en/free-pro-team@latest/rest/reference/'
 class GhApi(_GhObj):
     def __init__(self, owner=None, repo=None, token=None, debug=None, **kwargs):
         self.headers = { 'Accept': 'application/vnd.github.v3+json' }
+        token = token or os.getenv('GITHUB_TOKEN', None)
         if token: self.headers['Authorization'] = 'token ' + token
         if owner: kwargs['owner'] = owner
         if repo:  kwargs['repo' ] = repo
