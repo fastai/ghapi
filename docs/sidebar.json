@@ -1,7 +1,6 @@
 {
   "ghapi": {
     "Overview": "/",
-    "Getting started with the GitHub API": "tutorial_api.html",
     "Getting started with GitHub Actions": "tutorial_actions.html",
     "API details": "core.html",
     "GitHub Actions": "actions.html",

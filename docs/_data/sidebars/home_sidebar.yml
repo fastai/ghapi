@@ -10,9 +10,6 @@ entries:
       title: Overview
       url: /
     - output: web,pdf
-      title: Getting started with the GitHub API
-      url: tutorial_api.html
-    - output: web,pdf
       title: Getting started with GitHub Actions
       url: tutorial_actions.html
     - output: web,pdf
