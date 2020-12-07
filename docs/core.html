@@ -1052,18 +1052,6 @@ https://docs.github.com/rest/reference/repos#create-a-repository-webhook
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">gh_date</span><span class="p">(</span><span class="n">dt</span><span class="p">:</span><span class="n">datetime</span><span class="p">):</span>
-    <span class="s2">&quot;Convert `dt` (which is assumed to be in UTC time zone) to a format suitable for GitHub API operations&quot;</span>
-    <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">dt</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">microsecond</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">isoformat</span><span class="p">()</span><span class="si">}</span><span class="s1">Z&#39;</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
 
 </div>
     {% endraw %}
