@@ -7,9 +7,7 @@
 ### New Features
 
 - add `paged` ([#13](https://github.com/fastai/ghapi/issues/13))
-
 - add `gh_date` ([#12](https://github.com/fastai/ghapi/issues/12))
-
 
 
 ## 0.1.1
@@ -26,5 +24,4 @@
 ## 0.1.0
 
 - First release with full API coverage
-
 
