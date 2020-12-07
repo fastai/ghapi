@@ -1,4 +1,4 @@
-.github
+*test.*
 conda/
 .sass-cache/
 api.json
