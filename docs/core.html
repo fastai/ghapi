@@ -1035,7 +1035,7 @@ https://docs.github.com/rest/reference/repos#create-a-repository-webhook
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="gh_date" class="doc_header"><code>gh_date</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/core.py#L125" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>gh_date</code>(<strong><code>dt</code></strong>:<code>datetime</code>)</p>
+<h4 id="date2gh" class="doc_header"><code>date2gh</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/core.py#L125" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>date2gh</code>(<strong><code>dt</code></strong>:<code>datetime</code>)</p>
 </blockquote>
 <p>Convert <code>dt</code> (which is assumed to be in UTC time zone) to a format suitable for GitHub API operations</p>
 
@@ -1058,7 +1058,7 @@ https://docs.github.com/rest/reference/repos#create-a-repository-webhook
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The GitHub API assumes that dates will be in a specific string format. <a href="/core.html#gh_date"><code>gh_date</code></a> converts Python standard <code>datetime</code> objects to that format. For instance, to find issues opened in the last week:</p>
+<p>The GitHub API assumes that dates will be in a specific string format. <a href="/core.html#date2gh"><code>date2gh</code></a> converts Python standard <code>datetime</code> objects to that format. For instance, to find issues opened in the 'fastcore' repo in the last 4 weeks:</p>
 
 </div>
 </div>
@@ -1070,8 +1070,8 @@ https://docs.github.com/rest/reference/repos#create-a-repository-webhook
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">dt</span> <span class="o">=</span> <span class="n">gh_date</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">utcnow</span><span class="p">()</span> <span class="o">-</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">weeks</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
-<span class="n">issues</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">issues</span><span class="o">.</span><span class="n">list_for_repo</span><span class="p">(</span><span class="n">since</span><span class="o">=</span><span class="n">dt</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">dt</span> <span class="o">=</span> <span class="n">date2gh</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">utcnow</span><span class="p">()</span> <span class="o">-</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">weeks</span><span class="o">=</span><span class="mi">4</span><span class="p">))</span>
+<span class="n">issues</span> <span class="o">=</span> <span class="n">GhApi</span><span class="p">(</span><span class="s1">&#39;fastai&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">issues</span><span class="o">.</span><span class="n">list_for_repo</span><span class="p">(</span><span class="n">repo</span><span class="o">=</span><span class="s1">&#39;fastcore&#39;</span><span class="p">,</span> <span class="n">since</span><span class="o">=</span><span class="n">dt</span><span class="p">)</span>
 <span class="nb">len</span><span class="p">(</span><span class="n">issues</span><span class="p">)</span>
 </pre></div>
 
@@ -1087,9 +1087,73 @@ https://docs.github.com/rest/reference/repos#create-a-repository-webhook
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>1</pre>
+<pre>9</pre>
 </div>
 
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="gh2date" class="doc_header"><code>gh2date</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/core.py#L130" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>gh2date</code>(<strong><code>dtstr</code></strong>:<code>str</code>)</p>
+</blockquote>
+<p>Convert date string <code>dtstr</code> received from a GitHub API operation to a UTC <code>datetime</code></p>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">created</span> <span class="o">=</span> <span class="n">issues</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">created_at</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">created</span><span class="p">,</span> <span class="s1">&#39;-&gt;&#39;</span><span class="p">,</span> <span class="n">gh2date</span><span class="p">(</span><span class="n">created</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>2020-11-25T09:33:08Z -&gt; 2020-11-25 09:33:08
+</pre>
+</div>
 </div>
 
 </div>
@@ -1122,7 +1186,7 @@ https://docs.github.com/rest/reference/repos#create-a-repository-webhook
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="print_summary" class="doc_header"><code>print_summary</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/core.py#L130" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>print_summary</code>(<strong><code>req</code></strong>:<code>Request</code>)</p>
+<h4 id="print_summary" class="doc_header"><code>print_summary</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/core.py#L135" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>print_summary</code>(<strong><code>req</code></strong>:<code>Request</code>)</p>
 </blockquote>
 <p>Print <code>Request.summary</code> with the token (if any) removed</p>
 
@@ -1237,7 +1301,7 @@ https://docs.github.com/rest/reference/repos#create-a-repository-webhook
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="GhApi.upload_file" class="doc_header"><code>GhApi.upload_file</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/core.py#L142" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>GhApi.upload_file</code>(<strong><code>rel</code></strong>, <strong><code>fn</code></strong>)</p>
+<h4 id="GhApi.upload_file" class="doc_header"><code>GhApi.upload_file</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/core.py#L147" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>GhApi.upload_file</code>(<strong><code>rel</code></strong>, <strong><code>fn</code></strong>)</p>
 </blockquote>
 <p>Upload <code>fn</code> to endpoint for release <code>rel</code></p>
 
@@ -1269,7 +1333,7 @@ https://docs.github.com/rest/reference/repos#create-a-repository-webhook
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="GhApi.create_release" class="doc_header"><code>GhApi.create_release</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/core.py#L151" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>GhApi.create_release</code>(<strong><code>tag_name</code></strong>, <strong><code>branch</code></strong>=<em><code>'master'</code></em>, <strong><code>name</code></strong>=<em><code>None</code></em>, <strong><code>body</code></strong>=<em><code>''</code></em>, <strong><code>draft</code></strong>=<em><code>False</code></em>, <strong><code>prerelease</code></strong>=<em><code>False</code></em>, <strong><code>files</code></strong>=<em><code>None</code></em>)</p>
+<h4 id="GhApi.create_release" class="doc_header"><code>GhApi.create_release</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/core.py#L156" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>GhApi.create_release</code>(<strong><code>tag_name</code></strong>, <strong><code>branch</code></strong>=<em><code>'master'</code></em>, <strong><code>name</code></strong>=<em><code>None</code></em>, <strong><code>body</code></strong>=<em><code>''</code></em>, <strong><code>draft</code></strong>=<em><code>False</code></em>, <strong><code>prerelease</code></strong>=<em><code>False</code></em>, <strong><code>files</code></strong>=<em><code>None</code></em>)</p>
 </blockquote>
 <p>Wrapper for <a href="/core.html#GhApi.repos.create_release"><code>GhApi.repos.create_release</code></a> which also uploads <code>files</code></p>
 
@@ -1370,7 +1434,7 @@ https://docs.github.com/rest/reference/repos#create-a-repository-webhook
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="GhApi.delete_release" class="doc_header"><code>GhApi.delete_release</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/core.py#L135" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>GhApi.delete_release</code>(<strong><code>release</code></strong>)</p>
+<h4 id="GhApi.delete_release" class="doc_header"><code>GhApi.delete_release</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/core.py#L140" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>GhApi.delete_release</code>(<strong><code>release</code></strong>)</p>
 </blockquote>
 <p>Delete a release and its associated tag</p>
 
@@ -1401,7 +1465,7 @@ https://docs.github.com/rest/reference/repos#create-a-repository-webhook
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="GhApi.list_tags" class="doc_header"><code>GhApi.list_tags</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/core.py#L162" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>GhApi.list_tags</code>(<strong><code>prefix</code></strong>:<code>str</code>=<em><code>''</code></em>)</p>
+<h4 id="GhApi.list_tags" class="doc_header"><code>GhApi.list_tags</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/core.py#L167" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>GhApi.list_tags</code>(<strong><code>prefix</code></strong>:<code>str</code>=<em><code>''</code></em>)</p>
 </blockquote>
 <p>List all tags, optionally filtered to those starting with <code>prefix</code></p>
 
@@ -1481,7 +1545,7 @@ https://docs.github.com/rest/reference/repos#create-a-repository-webhook
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="GhApi.list_branches" class="doc_header"><code>GhApi.list_branches</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/core.py#L168" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>GhApi.list_branches</code>(<strong><code>prefix</code></strong>:<code>str</code>=<em><code>''</code></em>)</p>
+<h4 id="GhApi.list_branches" class="doc_header"><code>GhApi.list_branches</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/core.py#L173" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>GhApi.list_branches</code>(<strong><code>prefix</code></strong>:<code>str</code>=<em><code>''</code></em>)</p>
 </blockquote>
 <p>List all branches, optionally filtered to those starting with <code>prefix</code></p>
 
@@ -1569,7 +1633,7 @@ https://docs.github.com/rest/reference/repos#create-a-repository-webhook
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="GhApi.create_branch_empty" class="doc_header"><code>GhApi.create_branch_empty</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/core.py#L178" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>GhApi.create_branch_empty</code>(<strong><code>branch</code></strong>)</p>
+<h4 id="GhApi.create_branch_empty" class="doc_header"><code>GhApi.create_branch_empty</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/core.py#L183" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>GhApi.create_branch_empty</code>(<strong><code>branch</code></strong>)</p>
 </blockquote>
 
 </div>
@@ -1618,7 +1682,7 @@ https://docs.github.com/rest/reference/repos#create-a-repository-webhook
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="GhApi.delete_tag" class="doc_header"><code>GhApi.delete_tag</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/core.py#L184" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>GhApi.delete_tag</code>(<strong><code>tag</code></strong>:<code>str</code>)</p>
+<h4 id="GhApi.delete_tag" class="doc_header"><code>GhApi.delete_tag</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/core.py#L189" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>GhApi.delete_tag</code>(<strong><code>tag</code></strong>:<code>str</code>)</p>
 </blockquote>
 <p>Delete a tag</p>
 
@@ -1650,7 +1714,7 @@ https://docs.github.com/rest/reference/repos#create-a-repository-webhook
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="GhApi.delete_branch" class="doc_header"><code>GhApi.delete_branch</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/core.py#L190" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>GhApi.delete_branch</code>(<strong><code>branch</code></strong>:<code>str</code>)</p>
+<h4 id="GhApi.delete_branch" class="doc_header"><code>GhApi.delete_branch</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/core.py#L195" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>GhApi.delete_branch</code>(<strong><code>branch</code></strong>:<code>str</code>)</p>
 </blockquote>
 <p>Delete a branch</p>
 
@@ -1700,7 +1764,7 @@ https://docs.github.com/rest/reference/repos#create-a-repository-webhook
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="GhApi.get_branch" class="doc_header"><code>GhApi.get_branch</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/core.py#L196" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>GhApi.get_branch</code>(<strong><code>branch</code></strong>=<em><code>None</code></em>)</p>
+<h4 id="GhApi.get_branch" class="doc_header"><code>GhApi.get_branch</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/core.py#L201" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>GhApi.get_branch</code>(<strong><code>branch</code></strong>=<em><code>None</code></em>)</p>
 </blockquote>
 
 </div>
@@ -1737,7 +1801,7 @@ https://docs.github.com/rest/reference/repos#create-a-repository-webhook
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="GhApi.list_files" class="doc_header"><code>GhApi.list_files</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/core.py#L202" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>GhApi.list_files</code>(<strong><code>branch</code></strong>=<em><code>None</code></em>)</p>
+<h4 id="GhApi.list_files" class="doc_header"><code>GhApi.list_files</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/core.py#L207" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>GhApi.list_files</code>(<strong><code>branch</code></strong>=<em><code>None</code></em>)</p>
 </blockquote>
 
 </div>
@@ -1809,7 +1873,7 @@ https://docs.github.com/rest/reference/repos#create-a-repository-webhook
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="GhApi.get_content" class="doc_header"><code>GhApi.get_content</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/core.py#L209" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>GhApi.get_content</code>(<strong><code>path</code></strong>)</p>
+<h4 id="GhApi.get_content" class="doc_header"><code>GhApi.get_content</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/core.py#L214" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>GhApi.get_content</code>(<strong><code>path</code></strong>)</p>
 </blockquote>
 
 </div>
@@ -1858,7 +1922,7 @@ https://docs.github.com/rest/reference/repos#create-a-repository-webhook
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="GhApi.update_contents" class="doc_header"><code>GhApi.update_contents</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/core.py#L215" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>GhApi.update_contents</code>(<strong><code>path</code></strong>, <strong><code>message</code></strong>=<em><code>None</code></em>, <strong><code>content</code></strong>=<em><code>None</code></em>, <strong><code>sha</code></strong>=<em><code>None</code></em>, <strong><code>branch</code></strong>=<em><code>None</code></em>, <strong><code>committer</code></strong>=<em><code>None</code></em>, <strong><code>author</code></strong>=<em><code>None</code></em>)</p>
+<h4 id="GhApi.update_contents" class="doc_header"><code>GhApi.update_contents</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/core.py#L220" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>GhApi.update_contents</code>(<strong><code>path</code></strong>, <strong><code>message</code></strong>=<em><code>None</code></em>, <strong><code>content</code></strong>=<em><code>None</code></em>, <strong><code>sha</code></strong>=<em><code>None</code></em>, <strong><code>branch</code></strong>=<em><code>None</code></em>, <strong><code>committer</code></strong>=<em><code>None</code></em>, <strong><code>author</code></strong>=<em><code>None</code></em>)</p>
 </blockquote>
 
 </div>
@@ -1942,7 +2006,7 @@ https://docs.github.com/rest/reference/repos#create-a-repository-webhook
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="GhApi.enable_pages" class="doc_header"><code>GhApi.enable_pages</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/core.py#L225" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>GhApi.enable_pages</code>(<strong><code>branch</code></strong>=<em><code>None</code></em>, <strong><code>path</code></strong>=<em><code>'/'</code></em>)</p>
+<h4 id="GhApi.enable_pages" class="doc_header"><code>GhApi.enable_pages</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/core.py#L230" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>GhApi.enable_pages</code>(<strong><code>branch</code></strong>=<em><code>None</code></em>, <strong><code>path</code></strong>=<em><code>'/'</code></em>)</p>
 </blockquote>
 <p>Enable or update pages for a repo to point to a <code>branch</code> and <code>path</code>.</p>
 
