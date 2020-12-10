@@ -1,13 +1,13 @@
 ---
 
-title: Title
+title: auth
 
 
 keywords: fastai
 sidebar: home_sidebar
 
-
-
+summary: "Helpers for creating GitHub API tokens"
+description: "Helpers for creating GitHub API tokens"
 nb_path: "02_auth.ipynb"
 ---
 <!--
@@ -54,9 +54,9 @@ nb_path: "02_auth.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="GhDeviceAuth" class="doc_header"><code>class</code> <code>GhDeviceAuth</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/auth.py#L24" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>GhDeviceAuth</code>(<strong><code>client_id</code></strong>=<em><code>'771f3c3af93face45f52'</code></em>, <strong>*<code>scopes</code></strong>) :: <a href="/auth.html#GetAttrBase"><code>GetAttrBase</code></a></p>
+<h2 id="GhDeviceAuth" class="doc_header"><code>class</code> <code>GhDeviceAuth</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/auth.py#L16" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>GhDeviceAuth</code>(<strong><code>client_id</code></strong>=<em><code>'771f3c3af93face45f52'</code></em>, <strong>*<code>scopes</code></strong>) :: <code>GetAttrBase</code></p>
 </blockquote>
-<p>Get an oauth token using the GitHub API device workflow</p>
+<p>Get an oauth token using the GitHub API device flow</p>
 
 </div>
 
@@ -127,7 +127,7 @@ nb_path: "02_auth.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="GhDeviceAuth.url_docs" class="doc_header"><code>GhDeviceAuth.url_docs</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/auth.py#L34" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>GhDeviceAuth.url_docs</code>()</p>
+<h4 id="GhDeviceAuth.url_docs" class="doc_header"><code>GhDeviceAuth.url_docs</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/auth.py#L27" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>GhDeviceAuth.url_docs</code>()</p>
 </blockquote>
 <p>Default instructions on how to authenticate</p>
 
@@ -198,7 +198,7 @@ Then visit https://github.com/login/device in your browser, and paste the code w
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="GhDeviceAuth.open_browser" class="doc_header"><code>GhDeviceAuth.open_browser</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/auth.py#L39" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>GhDeviceAuth.open_browser</code>()</p>
+<h4 id="GhDeviceAuth.open_browser" class="doc_header"><code>GhDeviceAuth.open_browser</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/auth.py#L34" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>GhDeviceAuth.open_browser</code>()</p>
 </blockquote>
 <p>Open a web browser with the verification URL</p>
 
@@ -237,7 +237,7 @@ Then visit https://github.com/login/device in your browser, and paste the code w
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="GhDeviceAuth.auth" class="doc_header"><code>GhDeviceAuth.auth</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/auth.py#L43" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>GhDeviceAuth.auth</code>()</p>
+<h4 id="GhDeviceAuth.auth" class="doc_header"><code>GhDeviceAuth.auth</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/auth.py#L40" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>GhDeviceAuth.auth</code>()</p>
 </blockquote>
 <p>Return token if authentication complete, or <code>None</code> otherwise</p>
 
@@ -307,7 +307,7 @@ Then visit https://github.com/login/device in your browser, and paste the code w
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="GhDeviceAuth.wait" class="doc_header"><code>GhDeviceAuth.wait</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/auth.py#L54" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>GhDeviceAuth.wait</code>(<strong><code>cb</code></strong>:<code>callable</code>=<em><code>None</code></em>)</p>
+<h4 id="GhDeviceAuth.wait" class="doc_header"><code>GhDeviceAuth.wait</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/auth.py#L53" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>GhDeviceAuth.wait</code>(<strong><code>cb</code></strong>:<code>callable</code>=<em><code>None</code></em>)</p>
 </blockquote>
 <p>Wait for authentication to complete, calling <code>cb</code> after each poll, if it is set</p>
 

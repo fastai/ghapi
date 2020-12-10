@@ -285,6 +285,103 @@ nb_path: "00_core.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Rate-limits">Rate limits<a class="anchor-link" href="#Rate-limits"> </a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>GitHub has various <a href="https://docs.github.com/en/free-pro-team@latest/rest/overview/resources-in-the-rest-api#rate-limiting">rate limits</a> for their API. After each call, the response includes information about how many requests are remaining in the hourly quota. If you'd like to add alerts, or indications showing current quota usage, you can register a callback with <a href="/core.html#GhApi"><code>GhApi</code></a> by passing a callable to the <code>limit_cb</code> parameter. This callback will be called whenever the amount of quota used changes. It will be called with two arguments: the new quota remaining, and the total hourly quota.</p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">_f</span><span class="p">(</span><span class="n">rem</span><span class="p">,</span><span class="n">quota</span><span class="p">):</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Quota remaining: </span><span class="si">{</span><span class="n">rem</span><span class="si">}</span><span class="s2"> of </span><span class="si">{</span><span class="n">quota</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">api</span> <span class="o">=</span> <span class="n">GhApi</span><span class="p">(</span><span class="n">limit_cb</span><span class="o">=</span><span class="n">_f</span><span class="p">)</span>
+<span class="n">api</span><span class="p">[</span><span class="s1">&#39;/repos/</span><span class="si">{owner}</span><span class="s1">/</span><span class="si">{repo}</span><span class="s1">/git/ref/</span><span class="si">{ref}</span><span class="s1">&#39;</span><span class="p">](</span><span class="n">owner</span><span class="o">=</span><span class="s1">&#39;fastai&#39;</span><span class="p">,</span> <span class="n">repo</span><span class="o">=</span><span class="s1">&#39;ghapi-test&#39;</span><span class="p">,</span> <span class="n">ref</span><span class="o">=</span><span class="s1">&#39;heads/master&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">ref</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Quota remaining: 4990 of 5000
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;refs/heads/master&#39;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>You can always get the remaining quota from the <code>limit_rem</code> attribute:</p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">api</span><span class="o">.</span><span class="n">limit_rem</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;4990&#39;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Operations">Operations<a class="anchor-link" href="#Operations"> </a></h2>
 </div>
 </div>

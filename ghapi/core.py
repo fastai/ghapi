@@ -85,7 +85,7 @@ _docroot = 'https://docs.github.com/en/free-pro-team@latest/rest/reference/'
 
 # Cell
 class GhApi(_GhObj):
-    def __init__(self, owner=None, repo=None, token=None, debug=None, **kwargs):
+    def __init__(self, owner=None, repo=None, token=None, debug=None, limit_cb=None, **kwargs):
         self.headers = { 'Accept': 'application/vnd.github.v3+json' }
         token = token or os.getenv('GITHUB_TOKEN', None)
         if token: self.headers['Authorization'] = 'token ' + token
@@ -94,15 +94,21 @@ class GhApi(_GhObj):
         funcs_ = L(funcs).starmap(_GhVerb, client=self, kwargs=kwargs)
         self.func_dict = {f'{o.path}:{o.verb.upper()}':o for o in funcs_}
         self.groups = {k.replace('-','_'):_GhVerbGroup(k,v) for k,v in groupby(funcs_, 'tag').items()}
-        self.debug = debug
+        self.debug,self.limit_cb,self.limit_rem = debug,limit_cb,5000
 
     def __call__(self, path:str, verb:str=None, headers:dict=None, route:dict=None, query:dict=None, data=None):
         "Call a fully specified `path` using HTTP `verb`, passing arguments to `fastcore.core.urlsend`"
         if verb is None: verb = 'POST' if data else 'GET'
         headers = {**self.headers,**(headers or {})}
         if path[:7] not in ('http://','https:/'): path = GH_HOST+path
-        return dict2obj(urlsend(path, verb, headers=headers or None, debug=self.debug,
-                                route=route or None, query=query or None, data=data or None))
+        res,hdrs = urlsend(path, verb, headers=headers or None, debug=self.debug, return_headers=True,
+                           route=route or None, query=query or None, data=data or None)
+        if 'X-RateLimit-Remaining' in hdrs:
+            newlim = hdrs['X-RateLimit-Remaining']
+            if self.limit_cb is not None and newlim != self.limit_rem: self.limit_cb(newlim,hdrs['X-RateLimit-Limit'])
+            self.limit_rem = newlim
+
+        return dict2obj(res)
 
     def __dir__(self): return super().__dir__() + list(self.groups)
     def _repr_markdown_(self): return "\n".join(f'- [{o}]({_docroot+o})' for o in sorted(self.groups))

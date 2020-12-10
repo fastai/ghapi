@@ -5,8 +5,7 @@ __all__ = ['GhDeviceAuth']
 # Cell
 from fastcore.utils import *
 from .core import *
-import webbrowser
-import time
+import webbrowser,time
 
 from urllib.parse import parse_qs
 
