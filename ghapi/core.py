@@ -105,7 +105,7 @@ class GhApi(_GhObj):
                            route=route or None, query=query or None, data=data or None)
         if 'X-RateLimit-Remaining' in hdrs:
             newlim = hdrs['X-RateLimit-Remaining']
-            if self.limit_cb is not None and newlim != self.limit_rem: self.limit_cb(newlim,hdrs['X-RateLimit-Limit'])
+            if self.limit_cb is not None and newlim != self.limit_rem: self.limit_cb(int(newlim),int(hdrs['X-RateLimit-Limit']))
             self.limit_rem = newlim
 
         return dict2obj(res)
