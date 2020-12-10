@@ -51,12 +51,12 @@ def auth(self:GhDeviceAuth)->str:
 
 # Cell
 @patch
-def wait(self:GhDeviceAuth, cb:callable=None)->str:
-    "Wait for authentication to complete, calling `cb` after each poll, if it is set"
+def wait(self:GhDeviceAuth, cb:callable=None, n_polls=9999)->str:
+    "Wait up to `n_polls` times for authentication to complete, calling `cb` after each poll, if passed"
     interval = int(self.interval)+1
-    res = self.auth()
-    while not res:
+    res = None
+    for i in range(n_polls):
+        res = self.auth()
         if cb: cb()
         time.sleep(interval)
-        res = self.auth()
     return res

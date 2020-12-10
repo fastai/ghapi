@@ -319,7 +319,7 @@ nb_path: "00_core.ipynb"
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Quota remaining: 4990 of 5000
+<pre>Quota remaining: 4997 of 5000
 </pre>
 </div>
 </div>
@@ -369,7 +369,7 @@ nb_path: "00_core.ipynb"
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&#39;4990&#39;</pre>
+<pre>&#39;4997&#39;</pre>
 </div>
 
 </div>
@@ -1104,7 +1104,7 @@ https://docs.github.com/rest/reference/repos#create-a-repository-webhook
 <pre>30 fast-image
 30 fastforest
 30 .github
-2 tweetrel
+3 tweetrel
 </pre>
 </div>
 </div>
@@ -1184,7 +1184,7 @@ https://docs.github.com/rest/reference/repos#create-a-repository-webhook
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>9</pre>
+<pre>8</pre>
 </div>
 
 </div>
@@ -1558,6 +1558,400 @@ https://docs.github.com/rest/reference/repos#create-a-repository-webhook
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>{&#39;data&#39;: b&#39;{&#34;tag_name&#34;: &#34;0.0.1&#34;, &#34;target_commitish&#34;: &#34;master&#34;, &#34;name&#34;: &#34;v0.0.1&#34;&#39;
+         b&#39;, &#34;body&#34;: &#34;&#34;, &#34;draft&#34;: false, &#34;prerelease&#34;: false}&#39;,
+ &#39;full_url&#39;: &#39;https://api.github.com/repos/fastai/ghapi-test/releases&#39;,
+ &#39;headers&#39;: {&#39;Accept&#39;: &#39;application/vnd.github.v3+json&#39;},
+ &#39;method&#39;: &#39;POST&#39;}
+{&#39;data&#39;: b&#39;---\n\ntitle: ghapi\n\n\nkeywords: fastai\nsidebar: home_sidebar\n\n&#39;
+         b&#39;summary: &#34;A delightful and complete interface to GitHub\&#39;s amazin&#39;
+         b&#39;g API&#34;\ndescription: &#34;A delightful and complete interface to GitH&#39;
+         b&#39;ub\&#39;s amazing API&#34;\nnb_path: &#34;index.ipynb&#34;\n---\n&lt;!--\n\n#########&#39;
+         b&#39;########################################\n### THIS FILE WAS AUTOG&#39;
+         b&#39;ENERATED! DO NOT EDIT! ###\n#####################################&#39;
+         b&#39;############\n# file to edit: index.ipynb\n# command to build the &#39;
+         b&#39;docs after a change: nbdev_build_docs\n\n--&gt;\n\n&lt;div class=&#34;containe&#39;
+         b&#39;r&#34; id=&#34;notebook-container&#34;&gt;\n        \n    {% raw %}\n    \n&lt;div cla&#39;
+         b&#39;ss=&#34;cell border-box-sizing code_cell rendered&#34;&gt;\n\n&lt;/div&gt;\n    {% e&#39;
+         b&#39;ndraw %}\n\n&lt;div class=&#34;cell border-box-sizing text_cell rendered&#34;&#39;
+         b&#39;&gt;&lt;div class=&#34;inner_cell&#34;&gt;\n&lt;div class=&#34;text_cell_render border-bo&#39;
+         b&#39;x-sizing rendered_html&#34;&gt;\n&lt;p&gt;&lt;a href=&#34;/cli.html#ghapi&#34;&gt;&lt;code&gt;ghap&#39;
+         b&#39;i&lt;/code&gt;&lt;/a&gt; provides 100% always-updated coverage of the entire &lt;a &#39;
+         b&#39;href=&#34;https://docs.github.com/en/free-pro-team@latest/rest&#34;&gt;GitHub A&#39;
+         b&#39;PI&lt;/a&gt;. Because we automatically convert the &lt;a href=&#34;https://docs.g&#39;
+         b&#39;ithub.com/en/free-pro-team@latest/rest/overview/openapi-description&#34;&#39;
+         b&#39;&gt;OpenAPI spec&lt;/a&gt; to a Pythonic API, &lt;a href=&#34;/cli.html#ghapi&#34;&gt;&lt;code&#39;
+         b&#39;&gt;ghapi&lt;/code&gt;&lt;/a&gt; is always up to date with the latest changes to Gi&#39;
+         b&#39;tHub APIs. Furthermore, because this is all done dynamically, the en&#39;
+         b&#39;tire package is only 35kB in size!&lt;/p&gt;\n&lt;p&gt;Using &lt;a href=&#34;/cli.ht&#39;
+         b&#39;ml#ghapi&#34;&gt;&lt;code&gt;ghapi&lt;/code&gt;&lt;/a&gt;, you can automate nearly anything t&#39;
+         b&#39;hat you can do through the GitHub web interface or through the &lt;code&#39;
+         b&#39;&gt;git&lt;/code&gt; client, such as:&lt;/p&gt;\n&lt;ul&gt;\n&lt;li&gt;Open, list, comment on&#39;
+         b&#39;, or modify &lt;a href=&#34;https://guides.github.com/features/issues/&#34;&gt;iss&#39;
+         b&#39;ues&lt;/a&gt; or &lt;a href=&#34;https://docs.github.com/en/free-pro-team@latest/&#39;
+         b&#39;github/collaborating-with-issues-and-pull-requests/about-pull-reques&#39;
+         b&#39;ts&#34;&gt;pull requests&lt;/a&gt;&lt;/li&gt;\n&lt;li&gt;Create, list, or modify &lt;a href=&#34;&#39;
+         b&#39;https://git-scm.com/book/en/v2/Git-Basics-Tagging&#34;&gt;git tags&lt;/a&gt; or &lt;&#39;
+         b&#39;a href=&#34;https://docs.github.com/en/free-pro-team@latest/github/admin&#39;
+         b&#39;istering-a-repository/managing-releases-in-a-repository&#34;&gt;GitHub rele&#39;
+         b&#39;ases&lt;/a&gt;, including uploading release assets&lt;/li&gt;\n&lt;li&gt;Configure &#39;
+         b&#39;and run GitHub &lt;a href=&#34;https://github.com/features/actions&#34;&gt;Actions&#39;
+         b&#39;&lt;/a&gt; and &lt;a href=&#34;https://docs.github.com/en/free-pro-team@latest/de&#39;
+         b&#39;velopers/webhooks-and-events/about-webhooks&#34;&gt;webhooks&lt;/a&gt;&lt;/li&gt;\n&lt;&#39;
+         b&#39;li&gt;Set up GitHub &lt;a href=&#34;https://docs.github.com/en/free-pro-team@l&#39;
+         b&#39;atest/rest/reference/users&#34;&gt;users&lt;/a&gt; and &lt;a href=&#34;https://docs.gith&#39;
+         b&#39;ub.com/en/free-pro-team@latest/github/setting-up-and-managing-organi&#39;
+         b&#39;zations-and-teams/about-organizations&#34;&gt;organizations&lt;/a&gt;&lt;/li&gt;\n&lt;l&#39;
+         b&#39;i&gt;Manage your &lt;a href=&#34;https://docs.github.com/en/free-pro-team@late&#39;
+         b&#39;st/rest/guides/delivering-deployments&#34;&gt;deployments&lt;/a&gt;&lt;/li&gt;\n&lt;li&gt;&#39;
+         b&#39;...and much, much more.&lt;/li&gt;\n&lt;/ul&gt;\n&lt;p&gt;There are two ways to use &#39;
+         b&#39;&lt;a href=&#34;/cli.html#ghapi&#34;&gt;&lt;code&gt;ghapi&lt;/code&gt;&lt;/a&gt;: either through Pyt&#39;
+         b&#39;hon, or from the command line. An overview of each is provided below&#39;
+         b&#39;.&lt;/p&gt;\n\n&lt;/div&gt;\n&lt;/div&gt;\n&lt;/div&gt;\n&lt;div class=&#34;cell border-box-sizi&#39;
+         b&#39;ng text_cell rendered&#34;&gt;&lt;div class=&#34;inner_cell&#34;&gt;\n&lt;div class=&#34;text&#39;
+         b&#39;_cell_render border-box-sizing rendered_html&#34;&gt;\n&lt;h2 id=&#34;Installat&#39;
+         b&#39;ion&#34;&gt;Installation&lt;a class=&#34;anchor-link&#34; href=&#34;#Installation&#34;&gt; &lt;/a&gt;&lt;/&#39;
+         b&#39;h2&gt;\n&lt;/div&gt;\n&lt;/div&gt;\n&lt;/div&gt;\n&lt;div class=&#34;cell border-box-sizing text&#39;
+         b&#39;_cell rendered&#34;&gt;&lt;div class=&#34;inner_cell&#34;&gt;\n&lt;div class=&#34;text_cell_r&#39;
+         b&#39;ender border-box-sizing rendered_html&#34;&gt;\n&lt;p&gt;To install, run eithe&#39;
+         b&#39;r &lt;code&gt;pip install ghapi&lt;/code&gt; or &lt;code&gt;conda install -c fastai gh&#39;
+         b&#39;api&lt;/code&gt;.&lt;/p&gt;\n\n&lt;/div&gt;\n&lt;/div&gt;\n&lt;/div&gt;\n&lt;div class=&#34;cell borde&#39;
+         b&#39;r-box-sizing text_cell rendered&#34;&gt;&lt;div class=&#34;inner_cell&#34;&gt;\n&lt;div c&#39;
+         b&#39;lass=&#34;text_cell_render border-box-sizing rendered_html&#34;&gt;\n&lt;h2 id=&#39;
+         b&#39;&#34;How-to-use---Python&#34;&gt;How to use - Python&lt;a class=&#34;anchor-link&#34; href&#39;
+         b&#39;=&#34;#How-to-use---Python&#34;&gt; &lt;/a&gt;&lt;/h2&gt;\n&lt;/div&gt;\n&lt;/div&gt;\n&lt;/div&gt;\n&lt;div cla&#39;
+         b&#39;ss=&#34;cell border-box-sizing text_cell rendered&#34;&gt;&lt;div class=&#34;inner_cel&#39;
+         b&#39;l&#34;&gt;\n&lt;div class=&#34;text_cell_render border-box-sizing rendered_html&#39;
+         b&#39;&#34;&gt;\n&lt;p&gt;Throughout this documentation, you will see code inputs an&#39;
+         b&#39;d outputs shown in this format:&lt;/p&gt;\n\n&lt;/div&gt;\n&lt;/div&gt;\n&lt;/div&gt;\n  &#39;
+         b&#39;  {% raw %}\n    \n&lt;div class=&#34;cell border-box-sizing code_cell re&#39;
+         b&#39;ndered&#34;&gt;\n&lt;div class=&#34;input&#34;&gt;\n\n&lt;div class=&#34;inner_cell&#34;&gt;\n    &lt;div &#39;
+         b&#39;class=&#34;input_area&#34;&gt;\n&lt;div class=&#34; highlight hl-ipython3&#34;&gt;&lt;pre&gt;&lt;sp&#39;
+         b&#39;an&gt;&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;+&lt;/span&gt;&lt;span cla&#39;
+         b&#39;ss=&#34;mi&#34;&gt;1&lt;/span&gt;\n&lt;/pre&gt;&lt;/div&gt;\n\n    &lt;/div&gt;\n&lt;/div&gt;\n&lt;/div&gt;\n\n&lt;di&#39;
+         b&#39;v class=&#34;output_wrapper&#34;&gt;\n&lt;div class=&#34;output&#34;&gt;\n\n&lt;div class=&#34;outp&#39;
+         b&#39;ut_area&#34;&gt;\n\n\n\n&lt;div class=&#34;output_text output_subarea output_execu&#39;
+         b&#39;te_result&#34;&gt;\n&lt;pre&gt;2&lt;/pre&gt;\n&lt;/div&gt;\n\n&lt;/div&gt;\n\n&lt;/div&gt;\n&lt;/div&gt;\n\n&#39;
+         b&#39;&lt;/div&gt;\n    {% endraw %}\n\n&lt;div class=&#34;cell border-box-sizing text&#39;
+         b&#39;_cell rendered&#34;&gt;&lt;div class=&#34;inner_cell&#34;&gt;\n&lt;div class=&#34;text_cell_r&#39;
+         b&#39;ender border-box-sizing rendered_html&#34;&gt;\n&lt;p&gt;We recommend reading &#39;
+         b&#39;the documentation on the &lt;a href=&#34;https://ghapi.fast.ai/&#34;&gt;official s&#39;
+         b&#39;ite&lt;/a&gt;, rather than on GitHub, since not all the functionality desc&#39;
+         b&#39;ribed on this page is available through the GitHub viewer.&lt;/p&gt;\n&lt;&#39;
+         b&#39;p&gt;All of the documentation is available directly as Jupyter Notebook&#39;
+         b&#34;s, for instance the current page you&#39;re reading is available as a no&#34;
+         b&#39;tebook &lt;a href=&#34;https://github.com/fastai/ghapi/blob/master/index.ip&#39;
+         b&#39;ynb&#34;&gt;here&lt;/a&gt;. To open any page as an interactive notebook in Google&#39;
+         b&#39; Colab, click the &lt;em&gt;Colab&lt;/em&gt; badge at the top of the page.&lt;/&#39;
+         b&#39;p&gt;\n\n&lt;/div&gt;\n&lt;/div&gt;\n&lt;/div&gt;\n&lt;div class=&#34;cell border-box-sizing &#39;
+         b&#39;text_cell rendered&#34;&gt;&lt;div class=&#34;inner_cell&#34;&gt;\n&lt;div class=&#34;text_ce&#39;
+         b&#39;ll_render border-box-sizing rendered_html&#34;&gt;\n&lt;p&gt;To access the Git&#39;
+         b&#39;Hub API, first create a &lt;a href=&#34;/core.html#GhApi&#34;&gt;&lt;code&gt;GhApi&lt;/code&#39;
+         b&#39;&gt;&lt;/a&gt; object:&lt;/p&gt;\n\n&lt;/div&gt;\n&lt;/div&gt;\n&lt;/div&gt;\n    {% raw %}\n    \n&lt;&#39;
+         b&#39;div class=&#34;cell border-box-sizing code_cell rendered&#34;&gt;\n&lt;div clas&#39;
+         b&#39;s=&#34;input&#34;&gt;\n\n&lt;div class=&#34;inner_cell&#34;&gt;\n    &lt;div class=&#34;input_area&#34;&#39;
+         b&#39;&gt;\n&lt;div class=&#34; highlight hl-ipython3&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span cl&#39;
+         b&#39;ass=&#34;n&#34;&gt;api&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;GhApi&lt;/s&#39;
+         b&#39;pan&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;\n&lt;/pre&gt;&lt;/div&gt;\n\n    &lt;/div&gt;\n&lt;/div&#39;
+         b&#39;&gt;\n&lt;/div&gt;\n\n&lt;/div&gt;\n    {% endraw %}\n\n&lt;div class=&#34;cell border-b&#39;
+         b&#39;ox-sizing text_cell rendered&#34;&gt;&lt;div class=&#34;inner_cell&#34;&gt;\n&lt;div clas&#39;
+         b&#39;s=&#34;text_cell_render border-box-sizing rendered_html&#34;&gt;\n&lt;p&gt;Every p&#39;
+         b&#39;art of the API includes documentation directly in the &lt;code&gt;api&lt;/cod&#39;
+         b&#34;e&gt; object itself. For instance, here&#39;s how to explore the groups of &#34;
+         b&#39;functionality provided by the API by displaying the object:&lt;/p&gt;\n&#39;
+         b&#39;\n&lt;/div&gt;\n&lt;/div&gt;\n&lt;/div&gt;\n    {% raw %}\n    \n&lt;div class=&#34;cell bo&#39;
+         b&#39;rder-box-sizing code_cell rendered&#34;&gt;\n&lt;div class=&#34;input&#34;&gt;\n\n&lt;div c&#39;
+         b&#39;lass=&#34;inner_cell&#34;&gt;\n    &lt;div class=&#34;input_area&#34;&gt;\n&lt;div class=&#34; hig&#39;
+         b&#39;hlight hl-ipython3&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;api&lt;/span&gt;&#39;
+         b&#39;\n&lt;/pre&gt;&lt;/div&gt;\n\n    &lt;/div&gt;\n&lt;/div&gt;\n&lt;/div&gt;\n\n&lt;div class=&#34;output_&#39;
+         b&#39;wrapper&#34;&gt;\n&lt;div class=&#34;output&#34;&gt;\n\n&lt;div class=&#34;output_area&#34;&gt;\n\n\n&#39;
+         b&#39;&lt;div class=&#34;output_markdown rendered_html output_subarea output_exec&#39;
+         b&#39;ute_result&#34;&gt;\n&lt;ul&gt;\n&lt;li&gt;&lt;a href=&#34;https://docs.github.com/en/free-p&#39;
+         b&#39;ro-team@latest/rest/reference/actions&#34;&gt;actions&lt;/a&gt;&lt;/li&gt;\n&lt;li&gt;&lt;a h&#39;
+         b&#39;ref=&#34;https://docs.github.com/en/free-pro-team@latest/rest/reference/&#39;
+         b&#39;activity&#34;&gt;activity&lt;/a&gt;&lt;/li&gt;\n&lt;li&gt;&lt;a href=&#34;https://docs.github.com&#39;
+         b&#39;/en/free-pro-team@latest/rest/reference/apps&#34;&gt;apps&lt;/a&gt;&lt;/li&gt;\n&lt;li&gt;&#39;
+         b&#39;&lt;a href=&#34;https://docs.github.com/en/free-pro-team@latest/rest/refere&#39;
+         b&#39;nce/billing&#34;&gt;billing&lt;/a&gt;&lt;/li&gt;\n&lt;li&gt;&lt;a href=&#34;https://docs.github.c&#39;
+         b&#39;om/en/free-pro-team@latest/rest/reference/checks&#34;&gt;checks&lt;/a&gt;&lt;/li&#39;
+         b&#39;&gt;\n&lt;li&gt;&lt;a href=&#34;https://docs.github.com/en/free-pro-team@latest/r&#39;
+         b&#39;est/reference/code_scanning&#34;&gt;code_scanning&lt;/a&gt;&lt;/li&gt;\n&lt;li&gt;&lt;a href=&#39;
+         b&#39;&#34;https://docs.github.com/en/free-pro-team@latest/rest/reference/code&#39;
+         b&#39;s_of_conduct&#34;&gt;codes_of_conduct&lt;/a&gt;&lt;/li&gt;\n&lt;li&gt;&lt;a href=&#34;https://doc&#39;
+         b&#39;s.github.com/en/free-pro-team@latest/rest/reference/emojis&#34;&gt;emojis&lt;/&#39;
+         b&#39;a&gt;&lt;/li&gt;\n&lt;li&gt;&lt;a href=&#34;https://docs.github.com/en/free-pro-team@la&#39;
+         b&#39;test/rest/reference/enterprise_admin&#34;&gt;enterprise_admin&lt;/a&gt;&lt;/li&gt;\n&#39;
+         b&#39;&lt;li&gt;&lt;a href=&#34;https://docs.github.com/en/free-pro-team@latest/rest/re&#39;
+         b&#39;ference/gists&#34;&gt;gists&lt;/a&gt;&lt;/li&gt;\n&lt;li&gt;&lt;a href=&#34;https://docs.github.c&#39;
+         b&#39;om/en/free-pro-team@latest/rest/reference/git&#34;&gt;git&lt;/a&gt;&lt;/li&gt;\n&lt;li&gt;&#39;
+         b&#39;&lt;a href=&#34;https://docs.github.com/en/free-pro-team@latest/rest/refere&#39;
+         b&#39;nce/gitignore&#34;&gt;gitignore&lt;/a&gt;&lt;/li&gt;\n&lt;li&gt;&lt;a href=&#34;https://docs.gith&#39;
+         b&#39;ub.com/en/free-pro-team@latest/rest/reference/interactions&#34;&gt;interact&#39;
+         b&#39;ions&lt;/a&gt;&lt;/li&gt;\n&lt;li&gt;&lt;a href=&#34;https://docs.github.com/en/free-pro-t&#39;
+         b&#39;eam@latest/rest/reference/issues&#34;&gt;issues&lt;/a&gt;&lt;/li&gt;\n&lt;li&gt;&lt;a href=&#34;h&#39;
+         b&#39;ttps://docs.github.com/en/free-pro-team@latest/rest/reference/licens&#39;
+         b&#39;es&#34;&gt;licenses&lt;/a&gt;&lt;/li&gt;\n&lt;li&gt;&lt;a href=&#34;https://docs.github.com/en/fr&#39;
+         b&#39;ee-pro-team@latest/rest/reference/markdown&#34;&gt;markdown&lt;/a&gt;&lt;/li&gt;\n&lt;l&#39;
+         b&#39;i&gt;&lt;a href=&#34;https://docs.github.com/en/free-pro-team@latest/rest/refe&#39;
+         b&#39;rence/meta&#34;&gt;meta&lt;/a&gt;&lt;/li&gt;\n&lt;li&gt;&lt;a href=&#34;https://docs.github.com/e&#39;
+         b&#39;n/free-pro-team@latest/rest/reference/migrations&#34;&gt;migrations&lt;/a&gt;&lt;/li&#39;
+         b&#39;&gt;\n&lt;li&gt;&lt;a href=&#34;https://docs.github.com/en/free-pro-team@latest/r&#39;
+         b&#39;est/reference/oauth_authorizations&#34;&gt;oauth_authorizations&lt;/a&gt;&lt;/li&#39;
+         b&#39;&gt;\n&lt;li&gt;&lt;a href=&#34;https://docs.github.com/en/free-pro-team@latest/r&#39;
+         b&#39;est/reference/orgs&#34;&gt;orgs&lt;/a&gt;&lt;/li&gt;\n&lt;li&gt;&lt;a href=&#34;https://docs.gith&#39;
+         b&#39;ub.com/en/free-pro-team@latest/rest/reference/projects&#34;&gt;projects&lt;/a&gt;&#39;
+         b&#39;&lt;/li&gt;\n&lt;li&gt;&lt;a href=&#34;https://docs.github.com/en/free-pro-team@late&#39;
+         b&#39;st/rest/reference/pulls&#34;&gt;pulls&lt;/a&gt;&lt;/li&gt;\n&lt;li&gt;&lt;a href=&#34;https://doc&#39;
+         b&#39;s.github.com/en/free-pro-team@latest/rest/reference/rate_limit&#34;&gt;rate&#39;
+         b&#39;_limit&lt;/a&gt;&lt;/li&gt;\n&lt;li&gt;&lt;a href=&#34;https://docs.github.com/en/free-pro&#39;
+         b&#39;-team@latest/rest/reference/reactions&#34;&gt;reactions&lt;/a&gt;&lt;/li&gt;\n&lt;li&gt;&lt;a&#39;
+         b&#39; href=&#34;https://docs.github.com/en/free-pro-team@latest/rest/referenc&#39;
+         b&#39;e/repos&#34;&gt;repos&lt;/a&gt;&lt;/li&gt;\n&lt;li&gt;&lt;a href=&#34;https://docs.github.com/en/&#39;
+         b&#39;free-pro-team@latest/rest/reference/scim&#34;&gt;scim&lt;/a&gt;&lt;/li&gt;\n&lt;li&gt;&lt;a h&#39;
+         b&#39;ref=&#34;https://docs.github.com/en/free-pro-team@latest/rest/reference/&#39;
+         b&#39;search&#34;&gt;search&lt;/a&gt;&lt;/li&gt;\n&lt;li&gt;&lt;a href=&#34;https://docs.github.com/en/&#39;
+         b&#39;free-pro-team@latest/rest/reference/teams&#34;&gt;teams&lt;/a&gt;&lt;/li&gt;\n&lt;li&gt;&lt;a&#39;
+         b&#39; href=&#34;https://docs.github.com/en/free-pro-team@latest/rest/referenc&#39;
+         b&#39;e/users&#34;&gt;users&lt;/a&gt;&lt;/li&gt;\n&lt;/ul&gt;\n\n&lt;/div&gt;\n\n&lt;/div&gt;\n\n&lt;/div&gt;\n&lt;/div&gt;&#39;
+         b&#39;\n\n&lt;/div&gt;\n    {% endraw %}\n\n&lt;div class=&#34;cell border-box-sizin&#39;
+         b&#39;g text_cell rendered&#34;&gt;&lt;div class=&#34;inner_cell&#34;&gt;\n&lt;div class=&#34;text_&#39;
+         b&#39;cell_render border-box-sizing rendered_html&#34;&gt;\n&lt;p&gt;Then we can exp&#39;
+         b&#39;lore the endpoints provided by the API in each group, e.g. for the &lt;&#39;
+         b&#39;code&gt;git&lt;/code&gt; group:&lt;/p&gt;\n\n&lt;/div&gt;\n&lt;/div&gt;\n&lt;/div&gt;\n    {% raw &#39;
+         b&#39;%}\n    \n&lt;div class=&#34;cell border-box-sizing code_cell rendered&#34;&gt;\n&#39;
+         b&#39;&lt;div class=&#34;input&#34;&gt;\n\n&lt;div class=&#34;inner_cell&#34;&gt;\n    &lt;div class=&#34;in&#39;
+         b&#39;put_area&#34;&gt;\n&lt;div class=&#34; highlight hl-ipython3&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&#39;
+         b&#39;&gt;&lt;span class=&#34;n&#34;&gt;api&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;g&#39;
+         b&#39;it&lt;/span&gt;\n&lt;/pre&gt;&lt;/div&gt;\n\n    &lt;/div&gt;\n&lt;/div&gt;\n&lt;/div&gt;\n\n&lt;div class&#39;
+         b&#39;=&#34;output_wrapper&#34;&gt;\n&lt;div class=&#34;output&#34;&gt;\n\n&lt;div class=&#34;output_area&#39;
+         b&#39;&#34;&gt;\n\n\n&lt;div class=&#34;output_markdown rendered_html output_subarea ou&#39;
+         b&#39;tput_execute_result&#34;&gt;\n&lt;ul&gt;\n&lt;li&gt;&lt;a href=&#34;https://docs.github.com/&#39;
+         b&#39;rest/reference/git#create-a-blob&#34;&gt;git.create_blob&lt;/a&gt;(owner, repo, c&#39;
+         b&#39;ontent, encoding): &lt;em&gt;Create a blob&lt;/em&gt;&lt;/li&gt;\n&lt;li&gt;&lt;a href=&#34;http&#39;
+         b&#39;s://docs.github.com/rest/reference/git#get-a-blob&#34;&gt;git.get_blob&lt;/a&gt;(&#39;
+         b&#39;owner, repo, file_sha): &lt;em&gt;Get a blob&lt;/em&gt;&lt;/li&gt;\n&lt;li&gt;&lt;a href=&#34;ht&#39;
+         b&#39;tps://docs.github.com/rest/reference/git#create-a-commit&#34;&gt;git.create&#39;
+         b&#39;_commit&lt;/a&gt;(owner, repo, message, tree, parents, author, committer, &#39;
+         b&#39;signature): &lt;em&gt;Create a commit&lt;/em&gt;&lt;/li&gt;\n&lt;li&gt;&lt;a href=&#34;https://d&#39;
+         b&#39;ocs.github.com/rest/reference/git#get-a-commit&#34;&gt;git.get_commit&lt;/a&gt;(o&#39;
+         b&#39;wner, repo, commit_sha): &lt;em&gt;Get a commit&lt;/em&gt;&lt;/li&gt;\n&lt;li&gt;&lt;a href=&#39;
+         b&#39;&#34;https://docs.github.com/rest/reference/git#list-matching-references&#39;
+         b&#39;&#34;&gt;git.list_matching_refs&lt;/a&gt;(owner, repo, ref, per_page, page): &lt;em&gt;&#39;
+         b&#39;List matching references&lt;/em&gt;&lt;/li&gt;\n&lt;li&gt;&lt;a href=&#34;https://docs.git&#39;
+         b&#39;hub.com/rest/reference/git#get-a-reference&#34;&gt;git.get_ref&lt;/a&gt;(owner, r&#39;
+         b&#39;epo, ref): &lt;em&gt;Get a reference&lt;/em&gt;&lt;/li&gt;\n&lt;li&gt;&lt;a href=&#34;https://do&#39;
+         b&#39;cs.github.com/rest/reference/git#create-a-reference&#34;&gt;git.create_ref&lt;&#39;
+         b&#39;/a&gt;(owner, repo, ref, sha, key): &lt;em&gt;Create a reference&lt;/em&gt;&lt;/li&#39;
+         b&#39;&gt;\n&lt;li&gt;&lt;a href=&#34;https://docs.github.com/rest/reference/git#update&#39;
+         b&#39;-a-reference&#34;&gt;git.update_ref&lt;/a&gt;(owner, repo, ref, sha, force): &lt;em&gt;&#39;
+         b&#39;Update a reference&lt;/em&gt;&lt;/li&gt;\n&lt;li&gt;&lt;a href=&#34;https://docs.github.co&#39;
+         b&#39;m/rest/reference/git#delete-a-reference&#34;&gt;git.delete_ref&lt;/a&gt;(owner, r&#39;
+         b&#39;epo, ref): &lt;em&gt;Delete a reference&lt;/em&gt;&lt;/li&gt;\n&lt;li&gt;&lt;a href=&#34;https:/&#39;
+         b&#39;/docs.github.com/rest/reference/git#create-a-tag-object&#34;&gt;git.create_&#39;
+         b&#39;tag&lt;/a&gt;(owner, repo, tag, message, object, type, tagger): &lt;em&gt;Create&#39;
+         b&#39; a tag object&lt;/em&gt;&lt;/li&gt;\n&lt;li&gt;&lt;a href=&#34;https://docs.github.com/res&#39;
+         b&#39;t/reference/git#get-a-tag&#34;&gt;git.get_tag&lt;/a&gt;(owner, repo, tag_sha): &lt;e&#39;
+         b&#39;m&gt;Get a tag&lt;/em&gt;&lt;/li&gt;\n&lt;li&gt;&lt;a href=&#34;https://docs.github.com/rest/&#39;
+         b&#39;reference/git#create-a-tree&#34;&gt;git.create_tree&lt;/a&gt;(owner, repo, tree, &#39;
+         b&#39;base_tree): &lt;em&gt;Create a tree&lt;/em&gt;&lt;/li&gt;\n&lt;li&gt;&lt;a href=&#34;https://doc&#39;
+         b&#39;s.github.com/rest/reference/git#get-a-tree&#34;&gt;git.get_tree&lt;/a&gt;(owner, &#39;
+         b&#39;repo, tree_sha, recursive): &lt;em&gt;Get a tree&lt;/em&gt;&lt;/li&gt;\n&lt;/ul&gt;\n\n&lt;/di&#39;
+         b&#39;v&gt;\n\n&lt;/div&gt;\n\n&lt;/div&gt;\n&lt;/div&gt;\n\n&lt;/div&gt;\n    {% endraw %}\n\n&lt;div&#39;
+         b&#39; class=&#34;cell border-box-sizing text_cell rendered&#34;&gt;&lt;div class=&#34;inner&#39;
+         b&#39;_cell&#34;&gt;\n&lt;div class=&#34;text_cell_render border-box-sizing rendered_&#39;
+         b&#39;html&#34;&gt;\n&lt;p&gt;Here\&#39;s how to learn about an endpoint you want to use,&#39;
+         b&#39; e.g.:&lt;/p&gt;\n\n&lt;/div&gt;\n&lt;/div&gt;\n&lt;/div&gt;\n    {% raw %}\n    \n&lt;div cla&#39;
+         b&#39;ss=&#34;cell border-box-sizing code_cell rendered&#34;&gt;\n&lt;div class=&#34;inpu&#39;
+         b&#39;t&#34;&gt;\n\n&lt;div class=&#34;inner_cell&#34;&gt;\n    &lt;div class=&#34;input_area&#34;&gt;\n&lt;div &#39;
+         b&#39;class=&#34; highlight hl-ipython3&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;api&#39;
+         b&#39;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;git&lt;/span&gt;&lt;span class&#39;
+         b&#39;=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;get_ref&lt;/span&gt;\n&lt;/pre&gt;&lt;/div&gt;\n\n    &lt;/&#39;
+         b&#39;div&gt;\n&lt;/div&gt;\n&lt;/div&gt;\n\n&lt;div class=&#34;output_wrapper&#34;&gt;\n&lt;div class=&#39;
+         b&#39;&#34;output&#34;&gt;\n\n&lt;div class=&#34;output_area&#34;&gt;\n\n\n&lt;div class=&#34;output_ma&#39;
+         b&#39;rkdown rendered_html output_subarea output_execute_result&#34;&gt;\n&lt;p&gt;&lt;&#39;
+         b&#39;a href=&#34;https://docs.github.com/rest/reference/git#get-a-reference&#34;&gt;&#39;
+         b&#39;git.get_ref&lt;/a&gt;(owner, repo, ref): &lt;em&gt;Get a reference&lt;/em&gt;&lt;/p&gt;\n&#39;
+         b&#39;\n&lt;/div&gt;\n\n&lt;/div&gt;\n\n&lt;/div&gt;\n&lt;/div&gt;\n\n&lt;/div&gt;\n    {% endraw %}\n&#39;
+         b&#39;\n&lt;div class=&#34;cell border-box-sizing text_cell rendered&#34;&gt;&lt;div cla&#39;
+         b&#39;ss=&#34;inner_cell&#34;&gt;\n&lt;div class=&#34;text_cell_render border-box-sizing &#39;
+         b&#39;rendered_html&#34;&gt;\n&lt;p&gt;In Jupyter Notebook full tab completion, para&#39;
+         b&#39;meter lists, etc are provided for all endpoints. Endpoints are calle&#39;
+         b&#39;d as standard Python methods:&lt;/p&gt;\n\n&lt;/div&gt;\n&lt;/div&gt;\n&lt;/div&gt;\n    &#39;
+         b&#39;{% raw %}\n    \n&lt;div class=&#34;cell border-box-sizing code_cell rend&#39;
+         b&#39;ered&#34;&gt;\n&lt;div class=&#34;input&#34;&gt;\n\n&lt;div class=&#34;inner_cell&#34;&gt;\n    &lt;div cl&#39;
+         b&#39;ass=&#34;input_area&#34;&gt;\n&lt;div class=&#34; highlight hl-ipython3&#34;&gt;&lt;pre&gt;&lt;span&#39;
+         b&#39;&gt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;api&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span clas&#39;
+         b&#39;s=&#34;n&#34;&gt;git&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;get_ref&lt;/spa&#39;
+         b&#39;n&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;owner&lt;/span&gt;&lt;span class=&#34;o&#39;
+         b&#39;&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;fastai&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;&#39;
+         b&#39;/span&gt; &lt;span class=&#34;n&#34;&gt;repo&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span clas&#39;
+         b&#39;s=&#34;s1&#34;&gt;&amp;#39;fastcore&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class&#39;
+         b&#39;=&#34;n&#34;&gt;ref&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;heads/m&#39;
+         b&#39;aster&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;\n&lt;/pre&gt;&lt;/div&gt;\n\n    &lt;/di&#39;
+         b&#39;v&gt;\n&lt;/div&gt;\n&lt;/div&gt;\n\n&lt;div class=&#34;output_wrapper&#34;&gt;\n&lt;div class=&#34;o&#39;
+         b&#39;utput&#34;&gt;\n\n&lt;div class=&#34;output_area&#34;&gt;\n\n\n&lt;div class=&#34;output_mark&#39;
+         b&#39;down rendered_html output_subarea output_execute_result&#34;&gt;\n&lt;ul&gt;\n&lt;&#39;
+         b&#39;li&gt;ref: refs/heads/master&lt;/li&gt;\n&lt;li&gt;node_id: MDM6UmVmMjI1NDYwNTk5&#39;
+         b&#39;OnJlZnMvaGVhZHMvbWFzdGVy&lt;/li&gt;\n&lt;li&gt;url: &lt;a href=&#34;https://api.gith&#39;
+         b&#39;ub.com/repos/fastai/fastcore/git/refs/heads/master&#34;&gt;https://api.gith&#39;
+         b&#39;ub.com/repos/fastai/fastcore/git/refs/heads/master&lt;/a&gt;&lt;/li&gt;\n&lt;li&gt;&#39;
+         b&#39;object: &lt;ul&gt;\n&lt;li&gt;sha: 28721554e0eab1f2974237c502912f8ba42a44a0&lt;/&#39;
+         b&#39;li&gt;\n&lt;li&gt;type: commit&lt;/li&gt;\n&lt;li&gt;url: &lt;a href=&#34;https://api.github.c&#39;
+         b&#39;om/repos/fastai/fastcore/git/commits/28721554e0eab1f2974237c502912f8&#39;
+         b&#39;ba42a44a0&#34;&gt;https://api.github.com/repos/fastai/fastcore/git/commits/&#39;
+         b&#39;28721554e0eab1f2974237c502912f8ba42a44a0&lt;/a&gt;&lt;/li&gt;\n&lt;/ul&gt;\n&lt;/li&gt;\n&lt;/&#39;
+         b&#39;ul&gt;\n\n&lt;/div&gt;\n\n&lt;/div&gt;\n\n&lt;/div&gt;\n&lt;/div&gt;\n\n&lt;/div&gt;\n    {% endraw&#39;
+         b&#39; %}\n\n&lt;div class=&#34;cell border-box-sizing text_cell rendered&#34;&gt;&lt;div&#39;
+         b&#39; class=&#34;inner_cell&#34;&gt;\n&lt;div class=&#34;text_cell_render border-box-siz&#39;
+         b&#39;ing rendered_html&#34;&gt;\n&lt;p&gt;To use &lt;a href=&#34;/cli.html#ghapi&#34;&gt;&lt;code&gt;gh&#39;
+         b&#39;api&lt;/code&gt;&lt;/a&gt; to access authenticated operations (other than when r&#39;
+         b&#39;unning through GitHub Actions), you will need a GitHub &lt;a href=&#34;http&#39;
+         b&#39;s://docs.github.com/en/free-pro-team@latest/github/authenticating-to&#39;
+         b&#39;-github/creating-a-personal-access-token&#34;&gt;personal access token&lt;/a&gt;,&#39;
+         b&#34; which is a secret code used to access your account. If you don&#39;t ha&#34;
+         b&#39;ve one, &lt;a href=&#34;https://github.com/settings/tokens/new&#34;&gt;click here&lt;&#39;
+         b&#34;/a&gt; to create one. You&#39;ll be asked to enter a name -- choose anythin&#34;
+         b&#39;g you like, for instance &#34;&lt;em&gt;ghapi&lt;/em&gt;&#34;. You\&#39;ll also be asked &#39;
+         b&#39;to choose &#34;scopes&#34;; this limits what you\&#39;ll be able to do with t&#39;
+         b&#39;he API using this token. If you\&#39;re not sure, click &#34;&lt;em&gt;repo&lt;/em&#39;
+         b&#39;&gt;&#34; &#34;&lt;em&gt;gist&lt;/em&gt;&#34;, &#34;&lt;em&gt;notifications&lt;/em&gt;&#34;, and &#34;&lt;em&gt;workflow&lt;/em&gt;&#39;
+         b&#39;&#34;. Then click &#34;Generate Token&#34; at the bottom of the screen, and copy&#39;
+         b&#39; the token (the long string of letters and numbers shown). You can e&#39;
+         b&#39;asily do that by clicking the little clipboard icon next to the toke&#39;
+         b&#34;n.&lt;/p&gt;\n&lt;p&gt;Rather than pasting that token into every script, it&#39;s&#34;
+         b&#39; easiest to save it as an environment variable. If you save it as &lt;c&#39;
+         b&#39;ode&gt;$GITHUB_TOKEN&lt;/code&gt; then it will be most convenient, so add thi&#39;
+         b&#39;s to the end of your &lt;code&gt;.bashrc&lt;/code&gt; or &lt;code&gt;.zshrc&lt;/code&gt; fil&#39;
+         b&#39;e:&lt;/p&gt;\n\n&lt;pre&gt;&lt;code&gt;export GITHUB_TOKEN=xxx\n\n&lt;/code&gt;&lt;/pre&gt;\n&lt;p&#39;
+         b&#39;&gt;...replacing the &lt;code&gt;xxx&lt;/code&gt; with the token you just copied. (&#39;
+         b&#34;Don&#39;t forget to &lt;code&gt;source&lt;/code&gt; that file after you change it.),&#34;
+         b&#39; pass a [GitHub token].&lt;/p&gt;\n&lt;p&gt;As well as your &lt;code&gt;token&lt;/code&#39;
+         b&#39;&gt;, you can also pass any parameters you want auto-inserted into rele&#39;
+         b&#39;vant methods, such as &lt;code&gt;owner&lt;/code&gt; and &lt;code&gt;repo&lt;/code&gt;:&lt;&#39;
+         b&#39;/p&gt;\n\n&lt;/div&gt;\n&lt;/div&gt;\n&lt;/div&gt;\n    {% raw %}\n    \n&lt;div class=&#34;cel&#39;
+         b&#39;l border-box-sizing code_cell rendered&#34;&gt;\n&lt;div class=&#34;input&#34;&gt;\n\n&lt;d&#39;
+         b&#39;iv class=&#34;inner_cell&#34;&gt;\n    &lt;div class=&#34;input_area&#34;&gt;\n&lt;div class=&#34;&#39;
+         b&#39; highlight hl-ipython3&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;api&lt;/span&gt;&#39;
+         b&#39; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;GhApi&lt;/span&gt;&lt;span class=&#34;p&#39;
+         b&#39;&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;owner&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span &#39;
+         b&#39;class=&#34;s1&#34;&gt;&amp;#39;fastai&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span cla&#39;
+         b&#39;ss=&#34;n&#34;&gt;repo&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;fast&#39;
+         b&#39;core&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;token&lt;/span&#39;
+         b&#39;&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;github_token&lt;/span&gt;&lt;span cl&#39;
+         b&#39;ass=&#34;p&#34;&gt;)&lt;/span&gt;\n&lt;/pre&gt;&lt;/div&gt;\n\n    &lt;/div&gt;\n&lt;/div&gt;\n&lt;/div&gt;\n\n&lt;/d&#39;
+         b&#39;iv&gt;\n    {% endraw %}\n\n&lt;div class=&#34;cell border-box-sizing text_ce&#39;
+         b&#39;ll rendered&#34;&gt;&lt;div class=&#34;inner_cell&#34;&gt;\n&lt;div class=&#34;text_cell_rend&#39;
+         b&#39;er border-box-sizing rendered_html&#34;&gt;\n&lt;p&gt;We can now repeat the pr&#39;
+         b&#39;evious method, but only need to pass &lt;code&gt;ref&lt;/code&gt;:&lt;/p&gt;\n\n&lt;/di&#39;
+         b&#39;v&gt;\n&lt;/div&gt;\n&lt;/div&gt;\n    {% raw %}\n    \n&lt;div class=&#34;cell border-&#39;
+         b&#39;box-sizing code_cell rendered&#34;&gt;\n&lt;div class=&#34;input&#34;&gt;\n\n&lt;div class=&#39;
+         b&#39;&#34;inner_cell&#34;&gt;\n    &lt;div class=&#34;input_area&#34;&gt;\n&lt;div class=&#34; highligh&#39;
+         b&#39;t hl-ipython3&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;api&lt;/span&gt;&lt;span cla&#39;
+         b&#39;ss=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;git&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;sp&#39;
+         b&#39;an class=&#34;n&#34;&gt;get_ref&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&#39;
+         b&#39;&amp;#39;heads/master&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;\n&lt;/pre&gt;&lt;/di&#39;
+         b&#39;v&gt;\n\n    &lt;/div&gt;\n&lt;/div&gt;\n&lt;/div&gt;\n\n&lt;div class=&#34;output_wrapper&#34;&gt;\n&lt;&#39;
+         b&#39;div class=&#34;output&#34;&gt;\n\n&lt;div class=&#34;output_area&#34;&gt;\n\n\n&lt;div class=&#39;
+         b&#39;&#34;output_markdown rendered_html output_subarea output_execute_result&#34;&#39;
+         b&#39;&gt;\n&lt;ul&gt;\n&lt;li&gt;ref: refs/heads/master&lt;/li&gt;\n&lt;li&gt;node_id: MDM6UmVmMjI1&#39;
+         b&#39;NDYwNTk5OnJlZnMvaGVhZHMvbWFzdGVy&lt;/li&gt;\n&lt;li&gt;url: &lt;a href=&#34;https://&#39;
+         b&#39;api.github.com/repos/fastai/fastcore/git/refs/heads/master&#34;&gt;https://&#39;
+         b&#39;api.github.com/repos/fastai/fastcore/git/refs/heads/master&lt;/a&gt;&lt;/&#39;
+         b&#39;li&gt;\n&lt;li&gt;object: &lt;ul&gt;\n&lt;li&gt;sha: 28721554e0eab1f2974237c502912f8ba4&#39;
+         b&#39;2a44a0&lt;/li&gt;\n&lt;li&gt;type: commit&lt;/li&gt;\n&lt;li&gt;url: &lt;a href=&#34;https://api.&#39;
+         b&#39;github.com/repos/fastai/fastcore/git/commits/28721554e0eab1f2974237c&#39;
+         b&#39;502912f8ba42a44a0&#34;&gt;https://api.github.com/repos/fastai/fastcore/git/&#39;
+         b&#39;commits/28721554e0eab1f2974237c502912f8ba42a44a0&lt;/a&gt;&lt;/li&gt;\n&lt;/ul&gt;\n&#39;
+         b&#39;&lt;/li&gt;\n&lt;/ul&gt;\n\n&lt;/div&gt;\n\n&lt;/div&gt;\n\n&lt;/div&gt;\n&lt;/div&gt;\n\n&lt;/div&gt;\n    {&#39;
+         b&#39;% endraw %}\n\n&lt;div class=&#34;cell border-box-sizing text_cell render&#39;
+         b&#39;ed&#34;&gt;&lt;div class=&#34;inner_cell&#34;&gt;\n&lt;div class=&#34;text_cell_render border&#39;
+         b&#39;-box-sizing rendered_html&#34;&gt;\n&lt;p&gt;Now that we\&#39;ve provided our token&#39;
+         b&#39;, we can use authenticated endpoints such as creating an issue:&lt;&#39;
+         b&#39;/p&gt;\n&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;iss&#39;
+         b&#39;ue&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;api&lt;/span&gt;&lt;span c&#39;
+         b&#39;lass=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;issues&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/spa&#39;
+         b&#39;n&gt;&lt;span class=&#34;n&#34;&gt;create&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;&#39;
+         b&#39;s2&#34;&gt;&amp;quot;Remember to check out GhApi!&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&#39;
+         b&#34;&lt;/span&gt;\n&lt;/pre&gt;&lt;/div&gt;\n&lt;p&gt;Since we&#39;ve now checked out GhApi, let&#39;s&#34;
+         b&#39; close this issue. \xf0\x9f\x98\x8e&lt;/p&gt;\n&lt;div class=&#34;highlight&#34;&gt;&lt;&#39;
+         b&#39;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;api&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;&#39;
+         b&#39;span class=&#34;n&#34;&gt;issues&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;&#39;
+         b&#39;update&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;issue&lt;/span&gt;&lt;sp&#39;
+         b&#39;an class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;number&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;&#39;
+         b&#39;/span&gt; &lt;span class=&#34;n&#34;&gt;state&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span cla&#39;
+         b&#39;ss=&#34;s1&#34;&gt;&amp;#39;closed&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;\n&lt;/pre&gt;&lt;/&#39;
+         b&#39;div&gt;\n\n&lt;/div&gt;\n&lt;/div&gt;\n&lt;/div&gt;\n&lt;div class=&#34;cell border-box-sizin&#39;
+         b&#39;g text_cell rendered&#34;&gt;&lt;div class=&#34;inner_cell&#34;&gt;\n&lt;div class=&#34;text_&#39;
+         b&#39;cell_render border-box-sizing rendered_html&#34;&gt;\n&lt;h2 id=&#34;How-to-use&#39;
+         b&#39;---command-line&#34;&gt;How to use - command line&lt;a class=&#34;anchor-link&#34; hre&#39;
+         b&#39;f=&#34;#How-to-use---command-line&#34;&gt; &lt;/a&gt;&lt;/h2&gt;\n&lt;/div&gt;\n&lt;/div&gt;\n&lt;/div&gt;\n&lt;&#39;
+         b&#39;div class=&#34;cell border-box-sizing text_cell rendered&#34;&gt;&lt;div class=&#34;in&#39;
+         b&#39;ner_cell&#34;&gt;\n&lt;div class=&#34;text_cell_render border-box-sizing render&#39;
+         b&#39;ed_html&#34;&gt;\n&lt;p&gt;You can use &lt;a href=&#34;/core.html#GhApi&#34;&gt;&lt;code&gt;GhApi&lt;&#39;
+         b&#39;/code&gt;&lt;/a&gt; via the command line, and can access nearly everything in&#39;
+         b&#39; the &lt;a href=&#34;https://docs.github.com/en/free-pro-team@latest/rest&#34;&gt;&#39;
+         b&#39;GitHub API&lt;/a&gt;. We provide an overview here of one of the command li&#39;
+         b&#39;ne programs, &lt;a href=&#34;/cli.html#ghapi&#34;&gt;&lt;code&gt;ghapi&lt;/code&gt;&lt;/a&gt; -- see&#39;
+         b&#39; the full CLI docs page for details on all the programs available.&lt;/&#39;
+         b&#39;p&gt;\n&lt;p&gt;We strongly recommend enabling tab completion for &lt;a href=&#39;
+         b&#39;&#34;/cli.html#ghapi&#34;&gt;&lt;code&gt;ghapi&lt;/code&gt;&lt;/a&gt;, which you can do by placin&#39;
+         b&#39;g the following command at the end of your &lt;code&gt;~/.bashrc&lt;/code&gt; or&#39;
+         b&#39; &lt;code&gt;~/.zshrc&lt;/code&gt; file:&lt;/p&gt;\n&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;sp&#39;
+         b&#39;an&gt;&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;eval&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;quot;&lt;/span&#39;
+         b&#39;&gt;&lt;span class=&#34;k&#34;&gt;$(&lt;/span&gt;completion-ghapi --install&lt;span class=&#34;k&#34;&gt;&#39;
+         b&#39;)&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;&lt;/span&gt;\n&lt;/pre&gt;&lt;/div&gt;\n&lt;p&gt;To get st&#39;
+         b&#39;arted with the &lt;a href=&#34;/cli.html#ghapi&#34;&gt;&lt;code&gt;ghapi&lt;/code&gt;&lt;/a&gt; comm&#39;
+         b&#39;and, first find the name of the operation you wish to perform, for i&#39;
+         b&#39;nstance by searching the &lt;a href=&#34;https://ghapi.fast.ai/fullapi.html&#39;
+         b&#39;&#34;&gt;full API reference&lt;/a&gt;.&lt;/p&gt;\n&lt;p&gt;To use &lt;a href=&#34;/cli.html#ghapi&#39;
+         b&#39;&#34;&gt;&lt;code&gt;ghapi&lt;/code&gt;&lt;/a&gt;, pass the method name (exactly the same as &#39;
+         b&#34;you&#39;d use in the Python API) as the first parameter, followed by any&#34;
+         b&#39; positional parameters required, and then keyword arguments with &#34;&lt;c&#39;
+         b&#39;ode&gt;--&lt;/code&gt;&#34; before each parameter name.&lt;/p&gt;\n&lt;p&gt;For instance, &#39;
+         b&#39;&lt;a href=&#34;https://ghapi.fast.ai/fullapi.html#git&#34;&gt;git.get_ref&lt;/a&gt; tak&#39;
+         b&#39;es three parameters: &lt;code&gt;owner&lt;/code&gt;, &lt;code&gt;repo&lt;/code&gt;, and &lt;cod&#39;
+         b&#39;e&gt;ref&lt;/code&gt;. If we wish to pass the first two as positional paramet&#39;
+         b&#34;ers, and the last as a named argument, then we&#39;d call:&lt;/p&gt;\n&lt;div &#34;
+         b&#39;class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ghapi git.get_ref fastai ghapi-t&#39;
+         b&#39;est --ref heads/master\n&lt;/pre&gt;&lt;/div&gt;\n&lt;p&gt;If you have enabled tab c&#39;
+         b&#34;ompletion, then after you&#39;ve typed &lt;code&gt;ghapi g&lt;/code&gt; try pressing&#34;
+         b&#34; &lt;kbd&gt;Tab&lt;/kbd&gt;, and you&#39;ll see all the operation groups available i&#34;
+         b&#39;n the GitHub API that start with &lt;code&gt;g&lt;/code&gt;. If you keep typing,&#39;
+         b&#34; e.g. &lt;code&gt;ghapi git.&lt;/code&gt;, and hit &lt;kbd&gt;Tab&lt;/kbd&gt; again, you&#39;ll &#34;
+         b&#39;now see all the operations available in the &lt;code&gt;git&lt;/code&gt; group, &#39;
+         b&#39;i.e:&lt;/p&gt;\n\n&lt;pre&gt;&lt;code&gt;git.create_blob git.create_commit git.creat&#39;
+         b&#39;e_ref git.create_tag git.create_tree git.delete_ref git.get_blob git&#39;
+         b&#39;.get_commit git.get_ref git.get_tag git.get_tree git.list_matching_r&#39;
+         b&#39;efs git.name git.update_ref git.verbs&lt;/code&gt;&lt;/pre&gt;\n&lt;p&gt;If you pas&#39;
+         b&#34;s just &lt;code&gt;--help&lt;/code&gt; after the operation name, you&#39;ll see a fu&#34;
+         b&#39;ll list of all parameters accepted, and a link to the official GitHu&#39;
+         b&#39;b documentation.&lt;/p&gt;\n&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gh&#39;
+         b&#39;api --help\n&amp;gt; &amp;gt;&amp;gt; git.get_ref&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;owne&#39;
+         b&#39;r, repo, ref&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;\n&amp;gt;&amp;gt;&amp;gt; https://docs.g&#39;
+         b&#39;ithub.com/rest/reference/git#get-a-reference\n&lt;/pre&gt;&lt;/div&gt;\n&lt;p&gt;In &#39;
+         b&#39;addition to &lt;code&gt;--help&lt;/code&gt; and the GitHub operation parameters,&#39;
+         b&#39; you can also pass the following:&lt;/p&gt;\n&lt;ul&gt;\n&lt;li&gt;&lt;code&gt;--headers&lt;/&#39;
+         b&#39;code&gt;: A list of extra headers to pass, JSON-encoded&lt;/li&gt;\n&lt;li&gt;&lt;c&#39;
+         b&#39;ode&gt;--token&lt;/code&gt;: A GitHub authentation token&lt;/li&gt;\n&lt;li&gt;&lt;code&gt;-&#39;
+         b&#39;-debug&lt;/code&gt;: Print requests before sending them&lt;/li&gt;\n&lt;/ul&gt;\n\n&lt;/&#39;
+         b&#39;div&gt;\n&lt;/div&gt;\n&lt;/div&gt;\n&lt;/div&gt;\n \n\n&#39;,
+ &#39;full_url&#39;: &#39;https://uploads.github.com/repos/fastai/ghapi-test/releases/35079827/assets?name=index.html&#39;,
+ &#39;headers&#39;: {&#39;Accept&#39;: &#39;application/vnd.github.v3+json&#39;,
+             &#39;Content-type&#39;: &#39;text/html&#39;},
+ &#39;method&#39;: &#39;POST&#39;}
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
     {% endraw %}
 
@@ -1573,6 +1967,23 @@ https://docs.github.com/rest/reference/repos#create-a-repository-webhook
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>{&#39;data&#39;: None,
+ &#39;full_url&#39;: &#39;https://api.github.com/repos/fastai/ghapi-test/releases&#39;,
+ &#39;headers&#39;: {&#39;Accept&#39;: &#39;application/vnd.github.v3+json&#39;},
+ &#39;method&#39;: &#39;GET&#39;}
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -1599,6 +2010,23 @@ https://docs.github.com/rest/reference/repos#create-a-repository-webhook
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>{&#39;data&#39;: None,
+ &#39;full_url&#39;: &#39;https://api.github.com/repos/fastai/ghapi-test/releases/35079827/assets&#39;,
+ &#39;headers&#39;: {&#39;Accept&#39;: &#39;application/vnd.github.v3+json&#39;},
+ &#39;method&#39;: &#39;GET&#39;}
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -1689,6 +2117,23 @@ https://docs.github.com/rest/reference/repos#create-a-repository-webhook
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>{&#39;data&#39;: None,
+ &#39;full_url&#39;: &#39;https://api.github.com/repos/fastai/ghapi-test/git/matching-refs/tags/&#39;,
+ &#39;headers&#39;: {&#39;Accept&#39;: &#39;application/vnd.github.v3+json&#39;},
+ &#39;method&#39;: &#39;GET&#39;}
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
     {% endraw %}
 
@@ -1710,6 +2155,23 @@ https://docs.github.com/rest/reference/repos#create-a-repository-webhook
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>{&#39;data&#39;: None,
+ &#39;full_url&#39;: &#39;https://api.github.com/repos/fastai/ghapi-test/git/matching-refs/tags/0.0.1&#39;,
+ &#39;headers&#39;: {&#39;Accept&#39;: &#39;application/vnd.github.v3+json&#39;},
+ &#39;method&#39;: &#39;GET&#39;}
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -1769,6 +2231,23 @@ https://docs.github.com/rest/reference/repos#create-a-repository-webhook
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>{&#39;data&#39;: None,
+ &#39;full_url&#39;: &#39;https://api.github.com/repos/fastai/ghapi-test/git/matching-refs/heads/master&#39;,
+ &#39;headers&#39;: {&#39;Accept&#39;: &#39;application/vnd.github.v3+json&#39;},
+ &#39;method&#39;: &#39;GET&#39;}
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
     {% endraw %}
 
@@ -1791,6 +2270,31 @@ https://docs.github.com/rest/reference/repos#create-a-repository-webhook
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>{&#39;data&#39;: None,
+ &#39;full_url&#39;: &#39;https://api.github.com/repos/fastai/ghapi-test/releases/35079827&#39;,
+ &#39;headers&#39;: {&#39;Accept&#39;: &#39;application/vnd.github.v3+json&#39;},
+ &#39;method&#39;: &#39;DELETE&#39;}
+{&#39;data&#39;: None,
+ &#39;full_url&#39;: &#39;https://api.github.com/repos/fastai/ghapi-test/git/refs/tags/0.0.1&#39;,
+ &#39;headers&#39;: {&#39;Accept&#39;: &#39;application/vnd.github.v3+json&#39;},
+ &#39;method&#39;: &#39;DELETE&#39;}
+{&#39;data&#39;: None,
+ &#39;full_url&#39;: &#39;https://api.github.com/repos/fastai/ghapi-test/releases&#39;,
+ &#39;headers&#39;: {&#39;Accept&#39;: &#39;application/vnd.github.v3+json&#39;},
+ &#39;method&#39;: &#39;GET&#39;}
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -1847,6 +2351,33 @@ https://docs.github.com/rest/reference/repos#create-a-repository-webhook
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>{&#39;data&#39;: b&#39;{&#34;message&#34;: &#34;create testme&#34;, &#34;tree&#34;: &#34;4b825dc642cb6eb9a060e54bf8d692&#39;
+         b&#39;88fbee4904&#34;}&#39;,
+ &#39;full_url&#39;: &#39;https://api.github.com/repos/fastai/ghapi-test/git/commits&#39;,
+ &#39;headers&#39;: {&#39;Accept&#39;: &#39;application/vnd.github.v3+json&#39;},
+ &#39;method&#39;: &#39;POST&#39;}
+{&#39;data&#39;: b&#39;{&#34;ref&#34;: &#34;refs/heads/testme&#34;, &#34;sha&#34;: &#34;6ead5d26729238add90de4c12995b11&#39;
+         b&#39;90a4fe66d&#34;}&#39;,
+ &#39;full_url&#39;: &#39;https://api.github.com/repos/fastai/ghapi-test/git/refs&#39;,
+ &#39;headers&#39;: {&#39;Accept&#39;: &#39;application/vnd.github.v3+json&#39;},
+ &#39;method&#39;: &#39;POST&#39;}
+{&#39;data&#39;: None,
+ &#39;full_url&#39;: &#39;https://api.github.com/repos/fastai/ghapi-test/git/matching-refs/heads/testme&#39;,
+ &#39;headers&#39;: {&#39;Accept&#39;: &#39;application/vnd.github.v3+json&#39;},
+ &#39;method&#39;: &#39;GET&#39;}
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -1929,6 +2460,27 @@ https://docs.github.com/rest/reference/repos#create-a-repository-webhook
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>{&#39;data&#39;: None,
+ &#39;full_url&#39;: &#39;https://api.github.com/repos/fastai/ghapi-test/git/refs/heads/testme&#39;,
+ &#39;headers&#39;: {&#39;Accept&#39;: &#39;application/vnd.github.v3+json&#39;},
+ &#39;method&#39;: &#39;DELETE&#39;}
+{&#39;data&#39;: None,
+ &#39;full_url&#39;: &#39;https://api.github.com/repos/fastai/ghapi-test/git/matching-refs/heads/testme&#39;,
+ &#39;headers&#39;: {&#39;Accept&#39;: &#39;application/vnd.github.v3+json&#39;},
+ &#39;method&#39;: &#39;GET&#39;}
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -2023,6 +2575,25 @@ https://docs.github.com/rest/reference/repos#create-a-repository-webhook
 
 <div class="output_area">
 
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>{&#39;data&#39;: None,
+ &#39;full_url&#39;: &#39;https://api.github.com/repos/fastai/ghapi-test&#39;,
+ &#39;headers&#39;: {&#39;Accept&#39;: &#39;application/vnd.github.nebula-preview+json&#39;},
+ &#39;method&#39;: &#39;GET&#39;}
+{&#39;data&#39;: None,
+ &#39;full_url&#39;: &#39;https://api.github.com/repos/fastai/ghapi-test/git/matching-refs/heads/master&#39;,
+ &#39;headers&#39;: {&#39;Accept&#39;: &#39;application/vnd.github.v3+json&#39;},
+ &#39;method&#39;: &#39;GET&#39;}
+{&#39;data&#39;: None,
+ &#39;full_url&#39;: &#39;https://api.github.com/repos/fastai/ghapi-test/git/trees/f9a76973ef7dc714cc300ab0feabb8e92f8823d9&#39;,
+ &#39;headers&#39;: {&#39;Accept&#39;: &#39;application/vnd.github.v3+json&#39;},
+ &#39;method&#39;: &#39;GET&#39;}
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
 
 <div class="output_markdown rendered_html output_subarea output_execute_result">
 <ul>
@@ -2090,6 +2661,23 @@ https://docs.github.com/rest/reference/repos#create-a-repository-webhook
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>{&#39;data&#39;: None,
+ &#39;full_url&#39;: &#39;https://api.github.com/repos/fastai/ghapi-test/contents/README.md&#39;,
+ &#39;headers&#39;: {&#39;Accept&#39;: &#39;application/vnd.github.v3+json&#39;},
+ &#39;method&#39;: &#39;GET&#39;}
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
     {% endraw %}
 
@@ -2144,6 +2732,31 @@ https://docs.github.com/rest/reference/repos#create-a-repository-webhook
 
 <div class="output_area">
 
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>{&#39;data&#39;: None,
+ &#39;full_url&#39;: &#39;https://api.github.com/repos/fastai/ghapi-test&#39;,
+ &#39;headers&#39;: {&#39;Accept&#39;: &#39;application/vnd.github.nebula-preview+json&#39;},
+ &#39;method&#39;: &#39;GET&#39;}
+{&#39;data&#39;: None,
+ &#39;full_url&#39;: &#39;https://api.github.com/repos/fastai/ghapi-test/git/matching-refs/heads/master&#39;,
+ &#39;headers&#39;: {&#39;Accept&#39;: &#39;application/vnd.github.v3+json&#39;},
+ &#39;method&#39;: &#39;GET&#39;}
+{&#39;data&#39;: None,
+ &#39;full_url&#39;: &#39;https://api.github.com/repos/fastai/ghapi-test/git/trees/f9a76973ef7dc714cc300ab0feabb8e92f8823d9&#39;,
+ &#39;headers&#39;: {&#39;Accept&#39;: &#39;application/vnd.github.v3+json&#39;},
+ &#39;method&#39;: &#39;GET&#39;}
+{&#39;data&#39;: b&#39;{&#34;message&#34;: &#34;Update README&#34;, &#34;content&#34;: &#34;IyBnaGFwaS10ZXN0CgpUZXN0aW5&#39;
+         b&#39;nIHJlcG8gZm9yIGdoYXBpLiBZb3UgY2FuIHNhZmVseSBpZ25vcmUgdGhpcy4KZm9vYmF&#39;
+         b&#39;y&#34;, &#34;sha&#34;: &#34;9b33a4362dda251455f7e4d99554467d1e6ba024&#34;}&#39;,
+ &#39;full_url&#39;: &#39;https://api.github.com/repos/fastai/ghapi-test/contents/README.md&#39;,
+ &#39;headers&#39;: {&#39;Accept&#39;: &#39;application/vnd.github.v3+json&#39;},
+ &#39;method&#39;: &#39;PUT&#39;}
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -2171,6 +2784,41 @@ https://docs.github.com/rest/reference/repos#create-a-repository-webhook
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>{&#39;data&#39;: None,
+ &#39;full_url&#39;: &#39;https://api.github.com/repos/fastai/ghapi-test/contents/README.md&#39;,
+ &#39;headers&#39;: {&#39;Accept&#39;: &#39;application/vnd.github.v3+json&#39;},
+ &#39;method&#39;: &#39;GET&#39;}
+{&#39;data&#39;: None,
+ &#39;full_url&#39;: &#39;https://api.github.com/repos/fastai/ghapi-test&#39;,
+ &#39;headers&#39;: {&#39;Accept&#39;: &#39;application/vnd.github.nebula-preview+json&#39;},
+ &#39;method&#39;: &#39;GET&#39;}
+{&#39;data&#39;: None,
+ &#39;full_url&#39;: &#39;https://api.github.com/repos/fastai/ghapi-test/git/matching-refs/heads/master&#39;,
+ &#39;headers&#39;: {&#39;Accept&#39;: &#39;application/vnd.github.v3+json&#39;},
+ &#39;method&#39;: &#39;GET&#39;}
+{&#39;data&#39;: None,
+ &#39;full_url&#39;: &#39;https://api.github.com/repos/fastai/ghapi-test/git/trees/9bfc03f07d70d14944fca4464443fcf8da8dd444&#39;,
+ &#39;headers&#39;: {&#39;Accept&#39;: &#39;application/vnd.github.v3+json&#39;},
+ &#39;method&#39;: &#39;GET&#39;}
+{&#39;data&#39;: b&#39;{&#34;message&#34;: &#34;Revert README&#34;, &#34;content&#34;: &#34;IyBnaGFwaS10ZXN0CgpUZXN0aW5&#39;
+         b&#39;nIHJlcG8gZm9yIGdoYXBpLiBZb3UgY2FuIHNhZmVseSBpZ25vcmUgdGhpcy4K&#34;, &#34;sha&#39;
+         b&#39;&#34;: &#34;eaea0f2698e76c75602058bf4e2e9fd7940ac4e3&#34;}&#39;,
+ &#39;full_url&#39;: &#39;https://api.github.com/repos/fastai/ghapi-test/contents/README.md&#39;,
+ &#39;headers&#39;: {&#39;Accept&#39;: &#39;application/vnd.github.v3+json&#39;},
+ &#39;method&#39;: &#39;PUT&#39;}
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -2239,11 +2887,123 @@ https://docs.github.com/rest/reference/repos#create-a-repository-webhook
 
 <div class="output_area">
 
-
-<div class="output_markdown rendered_html output_subarea output_execute_result">
-
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>{&#39;data&#39;: None,
+ &#39;full_url&#39;: &#39;https://api.github.com/repos/fastai/ghapi-test&#39;,
+ &#39;headers&#39;: {&#39;Accept&#39;: &#39;application/vnd.github.nebula-preview+json&#39;},
+ &#39;method&#39;: &#39;GET&#39;}
+{&#39;data&#39;: None,
+ &#39;full_url&#39;: &#39;https://api.github.com/repos/fastai/ghapi-test/git/matching-refs/heads/new-branch&#39;,
+ &#39;headers&#39;: {&#39;Accept&#39;: &#39;application/vnd.github.v3+json&#39;},
+ &#39;method&#39;: &#39;GET&#39;}
+{&#39;data&#39;: b&#39;{&#34;message&#34;: &#34;create new-branch&#34;, &#34;tree&#34;: &#34;4b825dc642cb6eb9a060e54bf8&#39;
+         b&#39;d69288fbee4904&#34;}&#39;,
+ &#39;full_url&#39;: &#39;https://api.github.com/repos/fastai/ghapi-test/git/commits&#39;,
+ &#39;headers&#39;: {&#39;Accept&#39;: &#39;application/vnd.github.v3+json&#39;},
+ &#39;method&#39;: &#39;POST&#39;}
+{&#39;data&#39;: b&#39;{&#34;ref&#34;: &#34;refs/heads/new-branch&#34;, &#34;sha&#34;: &#34;6ef9506361f90c68804fac4eb97&#39;
+         b&#39;2eb958cef9ff5&#34;}&#39;,
+ &#39;full_url&#39;: &#39;https://api.github.com/repos/fastai/ghapi-test/git/refs&#39;,
+ &#39;headers&#39;: {&#39;Accept&#39;: &#39;application/vnd.github.v3+json&#39;},
+ &#39;method&#39;: &#39;POST&#39;}
+{&#39;data&#39;: b&#39;{&#34;source&#34;: {&#34;branch&#34;: &#34;new-branch&#34;, &#34;path&#34;: &#34;/&#34;}}&#39;,
+ &#39;full_url&#39;: &#39;https://api.github.com/repos/fastai/ghapi-test/pages&#39;,
+ &#39;headers&#39;: {&#39;Accept&#39;: &#39;application/vnd.github.switcheroo-preview+json&#39;},
+ &#39;method&#39;: &#39;POST&#39;}
+</pre>
+</div>
 </div>
 
+<div class="output_area">
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">HTTPError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-78-420f68127e2e&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>res <span class="ansi-blue-fg">=</span> api<span class="ansi-blue-fg">.</span>enable_pages<span class="ansi-blue-fg">(</span>branch<span class="ansi-blue-fg">=</span><span class="ansi-blue-fg">&#39;new-branch&#39;</span><span class="ansi-blue-fg">,</span> path<span class="ansi-blue-fg">=</span><span class="ansi-blue-fg">&#39;/&#39;</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">      2</span> test_eq<span class="ansi-blue-fg">(</span>res<span class="ansi-blue-fg">.</span>source<span class="ansi-blue-fg">.</span>branch<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">&#39;new-branch&#39;</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">      3</span> test_eq<span class="ansi-blue-fg">(</span>res<span class="ansi-blue-fg">.</span>source<span class="ansi-blue-fg">.</span>path<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">&#39;/&#39;</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">      4</span> api<span class="ansi-blue-fg">.</span>repos<span class="ansi-blue-fg">.</span>delete_pages_site<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">      5</span> api<span class="ansi-blue-fg">.</span>delete_branch<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;new-branch&#39;</span><span class="ansi-blue-fg">)</span>
+
+<span class="ansi-green-fg">&lt;ipython-input-77-046cb4100996&gt;</span> in <span class="ansi-cyan-fg">enable_pages</span><span class="ansi-blue-fg">(self, branch, path)</span>
+<span class="ansi-green-intense-fg ansi-bold">      9</span>     <span class="ansi-green-fg">if</span> r<span class="ansi-blue-fg">.</span>has_pages<span class="ansi-blue-fg">:</span> <span class="ansi-green-fg">return</span> self<span class="ansi-blue-fg">.</span>repos<span class="ansi-blue-fg">.</span>update_information_about_pages_site<span class="ansi-blue-fg">(</span>source<span class="ansi-blue-fg">=</span>source<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">     10</span>     <span class="ansi-green-fg">if</span> len<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">.</span>list_branches<span class="ansi-blue-fg">(</span>branch<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">==</span><span class="ansi-cyan-fg">0</span><span class="ansi-blue-fg">:</span> self<span class="ansi-blue-fg">.</span>create_branch_empty<span class="ansi-blue-fg">(</span>branch<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-fg">---&gt; 11</span><span class="ansi-red-fg">     </span><span class="ansi-green-fg">return</span> self<span class="ansi-blue-fg">.</span>repos<span class="ansi-blue-fg">.</span>create_pages_site<span class="ansi-blue-fg">(</span>source<span class="ansi-blue-fg">=</span>source<span class="ansi-blue-fg">)</span>
+
+<span class="ansi-green-fg">&lt;ipython-input-7-e546d97ea984&gt;</span> in <span class="ansi-cyan-fg">__call__</span><span class="ansi-blue-fg">(self, headers, *args, **kwargs)</span>
+<span class="ansi-green-intense-fg ansi-bold">     19</span>         route_p,query_p,data_p = [{p:kwargs[p] for p in o if p in kwargs}
+<span class="ansi-green-intense-fg ansi-bold">     20</span>                                  for o in (self.route_ps,self.params,d)]
+<span class="ansi-green-fg">---&gt; 21</span><span class="ansi-red-fg">         </span><span class="ansi-green-fg">return</span> self<span class="ansi-blue-fg">.</span>client<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">.</span>path<span class="ansi-blue-fg">,</span> self<span class="ansi-blue-fg">.</span>verb<span class="ansi-blue-fg">,</span> headers<span class="ansi-blue-fg">=</span>headers<span class="ansi-blue-fg">,</span> route<span class="ansi-blue-fg">=</span>route_p<span class="ansi-blue-fg">,</span> query<span class="ansi-blue-fg">=</span>query_p<span class="ansi-blue-fg">,</span> data<span class="ansi-blue-fg">=</span>data_p<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">     22</span> 
+<span class="ansi-green-intense-fg ansi-bold">     23</span>     <span class="ansi-green-fg">def</span> __str__<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span> <span class="ansi-green-fg">return</span> <span class="ansi-blue-fg">f&#39;{self.tag}.{self.name}{signature(self)}\n{self.doc_url}&#39;</span>
+
+<span class="ansi-green-fg">&lt;ipython-input-10-dc4bac5731e2&gt;</span> in <span class="ansi-cyan-fg">__call__</span><span class="ansi-blue-fg">(self, path, verb, headers, route, query, data)</span>
+<span class="ansi-green-intense-fg ansi-bold">     17</span>         headers <span class="ansi-blue-fg">=</span> <span class="ansi-blue-fg">{</span><span class="ansi-blue-fg">**</span>self<span class="ansi-blue-fg">.</span>headers<span class="ansi-blue-fg">,</span><span class="ansi-blue-fg">**</span><span class="ansi-blue-fg">(</span>headers <span class="ansi-green-fg">or</span> <span class="ansi-blue-fg">{</span><span class="ansi-blue-fg">}</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">}</span>
+<span class="ansi-green-intense-fg ansi-bold">     18</span>         <span class="ansi-green-fg">if</span> path<span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">:</span><span class="ansi-cyan-fg">7</span><span class="ansi-blue-fg">]</span> <span class="ansi-green-fg">not</span> <span class="ansi-green-fg">in</span> <span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;http://&#39;</span><span class="ansi-blue-fg">,</span><span class="ansi-blue-fg">&#39;https:/&#39;</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span> path <span class="ansi-blue-fg">=</span> GH_HOST<span class="ansi-blue-fg">+</span>path
+<span class="ansi-green-fg">---&gt; 19</span><span class="ansi-red-fg">         res,hdrs = urlsend(path, verb, headers=headers or None, debug=self.debug, return_headers=True,
+</span><span class="ansi-green-intense-fg ansi-bold">     20</span>                            route=route or None, query=query or None, data=data or None)
+<span class="ansi-green-intense-fg ansi-bold">     21</span>         <span class="ansi-green-fg">if</span> <span class="ansi-blue-fg">&#39;X-RateLimit-Remaining&#39;</span> <span class="ansi-green-fg">in</span> hdrs<span class="ansi-blue-fg">:</span>
+
+<span class="ansi-green-fg">~/github/fastcore/fastcore/net.py</span> in <span class="ansi-cyan-fg">urlsend</span><span class="ansi-blue-fg">(url, verb, headers, route, query, data, json_data, return_json, return_headers, debug)</span>
+<span class="ansi-green-intense-fg ansi-bold">    173</span>     req <span class="ansi-blue-fg">=</span> urlrequest<span class="ansi-blue-fg">(</span>url<span class="ansi-blue-fg">,</span> verb<span class="ansi-blue-fg">,</span> headers<span class="ansi-blue-fg">,</span> route<span class="ansi-blue-fg">=</span>route<span class="ansi-blue-fg">,</span> query<span class="ansi-blue-fg">=</span>query<span class="ansi-blue-fg">,</span> data<span class="ansi-blue-fg">=</span>data<span class="ansi-blue-fg">,</span> json_data<span class="ansi-blue-fg">=</span>json_data<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    174</span>     <span class="ansi-green-fg">if</span> debug<span class="ansi-blue-fg">:</span> debug<span class="ansi-blue-fg">(</span>req<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-fg">--&gt; 175</span><span class="ansi-red-fg">     </span><span class="ansi-green-fg">return</span> urlread<span class="ansi-blue-fg">(</span>req<span class="ansi-blue-fg">,</span> return_json<span class="ansi-blue-fg">=</span>return_json<span class="ansi-blue-fg">,</span> return_headers<span class="ansi-blue-fg">=</span>return_headers<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    176</span> 
+<span class="ansi-green-intense-fg ansi-bold">    177</span> <span class="ansi-red-fg"># Cell</span>
+
+<span class="ansi-green-fg">~/github/fastcore/fastcore/net.py</span> in <span class="ansi-cyan-fg">urlread</span><span class="ansi-blue-fg">(url, data, headers, decode, return_json, return_headers, **kwargs)</span>
+<span class="ansi-green-intense-fg ansi-bold">    108</span>     <span class="ansi-blue-fg">&#34;Retrieve `url`, using `data` dict or `kwargs` to `POST` if present&#34;</span>
+<span class="ansi-green-intense-fg ansi-bold">    109</span>     <span class="ansi-green-fg">try</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg">--&gt; 110</span><span class="ansi-red-fg">         </span><span class="ansi-green-fg">with</span> urlopen<span class="ansi-blue-fg">(</span>url<span class="ansi-blue-fg">,</span> data<span class="ansi-blue-fg">=</span>data<span class="ansi-blue-fg">,</span> headers<span class="ansi-blue-fg">=</span>headers<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>kwargs<span class="ansi-blue-fg">)</span> <span class="ansi-green-fg">as</span> u<span class="ansi-blue-fg">:</span> res<span class="ansi-blue-fg">,</span>hdrs <span class="ansi-blue-fg">=</span> u<span class="ansi-blue-fg">.</span>read<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">,</span>u<span class="ansi-blue-fg">.</span>headers
+<span class="ansi-green-intense-fg ansi-bold">    111</span>     <span class="ansi-green-fg">except</span> HTTPError <span class="ansi-green-fg">as</span> e<span class="ansi-blue-fg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">    112</span>         <span class="ansi-green-fg">if</span> <span class="ansi-cyan-fg">400</span> <span class="ansi-blue-fg">&lt;=</span> e<span class="ansi-blue-fg">.</span>code <span class="ansi-blue-fg">&lt;</span> <span class="ansi-cyan-fg">500</span><span class="ansi-blue-fg">:</span> <span class="ansi-green-fg">raise</span> ExceptionsHTTP<span class="ansi-blue-fg">[</span>e<span class="ansi-blue-fg">.</span>code<span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">(</span>e<span class="ansi-blue-fg">.</span>url<span class="ansi-blue-fg">,</span> e<span class="ansi-blue-fg">.</span>hdrs<span class="ansi-blue-fg">,</span> e<span class="ansi-blue-fg">.</span>fp<span class="ansi-blue-fg">)</span> <span class="ansi-green-fg">from</span> <span class="ansi-green-fg">None</span>
+
+<span class="ansi-green-fg">~/github/fastcore/fastcore/net.py</span> in <span class="ansi-cyan-fg">urlopen</span><span class="ansi-blue-fg">(url, data, headers, **kwargs)</span>
+<span class="ansi-green-intense-fg ansi-bold">    102</span>         <span class="ansi-green-fg">if</span> <span class="ansi-green-fg">not</span> isinstance<span class="ansi-blue-fg">(</span>data<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">(</span>str<span class="ansi-blue-fg">,</span>bytes<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span> data <span class="ansi-blue-fg">=</span> urlencode<span class="ansi-blue-fg">(</span>data<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    103</span>         <span class="ansi-green-fg">if</span> <span class="ansi-green-fg">not</span> isinstance<span class="ansi-blue-fg">(</span>data<span class="ansi-blue-fg">,</span> bytes<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span> data <span class="ansi-blue-fg">=</span> data<span class="ansi-blue-fg">.</span>encode<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;ascii&#39;</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-fg">--&gt; 104</span><span class="ansi-red-fg">     </span><span class="ansi-green-fg">return</span> _opener<span class="ansi-blue-fg">.</span>open<span class="ansi-blue-fg">(</span>urlwrap<span class="ansi-blue-fg">(</span>url<span class="ansi-blue-fg">,</span> data<span class="ansi-blue-fg">=</span>data<span class="ansi-blue-fg">,</span> headers<span class="ansi-blue-fg">=</span>headers<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    105</span> 
+<span class="ansi-green-intense-fg ansi-bold">    106</span> <span class="ansi-red-fg"># Cell</span>
+
+<span class="ansi-green-fg">~/anaconda3/lib/python3.8/urllib/request.py</span> in <span class="ansi-cyan-fg">open</span><span class="ansi-blue-fg">(self, fullurl, data, timeout)</span>
+<span class="ansi-green-intense-fg ansi-bold">    529</span>         <span class="ansi-green-fg">for</span> processor <span class="ansi-green-fg">in</span> self<span class="ansi-blue-fg">.</span>process_response<span class="ansi-blue-fg">.</span>get<span class="ansi-blue-fg">(</span>protocol<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">    530</span>             meth <span class="ansi-blue-fg">=</span> getattr<span class="ansi-blue-fg">(</span>processor<span class="ansi-blue-fg">,</span> meth_name<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-fg">--&gt; 531</span><span class="ansi-red-fg">             </span>response <span class="ansi-blue-fg">=</span> meth<span class="ansi-blue-fg">(</span>req<span class="ansi-blue-fg">,</span> response<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    532</span> 
+<span class="ansi-green-intense-fg ansi-bold">    533</span>         <span class="ansi-green-fg">return</span> response
+
+<span class="ansi-green-fg">~/anaconda3/lib/python3.8/urllib/request.py</span> in <span class="ansi-cyan-fg">http_response</span><span class="ansi-blue-fg">(self, request, response)</span>
+<span class="ansi-green-intense-fg ansi-bold">    638</span>         <span class="ansi-red-fg"># request was successfully received, understood, and accepted.</span>
+<span class="ansi-green-intense-fg ansi-bold">    639</span>         <span class="ansi-green-fg">if</span> <span class="ansi-green-fg">not</span> <span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">200</span> <span class="ansi-blue-fg">&lt;=</span> code <span class="ansi-blue-fg">&lt;</span> <span class="ansi-cyan-fg">300</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg">--&gt; 640</span><span class="ansi-red-fg">             response = self.parent.error(
+</span><span class="ansi-green-intense-fg ansi-bold">    641</span>                 &#39;http&#39;, request, response, code, msg, hdrs)
+<span class="ansi-green-intense-fg ansi-bold">    642</span> 
+
+<span class="ansi-green-fg">~/anaconda3/lib/python3.8/urllib/request.py</span> in <span class="ansi-cyan-fg">error</span><span class="ansi-blue-fg">(self, proto, *args)</span>
+<span class="ansi-green-intense-fg ansi-bold">    567</span>         <span class="ansi-green-fg">if</span> http_err<span class="ansi-blue-fg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">    568</span>             args <span class="ansi-blue-fg">=</span> <span class="ansi-blue-fg">(</span>dict<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">&#39;default&#39;</span><span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">&#39;http_error_default&#39;</span><span class="ansi-blue-fg">)</span> <span class="ansi-blue-fg">+</span> orig_args
+<span class="ansi-green-fg">--&gt; 569</span><span class="ansi-red-fg">             </span><span class="ansi-green-fg">return</span> self<span class="ansi-blue-fg">.</span>_call_chain<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">*</span>args<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    570</span> 
+<span class="ansi-green-intense-fg ansi-bold">    571</span> <span class="ansi-red-fg"># XXX probably also want an abstract factory that knows when it makes</span>
+
+<span class="ansi-green-fg">~/anaconda3/lib/python3.8/urllib/request.py</span> in <span class="ansi-cyan-fg">_call_chain</span><span class="ansi-blue-fg">(self, chain, kind, meth_name, *args)</span>
+<span class="ansi-green-intense-fg ansi-bold">    500</span>         <span class="ansi-green-fg">for</span> handler <span class="ansi-green-fg">in</span> handlers<span class="ansi-blue-fg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">    501</span>             func <span class="ansi-blue-fg">=</span> getattr<span class="ansi-blue-fg">(</span>handler<span class="ansi-blue-fg">,</span> meth_name<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-fg">--&gt; 502</span><span class="ansi-red-fg">             </span>result <span class="ansi-blue-fg">=</span> func<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">*</span>args<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    503</span>             <span class="ansi-green-fg">if</span> result <span class="ansi-green-fg">is</span> <span class="ansi-green-fg">not</span> <span class="ansi-green-fg">None</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">    504</span>                 <span class="ansi-green-fg">return</span> result
+
+<span class="ansi-green-fg">~/anaconda3/lib/python3.8/urllib/request.py</span> in <span class="ansi-cyan-fg">http_error_default</span><span class="ansi-blue-fg">(self, req, fp, code, msg, hdrs)</span>
+<span class="ansi-green-intense-fg ansi-bold">    647</span> <span class="ansi-green-fg">class</span> HTTPDefaultErrorHandler<span class="ansi-blue-fg">(</span>BaseHandler<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">    648</span>     <span class="ansi-green-fg">def</span> http_error_default<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">,</span> req<span class="ansi-blue-fg">,</span> fp<span class="ansi-blue-fg">,</span> code<span class="ansi-blue-fg">,</span> msg<span class="ansi-blue-fg">,</span> hdrs<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg">--&gt; 649</span><span class="ansi-red-fg">         </span><span class="ansi-green-fg">raise</span> HTTPError<span class="ansi-blue-fg">(</span>req<span class="ansi-blue-fg">.</span>full_url<span class="ansi-blue-fg">,</span> code<span class="ansi-blue-fg">,</span> msg<span class="ansi-blue-fg">,</span> hdrs<span class="ansi-blue-fg">,</span> fp<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    650</span> 
+<span class="ansi-green-intense-fg ansi-bold">    651</span> <span class="ansi-green-fg">class</span> HTTPRedirectHandler<span class="ansi-blue-fg">(</span>BaseHandler<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
+
+<span class="ansi-red-fg">HTTPError</span>: HTTP Error 500: Internal Server Error</pre>
+</div>
 </div>
 
 </div>
