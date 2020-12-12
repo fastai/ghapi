@@ -1,11 +1,14 @@
 {
   "ghapi": {
     "Overview": "/",
-    "Getting started with GitHub Actions": "tutorial_actions.html",
-    "API details": "core.html",
-    "GitHub Actions": "actions.html",
+    "GhApi details": "core.html",
+    "GitHub Actions details": "actions.html",
+    "Authentication": "auth.html",
+    "Pagination": "page.html",
+    "The events API": "event.html",
     "Command line interface": "cli.html",
     "Full GitHub API reference": "fullapi.html",
+    "Getting started with GitHub Actions": "tutorial_actions.html",
     "Internal - OpenAPI Parser": "build_lib.html"
   }
 }

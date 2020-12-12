@@ -10,20 +10,29 @@ entries:
       title: Overview
       url: /
     - output: web,pdf
-      title: Getting started with GitHub Actions
-      url: tutorial_actions.html
-    - output: web,pdf
-      title: API details
+      title: GhApi details
       url: core.html
     - output: web,pdf
-      title: GitHub Actions
+      title: GitHub Actions details
       url: actions.html
+    - output: web,pdf
+      title: Authentication
+      url: auth.html
+    - output: web,pdf
+      title: Pagination
+      url: page.html
+    - output: web,pdf
+      title: The events API
+      url: event.html
     - output: web,pdf
       title: Command line interface
       url: cli.html
     - output: web,pdf
       title: Full GitHub API reference
       url: fullapi.html
+    - output: web,pdf
+      title: Getting started with GitHub Actions
+      url: tutorial_actions.html
     - output: web,pdf
       title: Internal - OpenAPI Parser
       url: build_lib.html

@@ -6,8 +6,34 @@ __all__ = ['fetch_events']
 from fastcore.utils import *
 from fastcore.foundation import *
 from .core import *
+from .page import *
 
 import time
+from itertools import islice
+
+# Cell
+def _list_events(username=None, org=None, owner=None, repo=None):
+    if (username or org or owner) and \
+        not (bool(username) ^ bool(org) ^ bool(owner)): raise Exception('Can not pass more than one of username, org, and owner')
+    if (owner and not repo) or (repo and not owner): 'Must pass both repo and owner, if passing either'
+    if owner: return api.activity.list_public_events_for_repo_network,{'owner':owner,'repo':repo}
+    if org: return api.activity.list_public_org_events,{'org':org}
+    if username: return api.activity.list_public_events_for_user,{'username':username}
+    return api.activity.list_public_events,{}
+
+# Cell
+@patch
+def list_events(self:GhApi, username=None, org=None, owner=None, repo=None, per_page=30, page=1):
+    "Fetch public events for repo network, org, user, or all"
+    oper,kwargs = _list_events(username=username, org=org, owner=owner, repo=repo)
+    return oper(per_page=per_page, page=page, **kwargs)
+
+# Cell
+@patch
+def list_events_parallel(self:GhApi, username=None, org=None, owner=None, repo=None, per_page=30, n_pages=8):
+    "Fetch as many events from `list_events` in parallel as available"
+    oper,kwargs = _list_events(username=username, org=org, owner=owner, repo=repo)
+    return pages(oper, n_pages, per_page=per_page, **kwargs).concat()
 
 # Cell
 def fetch_events(types=None):
@@ -15,9 +41,9 @@ def fetch_events(types=None):
     if types: types=setify(types)
     seen = set()
     while True:
-        evts = [o for o in api.activity.list_public_events() if o.id not in seen]
-        print('***', len(evts))
+        evts = [o for o in api.list_events_parallel(n_pages=2) if o.id not in seen]
+        print('\n***', len(evts))
         for o in evts:
             seen.add(o.id)
             if not types or o.type in types: yield o
-        time.sleep(0.5)
+        time.sleep(0.6)

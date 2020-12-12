@@ -74,6 +74,13 @@ nb_path: "04_event.ipynb"
     
 <div class="cell border-box-sizing code_cell rendered">
 
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
 <div class="output_wrapper">
 <div class="output">
 
@@ -81,7 +88,105 @@ nb_path: "04_event.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="fetch_events" class="doc_header"><code>fetch_events</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/event.py#L13" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>fetch_events</code>(<strong><code>types</code></strong>=<em><code>None</code></em>)</p>
+<h4 id="GhApi.list_events" class="doc_header"><code>GhApi.list_events</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/event.py#L25" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>GhApi.list_events</code>(<strong><code>username</code></strong>=<em><code>None</code></em>, <strong><code>org</code></strong>=<em><code>None</code></em>, <strong><code>owner</code></strong>=<em><code>None</code></em>, <strong><code>repo</code></strong>=<em><code>None</code></em>, <strong><code>per_page</code></strong>=<em><code>30</code></em>, <strong><code>page</code></strong>=<em><code>1</code></em>)</p>
+</blockquote>
+<p>Fetch public events for repo network, org, user, or all</p>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="GhApi.list_events_parallel" class="doc_header"><code>GhApi.list_events_parallel</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/event.py#L32" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>GhApi.list_events_parallel</code>(<strong><code>username</code></strong>=<em><code>None</code></em>, <strong><code>org</code></strong>=<em><code>None</code></em>, <strong><code>owner</code></strong>=<em><code>None</code></em>, <strong><code>repo</code></strong>=<em><code>None</code></em>, <strong><code>per_page</code></strong>=<em><code>30</code></em>, <strong><code>n_pages</code></strong>=<em><code>8</code></em>)</p>
+</blockquote>
+<p>Fetch as many events from <code>list_events</code> in parallel as available</p>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ev</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">list_events_parallel</span><span class="p">(</span><span class="n">org</span><span class="o">=</span><span class="s1">&#39;fastai&#39;</span><span class="p">)</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">ev</span><span class="p">),</span><span class="n">ev</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">org</span><span class="o">.</span><span class="n">login</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>(240, &#39;fastai&#39;)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="fetch_events" class="doc_header"><code>fetch_events</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/event.py#L39" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>fetch_events</code>(<strong><code>types</code></strong>=<em><code>None</code></em>)</p>
 </blockquote>
 <p>Generate an infinite stream of events optionally filtered to <code>types</code></p>
 
@@ -98,6 +203,54 @@ nb_path: "04_event.ipynb"
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">o</span> <span class="ow">in</span> <span class="n">islice</span><span class="p">(</span><span class="n">fetch_events</span><span class="p">(</span><span class="s1">&#39;PullRequestEvent&#39;</span><span class="p">),</span> <span class="mi">100</span><span class="p">):</span> <span class="nb">print</span><span class="p">(</span><span class="n">o</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>
+*** 60
+14505512015 14505511995 14505511993 14505511981 14505511975 14505511976 14505511971 14505511970 14505511968 14505511963 14505511921 14505511920 14505511889 
+*** 28
+14505512077 14505512069 14505512063 14505512061 14505512053 14505512051 14505512048 14505512040 14505512034 
+*** 38
+14505512248 14505512218 14505512215 14505512210 14505512198 14505512092 
+*** 41
+14505512340 14505512326 14505512325 14505512314 14505512313 14505512315 14505512311 14505512304 14505512307 14505512289 14505512277 14505512271 14505512261 14505512257 
+*** 43
+14505512456 14505512454 14505512450 14505512445 14505512429 14505512427 14505512408 14505512403 14505512395 14505512380 14505512366 14505512362 14505512355 14505512353 
+*** 32
+14505512515 14505512505 14505512504 14505512495 14505512486 14505512477 14505512458 
+*** 38
+14505512598 14505512600 14505512582 14505512566 14505512558 14505512549 14505512538 14505512530 14505512523 
+*** 60
+14505512763 14505512761 14505512740 14505512727 14505512723 14505512720 14505512716 14505512712 14505512709 14505512705 14505512701 14505512688 14505512679 14505512668 14505512669 14505512666 14505512655 
+*** 42
+14505512843 14505512838 14505512841 14505512839 14505512835 14505512833 14505512831 14505512809 14505512811 14505512803 14505512800 </pre>
+</div>
+</div>
+
+</div>
+</div>
 
 </div>
     {% endraw %}
