@@ -7,6 +7,8 @@ from fastcore.utils import *
 from fastcore.foundation import *
 from .core import *
 
+from urllib.parse import parse_qs,urlsplit
+
 # Cell
 _scopes =(
     'repo','repo:status','repo_deployment','public_repo','repo:invite','security_events','admin:repo_hook','write:repo_hook',
