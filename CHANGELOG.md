@@ -2,6 +2,13 @@
 
 <!-- do not remove -->
 
+## 0.1.8
+
+### New Features
+
+- add `fetch_events` ([#19](https://github.com/fastai/ghapi/issues/19))
+
+
 ## 0.1.7
 
 ### New Features
