@@ -56,7 +56,7 @@ def _want_evt(o, types, incl_bot):
 def fetch_events(self:GhApi, n_pages=3, pause=0.4, per_page=30, types=None, incl_bot=False, **kwargs):
     "Generate an infinite stream of events, optionally filtered to `types, with `pause` seconds between requests"
     seen = set()
-    if types: types=setify(types)
+    if types: types=setify(types or None)
     while True:
         evts = self.list_events_parallel(n_pages=n_pages, per_page=per_page, **kwargs)
         new_evts = L(o for o in evts if o.id not in seen and _want_evt(o, types, incl_bot))
