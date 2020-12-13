@@ -9,7 +9,7 @@ from fastcore.meta import *
 from .core import *
 from .page import *
 
-import time
+import time,json,gzip
 from itertools import islice
 
 # Cell
@@ -67,11 +67,16 @@ def fetch_events(self:GhApi, n_pages=3, pause=0.4, per_page=30, types=None, incl
 # Cell
 def load_sample_events():
     "Load sample events, downloading if needed"
-    return dict2obj(json.load(open_file('sample_evts.json.gz')))
+    name = 'sample_evts.json.gz'
+    url = f'https://raw.githubusercontent.com/fastai/ghapi/master/examples/{name}'
+    try: path = Path(__file__).parent
+    except NameError: path = Path()/'examples'
+    path = path/name
+    if not path.exists(): path.write_bytes(urlread(url, decode=False))
+    return dict2obj(json.load(open_file(path)))
 
 # Cell
 def save_sample_events(n=1000):
     "Save the most recent `n` events as compressed JSON"
-    import json,gzip
     evts = list(islice(api.fetch_events(incl_bot=True), 1000))
     with gzip.open('sample_evts.json.gz', 'wt') as f: json.dump(obj2dict(evts), f)
