@@ -7,7 +7,7 @@ from fastcore.utils import *
 from fastcore.foundation import *
 from .core import *
 
-import webbrowser
+import webbrowser,time
 from urllib.parse import parse_qs,urlsplit
 
 # Cell
@@ -74,6 +74,6 @@ def wait(self:GhDeviceAuth, cb:callable=None, n_polls=9999)->str:
     res = None
     for i in range(n_polls):
         res = self.auth()
+        if res: return res
         if cb: cb()
         time.sleep(interval)
-    return res
