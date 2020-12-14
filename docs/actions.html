@@ -305,7 +305,7 @@ nb_path: "01_actions.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><code>event</code> is the event to trigger on. <code>run</code> is the shell lines to run before running the script, such as a <code>pip install</code> step. <code>context</code> are the env var context lines to include in the <code>env:</code> section of the workflow, normally created with <a href="/actions.html#env_contexts"><code>env_contexts</code></a>. <code>opersys</code> can be a string containing a comma-separated list of operating systems, e.g. <code>macos, ubuntu, windows</code>, which will be used to create a parallel matrix build.</p>
+<p><a href="/event.html"><code>event</code></a> is the event to trigger on. <code>run</code> is the shell lines to run before running the script, such as a <code>pip install</code> step. <code>context</code> are the env var context lines to include in the <code>env:</code> section of the workflow, normally created with <a href="/actions.html#env_contexts"><code>env_contexts</code></a>. <code>opersys</code> can be a string containing a comma-separated list of operating systems, e.g. <code>macos, ubuntu, windows</code>, which will be used to create a parallel matrix build.</p>
 <p>The <code>prebuild</code> bool tells <a href="/cli.html#ghapi"><code>ghapi</code></a> to include a prebuild job, which contains the following workflow:</p>
 <div class="highlight"><pre><span></span>runs-on: ubuntu-latest
 outputs:
