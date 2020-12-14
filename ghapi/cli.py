@@ -4,6 +4,7 @@ __all__ = ['ghapi', 'ghpath', 'ghraw', 'completion_ghapi']
 
 # Cell
 from fastcore.utils import *
+from fastcore.foundation import *
 import ghapi.core as gh,inspect
 from .core import *
 from collections import defaultdict
@@ -50,9 +51,8 @@ def _ghapi(arg, api):
 def ghapi():
     "Python backend for the `ghapi` command, which calls an endpoint by operation name"
     res = _call_api(_ghapi)
-    if isinstance(res, (gh._GhObj,dict)): print(res)
-    elif callable(res): print(inspect.signature(res))
-    else: print(res)
+    if isinstance(res, (gh._GhObj,dict,L)): print(res)
+    elif res: print(inspect.signature(res))
 
 # Cell
 def _ghpath(arg, api): return api[arg.pop(0),arg.pop(0)]
