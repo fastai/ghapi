@@ -2,6 +2,14 @@
 
 <!-- do not remove -->
 
+## 0.1.13
+
+
+### Bugs Squashed
+
+- missing import in auth ([#21](https://github.com/fastai/ghapi/issues/21))
+
+
 ## 0.1.11
 
 ### Bugs Squashed
