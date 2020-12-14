@@ -51,7 +51,8 @@ def ghapi():
     "Python backend for the `ghapi` command, which calls an endpoint by operation name"
     res = _call_api(_ghapi)
     if isinstance(res, (gh._GhObj,dict)): print(res)
-    elif res: print(inspect.signature(res))
+    elif callable(res): print(inspect.signature(res))
+    else: print(res)
 
 # Cell
 def _ghpath(arg, api): return api[arg.pop(0),arg.pop(0)]
