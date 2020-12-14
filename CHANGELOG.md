@@ -4,7 +4,9 @@
 
 ## 0.1.11
 
+### Bugs Squashed
 
+- missing webbrowser import ([#20](https://github.com/fastai/ghapi/issues/20))
 
 
 ## 0.1.10
