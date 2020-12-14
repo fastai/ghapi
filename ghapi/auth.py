@@ -7,6 +7,7 @@ from fastcore.utils import *
 from fastcore.foundation import *
 from .core import *
 
+import webbrowser
 from urllib.parse import parse_qs,urlsplit
 
 # Cell

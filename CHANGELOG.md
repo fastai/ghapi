@@ -2,6 +2,11 @@
 
 <!-- do not remove -->
 
+## 0.1.11
+
+
+
+
 ## 0.1.10
 
 - Add `load_sample_events`, which loads a file of 1000 sample public events

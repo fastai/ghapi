@@ -67,7 +67,7 @@ nb_path: "02_auth.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="scope_str" class="doc_header"><code>scope_str</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/auth.py#L24" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>scope_str</code>(<strong>*<code>scopes</code></strong>)</p>
+<h4 id="scope_str" class="doc_header"><code>scope_str</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/auth.py#L25" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>scope_str</code>(<strong>*<code>scopes</code></strong>)</p>
 </blockquote>
 <p>Convert <code>scopes</code> into a comma-separated string</p>
 
@@ -139,7 +139,7 @@ nb_path: "02_auth.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="GhDeviceAuth" class="doc_header"><code>class</code> <code>GhDeviceAuth</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/auth.py#L32" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>GhDeviceAuth</code>(<strong><code>client_id</code></strong>=<em><code>'771f3c3af93face45f52'</code></em>, <strong>*<code>scopes</code></strong>) :: <code>GetAttrBase</code></p>
+<h2 id="GhDeviceAuth" class="doc_header"><code>class</code> <code>GhDeviceAuth</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/auth.py#L33" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>GhDeviceAuth</code>(<strong><code>client_id</code></strong>=<em><code>'771f3c3af93face45f52'</code></em>, <strong>*<code>scopes</code></strong>) :: <code>GetAttrBase</code></p>
 </blockquote>
 <p>Get an oauth token using the GitHub API device flow</p>
 
@@ -190,7 +190,7 @@ nb_path: "02_auth.ipynb"
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>(&#39;c42d42028140be95ace73753538e14b51fa86177&#39;, &#39;2ACD-D414&#39;)</pre>
+<pre>(&#39;a376328e450ceb59569c2e67190734e3b672f82e&#39;, &#39;ED0B-C189&#39;)</pre>
 </div>
 
 </div>
@@ -212,7 +212,7 @@ nb_path: "02_auth.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="GhDeviceAuth.url_docs" class="doc_header"><code>GhDeviceAuth.url_docs</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/auth.py#L43" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>GhDeviceAuth.url_docs</code>()</p>
+<h4 id="GhDeviceAuth.url_docs" class="doc_header"><code>GhDeviceAuth.url_docs</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/auth.py#L44" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>GhDeviceAuth.url_docs</code>()</p>
 </blockquote>
 <p>Default instructions on how to authenticate</p>
 
@@ -260,7 +260,7 @@ nb_path: "02_auth.ipynb"
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>First copy your one-time code: 2ACD-D414
+<pre>First copy your one-time code: ED0B-C189
 Then visit https://github.com/login/device in your browser, and paste the code when prompted.
 </pre>
 </div>
@@ -283,7 +283,7 @@ Then visit https://github.com/login/device in your browser, and paste the code w
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="GhDeviceAuth.open_browser" class="doc_header"><code>GhDeviceAuth.open_browser</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/auth.py#L50" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>GhDeviceAuth.open_browser</code>()</p>
+<h4 id="GhDeviceAuth.open_browser" class="doc_header"><code>GhDeviceAuth.open_browser</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/auth.py#L51" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>GhDeviceAuth.open_browser</code>()</p>
 </blockquote>
 <p>Open a web browser with the verification URL</p>
 
@@ -322,7 +322,7 @@ Then visit https://github.com/login/device in your browser, and paste the code w
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="GhDeviceAuth.auth" class="doc_header"><code>GhDeviceAuth.auth</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/auth.py#L56" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>GhDeviceAuth.auth</code>()</p>
+<h4 id="GhDeviceAuth.auth" class="doc_header"><code>GhDeviceAuth.auth</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/auth.py#L57" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>GhDeviceAuth.auth</code>()</p>
 </blockquote>
 <p>Return token if authentication complete, or <code>None</code> otherwise</p>
 
@@ -392,7 +392,7 @@ Then visit https://github.com/login/device in your browser, and paste the code w
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="GhDeviceAuth.wait" class="doc_header"><code>GhDeviceAuth.wait</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/auth.py#L69" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>GhDeviceAuth.wait</code>(<strong><code>cb</code></strong>:<code>callable</code>=<em><code>None</code></em>, <strong><code>n_polls</code></strong>=<em><code>9999</code></em>)</p>
+<h4 id="GhDeviceAuth.wait" class="doc_header"><code>GhDeviceAuth.wait</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/auth.py#L70" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>GhDeviceAuth.wait</code>(<strong><code>cb</code></strong>:<code>callable</code>=<em><code>None</code></em>, <strong><code>n_polls</code></strong>=<em><code>9999</code></em>)</p>
 </blockquote>
 <p>Wait up to <code>n_polls</code> times for authentication to complete, calling <code>cb</code> after each poll, if passed</p>
 
