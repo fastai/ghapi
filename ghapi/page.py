@@ -54,7 +54,7 @@ def parse_link_hdr(header):
 @patch
 def last_page(self:GhApi):
     "Parse RFC 5988 link header from most recent operation, and extract the last page"
-    header = api.recv_hdrs.get('Link', '')
+    header = self.recv_hdrs.get('Link', '')
     last = nested_idx(parse_link_hdr(header), 'last', 0) or ''
     qs = parse_qs(urlsplit(last).query)
     return int(nested_idx(qs,'page',0) or 0)
