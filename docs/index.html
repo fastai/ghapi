@@ -207,13 +207,6 @@ nb_path: "index.ipynb"
 </div>
     {% endraw %}
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Then we can explore the endpoints provided by the API in each group, e.g. for the <code>git</code> group:</p>
-
-</div>
-</div>
-</div>
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -221,7 +214,7 @@ nb_path: "index.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">api</span><span class="o">.</span><span class="n">git</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">api</span><span class="o">.</span><span class="n">issues</span>
 </pre></div>
 
     </div>
@@ -236,19 +229,45 @@ nb_path: "index.ipynb"
 
 <div class="output_markdown rendered_html output_subarea output_execute_result">
 <ul>
-<li><a href="https://docs.github.com/rest/reference/git#create-a-blob">git.create_blob</a>(owner, repo, content, encoding): <em>Create a blob</em></li>
-<li><a href="https://docs.github.com/rest/reference/git#get-a-blob">git.get_blob</a>(owner, repo, file_sha): <em>Get a blob</em></li>
-<li><a href="https://docs.github.com/rest/reference/git#create-a-commit">git.create_commit</a>(owner, repo, message, tree, parents, author, committer, signature): <em>Create a commit</em></li>
-<li><a href="https://docs.github.com/rest/reference/git#get-a-commit">git.get_commit</a>(owner, repo, commit_sha): <em>Get a commit</em></li>
-<li><a href="https://docs.github.com/rest/reference/git#list-matching-references">git.list_matching_refs</a>(owner, repo, ref, per_page, page): <em>List matching references</em></li>
-<li><a href="https://docs.github.com/rest/reference/git#get-a-reference">git.get_ref</a>(owner, repo, ref): <em>Get a reference</em></li>
-<li><a href="https://docs.github.com/rest/reference/git#create-a-reference">git.create_ref</a>(owner, repo, ref, sha, key): <em>Create a reference</em></li>
-<li><a href="https://docs.github.com/rest/reference/git#update-a-reference">git.update_ref</a>(owner, repo, ref, sha, force): <em>Update a reference</em></li>
-<li><a href="https://docs.github.com/rest/reference/git#delete-a-reference">git.delete_ref</a>(owner, repo, ref): <em>Delete a reference</em></li>
-<li><a href="https://docs.github.com/rest/reference/git#create-a-tag-object">git.create_tag</a>(owner, repo, tag, message, object, type, tagger): <em>Create a tag object</em></li>
-<li><a href="https://docs.github.com/rest/reference/git#get-a-tag">git.get_tag</a>(owner, repo, tag_sha): <em>Get a tag</em></li>
-<li><a href="https://docs.github.com/rest/reference/git#create-a-tree">git.create_tree</a>(owner, repo, tree, base_tree): <em>Create a tree</em></li>
-<li><a href="https://docs.github.com/rest/reference/git#get-a-tree">git.get_tree</a>(owner, repo, tree_sha, recursive): <em>Get a tree</em></li>
+<li><a href="https://docs.github.com/v3/issues/#list-issues-assigned-to-the-authenticated-user">issues.list</a>(filter, state, labels, sort, direction, since, collab, orgs, owned, pulls, per_page, page): <em>List issues assigned to the authenticated user</em></li>
+<li><a href="https://docs.github.com/v3/issues/#list-organization-issues-assigned-to-the-authenticated-user">issues.list_for_org</a>(org, filter, state, labels, sort, direction, since, per_page, page): <em>List organization issues assigned to the authenticated user</em></li>
+<li><a href="https://docs.github.com/rest/reference/issues#list-assignees">issues.list_assignees</a>(owner, repo, per_page, page): <em>List assignees</em></li>
+<li><a href="https://docs.github.com/rest/reference/issues#check-if-a-user-can-be-assigned">issues.check_user_can_be_assigned</a>(owner, repo, assignee): <em>Check if a user can be assigned</em></li>
+<li><a href="https://docs.github.com/v3/issues/#list-repository-issues">issues.list_for_repo</a>(owner, repo, milestone, state, assignee, creator, mentioned, labels, sort, direction, since, per_page, page): <em>List repository issues</em></li>
+<li><a href="https://docs.github.com/v3/issues/#create-an-issue">issues.create</a>(owner, repo, title, body, assignee, milestone, labels, assignees): <em>Create an issue</em></li>
+<li><a href="https://docs.github.com/rest/reference/issues#list-issue-comments-for-a-repository">issues.list_comments_for_repo</a>(owner, repo, sort, direction, since, per_page, page): <em>List issue comments for a repository</em></li>
+<li><a href="https://docs.github.com/rest/reference/issues#get-an-issue-comment">issues.get_comment</a>(owner, repo, comment_id): <em>Get an issue comment</em></li>
+<li><a href="https://docs.github.com/rest/reference/issues#update-an-issue-comment">issues.update_comment</a>(owner, repo, comment_id, body): <em>Update an issue comment</em></li>
+<li><a href="https://docs.github.com/rest/reference/issues#delete-an-issue-comment">issues.delete_comment</a>(owner, repo, comment_id): <em>Delete an issue comment</em></li>
+<li><a href="https://docs.github.com/rest/reference/issues#list-issue-events-for-a-repository">issues.list_events_for_repo</a>(owner, repo, per_page, page): <em>List issue events for a repository</em></li>
+<li><a href="https://docs.github.com/rest/reference/issues#get-an-issue-event">issues.get_event</a>(owner, repo, event_id): <em>Get an issue event</em></li>
+<li><a href="https://docs.github.com/v3/issues/#get-an-issue">issues.get</a>(owner, repo, issue_number): <em>Get an issue</em></li>
+<li><a href="https://docs.github.com/v3/issues/#update-an-issue">issues.update</a>(owner, repo, issue_number, title, body, assignee, state, milestone, labels, assignees): <em>Update an issue</em></li>
+<li><a href="https://docs.github.com/rest/reference/issues#add-assignees-to-an-issue">issues.add_assignees</a>(owner, repo, issue_number, assignees): <em>Add assignees to an issue</em></li>
+<li><a href="https://docs.github.com/rest/reference/issues#remove-assignees-from-an-issue">issues.remove_assignees</a>(owner, repo, issue_number, assignees): <em>Remove assignees from an issue</em></li>
+<li><a href="https://docs.github.com/rest/reference/issues#list-issue-comments">issues.list_comments</a>(owner, repo, issue_number, since, per_page, page): <em>List issue comments</em></li>
+<li><a href="https://docs.github.com/rest/reference/issues#create-an-issue-comment">issues.create_comment</a>(owner, repo, issue_number, body): <em>Create an issue comment</em></li>
+<li><a href="https://docs.github.com/rest/reference/issues#list-issue-events">issues.list_events</a>(owner, repo, issue_number, per_page, page): <em>List issue events</em></li>
+<li><a href="https://docs.github.com/rest/reference/issues#list-labels-for-an-issue">issues.list_labels_on_issue</a>(owner, repo, issue_number, per_page, page): <em>List labels for an issue</em></li>
+<li><a href="https://docs.github.com/rest/reference/issues#add-labels-to-an-issue">issues.add_labels</a>(owner, repo, issue_number, labels): <em>Add labels to an issue</em></li>
+<li><a href="https://docs.github.com/rest/reference/issues#set-labels-for-an-issue">issues.set_labels</a>(owner, repo, issue_number, labels): <em>Set labels for an issue</em></li>
+<li><a href="https://docs.github.com/rest/reference/issues#remove-all-labels-from-an-issue">issues.remove_all_labels</a>(owner, repo, issue_number): <em>Remove all labels from an issue</em></li>
+<li><a href="https://docs.github.com/rest/reference/issues#remove-a-label-from-an-issue">issues.remove_label</a>(owner, repo, issue_number, name): <em>Remove a label from an issue</em></li>
+<li><a href="https://docs.github.com/v3/issues/#lock-an-issue">issues.lock</a>(owner, repo, issue_number, lock_reason): <em>Lock an issue</em></li>
+<li><a href="https://docs.github.com/v3/issues/#unlock-an-issue">issues.unlock</a>(owner, repo, issue_number): <em>Unlock an issue</em></li>
+<li><a href="https://docs.github.com/rest/reference/issues#list-timeline-events-for-an-issue">issues.list_events_for_timeline</a>(owner, repo, issue_number, per_page, page): <em>List timeline events for an issue</em></li>
+<li><a href="https://docs.github.com/rest/reference/issues#list-labels-for-a-repository">issues.list_labels_for_repo</a>(owner, repo, per_page, page): <em>List labels for a repository</em></li>
+<li><a href="https://docs.github.com/rest/reference/issues#create-a-label">issues.create_label</a>(owner, repo, name, color, description): <em>Create a label</em></li>
+<li><a href="https://docs.github.com/rest/reference/issues#get-a-label">issues.get_label</a>(owner, repo, name): <em>Get a label</em></li>
+<li><a href="https://docs.github.com/rest/reference/issues#update-a-label">issues.update_label</a>(owner, repo, name, new_name, color, description): <em>Update a label</em></li>
+<li><a href="https://docs.github.com/rest/reference/issues#delete-a-label">issues.delete_label</a>(owner, repo, name): <em>Delete a label</em></li>
+<li><a href="https://docs.github.com/rest/reference/issues#list-milestones">issues.list_milestones</a>(owner, repo, state, sort, direction, per_page, page): <em>List milestones</em></li>
+<li><a href="https://docs.github.com/rest/reference/issues#create-a-milestone">issues.create_milestone</a>(owner, repo, title, state, description, due_on): <em>Create a milestone</em></li>
+<li><a href="https://docs.github.com/rest/reference/issues#get-a-milestone">issues.get_milestone</a>(owner, repo, milestone_number): <em>Get a milestone</em></li>
+<li><a href="https://docs.github.com/rest/reference/issues#update-a-milestone">issues.update_milestone</a>(owner, repo, milestone_number, title, state, description, due_on): <em>Update a milestone</em></li>
+<li><a href="https://docs.github.com/rest/reference/issues#delete-a-milestone">issues.delete_milestone</a>(owner, repo, milestone_number): <em>Delete a milestone</em></li>
+<li><a href="https://docs.github.com/rest/reference/issues#list-labels-for-issues-in-a-milestone">issues.list_labels_for_milestone</a>(owner, repo, milestone_number, per_page, page): <em>List labels for issues in a milestone</em></li>
+<li><a href="https://docs.github.com/v3/issues/#list-user-account-issues-assigned-to-the-authenticated-user">issues.list_for_authenticated_user</a>(filter, state, labels, sort, direction, since, per_page, page): <em>List user account issues assigned to the authenticated user</em></li>
 </ul>
 
 </div>
@@ -261,6 +280,13 @@ nb_path: "index.ipynb"
 </div>
     {% endraw %}
 
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Then we can explore the endpoints provided by the API in each group, e.g. for the <code>git</code> group:</p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Here's how to learn about an endpoint you want to use, e.g.:</p>
@@ -456,6 +482,12 @@ nb_path: "index.ipynb"
 <p>We strongly recommend enabling tab completion for <a href="/cli.html#ghapi"><code>ghapi</code></a>, which you can do by placing the following command at the end of your <code>~/.bashrc</code> or <code>~/.zshrc</code> file:</p>
 <div class="highlight"><pre><span></span><span class="nb">eval</span> <span class="s2">&quot;</span><span class="k">$(</span>completion-ghapi --install<span class="k">)</span><span class="s2">&quot;</span>
 </pre></div>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>To get started with the <a href="/cli.html#ghapi"><code>ghapi</code></a> command, first find the name of the operation you wish to perform, for instance by searching the <a href="https://ghapi.fast.ai/fullapi.html">full API reference</a>.</p>
 <p>To use <a href="/cli.html#ghapi"><code>ghapi</code></a>, pass the method name (exactly the same as you'd use in the Python API) as the first parameter, followed by any positional parameters required, and then keyword arguments with "<code>--</code>" before each parameter name.</p>
 <p>For instance, <a href="https://ghapi.fast.ai/fullapi.html#git">git.get_ref</a> takes three parameters: <code>owner</code>, <code>repo</code>, and <code>ref</code>. If we wish to pass the first two as positional parameters, and the last as a named argument, then we'd call:</p>
