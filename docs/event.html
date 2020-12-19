@@ -431,7 +431,7 @@ nb_path: "04_event.ipynb"
     <span class="k">return</span> <span class="n">res</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
 
 <span class="n">Markdown</span><span class="p">(</span><span class="s1">&#39;|Type|Description|</span><span class="se">\n</span><span class="s1">|:--|:--|</span><span class="se">\n</span><span class="s1">&#39;</span> <span class="o">+</span>
-         <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;|</span><span class="si">{</span><span class="n">o</span><span class="o">.</span><span class="n">type</span><span class="p">[:</span><span class="o">-</span><span class="mi">5</span><span class="p">]</span><span class="si">}</span><span class="s1">|</span><span class="si">{</span><span class="n">_fmt_evt</span><span class="p">(</span><span class="n">o</span><span class="p">)</span><span class="si">}</span><span class="s1">|&#39;</span> <span class="k">for</span> <span class="n">o</span> <span class="ow">in</span> <span class="n">exs</span><span class="p">))</span>
+         <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;|</span><span class="si">{</span><span class="n">camel2words</span><span class="p">(</span><span class="n">o</span><span class="o">.</span><span class="n">type</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;PullRequest&quot;</span><span class="p">,</span><span class="s2">&quot;PR &quot;</span><span class="p">)[:</span><span class="o">-</span><span class="mi">5</span><span class="p">])</span><span class="si">}</span><span class="s1">|</span><span class="si">{</span><span class="n">_fmt_evt</span><span class="p">(</span><span class="n">o</span><span class="p">)</span><span class="si">}</span><span class="s1">|&#39;</span> <span class="k">for</span> <span class="n">o</span> <span class="ow">in</span> <span class="n">exs</span><span class="p">))</span>
 </pre></div>
 
     </div>
@@ -465,7 +465,7 @@ nb_path: "04_event.ipynb"
 <td style="text-align:left">🏭 <strong>github-classroom[bot]</strong> created repository in <em>Introduction-to-Programming-OSOWSKI/…</em>: "1-5-add-two-numbers-noraahlman23 created by GitHu…"</td>
 </tr>
 <tr>
-<td style="text-align:left">PullRequest</td>
+<td style="text-align:left">PR</td>
 <td style="text-align:left">📬 <strong>JerryMacedoCastro</strong> opened PR #1 on <em>JerryMacedoCastro/tb-arquitetura-js</em>: "Input component created"</td>
 </tr>
 <tr>
@@ -477,7 +477,7 @@ nb_path: "04_event.ipynb"
 <td style="text-align:left">♥ <strong>navikt</strong> made public repo  <em>navikt/syfoinntektsmelding</em></td>
 </tr>
 <tr>
-<td style="text-align:left">PullRequestReviewComment</td>
+<td style="text-align:left">PR  Review Comment</td>
 <td style="text-align:left">🗨 <strong>fruttasecca</strong> created review comment on PR #97 in <em>orchest/orchest</em>: "Does this make it so that users coming from an ol…"</td>
 </tr>
 <tr>
@@ -485,7 +485,7 @@ nb_path: "04_event.ipynb"
 <td style="text-align:left">🍽 <strong>amin-lotf</strong> forked <em>vinaygaba/Learn-Jetpack-Compose-By-Example</em>: "🚀 This project contains various examples that sho…"</td>
 </tr>
 <tr>
-<td style="text-align:left">CommitComment</td>
+<td style="text-align:left">Commit Comment</td>
 <td style="text-align:left">🎉 <strong>vercel[bot]</strong> created commint comment in <em>Samaraferreira/test-frontend</em>: "Successfully deployed to the following URLs:  * […"</td>
 </tr>
 <tr>
@@ -493,7 +493,7 @@ nb_path: "04_event.ipynb"
 <td style="text-align:left">👀 <strong>ikarius</strong> started watching <em>jorgebucaran/awsm.fish</em></td>
 </tr>
 <tr>
-<td style="text-align:left">PullRequestReview</td>
+<td style="text-align:left">PR  Review</td>
 <td style="text-align:left">💌 <strong>fruttasecca</strong> created PR review in <em>orchest/orchest</em></td>
 </tr>
 <tr>
@@ -509,7 +509,7 @@ nb_path: "04_event.ipynb"
 <td style="text-align:left">📚 <strong>TradingToolCrypto</strong> created wiki page in <em>TradingToolCrypto/TradingTool-Wiki</em></td>
 </tr>
 <tr>
-<td style="text-align:left">IssueComment</td>
+<td style="text-align:left">Issue Comment</td>
 <td style="text-align:left">💬 <strong>jerhard</strong> created comment on issue #2570 in <em>ls1intum/Artemis</em>: "Do you think that spaces (or even white space cha…"</td>
 </tr>
 </tbody>
