@@ -85,56 +85,30 @@ api
 
 
 
+Then we can explore the endpoints provided by the API in each group, e.g. for the `git` group:
+
 ```python
-api.issues
+api.git
 ```
 
 
 
 
-- [issues.list](https://docs.github.com/v3/issues/#list-issues-assigned-to-the-authenticated-user)(filter, state, labels, sort, direction, since, collab, orgs, owned, pulls, per_page, page): *List issues assigned to the authenticated user*
-- [issues.list_for_org](https://docs.github.com/v3/issues/#list-organization-issues-assigned-to-the-authenticated-user)(org, filter, state, labels, sort, direction, since, per_page, page): *List organization issues assigned to the authenticated user*
-- [issues.list_assignees](https://docs.github.com/rest/reference/issues#list-assignees)(owner, repo, per_page, page): *List assignees*
-- [issues.check_user_can_be_assigned](https://docs.github.com/rest/reference/issues#check-if-a-user-can-be-assigned)(owner, repo, assignee): *Check if a user can be assigned*
-- [issues.list_for_repo](https://docs.github.com/v3/issues/#list-repository-issues)(owner, repo, milestone, state, assignee, creator, mentioned, labels, sort, direction, since, per_page, page): *List repository issues*
-- [issues.create](https://docs.github.com/v3/issues/#create-an-issue)(owner, repo, title, body, assignee, milestone, labels, assignees): *Create an issue*
-- [issues.list_comments_for_repo](https://docs.github.com/rest/reference/issues#list-issue-comments-for-a-repository)(owner, repo, sort, direction, since, per_page, page): *List issue comments for a repository*
-- [issues.get_comment](https://docs.github.com/rest/reference/issues#get-an-issue-comment)(owner, repo, comment_id): *Get an issue comment*
-- [issues.update_comment](https://docs.github.com/rest/reference/issues#update-an-issue-comment)(owner, repo, comment_id, body): *Update an issue comment*
-- [issues.delete_comment](https://docs.github.com/rest/reference/issues#delete-an-issue-comment)(owner, repo, comment_id): *Delete an issue comment*
-- [issues.list_events_for_repo](https://docs.github.com/rest/reference/issues#list-issue-events-for-a-repository)(owner, repo, per_page, page): *List issue events for a repository*
-- [issues.get_event](https://docs.github.com/rest/reference/issues#get-an-issue-event)(owner, repo, event_id): *Get an issue event*
-- [issues.get](https://docs.github.com/v3/issues/#get-an-issue)(owner, repo, issue_number): *Get an issue*
-- [issues.update](https://docs.github.com/v3/issues/#update-an-issue)(owner, repo, issue_number, title, body, assignee, state, milestone, labels, assignees): *Update an issue*
-- [issues.add_assignees](https://docs.github.com/rest/reference/issues#add-assignees-to-an-issue)(owner, repo, issue_number, assignees): *Add assignees to an issue*
-- [issues.remove_assignees](https://docs.github.com/rest/reference/issues#remove-assignees-from-an-issue)(owner, repo, issue_number, assignees): *Remove assignees from an issue*
-- [issues.list_comments](https://docs.github.com/rest/reference/issues#list-issue-comments)(owner, repo, issue_number, since, per_page, page): *List issue comments*
-- [issues.create_comment](https://docs.github.com/rest/reference/issues#create-an-issue-comment)(owner, repo, issue_number, body): *Create an issue comment*
-- [issues.list_events](https://docs.github.com/rest/reference/issues#list-issue-events)(owner, repo, issue_number, per_page, page): *List issue events*
-- [issues.list_labels_on_issue](https://docs.github.com/rest/reference/issues#list-labels-for-an-issue)(owner, repo, issue_number, per_page, page): *List labels for an issue*
-- [issues.add_labels](https://docs.github.com/rest/reference/issues#add-labels-to-an-issue)(owner, repo, issue_number, labels): *Add labels to an issue*
-- [issues.set_labels](https://docs.github.com/rest/reference/issues#set-labels-for-an-issue)(owner, repo, issue_number, labels): *Set labels for an issue*
-- [issues.remove_all_labels](https://docs.github.com/rest/reference/issues#remove-all-labels-from-an-issue)(owner, repo, issue_number): *Remove all labels from an issue*
-- [issues.remove_label](https://docs.github.com/rest/reference/issues#remove-a-label-from-an-issue)(owner, repo, issue_number, name): *Remove a label from an issue*
-- [issues.lock](https://docs.github.com/v3/issues/#lock-an-issue)(owner, repo, issue_number, lock_reason): *Lock an issue*
-- [issues.unlock](https://docs.github.com/v3/issues/#unlock-an-issue)(owner, repo, issue_number): *Unlock an issue*
-- [issues.list_events_for_timeline](https://docs.github.com/rest/reference/issues#list-timeline-events-for-an-issue)(owner, repo, issue_number, per_page, page): *List timeline events for an issue*
-- [issues.list_labels_for_repo](https://docs.github.com/rest/reference/issues#list-labels-for-a-repository)(owner, repo, per_page, page): *List labels for a repository*
-- [issues.create_label](https://docs.github.com/rest/reference/issues#create-a-label)(owner, repo, name, color, description): *Create a label*
-- [issues.get_label](https://docs.github.com/rest/reference/issues#get-a-label)(owner, repo, name): *Get a label*
-- [issues.update_label](https://docs.github.com/rest/reference/issues#update-a-label)(owner, repo, name, new_name, color, description): *Update a label*
-- [issues.delete_label](https://docs.github.com/rest/reference/issues#delete-a-label)(owner, repo, name): *Delete a label*
-- [issues.list_milestones](https://docs.github.com/rest/reference/issues#list-milestones)(owner, repo, state, sort, direction, per_page, page): *List milestones*
-- [issues.create_milestone](https://docs.github.com/rest/reference/issues#create-a-milestone)(owner, repo, title, state, description, due_on): *Create a milestone*
-- [issues.get_milestone](https://docs.github.com/rest/reference/issues#get-a-milestone)(owner, repo, milestone_number): *Get a milestone*
-- [issues.update_milestone](https://docs.github.com/rest/reference/issues#update-a-milestone)(owner, repo, milestone_number, title, state, description, due_on): *Update a milestone*
-- [issues.delete_milestone](https://docs.github.com/rest/reference/issues#delete-a-milestone)(owner, repo, milestone_number): *Delete a milestone*
-- [issues.list_labels_for_milestone](https://docs.github.com/rest/reference/issues#list-labels-for-issues-in-a-milestone)(owner, repo, milestone_number, per_page, page): *List labels for issues in a milestone*
-- [issues.list_for_authenticated_user](https://docs.github.com/v3/issues/#list-user-account-issues-assigned-to-the-authenticated-user)(filter, state, labels, sort, direction, since, per_page, page): *List user account issues assigned to the authenticated user*
+- [git.create_blob](https://docs.github.com/rest/reference/git#create-a-blob)(owner, repo, content, encoding): *Create a blob*
+- [git.get_blob](https://docs.github.com/rest/reference/git#get-a-blob)(owner, repo, file_sha): *Get a blob*
+- [git.create_commit](https://docs.github.com/rest/reference/git#create-a-commit)(owner, repo, message, tree, parents, author, committer, signature): *Create a commit*
+- [git.get_commit](https://docs.github.com/rest/reference/git#get-a-commit)(owner, repo, commit_sha): *Get a commit*
+- [git.list_matching_refs](https://docs.github.com/rest/reference/git#list-matching-references)(owner, repo, ref, per_page, page): *List matching references*
+- [git.get_ref](https://docs.github.com/rest/reference/git#get-a-reference)(owner, repo, ref): *Get a reference*
+- [git.create_ref](https://docs.github.com/rest/reference/git#create-a-reference)(owner, repo, ref, sha, key): *Create a reference*
+- [git.update_ref](https://docs.github.com/rest/reference/git#update-a-reference)(owner, repo, ref, sha, force): *Update a reference*
+- [git.delete_ref](https://docs.github.com/rest/reference/git#delete-a-reference)(owner, repo, ref): *Delete a reference*
+- [git.create_tag](https://docs.github.com/rest/reference/git#create-a-tag-object)(owner, repo, tag, message, object, type, tagger): *Create a tag object*
+- [git.get_tag](https://docs.github.com/rest/reference/git#get-a-tag)(owner, repo, tag_sha): *Get a tag*
+- [git.create_tree](https://docs.github.com/rest/reference/git#create-a-tree)(owner, repo, tree, base_tree): *Create a tree*
+- [git.get_tree](https://docs.github.com/rest/reference/git#get-a-tree)(owner, repo, tree_sha, recursive): *Get a tree*
 
 
-
-Then we can explore the endpoints provided by the API in each group, e.g. for the `git` group:
 
 Here's how to learn about an endpoint you want to use, e.g.:
 
