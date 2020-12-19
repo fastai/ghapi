@@ -78,7 +78,7 @@ nb_path: "04_event.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="GhApi.list_events" class="doc_header"><code>GhApi.list_events</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/event.py#L31" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>GhApi.list_events</code>(<strong><code>per_page</code></strong>=<em><code>30</code></em>, <strong><code>page</code></strong>=<em><code>1</code></em>, <strong><code>username</code></strong>=<em><code>None</code></em>, <strong><code>org</code></strong>=<em><code>None</code></em>, <strong><code>owner</code></strong>=<em><code>None</code></em>, <strong><code>repo</code></strong>=<em><code>None</code></em>)</p>
+<h4 id="GhApi.list_events" class="doc_header"><code>GhApi.list_events</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/event.py#L33" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>GhApi.list_events</code>(<strong><code>per_page</code></strong>=<em><code>30</code></em>, <strong><code>page</code></strong>=<em><code>1</code></em>, <strong><code>username</code></strong>=<em><code>None</code></em>, <strong><code>org</code></strong>=<em><code>None</code></em>, <strong><code>owner</code></strong>=<em><code>None</code></em>, <strong><code>repo</code></strong>=<em><code>None</code></em>)</p>
 </blockquote>
 <p>Fetch public events for repo network, org, user, or all</p>
 
@@ -110,7 +110,7 @@ nb_path: "04_event.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="GhApi.list_events_parallel" class="doc_header"><code>GhApi.list_events_parallel</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/event.py#L39" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>GhApi.list_events_parallel</code>(<strong><code>per_page</code></strong>=<em><code>30</code></em>, <strong><code>n_pages</code></strong>=<em><code>8</code></em>, <strong><code>username</code></strong>=<em><code>None</code></em>, <strong><code>org</code></strong>=<em><code>None</code></em>, <strong><code>owner</code></strong>=<em><code>None</code></em>, <strong><code>repo</code></strong>=<em><code>None</code></em>)</p>
+<h4 id="GhApi.list_events_parallel" class="doc_header"><code>GhApi.list_events_parallel</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/event.py#L41" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>GhApi.list_events_parallel</code>(<strong><code>per_page</code></strong>=<em><code>30</code></em>, <strong><code>n_pages</code></strong>=<em><code>8</code></em>, <strong><code>username</code></strong>=<em><code>None</code></em>, <strong><code>org</code></strong>=<em><code>None</code></em>, <strong><code>owner</code></strong>=<em><code>None</code></em>, <strong><code>repo</code></strong>=<em><code>None</code></em>)</p>
 </blockquote>
 <p>Fetch as many events from <code>list_events</code> in parallel as available</p>
 
@@ -174,6 +174,13 @@ nb_path: "04_event.ipynb"
     
 <div class="cell border-box-sizing code_cell rendered">
 
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
 <div class="output_wrapper">
 <div class="output">
 
@@ -181,9 +188,9 @@ nb_path: "04_event.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="GhApi.fetch_events" class="doc_header"><code>GhApi.fetch_events</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/event.py#L54" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>GhApi.fetch_events</code>(<strong><code>n_pages</code></strong>=<em><code>3</code></em>, <strong><code>pause</code></strong>=<em><code>0.4</code></em>, <strong><code>per_page</code></strong>=<em><code>30</code></em>, <strong><code>types</code></strong>=<em><code>None</code></em>, <strong><code>incl_bot</code></strong>=<em><code>False</code></em>, <strong><code>username</code></strong>=<em><code>None</code></em>, <strong><code>org</code></strong>=<em><code>None</code></em>, <strong><code>owner</code></strong>=<em><code>None</code></em>, <strong><code>repo</code></strong>=<em><code>None</code></em>)</p>
+<h4 id="GhEvent" class="doc_header"><code>class</code> <code>GhEvent</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/event.py#L56" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>GhEvent</code>() :: <code>AttrDict</code></p>
 </blockquote>
-<p>Generate an infinite stream of events, optionally filtered to <code>types, with</code>pause` seconds between requests</p>
+<p>Class for events returned from `fetch_events</p>
 
 </div>
 
@@ -209,7 +216,7 @@ nb_path: "04_event.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="p">[</span><span class="n">o</span><span class="o">.</span><span class="n">type</span> <span class="k">for</span> <span class="n">o</span> <span class="ow">in</span> <span class="n">islice</span><span class="p">(</span><span class="n">api</span><span class="o">.</span><span class="n">fetch_events</span><span class="p">(</span><span class="n">username</span><span class="o">=</span><span class="s1">&#39;jph00&#39;</span><span class="p">),</span> <span class="mi">5</span><span class="p">)]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">([</span><span class="n">snake2camel</span><span class="p">(</span><span class="n">o</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;Event&#39;</span> <span class="k">for</span> <span class="n">o</span> <span class="ow">in</span> <span class="n">Event</span><span class="p">])</span>
 </pre></div>
 
     </div>
@@ -221,16 +228,28 @@ nb_path: "04_event.ipynb"
 
 <div class="output_area">
 
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>[&#39;PushEvent&#39;, &#39;PushEvent&#39;, &#39;PushEvent&#39;, &#39;PushEvent&#39;, &#39;IssuesEvent&#39;]</pre>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[&#39;PageBuildEvent&#39;, &#39;ContentReferenceEvent&#39;, &#39;RepositoryImportEvent&#39;, &#39;CreateEvent&#39;, &#39;WorkflowRunEvent&#39;, &#39;DeleteEvent&#39;, &#39;OrganizationEvent&#39;, &#39;SponsorshipEvent&#39;, &#39;ProjectColumnEvent&#39;, &#39;PushEvent&#39;, &#39;ContextEvent&#39;, &#39;MilestoneEvent&#39;, &#39;ProjectCardEvent&#39;, &#39;ProjectEvent&#39;, &#39;PackageEvent&#39;, &#39;PullRequestEvent&#39;, &#39;RepositoryDispatchEvent&#39;, &#39;TeamAddEvent&#39;, &#39;WorkflowDispatchEvent&#39;, &#39;MemberEvent&#39;, &#39;MetaEvent&#39;, &#39;CodeScanningAlertEvent&#39;, &#39;PublicEvent&#39;, &#39;NeedsEvent&#39;, &#39;CheckRunEvent&#39;, &#39;SecurityAdvisoryEvent&#39;, &#39;PullRequestReviewCommentEvent&#39;, &#39;OrgBlockEvent&#39;, &#39;CommitCommentEvent&#39;, &#39;WatchEvent&#39;, &#39;MarketplacePurchaseEvent&#39;, &#39;StarEvent&#39;, &#39;InstallationRepositoriesEvent&#39;, &#39;CheckSuiteEvent&#39;, &#39;GithubAppAuthorizationEvent&#39;, &#39;TeamEvent&#39;, &#39;StatusEvent&#39;, &#39;RepositoryVulnerabilityAlertEvent&#39;, &#39;PullRequestReviewEvent&#39;, &#39;LabelEvent&#39;, &#39;InstallationEvent&#39;, &#39;ReleaseEvent&#39;, &#39;IssuesEvent&#39;, &#39;RepositoryEvent&#39;, &#39;GollumEvent&#39;, &#39;MembershipEvent&#39;, &#39;DeploymentEvent&#39;, &#39;DeployKeyEvent&#39;, &#39;IssueCommentEvent&#39;, &#39;PingEvent&#39;, &#39;DeploymentStatusEvent&#39;, &#39;ForkEvent&#39;, &#39;ScheduleEvent&#39;]
+</pre>
 </div>
-
 </div>
 
 </div>
 </div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
 
 </div>
     {% endraw %}
@@ -246,7 +265,39 @@ nb_path: "04_event.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="load_sample_events" class="doc_header"><code>load_sample_events</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/event.py#L68" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>load_sample_events</code>()</p>
+<h4 id="GhApi.fetch_events" class="doc_header"><code>GhApi.fetch_events</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/event.py#L78" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>GhApi.fetch_events</code>(<strong><code>n_pages</code></strong>=<em><code>3</code></em>, <strong><code>pause</code></strong>=<em><code>0.4</code></em>, <strong><code>per_page</code></strong>=<em><code>30</code></em>, <strong><code>types</code></strong>=<em><code>None</code></em>, <strong><code>incl_bot</code></strong>=<em><code>False</code></em>, <strong><code>username</code></strong>=<em><code>None</code></em>, <strong><code>org</code></strong>=<em><code>None</code></em>, <strong><code>owner</code></strong>=<em><code>None</code></em>, <strong><code>repo</code></strong>=<em><code>None</code></em>)</p>
+</blockquote>
+<p>Generate an infinite stream of events, optionally filtered to <code>types, with</code>pause` seconds between requests</p>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="load_sample_events" class="doc_header"><code>load_sample_events</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/event.py#L93" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>load_sample_events</code>()</p>
 </blockquote>
 <p>Load sample events, downloading if needed</p>
 
@@ -278,7 +329,7 @@ nb_path: "04_event.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="save_sample_events" class="doc_header"><code>save_sample_events</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/event.py#L79" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>save_sample_events</code>(<strong><code>n</code></strong>=<em><code>1000</code></em>)</p>
+<h4 id="save_sample_events" class="doc_header"><code>save_sample_events</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/event.py#L104" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>save_sample_events</code>(<strong><code>n</code></strong>=<em><code>5000</code></em>)</p>
 </blockquote>
 <p>Save the most recent <code>n</code> events as compressed JSON</p>
 
@@ -295,6 +346,259 @@ nb_path: "04_event.ipynb"
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="None" class="doc_header"><code>None</code><a href="" class="source_link" style="float:right">[source]</a></h4>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="None" class="doc_header"><code>None</code><a href="" class="source_link" style="float:right">[source]</a></h4>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
+<span class="n">Counter</span><span class="p">([</span><span class="n">o</span><span class="o">.</span><span class="n">full_type</span> <span class="k">for</span> <span class="n">o</span> <span class="ow">in</span> <span class="n">evts</span><span class="p">])</span><span class="o">.</span><span class="n">most_common</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[(&#39;PushEvent&#39;, 2621),
+ (&#39;CreateEvent&#39;, 732),
+ (&#39;IssueCommentEvent_created&#39;, 322),
+ (&#39;WatchEvent_started&#39;, 204),
+ (&#39;PullRequestEvent_closed&#39;, 187),
+ (&#39;PullRequestReviewEvent_created&#39;, 171),
+ (&#39;PullRequestEvent_opened&#39;, 167),
+ (&#39;PullRequestReviewCommentEvent_created&#39;, 140),
+ (&#39;DeleteEvent&#39;, 108),
+ (&#39;ForkEvent&#39;, 106),
+ (&#39;IssuesEvent_opened&#39;, 74),
+ (&#39;IssuesEvent_closed&#39;, 56),
+ (&#39;ReleaseEvent_published&#39;, 34),
+ (&#39;MemberEvent_added&#39;, 23),
+ (&#39;CommitCommentEvent&#39;, 18),
+ (&#39;GollumEvent&#39;, 17),
+ (&#39;PublicEvent&#39;, 15),
+ (&#39;IssuesEvent_reopened&#39;, 3),
+ (&#39;PullRequestEvent_reopened&#39;, 2)]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="None" class="doc_header"><code>None</code><a href="" class="source_link" style="float:right">[source]</a></h4>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>You can use the <a href="/event.html#description"><code>description</code></a> and <a href="/event.html#emoji"><code>emoji</code></a> properties to display events, e.g:</p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">evts</span> <span class="o">=</span> <span class="n">load_sample_events</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">exs</span> <span class="o">=</span> <span class="p">[</span><span class="n">first</span><span class="p">(</span><span class="n">evts</span><span class="p">,</span> <span class="n">risinstance</span><span class="p">(</span><span class="n">o</span><span class="p">))</span> <span class="k">for</span> <span class="n">o</span> <span class="ow">in</span> <span class="n">described_evts</span><span class="p">]</span>
+<span class="k">def</span> <span class="nf">_fmt_evt</span><span class="p">(</span><span class="n">o</span><span class="p">):</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">o</span><span class="o">.</span><span class="n">emoji</span><span class="si">}</span><span class="s1"> **</span><span class="si">{</span><span class="n">o</span><span class="o">.</span><span class="n">actor</span><span class="o">.</span><span class="n">login</span><span class="si">}</span><span class="s1">** &#39;</span> <span class="o">+</span> <span class="n">truncstr</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">o</span><span class="o">.</span><span class="n">description</span><span class="si">}</span><span class="s1"> *</span><span class="si">{</span><span class="n">o</span><span class="o">.</span><span class="n">repo</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span><span class="mi">60</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;*&#39;</span>
+
+<span class="n">Markdown</span><span class="p">(</span><span class="s1">&#39;|Type|Description|</span><span class="se">\n</span><span class="s1">|:-|:-|</span><span class="se">\n</span><span class="s1">&#39;</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">o</span><span class="o">.</span><span class="n">type</span><span class="si">}</span><span class="s1">|</span><span class="si">{</span><span class="n">_fmt_evt</span><span class="p">(</span><span class="n">o</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span> <span class="k">for</span> <span class="n">o</span> <span class="ow">in</span> <span class="n">exs</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea output_execute_result">
+<table>
+<thead><tr>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"></td>
+</tr>
+</tbody>
+</table>
+<p>DeleteEvent|✂ <strong>dependabot[bot]</strong> deleted branch "packit-0.5.0" in <em>paketo-buildpacks/occam</em>
+CreateEvent|🏭 <strong>github-classroom[bot]</strong> created repository in <em>Introduction-to-Programming-OSOWSKI/…</em>
+PullRequestEvent|📬 <strong>JerryMacedoCastro</strong> opened PR #1 on <em>JerryMacedoCastro/tb-arquitetura-js</em>
+MemberEvent|💃 <strong>github-classroom[bot]</strong> added member noraahlman23 in <em>Introduction-to-Programming-O…</em>
+PublicEvent|♥ <strong>navikt</strong> made public repo  <em>navikt/syfoinntektsmelding</em>
+PullRequestReviewCommentEvent|🗨 <strong>fruttasecca</strong> created review comment on PR #97 in <em>orchest/orchest</em>
+ForkEvent|🍽 <strong>amin-lotf</strong> forked <em>vinaygaba/Learn-Jetpack-Compose-By-Example</em>
+CommitCommentEvent|🎉 <strong>vercel[bot]</strong> created commint comment in <em>Samaraferreira/test-frontend</em>
+WatchEvent|👀 <strong>ikarius</strong> started watching <em>jorgebucaran/awsm.fish</em>
+PullRequestReviewEvent|💌 <strong>fruttasecca</strong> created PR review in <em>orchest/orchest</em>
+ReleaseEvent|🚀 <strong>github-actions[bot]</strong> published release v1.1.3 in <em>vouv/srun</em>
+IssuesEvent|🐛 <strong>efritz</strong> opened issue #16915 on <em>sourcegraph/sourcegraph</em>
+GollumEvent|📚 <strong>TradingToolCrypto</strong> created wiki page in <em>TradingToolCrypto/TradingTool-Wiki</em>
+IssueCommentEvent|💬 <strong>jerhard</strong> created comment on issue #2570 in <em>ls1intum/Artemis</em></p>
+
+</div>
+
+</div>
+
+</div>
+</div>
 
 </div>
     {% endraw %}
