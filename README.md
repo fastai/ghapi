@@ -41,6 +41,7 @@ All of the documentation is available directly as Jupyter Notebooks, for instanc
 To access the GitHub API, first create a `GhApi` object:
 
 ```python
+from ghapi.all import GhApi
 api = GhApi()
 ```
 
