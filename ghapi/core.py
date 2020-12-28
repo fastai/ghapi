@@ -14,9 +14,10 @@ from urllib.request import Request
 from urllib.error import HTTPError
 from datetime import datetime,timedelta
 from pprint import pprint
+import os
 
 # Cell
-GH_HOST = "https://api.github.com"
+GH_HOST = os.getenv('GH_HOST', "https://api.github.com")
 _DOC_URL = 'https://docs.github.com/'
 
 # Cell
