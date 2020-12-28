@@ -13,7 +13,7 @@ from urllib.parse import parse_qs,urlsplit
 # Cell
 def paged(oper, *args, per_page=30, max_pages=9999, **kwargs):
     "Convert operation `oper(*args,**kwargs)` into an iterator"
-    yield from itertools.takewhile(noop, (oper(*args, per_page=per_page, page=i) for i in range(1,max_pages+1)))
+    yield from itertools.takewhile(noop, (oper(*args, per_page=per_page, page=i, **kwargs) for i in range(1,max_pages+1)))
 
 # Cell
 class _Scanner:
