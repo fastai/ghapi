@@ -78,7 +78,7 @@ nb_path: "04_event.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="GhApi.list_events" class="doc_header"><code>GhApi.list_events</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/event.py#L33" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>GhApi.list_events</code>(<strong><code>per_page</code></strong>=<em><code>30</code></em>, <strong><code>page</code></strong>=<em><code>1</code></em>, <strong><code>username</code></strong>=<em><code>None</code></em>, <strong><code>org</code></strong>=<em><code>None</code></em>, <strong><code>owner</code></strong>=<em><code>None</code></em>, <strong><code>repo</code></strong>=<em><code>None</code></em>)</p>
+<h4 id="GhApi.list_events" class="doc_header"><code>GhApi.list_events</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/event.py#L43" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>GhApi.list_events</code>(<strong><code>per_page</code></strong>=<em><code>30</code></em>, <strong><code>page</code></strong>=<em><code>1</code></em>, <strong><code>username</code></strong>=<em><code>None</code></em>, <strong><code>org</code></strong>=<em><code>None</code></em>, <strong><code>owner</code></strong>=<em><code>None</code></em>, <strong><code>repo</code></strong>=<em><code>None</code></em>)</p>
 </blockquote>
 <p>Fetch public events for repo network, org, user, or all</p>
 
@@ -110,7 +110,7 @@ nb_path: "04_event.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="GhApi.list_events_parallel" class="doc_header"><code>GhApi.list_events_parallel</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/event.py#L41" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>GhApi.list_events_parallel</code>(<strong><code>per_page</code></strong>=<em><code>30</code></em>, <strong><code>n_pages</code></strong>=<em><code>8</code></em>, <strong><code>username</code></strong>=<em><code>None</code></em>, <strong><code>org</code></strong>=<em><code>None</code></em>, <strong><code>owner</code></strong>=<em><code>None</code></em>, <strong><code>repo</code></strong>=<em><code>None</code></em>)</p>
+<h4 id="GhApi.list_events_parallel" class="doc_header"><code>GhApi.list_events_parallel</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/event.py#L51" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>GhApi.list_events_parallel</code>(<strong><code>per_page</code></strong>=<em><code>30</code></em>, <strong><code>n_pages</code></strong>=<em><code>8</code></em>, <strong><code>username</code></strong>=<em><code>None</code></em>, <strong><code>org</code></strong>=<em><code>None</code></em>, <strong><code>owner</code></strong>=<em><code>None</code></em>, <strong><code>repo</code></strong>=<em><code>None</code></em>)</p>
 </blockquote>
 <p>Fetch as many events from <code>list_events</code> in parallel as available</p>
 
@@ -188,7 +188,7 @@ nb_path: "04_event.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="GhEvent" class="doc_header"><code>class</code> <code>GhEvent</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/event.py#L56" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>GhEvent</code>() :: <code>AttrDict</code></p>
+<h4 id="GhEvent" class="doc_header"><code>class</code> <code>GhEvent</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/event.py#L66" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>GhEvent</code>() :: <code>AttrDict</code></p>
 </blockquote>
 <p>Class for events returned from `fetch_events</p>
 
@@ -258,7 +258,7 @@ nb_path: "04_event.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="GhApi.fetch_events" class="doc_header"><code>GhApi.fetch_events</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/event.py#L77" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>GhApi.fetch_events</code>(<strong><code>n_pages</code></strong>=<em><code>3</code></em>, <strong><code>pause</code></strong>=<em><code>0.4</code></em>, <strong><code>per_page</code></strong>=<em><code>30</code></em>, <strong><code>types</code></strong>=<em><code>None</code></em>, <strong><code>incl_bot</code></strong>=<em><code>False</code></em>, <strong><code>username</code></strong>=<em><code>None</code></em>, <strong><code>org</code></strong>=<em><code>None</code></em>, <strong><code>owner</code></strong>=<em><code>None</code></em>, <strong><code>repo</code></strong>=<em><code>None</code></em>)</p>
+<h4 id="GhApi.fetch_events" class="doc_header"><code>GhApi.fetch_events</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/event.py#L87" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>GhApi.fetch_events</code>(<strong><code>n_pages</code></strong>=<em><code>3</code></em>, <strong><code>pause</code></strong>=<em><code>0.4</code></em>, <strong><code>per_page</code></strong>=<em><code>30</code></em>, <strong><code>types</code></strong>=<em><code>None</code></em>, <strong><code>incl_bot</code></strong>=<em><code>False</code></em>, <strong><code>username</code></strong>=<em><code>None</code></em>, <strong><code>org</code></strong>=<em><code>None</code></em>, <strong><code>owner</code></strong>=<em><code>None</code></em>, <strong><code>repo</code></strong>=<em><code>None</code></em>)</p>
 </blockquote>
 <p>Generate an infinite stream of events, optionally filtered to <code>types, with</code>pause` seconds between requests</p>
 
@@ -290,7 +290,7 @@ nb_path: "04_event.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="load_sample_events" class="doc_header"><code>load_sample_events</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/event.py#L92" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>load_sample_events</code>()</p>
+<h4 id="load_sample_events" class="doc_header"><code>load_sample_events</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/event.py#L102" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>load_sample_events</code>()</p>
 </blockquote>
 <p>Load sample events, downloading if needed</p>
 
@@ -322,7 +322,7 @@ nb_path: "04_event.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="save_sample_events" class="doc_header"><code>save_sample_events</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/event.py#L103" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>save_sample_events</code>(<strong><code>n</code></strong>=<em><code>5000</code></em>)</p>
+<h4 id="save_sample_events" class="doc_header"><code>save_sample_events</code><a href="https://github.com/fastai/ghapi/tree/master/ghapi/event.py#L113" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>save_sample_events</code>(<strong><code>n</code></strong>=<em><code>5000</code></em>)</p>
 </blockquote>
 <p>Save the most recent <code>n</code> events as compressed JSON</p>
 

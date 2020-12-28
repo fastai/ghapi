@@ -9,6 +9,7 @@
     "Command line interface": "cli.html",
     "Full GitHub API reference": "fullapi.html",
     "Getting started with GitHub Actions": "tutorial_actions.html",
-    "Internal - OpenAPI Parser": "build_lib.html"
+    "Internal - OpenAPI Parser": "build_lib.html",
+    "Title": "ghapi demo.html"
   }
 }
