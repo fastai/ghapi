@@ -2,6 +2,18 @@
 
 <!-- do not remove -->
 
+## 0.1.14
+
+### New Features
+
+- `text` property for `GhEvent` ([#23](https://github.com/fastai/ghapi/issues/23))
+
+### Bugs Squashed
+
+- broken links in index.html page ([#27](https://github.com/fastai/ghapi/issues/27))
+- Bug: `paged` does not pass `kwargs` to operation ([#24](https://github.com/fastai/ghapi/issues/24))
+
+
 ## 0.1.13
 
 
