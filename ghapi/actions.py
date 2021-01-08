@@ -4,7 +4,7 @@ __all__ = ['contexts', 'context_github', 'context_env', 'context_job', 'context_
            'context_secrets', 'context_strategy', 'context_matrix', 'context_needs', 'env_github', 'user_repo', 'Event',
            'create_workflow_files', 'fill_workflow_templates', 'env_contexts', 'def_pipinst', 'create_workflow',
            'gh_create_workflow', 'example_payload', 'github_token', 'actions_output', 'actions_debug', 'actions_warn',
-           'actions_error', 'actions_group', 'actions_endgroup', 'actions_mask', 'set_git_user']
+           'actions_error', 'actions_group', 'actions_mask', 'set_git_user']
 
 # Cell
 from fastcore.utils import *
@@ -15,6 +15,7 @@ from .core import *
 from .templates import *
 
 import textwrap
+from contextlib import contextmanager
 from enum import Enum
 
 # Cell
@@ -137,13 +138,11 @@ def actions_error(message, details=''):
     print(f"::error {details}::{message}")
 
 # Cell
+@contextmanager
 def actions_group(title):
-    "Print the special `::group` line for `title`"
+    "Context manager to print the special `::group`/`::endgroup` lines for `title`"
     print(f"::group::{title}")
-
-# Cell
-def actions_endgroup():
-    "Print the special `::endgroup`"
+    yield
     print(f"::endgroup::")
 
 # Cell
