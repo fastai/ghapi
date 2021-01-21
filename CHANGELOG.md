@@ -2,6 +2,13 @@
 
 <!-- do not remove -->
 
+## 0.1.15
+
+### New Features
+
+- make `actions_group` a context manager ([#33](https://github.com/fastai/ghapi/issues/33))
+
+
 ## 0.1.14
 
 ### New Features
