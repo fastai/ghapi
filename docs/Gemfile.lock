@@ -36,7 +36,7 @@ GEM
       jekyll-seo-tag (~> 2.0)
     jekyll-watch (2.2.1)
       listen (~> 3.0)
-    kramdown (2.3.0)
+    kramdown (2.3.1)
       rexml
     liquid (4.0.3)
     listen (3.3.1)
