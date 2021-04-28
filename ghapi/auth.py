@@ -36,7 +36,7 @@ class GhDeviceAuth(GetAttrBase):
     def __init__(self, client_id=_def_clientid, *scopes):
         url = 'https://github.com/login/device/code'
         self.client_id = client_id
-        self.params = parse_qs(urlread(url, client_id=client_id, scope=scope_str(scopes)))
+        self.params = parse_qs(urlread(url, client_id=client_id, scope=scope_str(*scopes)))
 
     def _getattr(self,v): return v[0]
 
