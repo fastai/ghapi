@@ -182,7 +182,7 @@ nb_path: "03_page.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>However, <code>per_page</code> has a maximum of <code>100</code>, so if you want more, you'll have to pass <code>page=</code> to get pages beyond the first. An easy way to iterate through all pages is to use <a href="/page.html#paged"><code>paged</code></a>.</p>
+<p>However, <code>per_page</code> has a maximum of <code>100</code>, so if you want more, you'll have to pass <code>page=</code> to get pages beyond the first. An easy way to iterate through all pages is to use <a href="/page.html#paged"><code>paged</code></a>. <a href="/page.html#paged"><code>paged</code></a> returns a generator</p>
 
 </div>
 </div>
@@ -266,7 +266,7 @@ nb_path: "03_page.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">repos</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">repos</span><span class="o">.</span><span class="n">list_for_org</span><span class="p">(</span><span class="s1">&#39;fastai&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">repos</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">repos</span><span class="o">.</span><span class="n">list_for_org</span><span class="p">(</span><span class="n">org</span><span class="o">=</span><span class="s1">&#39;fastai&#39;</span><span class="p">)</span>
 <span class="nb">len</span><span class="p">(</span><span class="n">repos</span><span class="p">),</span><span class="n">repos</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">name</span>
 </pre></div>
 
@@ -282,7 +282,7 @@ nb_path: "03_page.ipynb"
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>(30, &#39;fast-image&#39;)</pre>
+<pre>(30, &#39;docs&#39;)</pre>
 </div>
 
 </div>
@@ -295,7 +295,7 @@ nb_path: "03_page.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>To convert this operation into a Python iterator, pass the operation itself, along with any arguments (either keyword or positional) to <a href="/page.html#paged"><code>paged</code></a>:</p>
+<p>To convert this operation into a Python iterator, pass the operation itself, along with any arguments (either keyword or positional) to <a href="/page.html#paged"><code>paged</code></a>.  Note how the function and arguments are passed separately:</p>
 
 </div>
 </div>
@@ -307,7 +307,7 @@ nb_path: "03_page.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">repos</span> <span class="o">=</span> <span class="n">paged</span><span class="p">(</span><span class="n">api</span><span class="o">.</span><span class="n">repos</span><span class="o">.</span><span class="n">list_for_org</span><span class="p">,</span> <span class="s1">&#39;fastai&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">repos</span> <span class="o">=</span> <span class="n">paged</span><span class="p">(</span><span class="n">api</span><span class="o">.</span><span class="n">repos</span><span class="o">.</span><span class="n">list_for_org</span><span class="p">,</span> <span class="n">org</span><span class="o">=</span><span class="s1">&#39;fastai&#39;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -319,7 +319,7 @@ nb_path: "03_page.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>You can now iterate through <code>repos</code> using Python, e.g:</p>
+<p>Note that the object returned from <a href="/page.html#paged"><code>paged</code></a> is a generator.  You can iterate through this generator <code>repos</code> in the normal way:</p>
 
 </div>
 </div>
@@ -344,10 +344,9 @@ nb_path: "03_page.ipynb"
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>30 fast-image
-30 fastforest
-30 .github
-3 tweetrel
+<pre>30 docs
+30 fastscript
+25 wireguard-fast
 </pre>
 </div>
 </div>
