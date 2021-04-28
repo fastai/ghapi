@@ -42,7 +42,8 @@ class _GhObj: pass
 class _GhVerb(_GhObj):
     __slots__ = 'path,verb,tag,name,summary,url,route_ps,params,data,preview,client,__doc__'.split(',')
     def __init__(self, path, verb, oper, summary, url, params, data, preview, client, kwargs):
-        tag,name = oper.split('/')
+        tag,*name = oper.split('/')
+        name = '__'.join(name)
         name = name.replace('-','_')
         path,_,_ = partial_format(path, **kwargs)
         route_ps = stringfmt_names(path)
