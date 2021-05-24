@@ -2,6 +2,14 @@
 
 <!-- do not remove -->
 
+## 0.1.17
+
+
+### Bugs Squashed
+
+- Fix ability to define scopes ([#53](https://github.com/fastai/ghapi/pull/53)), thanks to [@danpalmer](https://github.com/danpalmer)
+
+
 ## 0.1.15
 
 ### New Features
