@@ -225,5 +225,5 @@ ghapi --help
 In addition to `--help` and the GitHub operation parameters, you can also pass the following:
 
 - `--headers`: A list of extra headers to pass, JSON-encoded
-- `--token`: A GitHub authentation token
+- `--token`: A GitHub authentication token
 - `--debug`: Print requests before sending them
