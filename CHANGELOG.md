@@ -2,6 +2,12 @@
 
 <!-- do not remove -->
 
+## 0.1.18
+
+### Bugs Squashed
+
+- `HTTP Error 422: Unprocessable Entity` returned for `issues.add_labels` ([#69](https://github.com/fastai/ghapi/issues/69))
+
 
 ## 0.1.17
 
