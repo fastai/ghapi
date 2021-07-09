@@ -27,11 +27,19 @@ def _detls(k,v):
     except KeyError: pass
     return [k]+res
 
+def _find_data(d):
+    if 'properties' in d: return d['properties']
+    if 'oneOf' in d:
+        for o in d['oneOf']:
+            if 'properties' in o: return o['properties']
+    return {}
+
 # Cell
 def build_funcs(nm='ghapi/metadata.py', url=GH_OPENAPI_URL, docurl=_DOC_URL):
     "Build module metadata.py from an Open API spec and optionally filter by a path `pre`"
     def _get_detls(o):
-        data = nested_idx(o, *'requestBody content application/json schema properties'.split()) or {}
+        data = nested_idx(o, *'requestBody content application/json schema'.split()) or {}
+        data = _find_data(data)
         url = o['externalDocs']['url'][len(docurl):]
         params = o.get('parameters',None)
         qparams = [p['name'] for p in params if p['in']=='query'] if params else []
