@@ -58,7 +58,7 @@ nb_path: "50_fullapi.ipynb"
 
 <div class="output_markdown rendered_html output_subarea output_execute_result">
 <h2 id="actions">actions<a class="anchor-link" href="#actions"> </a></h2><ul>
-<li><a href="https://docs.github.com/rest/reference/actions#get-github-actions-permissions-for-an-organization">actions.actions_policies__get_github_actions_permissions_organization</a>(org): <em>Get GitHub Actions permissions for an organization</em></li>
+<li><a href="https://docs.github.com/rest/reference/actions#get-github-actions-permissions-for-an-organization">actions.get_github_actions_permissions_organization</a>(org): <em>Get GitHub Actions permissions for an organization</em></li>
 <li><a href="https://docs.github.com/rest/reference/actions#set-github-actions-permissions-for-an-organization">actions.set_github_actions_permissions_organization</a>(org, enabled_repositories, allowed_actions): <em>Set GitHub Actions permissions for an organization</em></li>
 <li><a href="https://docs.github.com/rest/reference/actions#list-selected-repositories-enabled-for-github-actions-in-an-organization">actions.list_selected_repositories_enabled_github_actions_organization</a>(org, per_page, page): <em>List selected repositories enabled for GitHub Actions in an organization</em></li>
 <li><a href="https://docs.github.com/rest/reference/actions#set-selected-repositories-enabled-for-github-actions-in-an-organization">actions.set_selected_repositories_enabled_github_actions_organization</a>(org, selected_repository_ids): <em>Set selected repositories enabled for GitHub Actions in an organization</em></li>
@@ -114,6 +114,7 @@ nb_path: "50_fullapi.ipynb"
 <li><a href="https://docs.github.com/rest/reference/actions#get-a-workflow-run">actions.get_workflow_run</a>(owner, repo, run_id): <em>Get a workflow run</em></li>
 <li><a href="https://docs.github.com/rest/reference/actions#delete-a-workflow-run">actions.delete_workflow_run</a>(owner, repo, run_id): <em>Delete a workflow run</em></li>
 <li><a href="https://docs.github.com/rest/reference/actions#get-the-review-history-for-a-workflow-run">actions.get_reviews_for_run</a>(owner, repo, run_id): <em>Get the review history for a workflow run</em></li>
+<li><a href="https://docs.github.com/rest/reference/actions#approve-a-workflow-run-for-a-fork-pull-request">actions.approve_workflow_run</a>(owner, repo, run_id): <em>Approve a workflow run for a fork pull request</em></li>
 <li><a href="https://docs.github.com/rest/reference/actions#list-workflow-run-artifacts">actions.list_workflow_run_artifacts</a>(owner, repo, run_id, per_page, page): <em>List workflow run artifacts</em></li>
 <li><a href="https://docs.github.com/rest/reference/actions#cancel-a-workflow-run">actions.cancel_workflow_run</a>(owner, repo, run_id): <em>Cancel a workflow run</em></li>
 <li><a href="https://docs.github.com/rest/reference/actions#list-jobs-for-a-workflow-run">actions.list_jobs_for_workflow_run</a>(owner, repo, run_id, filter, per_page, page): <em>List jobs for a workflow run</em></li>
@@ -175,16 +176,16 @@ nb_path: "50_fullapi.ipynb"
 <li><a href="https://docs.github.com/rest/reference/activity#list-repositories-watched-by-a-user">activity.list_repos_watched_by_user</a>(username, per_page, page): <em>List repositories watched by a user</em></li>
 </ul>
 <h2 id="apps">apps<a class="anchor-link" href="#apps"> </a></h2><ul>
-<li><a href="https://docs.github.com/rest/reference/apps/#get-the-authenticated-app">apps.get_authenticated</a>(): <em>Get the authenticated app</em></li>
-<li><a href="https://docs.github.com/rest/reference/apps/#create-a-github-app-from-a-manifest">apps.create_from_manifest</a>(code): <em>Create a GitHub App from a manifest</em></li>
+<li><a href="https://docs.github.com/rest/reference/apps#get-the-authenticated-app">apps.get_authenticated</a>(): <em>Get the authenticated app</em></li>
+<li><a href="https://docs.github.com/rest/reference/apps#create-a-github-app-from-a-manifest">apps.create_from_manifest</a>(code): <em>Create a GitHub App from a manifest</em></li>
 <li><a href="https://docs.github.com/rest/reference/apps#get-a-webhook-configuration-for-an-app">apps.get_webhook_config_for_app</a>(): <em>Get a webhook configuration for an app</em></li>
 <li><a href="https://docs.github.com/rest/reference/apps#update-a-webhook-configuration-for-an-app">apps.update_webhook_config_for_app</a>(url, content_type, secret, insecure_ssl): <em>Update a webhook configuration for an app</em></li>
-<li><a href="https://docs.github.com/rest/reference/apps/#list-installations-for-the-authenticated-app">apps.list_installations</a>(per_page, page, since, outdated): <em>List installations for the authenticated app</em></li>
-<li><a href="https://docs.github.com/rest/reference/apps/#get-an-installation-for-the-authenticated-app">apps.get_installation</a>(installation_id): <em>Get an installation for the authenticated app</em></li>
-<li><a href="https://docs.github.com/rest/reference/apps/#delete-an-installation-for-the-authenticated-app">apps.delete_installation</a>(installation_id): <em>Delete an installation for the authenticated app</em></li>
+<li><a href="https://docs.github.com/rest/reference/apps#list-installations-for-the-authenticated-app">apps.list_installations</a>(per_page, page, since, outdated): <em>List installations for the authenticated app</em></li>
+<li><a href="https://docs.github.com/rest/reference/apps#get-an-installation-for-the-authenticated-app">apps.get_installation</a>(installation_id): <em>Get an installation for the authenticated app</em></li>
+<li><a href="https://docs.github.com/rest/reference/apps#delete-an-installation-for-the-authenticated-app">apps.delete_installation</a>(installation_id): <em>Delete an installation for the authenticated app</em></li>
 <li><a href="https://docs.github.com/rest/reference/apps/#create-an-installation-access-token-for-an-app">apps.create_installation_access_token</a>(installation_id, repositories, repository_ids, permissions): <em>Create an installation access token for an app</em></li>
-<li><a href="https://docs.github.com/rest/reference/apps/#suspend-an-app-installation">apps.suspend_installation</a>(installation_id): <em>Suspend an app installation</em></li>
-<li><a href="https://docs.github.com/rest/reference/apps/#unsuspend-an-app-installation">apps.unsuspend_installation</a>(installation_id): <em>Unsuspend an app installation</em></li>
+<li><a href="https://docs.github.com/rest/reference/apps#suspend-an-app-installation">apps.suspend_installation</a>(installation_id): <em>Suspend an app installation</em></li>
+<li><a href="https://docs.github.com/rest/reference/apps#unsuspend-an-app-installation">apps.unsuspend_installation</a>(installation_id): <em>Unsuspend an app installation</em></li>
 <li><a href="https://docs.github.com/rest/reference/apps#delete-an-app-authorization">apps.delete_authorization</a>(client_id, access_token): <em>Delete an app authorization</em></li>
 <li><a href="https://docs.github.com/rest/reference/apps#revoke-a-grant-for-an-application">apps.revoke_grant_for_application</a>(client_id, access_token): <em>Revoke a grant for an application</em></li>
 <li><a href="https://docs.github.com/rest/reference/apps#check-a-token">apps.check_token</a>(client_id, access_token): <em>Check a token</em></li>
@@ -195,7 +196,6 @@ nb_path: "50_fullapi.ipynb"
 <li><a href="https://docs.github.com/rest/reference/apps#reset-an-authorization">apps.reset_authorization</a>(client_id, access_token): <em>Reset an authorization</em></li>
 <li><a href="https://docs.github.com/rest/reference/apps#revoke-an-authorization-for-an-application">apps.revoke_authorization_for_application</a>(client_id, access_token): <em>Revoke an authorization for an application</em></li>
 <li><a href="https://docs.github.com/rest/reference/apps/#get-an-app">apps.get_by_slug</a>(app_slug): <em>Get an app</em></li>
-<li><a href="https://docs.github.com/rest/reference/apps#create-a-content-attachment">apps.create_content_attachment</a>(content_reference_id, title, body): <em>Create a content attachment</em></li>
 <li><a href="https://docs.github.com/rest/reference/apps#list-repositories-accessible-to-the-app-installation">apps.list_repos_accessible_to_installation</a>(per_page, page): <em>List repositories accessible to the app installation</em></li>
 <li><a href="https://docs.github.com/rest/reference/apps#revoke-an-installation-access-token">apps.revoke_installation_access_token</a>(): <em>Revoke an installation access token</em></li>
 <li><a href="https://docs.github.com/rest/reference/apps#get-a-subscription-plan-for-an-account">apps.get_subscription_plan_for_account</a>(account_id): <em>Get a subscription plan for an account</em></li>
@@ -204,29 +204,27 @@ nb_path: "50_fullapi.ipynb"
 <li><a href="https://docs.github.com/rest/reference/apps#get-a-subscription-plan-for-an-account-stubbed">apps.get_subscription_plan_for_account_stubbed</a>(account_id): <em>Get a subscription plan for an account (stubbed)</em></li>
 <li><a href="https://docs.github.com/rest/reference/apps#list-plans-stubbed">apps.list_plans_stubbed</a>(per_page, page): <em>List plans (stubbed)</em></li>
 <li><a href="https://docs.github.com/rest/reference/apps#list-accounts-for-a-plan-stubbed">apps.list_accounts_for_plan_stubbed</a>(plan_id, sort, direction, per_page, page): <em>List accounts for a plan (stubbed)</em></li>
-<li><a href="https://docs.github.com/rest/reference/apps/#get-an-organization-installation-for-the-authenticated-app">apps.get_org_installation</a>(org): <em>Get an organization installation for the authenticated app</em></li>
-<li><a href="https://docs.github.com/rest/reference/apps/#get-a-repository-installation-for-the-authenticated-app">apps.get_repo_installation</a>(owner, repo): <em>Get a repository installation for the authenticated app</em></li>
+<li><a href="https://docs.github.com/rest/reference/apps#get-an-organization-installation-for-the-authenticated-app">apps.get_org_installation</a>(org): <em>Get an organization installation for the authenticated app</em></li>
+<li><a href="https://docs.github.com/rest/reference/apps#create-a-content-attachment">apps.create_content_attachment</a>(owner, repo, content_reference_id, title, body): <em>Create a content attachment</em></li>
+<li><a href="https://docs.github.com/rest/reference/apps#get-a-repository-installation-for-the-authenticated-app">apps.get_repo_installation</a>(owner, repo): <em>Get a repository installation for the authenticated app</em></li>
 <li><a href="https://docs.github.com/rest/reference/apps#list-app-installations-accessible-to-the-user-access-token">apps.list_installations_for_authenticated_user</a>(per_page, page): <em>List app installations accessible to the user access token</em></li>
 <li><a href="https://docs.github.com/rest/reference/apps#list-repositories-accessible-to-the-user-access-token">apps.list_installation_repos_for_authenticated_user</a>(installation_id, per_page, page): <em>List repositories accessible to the user access token</em></li>
 <li><a href="https://docs.github.com/rest/reference/apps#add-a-repository-to-an-app-installation">apps.add_repo_to_installation</a>(installation_id, repository_id): <em>Add a repository to an app installation</em></li>
 <li><a href="https://docs.github.com/rest/reference/apps#remove-a-repository-from-an-app-installation">apps.remove_repo_from_installation</a>(installation_id, repository_id): <em>Remove a repository from an app installation</em></li>
 <li><a href="https://docs.github.com/rest/reference/apps#list-subscriptions-for-the-authenticated-user">apps.list_subscriptions_for_authenticated_user</a>(per_page, page): <em>List subscriptions for the authenticated user</em></li>
 <li><a href="https://docs.github.com/rest/reference/apps#list-subscriptions-for-the-authenticated-user-stubbed">apps.list_subscriptions_for_authenticated_user_stubbed</a>(per_page, page): <em>List subscriptions for the authenticated user (stubbed)</em></li>
-<li><a href="https://docs.github.com/rest/reference/apps/#get-a-user-installation-for-the-authenticated-app">apps.get_user_installation</a>(username): <em>Get a user installation for the authenticated app</em></li>
-</ul>
-<h2 id="audit_log">audit_log<a class="anchor-link" href="#audit_log"> </a></h2><ul>
-<li><a href="https://docs.github.com/rest/reference/enterprise-admin#get-the-audit-log-for-an-enterprise">audit-log.get_audit_log</a>(enterprise, phrase, include, after, before, order, page, per_page): <em>Get the audit log for an enterprise</em></li>
+<li><a href="https://docs.github.com/rest/reference/apps#get-a-user-installation-for-the-authenticated-app">apps.get_user_installation</a>(username): <em>Get a user installation for the authenticated app</em></li>
 </ul>
 <h2 id="billing">billing<a class="anchor-link" href="#billing"> </a></h2><ul>
-<li><a href="https://docs.github.com/rest/reference/billing/#get-github-actions-billing-for-an-enterprise">billing.get_github_actions_billing_ghe</a>(enterprise): <em>Get GitHub Actions billing for an enterprise</em></li>
-<li><a href="https://docs.github.com/rest/reference/billing/#get-github-packages-billing-for-an-enterprise">billing.get_github_packages_billing_ghe</a>(enterprise): <em>Get GitHub Packages billing for an enterprise</em></li>
-<li><a href="https://docs.github.com/rest/reference/billing/#get-shared-storage-billing-for-an-enterprise">billing.get_shared_storage_billing_ghe</a>(enterprise): <em>Get shared storage billing for an enterprise</em></li>
-<li><a href="https://docs.github.com/rest/reference/billing/#get-github-actions-billing-for-an-organization">billing.get_github_actions_billing_org</a>(org): <em>Get GitHub Actions billing for an organization</em></li>
-<li><a href="https://docs.github.com/rest/reference/billing/#get-github-packages-billing-for-an-organization">billing.get_github_packages_billing_org</a>(org): <em>Get GitHub Packages billing for an organization</em></li>
-<li><a href="https://docs.github.com/rest/reference/billing/#get-shared-storage-billing-for-an-organization">billing.get_shared_storage_billing_org</a>(org): <em>Get shared storage billing for an organization</em></li>
-<li><a href="https://docs.github.com/rest/reference/billing/#get-github-actions-billing-for-a-user">billing.get_github_actions_billing_user</a>(username): <em>Get GitHub Actions billing for a user</em></li>
-<li><a href="https://docs.github.com/rest/reference/billing/#get-github-packages-billing-for-a-user">billing.get_github_packages_billing_user</a>(username): <em>Get GitHub Packages billing for a user</em></li>
-<li><a href="https://docs.github.com/rest/reference/billing/#get-shared-storage-billing-for-a-user">billing.get_shared_storage_billing_user</a>(username): <em>Get shared storage billing for a user</em></li>
+<li><a href="https://docs.github.com/rest/reference/billing#get-github-actions-billing-for-an-enterprise">billing.get_github_actions_billing_ghe</a>(enterprise): <em>Get GitHub Actions billing for an enterprise</em></li>
+<li><a href="https://docs.github.com/rest/reference/billing#get-github-packages-billing-for-an-enterprise">billing.get_github_packages_billing_ghe</a>(enterprise): <em>Get GitHub Packages billing for an enterprise</em></li>
+<li><a href="https://docs.github.com/rest/reference/billing#get-shared-storage-billing-for-an-enterprise">billing.get_shared_storage_billing_ghe</a>(enterprise): <em>Get shared storage billing for an enterprise</em></li>
+<li><a href="https://docs.github.com/rest/reference/billing#get-github-actions-billing-for-an-organization">billing.get_github_actions_billing_org</a>(org): <em>Get GitHub Actions billing for an organization</em></li>
+<li><a href="https://docs.github.com/rest/reference/billing#get-github-packages-billing-for-an-organization">billing.get_github_packages_billing_org</a>(org): <em>Get GitHub Packages billing for an organization</em></li>
+<li><a href="https://docs.github.com/rest/reference/billing#get-shared-storage-billing-for-an-organization">billing.get_shared_storage_billing_org</a>(org): <em>Get shared storage billing for an organization</em></li>
+<li><a href="https://docs.github.com/rest/reference/billing#get-github-actions-billing-for-a-user">billing.get_github_actions_billing_user</a>(username): <em>Get GitHub Actions billing for a user</em></li>
+<li><a href="https://docs.github.com/rest/reference/billing#get-github-packages-billing-for-a-user">billing.get_github_packages_billing_user</a>(username): <em>Get GitHub Packages billing for a user</em></li>
+<li><a href="https://docs.github.com/rest/reference/billing#get-shared-storage-billing-for-a-user">billing.get_shared_storage_billing_user</a>(username): <em>Get shared storage billing for a user</em></li>
 </ul>
 <h2 id="checks">checks<a class="anchor-link" href="#checks"> </a></h2><ul>
 <li><a href="https://docs.github.com/rest/reference/checks#create-a-check-run">checks.create</a>(owner, repo, name, head_sha, details_url, external_id, status, started_at, conclusion, completed_at, output, actions): <em>Create a check run</em></li>
@@ -245,20 +243,20 @@ nb_path: "50_fullapi.ipynb"
 <li><a href="https://docs.github.com/rest/reference/code-scanning#list-code-scanning-alerts-for-a-repository">code-scanning.list_alerts_for_repo</a>(owner, repo, tool_name, tool_guid, page, per_page, ref, state): <em>List code scanning alerts for a repository</em></li>
 <li><a href="https://docs.github.com/rest/reference/code-scanning#get-a-code-scanning-alert">code-scanning.get_alert</a>(owner, repo, alert_number): <em>Get a code scanning alert</em></li>
 <li><a href="https://docs.github.com/rest/reference/code-scanning#update-a-code-scanning-alert">code-scanning.update_alert</a>(owner, repo, alert_number, state, dismissed_reason): <em>Update a code scanning alert</em></li>
-<li><a href="https://docs.github.com/rest/reference/code-scanning#list-instances-of-a-code-scanning-alert">code-scanning.list_alerts_instances</a>(owner, repo, alert_number, page, per_page, ref): <em>List instances of a code scanning alert</em></li>
+<li><a href="https://docs.github.com/rest/reference/code-scanning#list-instances-of-a-code-scanning-alert">code-scanning.list_alert_instances</a>(owner, repo, alert_number, page, per_page, ref): <em>List instances of a code scanning alert</em></li>
 <li><a href="https://docs.github.com/rest/reference/code-scanning#list-code-scanning-analyses-for-a-repository">code-scanning.list_recent_analyses</a>(owner, repo, tool_name, tool_guid, page, per_page, ref, sarif_id): <em>List code scanning analyses for a repository</em></li>
 <li><a href="https://docs.github.com/rest/reference/code-scanning#get-a-code-scanning-analysis-for-a-repository">code-scanning.get_analysis</a>(owner, repo, analysis_id): <em>Get a code scanning analysis for a repository</em></li>
 <li><a href="https://docs.github.com/rest/reference/code-scanning#delete-a-code-scanning-analysis-from-a-repository">code-scanning.delete_analysis</a>(owner, repo, analysis_id, confirm_delete): <em>Delete a code scanning analysis from a repository</em></li>
-<li><a href="https://docs.github.com/rest/reference/code-scanning#upload-an-analysis-as-sarif-data">code-scanning.upload_sarif</a>(owner, repo, commit_sha, ref, sarif, checkout_uri, started_at, tool_name): <em>Upload an analysis as SARIF data</em></li>
-<li><a href="https://docs.github.com/rest/reference/code-scanning#get-information-about-a-sarif-upload">code-scanning.get_sarif</a>(owner, repo, sarif_id): <em>Get information about a SARIF upload</em></li>
+<li><a href="https://docs.github.com/rest/reference/code-scanning#upload-a-sarif-file">code-scanning.upload_sarif</a>(owner, repo, commit_sha, ref, sarif, checkout_uri, started_at, tool_name): <em>Upload an analysis as SARIF data</em></li>
+<li><a href="https://docs.github.com/rest/reference/code-scanning#list-recent-code-scanning-analyses-for-a-repository">code-scanning.get_sarif</a>(owner, repo, sarif_id): <em>Get information about a SARIF upload</em></li>
 </ul>
 <h2 id="codes_of_conduct">codes_of_conduct<a class="anchor-link" href="#codes_of_conduct"> </a></h2><ul>
-<li><a href="https://docs.github.com/rest/reference/codes_of_conduct/#get-all-codes-of-conduct">codes-of-conduct.get_all_codes_of_conduct</a>(): <em>Get all codes of conduct</em></li>
-<li><a href="https://docs.github.com/rest/reference/codes_of_conduct/#get-a-code-of-conduct">codes-of-conduct.get_conduct_code</a>(key): <em>Get a code of conduct</em></li>
-<li><a href="https://docs.github.com/rest/reference/codes_of_conduct/#get-the-code-of-conduct-for-a-repository">codes-of-conduct.get_for_repo</a>(owner, repo): <em>Get the code of conduct for a repository</em></li>
+<li><a href="https://docs.github.com/rest/reference/codes-of-conduct#get-all-codes-of-conduct">codes-of-conduct.get_all_codes_of_conduct</a>(): <em>Get all codes of conduct</em></li>
+<li><a href="https://docs.github.com/rest/reference/codes-of-conduct#get-a-code-of-conduct">codes-of-conduct.get_conduct_code</a>(key): <em>Get a code of conduct</em></li>
+<li><a href="https://docs.github.com/rest/reference/codes-of-conduct#get-the-code-of-conduct-for-a-repository">codes-of-conduct.get_for_repo</a>(owner, repo): <em>Get the code of conduct for a repository</em></li>
 </ul>
 <h2 id="emojis">emojis<a class="anchor-link" href="#emojis"> </a></h2><ul>
-<li><a href="https://docs.github.com/rest/reference/emojis/#get-emojis">emojis.get</a>(): <em>Get emojis</em></li>
+<li><a href="https://docs.github.com/rest/reference/emojis#get-emojis">emojis.get</a>(): <em>Get emojis</em></li>
 </ul>
 <h2 id="enterprise_admin">enterprise_admin<a class="anchor-link" href="#enterprise_admin"> </a></h2><ul>
 <li><a href="https://docs.github.com/rest/reference/enterprise-admin#get-github-actions-permissions-for-an-enterprise">enterprise-admin.get_github_actions_permissions_enterprise</a>(enterprise): <em>Get GitHub Actions permissions for an enterprise</em></li>
@@ -288,6 +286,7 @@ nb_path: "50_fullapi.ipynb"
 <li><a href="https://docs.github.com/rest/reference/enterprise-admin#create-a-remove-token-for-an-enterprise">enterprise-admin.create_remove_token_for_enterprise</a>(enterprise): <em>Create a remove token for an enterprise</em></li>
 <li><a href="https://docs.github.com/rest/reference/enterprise-admin#get-a-self-hosted-runner-for-an-enterprise">enterprise-admin.get_self_hosted_runner_for_enterprise</a>(enterprise, runner_id): <em>Get a self-hosted runner for an enterprise</em></li>
 <li><a href="https://docs.github.com/rest/reference/enterprise-admin#delete-self-hosted-runner-from-an-enterprise">enterprise-admin.delete_self_hosted_runner_from_enterprise</a>(enterprise, runner_id): <em>Delete a self-hosted runner from an enterprise</em></li>
+<li><a href="https://docs.github.com/rest/reference/enterprise-admin#get-the-audit-log-for-an-enterprise">enterprise-admin.get_audit_log</a>(enterprise, phrase, include, after, before, order, page, per_page): <em>Get the audit log for an enterprise</em></li>
 <li><a href="https://docs.github.com/rest/reference/enterprise-admin#list-provisioned-scim-groups-for-an-enterprise">enterprise-admin.list_provisioned_groups_enterprise</a>(enterprise, startIndex, count, filter, excludedAttributes): <em>List provisioned SCIM groups for an enterprise</em></li>
 <li><a href="https://docs.github.com/rest/reference/enterprise-admin#provision-a-scim-enterprise-group-and-invite-users">enterprise-admin.provision_and_invite_enterprise_group</a>(enterprise, schemas, displayName, members): <em>Provision a SCIM enterprise group and invite users</em></li>
 <li><a href="https://docs.github.com/rest/reference/enterprise-admin#get-scim-provisioning-information-for-an-enterprise-group">enterprise-admin.get_provisioning_information_for_enterprise_group</a>(enterprise, scim_group_id, excludedAttributes): <em>Get SCIM provisioning information for an enterprise group</em></li>
@@ -302,26 +301,26 @@ nb_path: "50_fullapi.ipynb"
 <li><a href="https://docs.github.com/rest/reference/enterprise-admin#delete-a-scim-user-from-an-enterprise">enterprise-admin.delete_user_from_enterprise</a>(enterprise, scim_user_id): <em>Delete a SCIM user from an enterprise</em></li>
 </ul>
 <h2 id="gists">gists<a class="anchor-link" href="#gists"> </a></h2><ul>
-<li><a href="https://docs.github.com/rest/reference/gists/#list-gists-for-the-authenticated-user">gists.list</a>(since, per_page, page): <em>List gists for the authenticated user</em></li>
-<li><a href="https://docs.github.com/rest/reference/gists/#create-a-gist">gists.create</a>(description, files, public): <em>Create a gist</em></li>
-<li><a href="https://docs.github.com/rest/reference/gists/#list-public-gists">gists.list_public</a>(since, per_page, page): <em>List public gists</em></li>
-<li><a href="https://docs.github.com/rest/reference/gists/#list-starred-gists">gists.list_starred</a>(since, per_page, page): <em>List starred gists</em></li>
-<li><a href="https://docs.github.com/rest/reference/gists/#get-a-gist">gists.get</a>(gist_id): <em>Get a gist</em></li>
+<li><a href="https://docs.github.com/rest/reference/gists#list-gists-for-the-authenticated-user">gists.list</a>(since, per_page, page): <em>List gists for the authenticated user</em></li>
+<li><a href="https://docs.github.com/rest/reference/gists#create-a-gist">gists.create</a>(description, files, public): <em>Create a gist</em></li>
+<li><a href="https://docs.github.com/rest/reference/gists#list-public-gists">gists.list_public</a>(since, per_page, page): <em>List public gists</em></li>
+<li><a href="https://docs.github.com/rest/reference/gists#list-starred-gists">gists.list_starred</a>(since, per_page, page): <em>List starred gists</em></li>
+<li><a href="https://docs.github.com/rest/reference/gists#get-a-gist">gists.get</a>(gist_id): <em>Get a gist</em></li>
 <li><a href="https://docs.github.com/rest/reference/gists/#update-a-gist">gists.update</a>(gist_id, description, files): <em>Update a gist</em></li>
-<li><a href="https://docs.github.com/rest/reference/gists/#delete-a-gist">gists.delete</a>(gist_id): <em>Delete a gist</em></li>
+<li><a href="https://docs.github.com/rest/reference/gists#delete-a-gist">gists.delete</a>(gist_id): <em>Delete a gist</em></li>
 <li><a href="https://docs.github.com/rest/reference/gists#list-gist-comments">gists.list_comments</a>(gist_id, per_page, page): <em>List gist comments</em></li>
 <li><a href="https://docs.github.com/rest/reference/gists#create-a-gist-comment">gists.create_comment</a>(gist_id, body): <em>Create a gist comment</em></li>
 <li><a href="https://docs.github.com/rest/reference/gists#get-a-gist-comment">gists.get_comment</a>(gist_id, comment_id): <em>Get a gist comment</em></li>
 <li><a href="https://docs.github.com/rest/reference/gists#update-a-gist-comment">gists.update_comment</a>(gist_id, comment_id, body): <em>Update a gist comment</em></li>
 <li><a href="https://docs.github.com/rest/reference/gists#delete-a-gist-comment">gists.delete_comment</a>(gist_id, comment_id): <em>Delete a gist comment</em></li>
-<li><a href="https://docs.github.com/rest/reference/gists/#list-gist-commits">gists.list_commits</a>(gist_id, per_page, page): <em>List gist commits</em></li>
-<li><a href="https://docs.github.com/rest/reference/gists/#list-gist-forks">gists.list_forks</a>(gist_id, per_page, page): <em>List gist forks</em></li>
-<li><a href="https://docs.github.com/rest/reference/gists/#fork-a-gist">gists.fork</a>(gist_id): <em>Fork a gist</em></li>
-<li><a href="https://docs.github.com/rest/reference/gists/#check-if-a-gist-is-starred">gists.check_is_starred</a>(gist_id): <em>Check if a gist is starred</em></li>
-<li><a href="https://docs.github.com/rest/reference/gists/#star-a-gist">gists.star</a>(gist_id): <em>Star a gist</em></li>
-<li><a href="https://docs.github.com/rest/reference/gists/#unstar-a-gist">gists.unstar</a>(gist_id): <em>Unstar a gist</em></li>
-<li><a href="https://docs.github.com/rest/reference/gists/#get-a-gist-revision">gists.get_revision</a>(gist_id, sha): <em>Get a gist revision</em></li>
-<li><a href="https://docs.github.com/rest/reference/gists/#list-gists-for-a-user">gists.list_for_user</a>(username, since, per_page, page): <em>List gists for a user</em></li>
+<li><a href="https://docs.github.com/rest/reference/gists#list-gist-commits">gists.list_commits</a>(gist_id, per_page, page): <em>List gist commits</em></li>
+<li><a href="https://docs.github.com/rest/reference/gists#list-gist-forks">gists.list_forks</a>(gist_id, per_page, page): <em>List gist forks</em></li>
+<li><a href="https://docs.github.com/rest/reference/gists#fork-a-gist">gists.fork</a>(gist_id): <em>Fork a gist</em></li>
+<li><a href="https://docs.github.com/rest/reference/gists#check-if-a-gist-is-starred">gists.check_is_starred</a>(gist_id): <em>Check if a gist is starred</em></li>
+<li><a href="https://docs.github.com/rest/reference/gists#star-a-gist">gists.star</a>(gist_id): <em>Star a gist</em></li>
+<li><a href="https://docs.github.com/rest/reference/gists#unstar-a-gist">gists.unstar</a>(gist_id): <em>Unstar a gist</em></li>
+<li><a href="https://docs.github.com/rest/reference/gists#get-a-gist-revision">gists.get_revision</a>(gist_id, sha): <em>Get a gist revision</em></li>
+<li><a href="https://docs.github.com/rest/reference/gists#list-gists-for-a-user">gists.list_for_user</a>(username, since, per_page, page): <em>List gists for a user</em></li>
 </ul>
 <h2 id="git">git<a class="anchor-link" href="#git"> </a></h2><ul>
 <li><a href="https://docs.github.com/rest/reference/git#create-a-blob">git.create_blob</a>(owner, repo, content, encoding): <em>Create a blob</em></li>
@@ -339,8 +338,8 @@ nb_path: "50_fullapi.ipynb"
 <li><a href="https://docs.github.com/rest/reference/git#get-a-tree">git.get_tree</a>(owner, repo, tree_sha, recursive): <em>Get a tree</em></li>
 </ul>
 <h2 id="gitignore">gitignore<a class="anchor-link" href="#gitignore"> </a></h2><ul>
-<li><a href="https://docs.github.com/rest/reference/gitignore/#get-all-gitignore-templates">gitignore.get_all_templates</a>(): <em>Get all gitignore templates</em></li>
-<li><a href="https://docs.github.com/rest/reference/gitignore/#get-a-gitignore-template">gitignore.get_template</a>(name): <em>Get a gitignore template</em></li>
+<li><a href="https://docs.github.com/rest/reference/gitignore#get-all-gitignore-templates">gitignore.get_all_templates</a>(): <em>Get all gitignore templates</em></li>
+<li><a href="https://docs.github.com/rest/reference/gitignore#get-a-gitignore-template">gitignore.get_template</a>(name): <em>Get a gitignore template</em></li>
 </ul>
 <h2 id="interactions">interactions<a class="anchor-link" href="#interactions"> </a></h2><ul>
 <li><a href="https://docs.github.com/rest/reference/interactions#get-interaction-restrictions-for-an-organization">interactions.get_restrictions_for_org</a>(org): <em>Get interaction restrictions for an organization</em></li>
@@ -354,19 +353,19 @@ nb_path: "50_fullapi.ipynb"
 <li><a href="https://docs.github.com/rest/reference/interactions#remove-interaction-restrictions-from-your-public-repositories">interactions.remove_restrictions_for_authenticated_user</a>(): <em>Remove interaction restrictions from your public repositories</em></li>
 </ul>
 <h2 id="issues">issues<a class="anchor-link" href="#issues"> </a></h2><ul>
-<li><a href="https://docs.github.com/rest/reference/issues/#list-issues-assigned-to-the-authenticated-user">issues.list</a>(filter, state, labels, sort, direction, since, collab, orgs, owned, pulls, per_page, page): <em>List issues assigned to the authenticated user</em></li>
-<li><a href="https://docs.github.com/rest/reference/issues/#list-organization-issues-assigned-to-the-authenticated-user">issues.list_for_org</a>(org, filter, state, labels, sort, direction, since, per_page, page): <em>List organization issues assigned to the authenticated user</em></li>
+<li><a href="https://docs.github.com/rest/reference/issues#list-issues-assigned-to-the-authenticated-user">issues.list</a>(filter, state, labels, sort, direction, since, collab, orgs, owned, pulls, per_page, page): <em>List issues assigned to the authenticated user</em></li>
+<li><a href="https://docs.github.com/rest/reference/issues#list-organization-issues-assigned-to-the-authenticated-user">issues.list_for_org</a>(org, filter, state, labels, sort, direction, since, per_page, page): <em>List organization issues assigned to the authenticated user</em></li>
 <li><a href="https://docs.github.com/rest/reference/issues#list-assignees">issues.list_assignees</a>(owner, repo, per_page, page): <em>List assignees</em></li>
 <li><a href="https://docs.github.com/rest/reference/issues#check-if-a-user-can-be-assigned">issues.check_user_can_be_assigned</a>(owner, repo, assignee): <em>Check if a user can be assigned</em></li>
-<li><a href="https://docs.github.com/rest/reference/issues/#list-repository-issues">issues.list_for_repo</a>(owner, repo, milestone, state, assignee, creator, mentioned, labels, sort, direction, since, per_page, page): <em>List repository issues</em></li>
-<li><a href="https://docs.github.com/rest/reference/issues/#create-an-issue">issues.create</a>(owner, repo, title, body, assignee, milestone, labels, assignees): <em>Create an issue</em></li>
+<li><a href="https://docs.github.com/rest/reference/issues#list-repository-issues">issues.list_for_repo</a>(owner, repo, milestone, state, assignee, creator, mentioned, labels, sort, direction, since, per_page, page): <em>List repository issues</em></li>
+<li><a href="https://docs.github.com/rest/reference/issues#create-an-issue">issues.create</a>(owner, repo, title, body, assignee, milestone, labels, assignees): <em>Create an issue</em></li>
 <li><a href="https://docs.github.com/rest/reference/issues#list-issue-comments-for-a-repository">issues.list_comments_for_repo</a>(owner, repo, sort, direction, since, per_page, page): <em>List issue comments for a repository</em></li>
 <li><a href="https://docs.github.com/rest/reference/issues#get-an-issue-comment">issues.get_comment</a>(owner, repo, comment_id): <em>Get an issue comment</em></li>
 <li><a href="https://docs.github.com/rest/reference/issues#update-an-issue-comment">issues.update_comment</a>(owner, repo, comment_id, body): <em>Update an issue comment</em></li>
 <li><a href="https://docs.github.com/rest/reference/issues#delete-an-issue-comment">issues.delete_comment</a>(owner, repo, comment_id): <em>Delete an issue comment</em></li>
 <li><a href="https://docs.github.com/rest/reference/issues#list-issue-events-for-a-repository">issues.list_events_for_repo</a>(owner, repo, per_page, page): <em>List issue events for a repository</em></li>
 <li><a href="https://docs.github.com/rest/reference/issues#get-an-issue-event">issues.get_event</a>(owner, repo, event_id): <em>Get an issue event</em></li>
-<li><a href="https://docs.github.com/rest/reference/issues/#get-an-issue">issues.get</a>(owner, repo, issue_number): <em>Get an issue</em></li>
+<li><a href="https://docs.github.com/rest/reference/issues#get-an-issue">issues.get</a>(owner, repo, issue_number): <em>Get an issue</em></li>
 <li><a href="https://docs.github.com/rest/reference/issues/#update-an-issue">issues.update</a>(owner, repo, issue_number, title, body, assignee, state, milestone, labels, assignees): <em>Update an issue</em></li>
 <li><a href="https://docs.github.com/rest/reference/issues#add-assignees-to-an-issue">issues.add_assignees</a>(owner, repo, issue_number, assignees): <em>Add assignees to an issue</em></li>
 <li><a href="https://docs.github.com/rest/reference/issues#remove-assignees-from-an-issue">issues.remove_assignees</a>(owner, repo, issue_number, assignees): <em>Remove assignees from an issue</em></li>
@@ -374,12 +373,12 @@ nb_path: "50_fullapi.ipynb"
 <li><a href="https://docs.github.com/rest/reference/issues#create-an-issue-comment">issues.create_comment</a>(owner, repo, issue_number, body): <em>Create an issue comment</em></li>
 <li><a href="https://docs.github.com/rest/reference/issues#list-issue-events">issues.list_events</a>(owner, repo, issue_number, per_page, page): <em>List issue events</em></li>
 <li><a href="https://docs.github.com/rest/reference/issues#list-labels-for-an-issue">issues.list_labels_on_issue</a>(owner, repo, issue_number, per_page, page): <em>List labels for an issue</em></li>
-<li><a href="https://docs.github.com/rest/reference/issues#add-labels-to-an-issue">issues.add_labels</a>(owner, repo, issue_number): <em>Add labels to an issue</em></li>
+<li><a href="https://docs.github.com/rest/reference/issues#add-labels-to-an-issue">issues.add_labels</a>(owner, repo, issue_number, labels): <em>Add labels to an issue</em></li>
 <li><a href="https://docs.github.com/rest/reference/issues#set-labels-for-an-issue">issues.set_labels</a>(owner, repo, issue_number): <em>Set labels for an issue</em></li>
 <li><a href="https://docs.github.com/rest/reference/issues#remove-all-labels-from-an-issue">issues.remove_all_labels</a>(owner, repo, issue_number): <em>Remove all labels from an issue</em></li>
 <li><a href="https://docs.github.com/rest/reference/issues#remove-a-label-from-an-issue">issues.remove_label</a>(owner, repo, issue_number, name): <em>Remove a label from an issue</em></li>
-<li><a href="https://docs.github.com/rest/reference/issues/#lock-an-issue">issues.lock</a>(owner, repo, issue_number, lock_reason): <em>Lock an issue</em></li>
-<li><a href="https://docs.github.com/rest/reference/issues/#unlock-an-issue">issues.unlock</a>(owner, repo, issue_number): <em>Unlock an issue</em></li>
+<li><a href="https://docs.github.com/rest/reference/issues#lock-an-issue">issues.lock</a>(owner, repo, issue_number, lock_reason): <em>Lock an issue</em></li>
+<li><a href="https://docs.github.com/rest/reference/issues#unlock-an-issue">issues.unlock</a>(owner, repo, issue_number): <em>Unlock an issue</em></li>
 <li><a href="https://docs.github.com/rest/reference/issues#list-timeline-events-for-an-issue">issues.list_events_for_timeline</a>(owner, repo, issue_number, per_page, page): <em>List timeline events for an issue</em></li>
 <li><a href="https://docs.github.com/rest/reference/issues#list-labels-for-a-repository">issues.list_labels_for_repo</a>(owner, repo, per_page, page): <em>List labels for a repository</em></li>
 <li><a href="https://docs.github.com/rest/reference/issues#create-a-label">issues.create_label</a>(owner, repo, name, color, description): <em>Create a label</em></li>
@@ -392,19 +391,21 @@ nb_path: "50_fullapi.ipynb"
 <li><a href="https://docs.github.com/rest/reference/issues#update-a-milestone">issues.update_milestone</a>(owner, repo, milestone_number, title, state, description, due_on): <em>Update a milestone</em></li>
 <li><a href="https://docs.github.com/rest/reference/issues#delete-a-milestone">issues.delete_milestone</a>(owner, repo, milestone_number): <em>Delete a milestone</em></li>
 <li><a href="https://docs.github.com/rest/reference/issues#list-labels-for-issues-in-a-milestone">issues.list_labels_for_milestone</a>(owner, repo, milestone_number, per_page, page): <em>List labels for issues in a milestone</em></li>
-<li><a href="https://docs.github.com/rest/reference/issues/#list-user-account-issues-assigned-to-the-authenticated-user">issues.list_for_authenticated_user</a>(filter, state, labels, sort, direction, since, per_page, page): <em>List user account issues assigned to the authenticated user</em></li>
+<li><a href="https://docs.github.com/rest/reference/issues#list-user-account-issues-assigned-to-the-authenticated-user">issues.list_for_authenticated_user</a>(filter, state, labels, sort, direction, since, per_page, page): <em>List user account issues assigned to the authenticated user</em></li>
 </ul>
 <h2 id="licenses">licenses<a class="anchor-link" href="#licenses"> </a></h2><ul>
-<li><a href="https://docs.github.com/rest/reference/licenses/#get-all-commonly-used-licenses">licenses.get_all_commonly_used</a>(featured, per_page, page): <em>Get all commonly used licenses</em></li>
-<li><a href="https://docs.github.com/rest/reference/licenses/#get-a-license">licenses.get</a>(license): <em>Get a license</em></li>
+<li><a href="https://docs.github.com/rest/reference/licenses#get-all-commonly-used-licenses">licenses.get_all_commonly_used</a>(featured, per_page, page): <em>Get all commonly used licenses</em></li>
+<li><a href="https://docs.github.com/rest/reference/licenses#get-a-license">licenses.get</a>(license): <em>Get a license</em></li>
 <li><a href="https://docs.github.com/rest/reference/licenses/#get-the-license-for-a-repository">licenses.get_for_repo</a>(owner, repo): <em>Get the license for a repository</em></li>
 </ul>
 <h2 id="markdown">markdown<a class="anchor-link" href="#markdown"> </a></h2><ul>
-<li><a href="https://docs.github.com/rest/reference/markdown/#render-a-markdown-document">markdown.render</a>(text, mode, context): <em>Render a Markdown document</em></li>
-<li><a href="https://docs.github.com/rest/reference/markdown/#render-a-markdown-document-in-raw-mode">markdown.render_raw</a>(): <em>Render a Markdown document in raw mode</em></li>
+<li><a href="https://docs.github.com/rest/reference/markdown#render-a-markdown-document">markdown.render</a>(text, mode, context): <em>Render a Markdown document</em></li>
+<li><a href="https://docs.github.com/rest/reference/markdown#render-a-markdown-document-in-raw-mode">markdown.render_raw</a>(): <em>Render a Markdown document in raw mode</em></li>
 </ul>
 <h2 id="meta">meta<a class="anchor-link" href="#meta"> </a></h2><ul>
-<li><a href="https://docs.github.com/rest/reference/meta/#get-github-meta-information">meta.get</a>(): <em>Get GitHub meta information</em></li>
+<li><a href="https://docs.github.com/rest/overview/resources-in-the-rest-api#root-endpoint">meta.root</a>(): <em>GitHub API Root</em></li>
+<li><a href="https://docs.github.com/rest/reference/meta#get-github-meta-information">meta.get</a>(): <em>Get GitHub meta information</em></li>
+<li><a href="https://docs.github.com/rest/reference/meta#get-octocat">meta.get_octocat</a>(s): <em>Get Octocat</em></li>
 </ul>
 <h2 id="migrations">migrations<a class="anchor-link" href="#migrations"> </a></h2><ul>
 <li><a href="https://docs.github.com/rest/reference/migrations#list-organization-migrations">migrations.list_for_org</a>(org, per_page, page, exclude): <em>List organization migrations</em></li>
@@ -443,16 +444,16 @@ nb_path: "50_fullapi.ipynb"
 <li><a href="https://docs.github.com/rest/reference/oauth-authorizations#delete-an-authorization">oauth-authorizations.delete_authorization</a>(authorization_id): <em>Delete an authorization</em></li>
 </ul>
 <h2 id="orgs">orgs<a class="anchor-link" href="#orgs"> </a></h2><ul>
-<li><a href="https://docs.github.com/rest/reference/orgs/#list-organizations">orgs.list</a>(since, per_page): <em>List organizations</em></li>
-<li><a href="https://docs.github.com/rest/reference/orgs/#get-an-organization">orgs.get</a>(org): <em>Get an organization</em></li>
+<li><a href="https://docs.github.com/rest/reference/orgs#list-organizations">orgs.list</a>(since, per_page): <em>List organizations</em></li>
+<li><a href="https://docs.github.com/rest/reference/orgs#get-an-organization">orgs.get</a>(org): <em>Get an organization</em></li>
 <li><a href="https://docs.github.com/rest/reference/orgs/#update-an-organization">orgs.update</a>(org, billing_email, company, email, twitter_username, location, name, description, has_organization_projects, has_repository_projects, default_repository_permission, members_can_create_repositories, members_can_create_internal_repositories, members_can_create_private_repositories, members_can_create_public_repositories, members_allowed_repository_creation_type, members_can_create_pages, members_can_create_public_pages, members_can_create_private_pages, blog): <em>Update an organization</em></li>
-<li><a href="https://docs.github.com/rest/reference/orgs#get-the-audit-log-for-an-organization">orgs.get_audit_log</a>(org, phrase, include, after, before, order, per_page, page): <em>Get the audit log for an organization</em></li>
+<li><a href="https://docs.github.com/rest/reference/orgs#get-audit-log">orgs.get_audit_log</a>(org, phrase, include, after, before, order, per_page, page): <em>Get the audit log for an organization</em></li>
 <li><a href="https://docs.github.com/rest/reference/orgs#list-users-blocked-by-an-organization">orgs.list_blocked_users</a>(org): <em>List users blocked by an organization</em></li>
 <li><a href="https://docs.github.com/rest/reference/orgs#check-if-a-user-is-blocked-by-an-organization">orgs.check_blocked_user</a>(org, username): <em>Check if a user is blocked by an organization</em></li>
 <li><a href="https://docs.github.com/rest/reference/orgs#block-a-user-from-an-organization">orgs.block_user</a>(org, username): <em>Block a user from an organization</em></li>
 <li><a href="https://docs.github.com/rest/reference/orgs#unblock-a-user-from-an-organization">orgs.unblock_user</a>(org, username): <em>Unblock a user from an organization</em></li>
-<li><a href="https://docs.github.com/rest/reference/orgs/#list-saml-sso-authorizations-for-an-organization">orgs.list_saml_sso_authorizations</a>(org): <em>List SAML SSO authorizations for an organization</em></li>
-<li><a href="https://docs.github.com/rest/reference/orgs/#remove-a-saml-sso-authorization-for-an-organization">orgs.remove_saml_sso_authorization</a>(org, credential_id): <em>Remove a SAML SSO authorization for an organization</em></li>
+<li><a href="https://docs.github.com/rest/reference/orgs#list-saml-sso-authorizations-for-an-organization">orgs.list_saml_sso_authorizations</a>(org): <em>List SAML SSO authorizations for an organization</em></li>
+<li><a href="https://docs.github.com/rest/reference/orgs#remove-a-saml-sso-authorization-for-an-organization">orgs.remove_saml_sso_authorization</a>(org, credential_id): <em>Remove a SAML SSO authorization for an organization</em></li>
 <li><a href="https://docs.github.com/rest/reference/orgs#list-failed-organization-invitations">orgs.list_failed_invitations</a>(org, per_page, page): <em>List failed organization invitations</em></li>
 <li><a href="https://docs.github.com/rest/reference/orgs#list-organization-webhooks">orgs.list_webhooks</a>(org, per_page, page): <em>List organization webhooks</em></li>
 <li><a href="https://docs.github.com/rest/reference/orgs#create-an-organization-webhook">orgs.create_webhook</a>(org, name, config, events, active): <em>Create an organization webhook</em></li>
@@ -462,7 +463,7 @@ nb_path: "50_fullapi.ipynb"
 <li><a href="https://docs.github.com/rest/reference/orgs#get-a-webhook-configuration-for-an-organization">orgs.get_webhook_config_for_org</a>(org, hook_id): <em>Get a webhook configuration for an organization</em></li>
 <li><a href="https://docs.github.com/rest/reference/orgs#update-a-webhook-configuration-for-an-organization">orgs.update_webhook_config_for_org</a>(org, hook_id, url, content_type, secret, insecure_ssl): <em>Update a webhook configuration for an organization</em></li>
 <li><a href="https://docs.github.com/rest/reference/orgs#ping-an-organization-webhook">orgs.ping_webhook</a>(org, hook_id): <em>Ping an organization webhook</em></li>
-<li><a href="https://docs.github.com/rest/reference/orgs/#list-app-installations-for-an-organization">orgs.list_app_installations</a>(org, per_page, page): <em>List app installations for an organization</em></li>
+<li><a href="https://docs.github.com/rest/reference/orgs#list-app-installations-for-an-organization">orgs.list_app_installations</a>(org, per_page, page): <em>List app installations for an organization</em></li>
 <li><a href="https://docs.github.com/rest/reference/orgs#list-pending-organization-invitations">orgs.list_pending_invitations</a>(org, per_page, page): <em>List pending organization invitations</em></li>
 <li><a href="https://docs.github.com/rest/reference/orgs#create-an-organization-invitation">orgs.create_invitation</a>(org, invitee_id, email, role, team_ids): <em>Create an organization invitation</em></li>
 <li><a href="https://docs.github.com/rest/reference/orgs#cancel-an-organization-invitation">orgs.cancel_invitation</a>(org, invitation_id): <em>Cancel an organization invitation</em></li>
@@ -483,14 +484,14 @@ nb_path: "50_fullapi.ipynb"
 <li><a href="https://docs.github.com/rest/reference/orgs#list-organization-memberships-for-the-authenticated-user">orgs.list_memberships_for_authenticated_user</a>(state, per_page, page): <em>List organization memberships for the authenticated user</em></li>
 <li><a href="https://docs.github.com/rest/reference/orgs#get-an-organization-membership-for-the-authenticated-user">orgs.get_membership_for_authenticated_user</a>(org): <em>Get an organization membership for the authenticated user</em></li>
 <li><a href="https://docs.github.com/rest/reference/orgs#update-an-organization-membership-for-the-authenticated-user">orgs.update_membership_for_authenticated_user</a>(org, state): <em>Update an organization membership for the authenticated user</em></li>
-<li><a href="https://docs.github.com/rest/reference/orgs/#list-organizations-for-the-authenticated-user">orgs.list_for_authenticated_user</a>(per_page, page): <em>List organizations for the authenticated user</em></li>
-<li><a href="https://docs.github.com/rest/reference/orgs/#list-organizations-for-a-user">orgs.list_for_user</a>(username, per_page, page): <em>List organizations for a user</em></li>
+<li><a href="https://docs.github.com/rest/reference/orgs#list-organizations-for-the-authenticated-user">orgs.list_for_authenticated_user</a>(per_page, page): <em>List organizations for the authenticated user</em></li>
+<li><a href="https://docs.github.com/rest/reference/orgs#list-organizations-for-a-user">orgs.list_for_user</a>(username, per_page, page): <em>List organizations for a user</em></li>
 </ul>
 <h2 id="packages">packages<a class="anchor-link" href="#packages"> </a></h2><ul>
 <li><a href="https://docs.github.com/rest/reference/packages#get-a-package-for-an-organization">packages.get_package_for_organization</a>(org, package_type, package_name): <em>Get a package for an organization</em></li>
 <li><a href="https://docs.github.com/rest/reference/packages#delete-a-package-for-an-organization">packages.delete_package_for_org</a>(org, package_type, package_name): <em>Delete a package for an organization</em></li>
 <li><a href="https://docs.github.com/rest/reference/packages#restore-a-package-for-an-organization">packages.restore_package_for_org</a>(org, package_type, package_name, token): <em>Restore a package for an organization</em></li>
-<li><a href="https://docs.github.com/rest/reference/packages#get-all-package-versions-for-a-package-owned-by-the-authenticated-user">packages.get_all_package_versions_for_package_owned_by_org</a>(org, package_type, package_name, page, per_page, state): <em>Get all package versions for a package owned by an organization</em></li>
+<li><a href="https://docs.github.com/rest/reference/packages#get-all-package-versions-for-a-package-owned-by-an-organization">packages.get_all_package_versions_for_package_owned_by_org</a>(org, package_type, package_name, page, per_page, state): <em>Get all package versions for a package owned by an organization</em></li>
 <li><a href="https://docs.github.com/rest/reference/packages#get-a-package-version-for-an-organization">packages.get_package_version_for_organization</a>(org, package_type, package_name, package_version_id): <em>Get a package version for an organization</em></li>
 <li><a href="https://docs.github.com/rest/reference/packages#delete-a-package-version-for-an-organization">packages.delete_package_version_for_org</a>(org, package_type, package_name, package_version_id): <em>Delete package version for an organization</em></li>
 <li><a href="https://docs.github.com/rest/reference/packages#restore-a-package-version-for-an-organization">packages.restore_package_version_for_org</a>(org, package_type, package_name, package_version_id): <em>Restore package version for an organization</em></li>
@@ -506,8 +507,8 @@ nb_path: "50_fullapi.ipynb"
 <li><a href="https://docs.github.com/rest/reference/packages#get-a-package-version-for-a-user">packages.get_package_version_for_user</a>(username, package_type, package_name, package_version_id): <em>Get a package version for a user</em></li>
 </ul>
 <h2 id="projects">projects<a class="anchor-link" href="#projects"> </a></h2><ul>
-<li><a href="https://docs.github.com/rest/reference/projects/#list-organization-projects">projects.list_for_org</a>(org, state, per_page, page): <em>List organization projects</em></li>
-<li><a href="https://docs.github.com/rest/reference/projects/#create-an-organization-project">projects.create_for_org</a>(org, name, body): <em>Create an organization project</em></li>
+<li><a href="https://docs.github.com/rest/reference/projects#list-organization-projects">projects.list_for_org</a>(org, state, per_page, page): <em>List organization projects</em></li>
+<li><a href="https://docs.github.com/rest/reference/projects#create-an-organization-project">projects.create_for_org</a>(org, name, body): <em>Create an organization project</em></li>
 <li><a href="https://docs.github.com/rest/reference/projects#get-a-project-card">projects.get_card</a>(card_id): <em>Get a project card</em></li>
 <li><a href="https://docs.github.com/rest/reference/projects#update-a-project-card">projects.update_card</a>(card_id, note, archived): <em>Update an existing project card</em></li>
 <li><a href="https://docs.github.com/rest/reference/projects#delete-a-project-card">projects.delete_card</a>(card_id): <em>Delete a project card</em></li>
@@ -516,38 +517,38 @@ nb_path: "50_fullapi.ipynb"
 <li><a href="https://docs.github.com/rest/reference/projects#update-a-project-column">projects.update_column</a>(column_id, name): <em>Update an existing project column</em></li>
 <li><a href="https://docs.github.com/rest/reference/projects#delete-a-project-column">projects.delete_column</a>(column_id): <em>Delete a project column</em></li>
 <li><a href="https://docs.github.com/rest/reference/projects#list-project-cards">projects.list_cards</a>(column_id, archived_state, per_page, page): <em>List project cards</em></li>
-<li><a href="https://docs.github.com/rest/reference/projects#create-a-project-card">projects.create_card</a>(column_id): <em>Create a project card</em></li>
+<li><a href="https://docs.github.com/rest/reference/projects#create-a-project-card">projects.create_card</a>(column_id, note): <em>Create a project card</em></li>
 <li><a href="https://docs.github.com/rest/reference/projects#move-a-project-column">projects.move_column</a>(column_id, position): <em>Move a project column</em></li>
-<li><a href="https://docs.github.com/rest/reference/projects/#get-a-project">projects.get</a>(project_id): <em>Get a project</em></li>
-<li><a href="https://docs.github.com/rest/reference/projects/#update-a-project">projects.update</a>(project_id, name, body, state, organization_permission, private): <em>Update a project</em></li>
-<li><a href="https://docs.github.com/rest/reference/projects/#delete-a-project">projects.delete</a>(project_id): <em>Delete a project</em></li>
+<li><a href="https://docs.github.com/rest/reference/projects#get-a-project">projects.get</a>(project_id): <em>Get a project</em></li>
+<li><a href="https://docs.github.com/rest/reference/projects#update-a-project">projects.update</a>(project_id, name, body, state, organization_permission, private): <em>Update a project</em></li>
+<li><a href="https://docs.github.com/rest/reference/projects#delete-a-project">projects.delete</a>(project_id): <em>Delete a project</em></li>
 <li><a href="https://docs.github.com/rest/reference/projects#list-project-collaborators">projects.list_collaborators</a>(project_id, affiliation, per_page, page): <em>List project collaborators</em></li>
 <li><a href="https://docs.github.com/rest/reference/projects#add-project-collaborator">projects.add_collaborator</a>(project_id, username, permission): <em>Add project collaborator</em></li>
 <li><a href="https://docs.github.com/rest/reference/projects#remove-project-collaborator">projects.remove_collaborator</a>(project_id, username): <em>Remove user as a collaborator</em></li>
 <li><a href="https://docs.github.com/rest/reference/projects#get-project-permission-for-a-user">projects.get_permission_for_user</a>(project_id, username): <em>Get project permission for a user</em></li>
 <li><a href="https://docs.github.com/rest/reference/projects#list-project-columns">projects.list_columns</a>(project_id, per_page, page): <em>List project columns</em></li>
 <li><a href="https://docs.github.com/rest/reference/projects#create-a-project-column">projects.create_column</a>(project_id, name): <em>Create a project column</em></li>
-<li><a href="https://docs.github.com/rest/reference/projects/#list-repository-projects">projects.list_for_repo</a>(owner, repo, state, per_page, page): <em>List repository projects</em></li>
-<li><a href="https://docs.github.com/rest/reference/projects/#create-a-repository-project">projects.create_for_repo</a>(owner, repo, name, body): <em>Create a repository project</em></li>
-<li><a href="https://docs.github.com/rest/reference/projects/#create-a-user-project">projects.create_for_authenticated_user</a>(name, body): <em>Create a user project</em></li>
-<li><a href="https://docs.github.com/rest/reference/projects/#list-user-projects">projects.list_for_user</a>(username, state, per_page, page): <em>List user projects</em></li>
+<li><a href="https://docs.github.com/rest/reference/projects#list-repository-projects">projects.list_for_repo</a>(owner, repo, state, per_page, page): <em>List repository projects</em></li>
+<li><a href="https://docs.github.com/rest/reference/projects#create-a-repository-project">projects.create_for_repo</a>(owner, repo, name, body): <em>Create a repository project</em></li>
+<li><a href="https://docs.github.com/rest/reference/projects#create-a-user-project">projects.create_for_authenticated_user</a>(name, body): <em>Create a user project</em></li>
+<li><a href="https://docs.github.com/rest/reference/projects#list-user-projects">projects.list_for_user</a>(username, state, per_page, page): <em>List user projects</em></li>
 </ul>
 <h2 id="pulls">pulls<a class="anchor-link" href="#pulls"> </a></h2><ul>
-<li><a href="https://docs.github.com/rest/reference/pulls/#list-pull-requests">pulls.list</a>(owner, repo, state, head, base, sort, direction, per_page, page): <em>List pull requests</em></li>
-<li><a href="https://docs.github.com/rest/reference/pulls/#create-a-pull-request">pulls.create</a>(owner, repo, title, head, base, body, maintainer_can_modify, draft, issue): <em>Create a pull request</em></li>
+<li><a href="https://docs.github.com/rest/reference/pulls#list-pull-requests">pulls.list</a>(owner, repo, state, head, base, sort, direction, per_page, page): <em>List pull requests</em></li>
+<li><a href="https://docs.github.com/rest/reference/pulls#create-a-pull-request">pulls.create</a>(owner, repo, title, head, base, body, maintainer_can_modify, draft, issue): <em>Create a pull request</em></li>
 <li><a href="https://docs.github.com/rest/reference/pulls#list-review-comments-in-a-repository">pulls.list_review_comments_for_repo</a>(owner, repo, sort, direction, since, per_page, page): <em>List review comments in a repository</em></li>
 <li><a href="https://docs.github.com/rest/reference/pulls#get-a-review-comment-for-a-pull-request">pulls.get_review_comment</a>(owner, repo, comment_id): <em>Get a review comment for a pull request</em></li>
 <li><a href="https://docs.github.com/rest/reference/pulls#update-a-review-comment-for-a-pull-request">pulls.update_review_comment</a>(owner, repo, comment_id, body): <em>Update a review comment for a pull request</em></li>
 <li><a href="https://docs.github.com/rest/reference/pulls#delete-a-review-comment-for-a-pull-request">pulls.delete_review_comment</a>(owner, repo, comment_id): <em>Delete a review comment for a pull request</em></li>
-<li><a href="https://docs.github.com/rest/reference/pulls/#get-a-pull-request">pulls.get</a>(owner, repo, pull_number): <em>Get a pull request</em></li>
+<li><a href="https://docs.github.com/rest/reference/pulls#get-a-pull-request">pulls.get</a>(owner, repo, pull_number): <em>Get a pull request</em></li>
 <li><a href="https://docs.github.com/rest/reference/pulls/#update-a-pull-request">pulls.update</a>(owner, repo, pull_number, title, body, state, base, maintainer_can_modify): <em>Update a pull request</em></li>
 <li><a href="https://docs.github.com/rest/reference/pulls#list-review-comments-on-a-pull-request">pulls.list_review_comments</a>(owner, repo, pull_number, sort, direction, since, per_page, page): <em>List review comments on a pull request</em></li>
 <li><a href="https://docs.github.com/rest/reference/pulls#create-a-review-comment-for-a-pull-request">pulls.create_review_comment</a>(owner, repo, pull_number, body, commit_id, path, position, side, line, start_line, start_side, in_reply_to): <em>Create a review comment for a pull request</em></li>
 <li><a href="https://docs.github.com/rest/reference/pulls#create-a-reply-for-a-review-comment">pulls.create_reply_for_review_comment</a>(owner, repo, pull_number, comment_id, body): <em>Create a reply for a review comment</em></li>
-<li><a href="https://docs.github.com/rest/reference/pulls/#list-commits-on-a-pull-request">pulls.list_commits</a>(owner, repo, pull_number, per_page, page): <em>List commits on a pull request</em></li>
-<li><a href="https://docs.github.com/rest/reference/pulls/#list-pull-requests-files">pulls.list_files</a>(owner, repo, pull_number, per_page, page): <em>List pull requests files</em></li>
-<li><a href="https://docs.github.com/rest/reference/pulls/#check-if-a-pull-request-has-been-merged">pulls.check_if_merged</a>(owner, repo, pull_number): <em>Check if a pull request has been merged</em></li>
-<li><a href="https://docs.github.com/rest/reference/pulls/#merge-a-pull-request">pulls.merge</a>(owner, repo, pull_number, commit_title, commit_message, sha, merge_method): <em>Merge a pull request</em></li>
+<li><a href="https://docs.github.com/rest/reference/pulls#list-commits-on-a-pull-request">pulls.list_commits</a>(owner, repo, pull_number, per_page, page): <em>List commits on a pull request</em></li>
+<li><a href="https://docs.github.com/rest/reference/pulls#list-pull-requests-files">pulls.list_files</a>(owner, repo, pull_number, per_page, page): <em>List pull requests files</em></li>
+<li><a href="https://docs.github.com/rest/reference/pulls#check-if-a-pull-request-has-been-merged">pulls.check_if_merged</a>(owner, repo, pull_number): <em>Check if a pull request has been merged</em></li>
+<li><a href="https://docs.github.com/rest/reference/pulls#merge-a-pull-request">pulls.merge</a>(owner, repo, pull_number, commit_title, commit_message, sha, merge_method): <em>Merge a pull request</em></li>
 <li><a href="https://docs.github.com/rest/reference/pulls#list-requested-reviewers-for-a-pull-request">pulls.list_requested_reviewers</a>(owner, repo, pull_number, per_page, page): <em>List requested reviewers for a pull request</em></li>
 <li><a href="https://docs.github.com/rest/reference/pulls#request-reviewers-for-a-pull-request">pulls.request_reviewers</a>(owner, repo, pull_number, reviewers, team_reviewers): <em>Request reviewers for a pull request</em></li>
 <li><a href="https://docs.github.com/rest/reference/pulls#remove-requested-reviewers-from-a-pull-request">pulls.remove_requested_reviewers</a>(owner, repo, pull_number, reviewers, team_reviewers): <em>Remove requested reviewers from a pull request</em></li>
@@ -559,48 +560,49 @@ nb_path: "50_fullapi.ipynb"
 <li><a href="https://docs.github.com/rest/reference/pulls#list-comments-for-a-pull-request-review">pulls.list_comments_for_review</a>(owner, repo, pull_number, review_id, per_page, page): <em>List comments for a pull request review</em></li>
 <li><a href="https://docs.github.com/rest/reference/pulls#dismiss-a-review-for-a-pull-request">pulls.dismiss_review</a>(owner, repo, pull_number, review_id, message, event): <em>Dismiss a review for a pull request</em></li>
 <li><a href="https://docs.github.com/rest/reference/pulls#submit-a-review-for-a-pull-request">pulls.submit_review</a>(owner, repo, pull_number, review_id, body, event): <em>Submit a review for a pull request</em></li>
-<li><a href="https://docs.github.com/rest/reference/pulls/#update-a-pull-request-branch">pulls.update_branch</a>(owner, repo, pull_number, expected_head_sha): <em>Update a pull request branch</em></li>
+<li><a href="https://docs.github.com/rest/reference/pulls#update-a-pull-request-branch">pulls.update_branch</a>(owner, repo, pull_number, expected_head_sha): <em>Update a pull request branch</em></li>
 </ul>
 <h2 id="rate_limit">rate_limit<a class="anchor-link" href="#rate_limit"> </a></h2><ul>
-<li><a href="https://docs.github.com/rest/reference/rate_limit/#get-rate-limit-status-for-the-authenticated-user">rate-limit.get</a>(): <em>Get rate limit status for the authenticated user</em></li>
+<li><a href="https://docs.github.com/rest/reference/rate-limit#get-rate-limit-status-for-the-authenticated-user">rate-limit.get</a>(): <em>Get rate limit status for the authenticated user</em></li>
 </ul>
 <h2 id="reactions">reactions<a class="anchor-link" href="#reactions"> </a></h2><ul>
-<li><a href="https://docs.github.com/rest/reference/reactions/#list-reactions-for-a-team-discussion-comment">reactions.list_for_team_discussion_comment_in_org</a>(org, team_slug, discussion_number, comment_number, content, per_page, page): <em>List reactions for a team discussion comment</em></li>
-<li><a href="https://docs.github.com/rest/reference/reactions/#create-reaction-for-a-team-discussion-comment">reactions.create_for_team_discussion_comment_in_org</a>(org, team_slug, discussion_number, comment_number, content): <em>Create reaction for a team discussion comment</em></li>
-<li><a href="https://docs.github.com/rest/reference/reactions/#delete-team-discussion-comment-reaction">reactions.delete_for_team_discussion_comment</a>(org, team_slug, discussion_number, comment_number, reaction_id): <em>Delete team discussion comment reaction</em></li>
-<li><a href="https://docs.github.com/rest/reference/reactions/#list-reactions-for-a-team-discussion">reactions.list_for_team_discussion_in_org</a>(org, team_slug, discussion_number, content, per_page, page): <em>List reactions for a team discussion</em></li>
-<li><a href="https://docs.github.com/rest/reference/reactions/#create-reaction-for-a-team-discussion">reactions.create_for_team_discussion_in_org</a>(org, team_slug, discussion_number, content): <em>Create reaction for a team discussion</em></li>
-<li><a href="https://docs.github.com/rest/reference/reactions/#delete-team-discussion-reaction">reactions.delete_for_team_discussion</a>(org, team_slug, discussion_number, reaction_id): <em>Delete team discussion reaction</em></li>
+<li><a href="https://docs.github.com/rest/reference/reactions#list-reactions-for-a-team-discussion-comment">reactions.list_for_team_discussion_comment_in_org</a>(org, team_slug, discussion_number, comment_number, content, per_page, page): <em>List reactions for a team discussion comment</em></li>
+<li><a href="https://docs.github.com/rest/reference/reactions#create-reaction-for-a-team-discussion-comment">reactions.create_for_team_discussion_comment_in_org</a>(org, team_slug, discussion_number, comment_number, content): <em>Create reaction for a team discussion comment</em></li>
+<li><a href="https://docs.github.com/rest/reference/reactions#delete-team-discussion-comment-reaction">reactions.delete_for_team_discussion_comment</a>(org, team_slug, discussion_number, comment_number, reaction_id): <em>Delete team discussion comment reaction</em></li>
+<li><a href="https://docs.github.com/rest/reference/reactions#list-reactions-for-a-team-discussion">reactions.list_for_team_discussion_in_org</a>(org, team_slug, discussion_number, content, per_page, page): <em>List reactions for a team discussion</em></li>
+<li><a href="https://docs.github.com/rest/reference/reactions#create-reaction-for-a-team-discussion">reactions.create_for_team_discussion_in_org</a>(org, team_slug, discussion_number, content): <em>Create reaction for a team discussion</em></li>
+<li><a href="https://docs.github.com/rest/reference/reactions#delete-team-discussion-reaction">reactions.delete_for_team_discussion</a>(org, team_slug, discussion_number, reaction_id): <em>Delete team discussion reaction</em></li>
 <li><a href="https://docs.github.com/rest/reference/reactions/#delete-a-reaction-legacy">reactions.delete_legacy</a>(reaction_id): <em>Delete a reaction (Legacy)</em></li>
-<li><a href="https://docs.github.com/rest/reference/reactions/#list-reactions-for-a-commit-comment">reactions.list_for_commit_comment</a>(owner, repo, comment_id, content, per_page, page): <em>List reactions for a commit comment</em></li>
-<li><a href="https://docs.github.com/rest/reference/reactions/#create-reaction-for-a-commit-comment">reactions.create_for_commit_comment</a>(owner, repo, comment_id, content): <em>Create reaction for a commit comment</em></li>
-<li><a href="https://docs.github.com/rest/reference/reactions/#delete-a-commit-comment-reaction">reactions.delete_for_commit_comment</a>(owner, repo, comment_id, reaction_id): <em>Delete a commit comment reaction</em></li>
-<li><a href="https://docs.github.com/rest/reference/reactions/#list-reactions-for-an-issue-comment">reactions.list_for_issue_comment</a>(owner, repo, comment_id, content, per_page, page): <em>List reactions for an issue comment</em></li>
-<li><a href="https://docs.github.com/rest/reference/reactions/#create-reaction-for-an-issue-comment">reactions.create_for_issue_comment</a>(owner, repo, comment_id, content): <em>Create reaction for an issue comment</em></li>
-<li><a href="https://docs.github.com/rest/reference/reactions/#delete-an-issue-comment-reaction">reactions.delete_for_issue_comment</a>(owner, repo, comment_id, reaction_id): <em>Delete an issue comment reaction</em></li>
-<li><a href="https://docs.github.com/rest/reference/reactions/#list-reactions-for-an-issue">reactions.list_for_issue</a>(owner, repo, issue_number, content, per_page, page): <em>List reactions for an issue</em></li>
-<li><a href="https://docs.github.com/rest/reference/reactions/#create-reaction-for-an-issue">reactions.create_for_issue</a>(owner, repo, issue_number, content): <em>Create reaction for an issue</em></li>
-<li><a href="https://docs.github.com/rest/reference/reactions/#delete-an-issue-reaction">reactions.delete_for_issue</a>(owner, repo, issue_number, reaction_id): <em>Delete an issue reaction</em></li>
-<li><a href="https://docs.github.com/rest/reference/reactions/#list-reactions-for-a-pull-request-review-comment">reactions.list_for_pull_request_review_comment</a>(owner, repo, comment_id, content, per_page, page): <em>List reactions for a pull request review comment</em></li>
-<li><a href="https://docs.github.com/rest/reference/reactions/#create-reaction-for-a-pull-request-review-comment">reactions.create_for_pull_request_review_comment</a>(owner, repo, comment_id, content): <em>Create reaction for a pull request review comment</em></li>
-<li><a href="https://docs.github.com/rest/reference/reactions/#delete-a-pull-request-comment-reaction">reactions.delete_for_pull_request_comment</a>(owner, repo, comment_id, reaction_id): <em>Delete a pull request comment reaction</em></li>
+<li><a href="https://docs.github.com/rest/reference/reactions#list-reactions-for-a-commit-comment">reactions.list_for_commit_comment</a>(owner, repo, comment_id, content, per_page, page): <em>List reactions for a commit comment</em></li>
+<li><a href="https://docs.github.com/rest/reference/reactions#create-reaction-for-a-commit-comment">reactions.create_for_commit_comment</a>(owner, repo, comment_id, content): <em>Create reaction for a commit comment</em></li>
+<li><a href="https://docs.github.com/rest/reference/reactions#delete-a-commit-comment-reaction">reactions.delete_for_commit_comment</a>(owner, repo, comment_id, reaction_id): <em>Delete a commit comment reaction</em></li>
+<li><a href="https://docs.github.com/rest/reference/reactions#list-reactions-for-an-issue-comment">reactions.list_for_issue_comment</a>(owner, repo, comment_id, content, per_page, page): <em>List reactions for an issue comment</em></li>
+<li><a href="https://docs.github.com/rest/reference/reactions#create-reaction-for-an-issue-comment">reactions.create_for_issue_comment</a>(owner, repo, comment_id, content): <em>Create reaction for an issue comment</em></li>
+<li><a href="https://docs.github.com/rest/reference/reactions#delete-an-issue-comment-reaction">reactions.delete_for_issue_comment</a>(owner, repo, comment_id, reaction_id): <em>Delete an issue comment reaction</em></li>
+<li><a href="https://docs.github.com/rest/reference/reactions#list-reactions-for-an-issue">reactions.list_for_issue</a>(owner, repo, issue_number, content, per_page, page): <em>List reactions for an issue</em></li>
+<li><a href="https://docs.github.com/rest/reference/reactions#create-reaction-for-an-issue">reactions.create_for_issue</a>(owner, repo, issue_number, content): <em>Create reaction for an issue</em></li>
+<li><a href="https://docs.github.com/rest/reference/reactions#delete-an-issue-reaction">reactions.delete_for_issue</a>(owner, repo, issue_number, reaction_id): <em>Delete an issue reaction</em></li>
+<li><a href="https://docs.github.com/rest/reference/reactions#list-reactions-for-a-pull-request-review-comment">reactions.list_for_pull_request_review_comment</a>(owner, repo, comment_id, content, per_page, page): <em>List reactions for a pull request review comment</em></li>
+<li><a href="https://docs.github.com/rest/reference/reactions#create-reaction-for-a-pull-request-review-comment">reactions.create_for_pull_request_review_comment</a>(owner, repo, comment_id, content): <em>Create reaction for a pull request review comment</em></li>
+<li><a href="https://docs.github.com/rest/reference/reactions#delete-a-pull-request-comment-reaction">reactions.delete_for_pull_request_comment</a>(owner, repo, comment_id, reaction_id): <em>Delete a pull request comment reaction</em></li>
+<li><a href="https://docs.github.com/rest/reference/reactions/#create-reaction-for-a-release">reactions.create_for_release</a>(owner, repo, release_id, content): <em>Create reaction for a release</em></li>
 <li><a href="https://docs.github.com/rest/reference/reactions/#list-reactions-for-a-team-discussion-comment-legacy">reactions.list_for_team_discussion_comment_legacy</a>(team_id, discussion_number, comment_number, content, per_page, page): <em>List reactions for a team discussion comment (Legacy)</em></li>
 <li><a href="https://docs.github.com/rest/reference/reactions/#create-reaction-for-a-team-discussion-comment-legacy">reactions.create_for_team_discussion_comment_legacy</a>(team_id, discussion_number, comment_number, content): <em>Create reaction for a team discussion comment (Legacy)</em></li>
 <li><a href="https://docs.github.com/rest/reference/reactions/#list-reactions-for-a-team-discussion-legacy">reactions.list_for_team_discussion_legacy</a>(team_id, discussion_number, content, per_page, page): <em>List reactions for a team discussion (Legacy)</em></li>
 <li><a href="https://docs.github.com/rest/reference/reactions/#create-reaction-for-a-team-discussion-legacy">reactions.create_for_team_discussion_legacy</a>(team_id, discussion_number, content): <em>Create reaction for a team discussion (Legacy)</em></li>
 </ul>
 <h2 id="repos">repos<a class="anchor-link" href="#repos"> </a></h2><ul>
-<li><a href="https://docs.github.com/rest/reference/repos/#list-organization-repositories">repos.list_for_org</a>(org, type, sort, direction, per_page, page): <em>List organization repositories</em></li>
-<li><a href="https://docs.github.com/rest/reference/repos/#create-an-organization-repository">repos.create_in_org</a>(org, name, description, homepage, private, visibility, has_issues, has_projects, has_wiki, is_template, team_id, auto_init, gitignore_template, license_template, allow_squash_merge, allow_merge_commit, allow_rebase_merge, delete_branch_on_merge): <em>Create an organization repository</em></li>
-<li><a href="https://docs.github.com/rest/reference/repos/#get-a-repository">repos.get</a>(owner, repo): <em>Get a repository</em></li>
-<li><a href="https://docs.github.com/rest/reference/repos/#update-a-repository">repos.update</a>(owner, repo, name, description, homepage, private, visibility, has_issues, has_projects, has_wiki, is_template, default_branch, allow_squash_merge, allow_merge_commit, allow_rebase_merge, delete_branch_on_merge, archived): <em>Update a repository</em></li>
-<li><a href="https://docs.github.com/rest/reference/repos/#delete-a-repository">repos.delete</a>(owner, repo): <em>Delete a repository</em></li>
-<li><a href="https://docs.github.com/rest/reference/repos/#enable-automated-security-fixes">repos.enable_automated_security_fixes</a>(owner, repo): <em>Enable automated security fixes</em></li>
-<li><a href="https://docs.github.com/rest/reference/repos/#disable-automated-security-fixes">repos.disable_automated_security_fixes</a>(owner, repo): <em>Disable automated security fixes</em></li>
+<li><a href="https://docs.github.com/rest/reference/repos#list-organization-repositories">repos.list_for_org</a>(org, type, sort, direction, per_page, page): <em>List organization repositories</em></li>
+<li><a href="https://docs.github.com/rest/reference/repos#create-an-organization-repository">repos.create_in_org</a>(org, name, description, homepage, private, visibility, has_issues, has_projects, has_wiki, is_template, team_id, auto_init, gitignore_template, license_template, allow_squash_merge, allow_merge_commit, allow_rebase_merge, delete_branch_on_merge): <em>Create an organization repository</em></li>
+<li><a href="https://docs.github.com/rest/reference/repos#get-a-repository">repos.get</a>(owner, repo): <em>Get a repository</em></li>
+<li><a href="https://docs.github.com/rest/reference/repos/#update-a-repository">repos.update</a>(owner, repo, name, description, homepage, private, visibility, security_and_analysis, has_issues, has_projects, has_wiki, is_template, default_branch, allow_squash_merge, allow_merge_commit, allow_rebase_merge, delete_branch_on_merge, archived): <em>Update a repository</em></li>
+<li><a href="https://docs.github.com/rest/reference/repos#delete-a-repository">repos.delete</a>(owner, repo): <em>Delete a repository</em></li>
+<li><a href="https://docs.github.com/rest/reference/repos#enable-automated-security-fixes">repos.enable_automated_security_fixes</a>(owner, repo): <em>Enable automated security fixes</em></li>
+<li><a href="https://docs.github.com/rest/reference/repos#disable-automated-security-fixes">repos.disable_automated_security_fixes</a>(owner, repo): <em>Disable automated security fixes</em></li>
 <li><a href="https://docs.github.com/rest/reference/repos#list-branches">repos.list_branches</a>(owner, repo, protected, per_page, page): <em>List branches</em></li>
 <li><a href="https://docs.github.com/rest/reference/repos#get-a-branch">repos.get_branch</a>(owner, repo, branch): <em>Get a branch</em></li>
 <li><a href="https://docs.github.com/rest/reference/repos#get-branch-protection">repos.get_branch_protection</a>(owner, repo, branch): <em>Get branch protection</em></li>
-<li><a href="https://docs.github.com/rest/reference/repos#update-branch-protection">repos.update_branch_protection</a>(owner, repo, branch, required_status_checks, enforce_admins, required_pull_request_reviews, restrictions, required_linear_history, allow_force_pushes, allow_deletions): <em>Update branch protection</em></li>
+<li><a href="https://docs.github.com/rest/reference/repos#update-branch-protection">repos.update_branch_protection</a>(owner, repo, branch, required_status_checks, enforce_admins, required_pull_request_reviews, restrictions, required_linear_history, allow_force_pushes, allow_deletions, required_conversation_resolution): <em>Update branch protection</em></li>
 <li><a href="https://docs.github.com/rest/reference/repos#delete-branch-protection">repos.delete_branch_protection</a>(owner, repo, branch): <em>Delete branch protection</em></li>
 <li><a href="https://docs.github.com/rest/reference/repos#get-admin-branch-protection">repos.get_admin_branch_protection</a>(owner, repo, branch): <em>Get admin branch protection</em></li>
 <li><a href="https://docs.github.com/rest/reference/repos#set-admin-branch-protection">repos.set_admin_branch_protection</a>(owner, repo, branch): <em>Set admin branch protection</em></li>
@@ -615,23 +617,23 @@ nb_path: "50_fullapi.ipynb"
 <li><a href="https://docs.github.com/rest/reference/repos#update-status-check-potection">repos.update_status_check_protection</a>(owner, repo, branch, strict, contexts): <em>Update status check protection</em></li>
 <li><a href="https://docs.github.com/rest/reference/repos#remove-status-check-protection">repos.remove_status_check_protection</a>(owner, repo, branch): <em>Remove status check protection</em></li>
 <li><a href="https://docs.github.com/rest/reference/repos#get-all-status-check-contexts">repos.get_all_status_check_contexts</a>(owner, repo, branch): <em>Get all status check contexts</em></li>
-<li><a href="https://docs.github.com/rest/reference/repos#add-status-check-contexts">repos.add_status_check_contexts</a>(owner, repo, branch): <em>Add status check contexts</em></li>
-<li><a href="https://docs.github.com/rest/reference/repos#set-status-check-contexts">repos.set_status_check_contexts</a>(owner, repo, branch): <em>Set status check contexts</em></li>
-<li><a href="https://docs.github.com/rest/reference/repos#remove-status-check-contexts">repos.remove_status_check_contexts</a>(owner, repo, branch): <em>Remove status check contexts</em></li>
+<li><a href="https://docs.github.com/rest/reference/repos#add-status-check-contexts">repos.add_status_check_contexts</a>(owner, repo, branch, contexts): <em>Add status check contexts</em></li>
+<li><a href="https://docs.github.com/rest/reference/repos#set-status-check-contexts">repos.set_status_check_contexts</a>(owner, repo, branch, contexts): <em>Set status check contexts</em></li>
+<li><a href="https://docs.github.com/rest/reference/repos#remove-status-check-contexts">repos.remove_status_check_contexts</a>(owner, repo, branch, contexts): <em>Remove status check contexts</em></li>
 <li><a href="https://docs.github.com/rest/reference/repos#get-access-restrictions">repos.get_access_restrictions</a>(owner, repo, branch): <em>Get access restrictions</em></li>
 <li><a href="https://docs.github.com/rest/reference/repos#delete-access-restrictions">repos.delete_access_restrictions</a>(owner, repo, branch): <em>Delete access restrictions</em></li>
 <li><a href="https://docs.github.com/rest/reference/repos#list-apps-with-access-to-the-protected-branch">repos.get_apps_with_access_to_protected_branch</a>(owner, repo, branch): <em>Get apps with access to the protected branch</em></li>
-<li><a href="https://docs.github.com/rest/reference/repos#add-app-access-restrictions">repos.add_app_access_restrictions</a>(owner, repo, branch): <em>Add app access restrictions</em></li>
-<li><a href="https://docs.github.com/rest/reference/repos#set-app-access-restrictions">repos.set_app_access_restrictions</a>(owner, repo, branch): <em>Set app access restrictions</em></li>
-<li><a href="https://docs.github.com/rest/reference/repos#remove-app-access-restrictions">repos.remove_app_access_restrictions</a>(owner, repo, branch): <em>Remove app access restrictions</em></li>
+<li><a href="https://docs.github.com/rest/reference/repos#add-app-access-restrictions">repos.add_app_access_restrictions</a>(owner, repo, branch, apps): <em>Add app access restrictions</em></li>
+<li><a href="https://docs.github.com/rest/reference/repos#set-app-access-restrictions">repos.set_app_access_restrictions</a>(owner, repo, branch, apps): <em>Set app access restrictions</em></li>
+<li><a href="https://docs.github.com/rest/reference/repos#remove-app-access-restrictions">repos.remove_app_access_restrictions</a>(owner, repo, branch, apps): <em>Remove app access restrictions</em></li>
 <li><a href="https://docs.github.com/rest/reference/repos#list-teams-with-access-to-the-protected-branch">repos.get_teams_with_access_to_protected_branch</a>(owner, repo, branch): <em>Get teams with access to the protected branch</em></li>
-<li><a href="https://docs.github.com/rest/reference/repos#add-team-access-restrictions">repos.add_team_access_restrictions</a>(owner, repo, branch): <em>Add team access restrictions</em></li>
-<li><a href="https://docs.github.com/rest/reference/repos#set-team-access-restrictions">repos.set_team_access_restrictions</a>(owner, repo, branch): <em>Set team access restrictions</em></li>
-<li><a href="https://docs.github.com/rest/reference/repos#remove-team-access-restrictions">repos.remove_team_access_restrictions</a>(owner, repo, branch): <em>Remove team access restrictions</em></li>
+<li><a href="https://docs.github.com/rest/reference/repos#add-team-access-restrictions">repos.add_team_access_restrictions</a>(owner, repo, branch, teams): <em>Add team access restrictions</em></li>
+<li><a href="https://docs.github.com/rest/reference/repos#set-team-access-restrictions">repos.set_team_access_restrictions</a>(owner, repo, branch, teams): <em>Set team access restrictions</em></li>
+<li><a href="https://docs.github.com/rest/reference/repos#remove-team-access-restrictions">repos.remove_team_access_restrictions</a>(owner, repo, branch, teams): <em>Remove team access restrictions</em></li>
 <li><a href="https://docs.github.com/rest/reference/repos#list-users-with-access-to-the-protected-branch">repos.get_users_with_access_to_protected_branch</a>(owner, repo, branch): <em>Get users with access to the protected branch</em></li>
-<li><a href="https://docs.github.com/rest/reference/repos#add-user-access-restrictions">repos.add_user_access_restrictions</a>(owner, repo, branch): <em>Add user access restrictions</em></li>
-<li><a href="https://docs.github.com/rest/reference/repos#set-user-access-restrictions">repos.set_user_access_restrictions</a>(owner, repo, branch): <em>Set user access restrictions</em></li>
-<li><a href="https://docs.github.com/rest/reference/repos#remove-user-access-restrictions">repos.remove_user_access_restrictions</a>(owner, repo, branch): <em>Remove user access restrictions</em></li>
+<li><a href="https://docs.github.com/rest/reference/repos#add-user-access-restrictions">repos.add_user_access_restrictions</a>(owner, repo, branch, users): <em>Add user access restrictions</em></li>
+<li><a href="https://docs.github.com/rest/reference/repos#set-user-access-restrictions">repos.set_user_access_restrictions</a>(owner, repo, branch, users): <em>Set user access restrictions</em></li>
+<li><a href="https://docs.github.com/rest/reference/repos#remove-user-access-restrictions">repos.remove_user_access_restrictions</a>(owner, repo, branch, users): <em>Remove user access restrictions</em></li>
 <li><a href="https://docs.github.com/rest/reference/repos#rename-a-branch">repos.rename_branch</a>(owner, repo, branch, new_name): <em>Rename a branch</em></li>
 <li><a href="https://docs.github.com/rest/reference/repos#list-repository-collaborators">repos.list_collaborators</a>(owner, repo, affiliation, per_page, page): <em>List repository collaborators</em></li>
 <li><a href="https://docs.github.com/rest/reference/repos#check-if-a-user-is-a-repository-collaborator">repos.check_collaborator</a>(owner, repo, username): <em>Check if a user is a repository collaborator</em></li>
@@ -655,7 +657,7 @@ nb_path: "50_fullapi.ipynb"
 <li><a href="https://docs.github.com/rest/reference/repos#get-repository-content">repos.get_content</a>(owner, repo, path, ref): <em>Get repository content</em></li>
 <li><a href="https://docs.github.com/rest/reference/repos#create-or-update-file-contents">repos.create_or_update_file_contents</a>(owner, repo, path, message, content, sha, branch, committer, author): <em>Create or update file contents</em></li>
 <li><a href="https://docs.github.com/rest/reference/repos#delete-a-file">repos.delete_file</a>(owner, repo, path, message, sha, branch, committer, author): <em>Delete a file</em></li>
-<li><a href="https://docs.github.com/rest/reference/repos/#list-repository-contributors">repos.list_contributors</a>(owner, repo, anon, per_page, page): <em>List repository contributors</em></li>
+<li><a href="https://docs.github.com/rest/reference/repos#list-repository-contributors">repos.list_contributors</a>(owner, repo, anon, per_page, page): <em>List repository contributors</em></li>
 <li><a href="https://docs.github.com/rest/reference/repos#list-deployments">repos.list_deployments</a>(owner, repo, sha, ref, task, environment, per_page, page): <em>List deployments</em></li>
 <li><a href="https://docs.github.com/rest/reference/repos#create-a-deployment">repos.create_deployment</a>(owner, repo, ref, task, auto_merge, required_contexts, payload, environment, description, transient_environment, production_environment): <em>Create a deployment</em></li>
 <li><a href="https://docs.github.com/rest/reference/repos#get-a-deployment">repos.get_deployment</a>(owner, repo, deployment_id): <em>Get a deployment</em></li>
@@ -663,7 +665,7 @@ nb_path: "50_fullapi.ipynb"
 <li><a href="https://docs.github.com/rest/reference/repos#list-deployment-statuses">repos.list_deployment_statuses</a>(owner, repo, deployment_id, per_page, page): <em>List deployment statuses</em></li>
 <li><a href="https://docs.github.com/rest/reference/repos#create-a-deployment-status">repos.create_deployment_status</a>(owner, repo, deployment_id, state, target_url, log_url, description, environment, environment_url, auto_inactive): <em>Create a deployment status</em></li>
 <li><a href="https://docs.github.com/rest/reference/repos#get-a-deployment-status">repos.get_deployment_status</a>(owner, repo, deployment_id, status_id): <em>Get a deployment status</em></li>
-<li><a href="https://docs.github.com/rest/reference/repos/#create-a-repository-dispatch-event">repos.create_dispatch_event</a>(owner, repo, event_type, client_payload): <em>Create a repository dispatch event</em></li>
+<li><a href="https://docs.github.com/rest/reference/repos#create-a-repository-dispatch-event">repos.create_dispatch_event</a>(owner, repo, event_type, client_payload): <em>Create a repository dispatch event</em></li>
 <li><a href="https://docs.github.com/rest/reference/repos#get-all-environments">repos.get_all_environments</a>(owner, repo): <em>Get all environments</em></li>
 <li><a href="https://docs.github.com/rest/reference/repos#get-an-environment">repos.get_environment</a>(owner, repo, environment_name): <em>Get an environment</em></li>
 <li><a href="https://docs.github.com/rest/reference/repos#create-or-update-an-environment">repos.create_or_update_environment</a>(owner, repo, environment_name, wait_timer, reviewers, deployment_branch_policy): <em>Create or update an environment</em></li>
@@ -686,7 +688,7 @@ nb_path: "50_fullapi.ipynb"
 <li><a href="https://docs.github.com/rest/reference/repos#create-a-deploy-key">repos.create_deploy_key</a>(owner, repo, title, key, read_only): <em>Create a deploy key</em></li>
 <li><a href="https://docs.github.com/rest/reference/repos#get-a-deploy-key">repos.get_deploy_key</a>(owner, repo, key_id): <em>Get a deploy key</em></li>
 <li><a href="https://docs.github.com/rest/reference/repos#delete-a-deploy-key">repos.delete_deploy_key</a>(owner, repo, key_id): <em>Delete a deploy key</em></li>
-<li><a href="https://docs.github.com/rest/reference/repos/#list-repository-languages">repos.list_languages</a>(owner, repo): <em>List repository languages</em></li>
+<li><a href="https://docs.github.com/rest/reference/repos#list-repository-languages">repos.list_languages</a>(owner, repo): <em>List repository languages</em></li>
 <li><a href="https://docs.github.com/rest/reference/repos#merge-a-branch">repos.merge</a>(owner, repo, base, head, commit_message): <em>Merge a branch</em></li>
 <li><a href="https://docs.github.com/rest/reference/repos#get-a-github-pages-site">repos.get_pages</a>(owner, repo): <em>Get a GitHub Pages site</em></li>
 <li><a href="https://docs.github.com/rest/reference/repos#create-a-github-pages-site">repos.create_pages_site</a>(owner, repo, source): <em>Create a GitHub Pages site</em></li>
@@ -717,58 +719,58 @@ nb_path: "50_fullapi.ipynb"
 <li><a href="https://docs.github.com/rest/reference/repos#get-the-weekly-commit-count">repos.get_participation_stats</a>(owner, repo): <em>Get the weekly commit count</em></li>
 <li><a href="https://docs.github.com/rest/reference/repos#get-the-hourly-commit-count-for-each-day">repos.get_punch_card_stats</a>(owner, repo): <em>Get the hourly commit count for each day</em></li>
 <li><a href="https://docs.github.com/rest/reference/repos#create-a-commit-status">repos.create_commit_status</a>(owner, repo, sha, state, target_url, description, context): <em>Create a commit status</em></li>
-<li><a href="https://docs.github.com/rest/reference/repos/#list-repository-tags">repos.list_tags</a>(owner, repo, per_page, page): <em>List repository tags</em></li>
+<li><a href="https://docs.github.com/rest/reference/repos#list-repository-tags">repos.list_tags</a>(owner, repo, per_page, page): <em>List repository tags</em></li>
 <li><a href="https://docs.github.com/rest/reference/repos#download-a-repository-archive">repos.download_tarball_archive</a>(owner, repo, ref): <em>Download a repository archive (tar)</em></li>
-<li><a href="https://docs.github.com/rest/reference/repos/#list-repository-teams">repos.list_teams</a>(owner, repo, per_page, page): <em>List repository teams</em></li>
-<li><a href="https://docs.github.com/rest/reference/repos/#get-all-repository-topics">repos.get_all_topics</a>(owner, repo, page, per_page): <em>Get all repository topics</em></li>
-<li><a href="https://docs.github.com/rest/reference/repos/#replace-all-repository-topics">repos.replace_all_topics</a>(owner, repo, names): <em>Replace all repository topics</em></li>
+<li><a href="https://docs.github.com/rest/reference/repos#list-repository-teams">repos.list_teams</a>(owner, repo, per_page, page): <em>List repository teams</em></li>
+<li><a href="https://docs.github.com/rest/reference/repos#get-all-repository-topics">repos.get_all_topics</a>(owner, repo, page, per_page): <em>Get all repository topics</em></li>
+<li><a href="https://docs.github.com/rest/reference/repos#replace-all-repository-topics">repos.replace_all_topics</a>(owner, repo, names): <em>Replace all repository topics</em></li>
 <li><a href="https://docs.github.com/rest/reference/repos#get-repository-clones">repos.get_clones</a>(owner, repo, per): <em>Get repository clones</em></li>
 <li><a href="https://docs.github.com/rest/reference/repos#get-top-referral-paths">repos.get_top_paths</a>(owner, repo): <em>Get top referral paths</em></li>
 <li><a href="https://docs.github.com/rest/reference/repos#get-top-referral-sources">repos.get_top_referrers</a>(owner, repo): <em>Get top referral sources</em></li>
 <li><a href="https://docs.github.com/rest/reference/repos#get-page-views">repos.get_views</a>(owner, repo, per): <em>Get page views</em></li>
-<li><a href="https://docs.github.com/rest/reference/repos/#transfer-a-repository">repos.transfer</a>(owner, repo, new_owner, team_ids): <em>Transfer a repository</em></li>
-<li><a href="https://docs.github.com/rest/reference/repos/#check-if-vulnerability-alerts-are-enabled-for-a-repository">repos.check_vulnerability_alerts</a>(owner, repo): <em>Check if vulnerability alerts are enabled for a repository</em></li>
-<li><a href="https://docs.github.com/rest/reference/repos/#enable-vulnerability-alerts">repos.enable_vulnerability_alerts</a>(owner, repo): <em>Enable vulnerability alerts</em></li>
-<li><a href="https://docs.github.com/rest/reference/repos/#disable-vulnerability-alerts">repos.disable_vulnerability_alerts</a>(owner, repo): <em>Disable vulnerability alerts</em></li>
+<li><a href="https://docs.github.com/rest/reference/repos#transfer-a-repository">repos.transfer</a>(owner, repo, new_owner, team_ids): <em>Transfer a repository</em></li>
+<li><a href="https://docs.github.com/rest/reference/repos#check-if-vulnerability-alerts-are-enabled-for-a-repository">repos.check_vulnerability_alerts</a>(owner, repo): <em>Check if vulnerability alerts are enabled for a repository</em></li>
+<li><a href="https://docs.github.com/rest/reference/repos#enable-vulnerability-alerts">repos.enable_vulnerability_alerts</a>(owner, repo): <em>Enable vulnerability alerts</em></li>
+<li><a href="https://docs.github.com/rest/reference/repos#disable-vulnerability-alerts">repos.disable_vulnerability_alerts</a>(owner, repo): <em>Disable vulnerability alerts</em></li>
 <li><a href="https://docs.github.com/rest/reference/repos#download-a-repository-archive">repos.download_zipball_archive</a>(owner, repo, ref): <em>Download a repository archive (zip)</em></li>
-<li><a href="https://docs.github.com/rest/reference/repos/#create-a-repository-using-a-template">repos.create_using_template</a>(template_owner, template_repo, owner, name, description, include_all_branches, private): <em>Create a repository using a template</em></li>
-<li><a href="https://docs.github.com/rest/reference/repos/#list-public-repositories">repos.list_public</a>(since): <em>List public repositories</em></li>
-<li><a href="https://docs.github.com/rest/reference/repos/#list-repositories-for-the-authenticated-user">repos.list_for_authenticated_user</a>(visibility, affiliation, type, sort, direction, per_page, page, since, before): <em>List repositories for the authenticated user</em></li>
-<li><a href="https://docs.github.com/rest/reference/repos/#create-a-repository-for-the-authenticated-user">repos.create_for_authenticated_user</a>(name, description, homepage, private, has_issues, has_projects, has_wiki, team_id, auto_init, gitignore_template, license_template, allow_squash_merge, allow_merge_commit, allow_rebase_merge, delete_branch_on_merge, has_downloads, is_template): <em>Create a repository for the authenticated user</em></li>
+<li><a href="https://docs.github.com/rest/reference/repos#create-a-repository-using-a-template">repos.create_using_template</a>(template_owner, template_repo, owner, name, description, include_all_branches, private): <em>Create a repository using a template</em></li>
+<li><a href="https://docs.github.com/rest/reference/repos#list-public-repositories">repos.list_public</a>(since): <em>List public repositories</em></li>
+<li><a href="https://docs.github.com/rest/reference/repos#list-repositories-for-the-authenticated-user">repos.list_for_authenticated_user</a>(visibility, affiliation, type, sort, direction, per_page, page, since, before): <em>List repositories for the authenticated user</em></li>
+<li><a href="https://docs.github.com/rest/reference/repos#create-a-repository-for-the-authenticated-user">repos.create_for_authenticated_user</a>(name, description, homepage, private, has_issues, has_projects, has_wiki, team_id, auto_init, gitignore_template, license_template, allow_squash_merge, allow_merge_commit, allow_rebase_merge, delete_branch_on_merge, has_downloads, is_template): <em>Create a repository for the authenticated user</em></li>
 <li><a href="https://docs.github.com/rest/reference/repos#list-repository-invitations-for-the-authenticated-user">repos.list_invitations_for_authenticated_user</a>(per_page, page): <em>List repository invitations for the authenticated user</em></li>
 <li><a href="https://docs.github.com/rest/reference/repos#accept-a-repository-invitation">repos.accept_invitation</a>(invitation_id): <em>Accept a repository invitation</em></li>
 <li><a href="https://docs.github.com/rest/reference/repos#decline-a-repository-invitation">repos.decline_invitation</a>(invitation_id): <em>Decline a repository invitation</em></li>
-<li><a href="https://docs.github.com/rest/reference/repos/#list-repositories-for-a-user">repos.list_for_user</a>(username, type, sort, direction, per_page, page): <em>List repositories for a user</em></li>
+<li><a href="https://docs.github.com/rest/reference/repos#list-repositories-for-a-user">repos.list_for_user</a>(username, type, sort, direction, per_page, page): <em>List repositories for a user</em></li>
 </ul>
 <h2 id="scim">scim<a class="anchor-link" href="#scim"> </a></h2><ul>
-<li><a href="https://docs.github.com/rest/reference/scim/#list-scim-provisioned-identities">scim.list_provisioned_identities</a>(org, startIndex, count, filter): <em>List SCIM provisioned identities</em></li>
-<li><a href="https://docs.github.com/rest/reference/scim/#provision-and-invite-a-scim-user">scim.provision_and_invite_user</a>(org, userName, displayName, name, emails, schemas, externalId, groups, active): <em>Provision and invite a SCIM user</em></li>
-<li><a href="https://docs.github.com/rest/reference/scim/#get-scim-provisioning-information-for-a-user">scim.get_provisioning_information_for_user</a>(org, scim_user_id): <em>Get SCIM provisioning information for a user</em></li>
-<li><a href="https://docs.github.com/rest/reference/scim/#set-scim-information-for-a-provisioned-user">scim.set_information_for_provisioned_user</a>(org, scim_user_id, schemas, displayName, externalId, groups, active, userName, name, emails): <em>Update a provisioned organization membership</em></li>
-<li><a href="https://docs.github.com/rest/reference/scim/#update-an-attribute-for-a-scim-user">scim.update_attribute_for_user</a>(org, scim_user_id, schemas, Operations): <em>Update an attribute for a SCIM user</em></li>
-<li><a href="https://docs.github.com/rest/reference/scim/#delete-a-scim-user-from-an-organization">scim.delete_user_from_org</a>(org, scim_user_id): <em>Delete a SCIM user from an organization</em></li>
+<li><a href="https://docs.github.com/rest/reference/scim#list-scim-provisioned-identities">scim.list_provisioned_identities</a>(org, startIndex, count, filter): <em>List SCIM provisioned identities</em></li>
+<li><a href="https://docs.github.com/rest/reference/scim#provision-and-invite-a-scim-user">scim.provision_and_invite_user</a>(org, userName, displayName, name, emails, schemas, externalId, groups, active): <em>Provision and invite a SCIM user</em></li>
+<li><a href="https://docs.github.com/rest/reference/scim#get-scim-provisioning-information-for-a-user">scim.get_provisioning_information_for_user</a>(org, scim_user_id): <em>Get SCIM provisioning information for a user</em></li>
+<li><a href="https://docs.github.com/rest/reference/scim#set-scim-information-for-a-provisioned-user">scim.set_information_for_provisioned_user</a>(org, scim_user_id, schemas, displayName, externalId, groups, active, userName, name, emails): <em>Update a provisioned organization membership</em></li>
+<li><a href="https://docs.github.com/rest/reference/scim#update-an-attribute-for-a-scim-user">scim.update_attribute_for_user</a>(org, scim_user_id, schemas, Operations): <em>Update an attribute for a SCIM user</em></li>
+<li><a href="https://docs.github.com/rest/reference/scim#delete-a-scim-user-from-an-organization">scim.delete_user_from_org</a>(org, scim_user_id): <em>Delete a SCIM user from an organization</em></li>
 </ul>
 <h2 id="search">search<a class="anchor-link" href="#search"> </a></h2><ul>
-<li><a href="https://docs.github.com/rest/reference/search/#search-code">search.code</a>(q, sort, order, per_page, page): <em>Search code</em></li>
-<li><a href="https://docs.github.com/rest/reference/search/#search-commits">search.commits</a>(q, sort, order, per_page, page): <em>Search commits</em></li>
-<li><a href="https://docs.github.com/rest/reference/search/#search-issues-and-pull-requests">search.issues_and_pull_requests</a>(q, sort, order, per_page, page): <em>Search issues and pull requests</em></li>
-<li><a href="https://docs.github.com/rest/reference/search/#search-labels">search.labels</a>(repository_id, q, sort, order): <em>Search labels</em></li>
-<li><a href="https://docs.github.com/rest/reference/search/#search-repositories">search.repos</a>(q, sort, order, per_page, page): <em>Search repositories</em></li>
-<li><a href="https://docs.github.com/rest/reference/search/#search-topics">search.topics</a>(q): <em>Search topics</em></li>
-<li><a href="https://docs.github.com/rest/reference/search/#search-users">search.users</a>(q, sort, order, per_page, page): <em>Search users</em></li>
+<li><a href="https://docs.github.com/rest/reference/search#search-code">search.code</a>(q, sort, order, per_page, page): <em>Search code</em></li>
+<li><a href="https://docs.github.com/rest/reference/search#search-commits">search.commits</a>(q, sort, order, per_page, page): <em>Search commits</em></li>
+<li><a href="https://docs.github.com/rest/reference/search#search-issues-and-pull-requests">search.issues_and_pull_requests</a>(q, sort, order, per_page, page): <em>Search issues and pull requests</em></li>
+<li><a href="https://docs.github.com/rest/reference/search#search-labels">search.labels</a>(repository_id, q, sort, order, per_page, page): <em>Search labels</em></li>
+<li><a href="https://docs.github.com/rest/reference/search#search-repositories">search.repos</a>(q, sort, order, per_page, page): <em>Search repositories</em></li>
+<li><a href="https://docs.github.com/rest/reference/search#search-topics">search.topics</a>(q, per_page, page): <em>Search topics</em></li>
+<li><a href="https://docs.github.com/rest/reference/search#search-users">search.users</a>(q, sort, order, per_page, page): <em>Search users</em></li>
 </ul>
 <h2 id="secret_scanning">secret_scanning<a class="anchor-link" href="#secret_scanning"> </a></h2><ul>
-<li><a href="https://docs.github.com/rest/reference/secret-scanning#list-secret-scanning-alerts-for-a-repository">secret-scanning.list_alerts_for_repo</a>(owner, repo, state, page, per_page): <em>List secret scanning alerts for a repository</em></li>
+<li><a href="https://docs.github.com/rest/reference/secret-scanning#list-secret-scanning-alerts-for-a-repository">secret-scanning.list_alerts_for_repo</a>(owner, repo, state, secret_type, page, per_page): <em>List secret scanning alerts for a repository</em></li>
 <li><a href="https://docs.github.com/rest/reference/secret-scanning#get-a-secret-scanning-alert">secret-scanning.get_alert</a>(owner, repo, alert_number): <em>Get a secret scanning alert</em></li>
 <li><a href="https://docs.github.com/rest/reference/secret-scanning#update-a-secret-scanning-alert">secret-scanning.update_alert</a>(owner, repo, alert_number, state, resolution): <em>Update a secret scanning alert</em></li>
 </ul>
 <h2 id="teams">teams<a class="anchor-link" href="#teams"> </a></h2><ul>
 <li><a href="https://docs.github.com/rest/reference/teams#list-idp-groups-for-an-organization">teams.list_idp_groups_for_org</a>(org, per_page, page): <em>List IdP groups for an organization</em></li>
-<li><a href="https://docs.github.com/rest/reference/teams/#list-teams">teams.list</a>(org, per_page, page): <em>List teams</em></li>
-<li><a href="https://docs.github.com/rest/reference/teams/#create-a-team">teams.create</a>(org, name, description, maintainers, repo_names, privacy, permission, parent_team_id): <em>Create a team</em></li>
-<li><a href="https://docs.github.com/rest/reference/teams/#get-a-team-by-name">teams.get_by_name</a>(org, team_slug): <em>Get a team by name</em></li>
-<li><a href="https://docs.github.com/rest/reference/teams/#update-a-team">teams.update_in_org</a>(org, team_slug, name, description, privacy, permission, parent_team_id): <em>Update a team</em></li>
-<li><a href="https://docs.github.com/rest/reference/teams/#delete-a-team">teams.delete_in_org</a>(org, team_slug): <em>Delete a team</em></li>
+<li><a href="https://docs.github.com/rest/reference/teams#list-teams">teams.list</a>(org, per_page, page): <em>List teams</em></li>
+<li><a href="https://docs.github.com/rest/reference/teams#create-a-team">teams.create</a>(org, name, description, maintainers, repo_names, privacy, permission, parent_team_id): <em>Create a team</em></li>
+<li><a href="https://docs.github.com/rest/reference/teams#get-a-team-by-name">teams.get_by_name</a>(org, team_slug): <em>Get a team by name</em></li>
+<li><a href="https://docs.github.com/rest/reference/teams#update-a-team">teams.update_in_org</a>(org, team_slug, name, description, privacy, permission, parent_team_id): <em>Update a team</em></li>
+<li><a href="https://docs.github.com/rest/reference/teams#delete-a-team">teams.delete_in_org</a>(org, team_slug): <em>Delete a team</em></li>
 <li><a href="https://docs.github.com/rest/reference/teams#list-discussions">teams.list_discussions_in_org</a>(org, team_slug, direction, per_page, page, pinned): <em>List discussions</em></li>
 <li><a href="https://docs.github.com/rest/reference/teams#create-a-discussion">teams.create_discussion_in_org</a>(org, team_slug, title, body, private): <em>Create a discussion</em></li>
 <li><a href="https://docs.github.com/rest/reference/teams#get-a-discussion">teams.get_discussion_in_org</a>(org, team_slug, discussion_number): <em>Get a discussion</em></li>
@@ -784,17 +786,17 @@ nb_path: "50_fullapi.ipynb"
 <li><a href="https://docs.github.com/rest/reference/teams#get-team-membership-for-a-user">teams.get_membership_for_user_in_org</a>(org, team_slug, username): <em>Get team membership for a user</em></li>
 <li><a href="https://docs.github.com/rest/reference/teams#add-or-update-team-membership-for-a-user">teams.add_or_update_membership_for_user_in_org</a>(org, team_slug, username, role): <em>Add or update team membership for a user</em></li>
 <li><a href="https://docs.github.com/rest/reference/teams#remove-team-membership-for-a-user">teams.remove_membership_for_user_in_org</a>(org, team_slug, username): <em>Remove team membership for a user</em></li>
-<li><a href="https://docs.github.com/rest/reference/teams/#list-team-projects">teams.list_projects_in_org</a>(org, team_slug, per_page, page): <em>List team projects</em></li>
-<li><a href="https://docs.github.com/rest/reference/teams/#check-team-permissions-for-a-project">teams.check_permissions_for_project_in_org</a>(org, team_slug, project_id): <em>Check team permissions for a project</em></li>
-<li><a href="https://docs.github.com/rest/reference/teams/#add-or-update-team-project-permissions">teams.add_or_update_project_permissions_in_org</a>(org, team_slug, project_id, permission): <em>Add or update team project permissions</em></li>
-<li><a href="https://docs.github.com/rest/reference/teams/#remove-a-project-from-a-team">teams.remove_project_in_org</a>(org, team_slug, project_id): <em>Remove a project from a team</em></li>
-<li><a href="https://docs.github.com/rest/reference/teams/#list-team-repositories">teams.list_repos_in_org</a>(org, team_slug, per_page, page): <em>List team repositories</em></li>
+<li><a href="https://docs.github.com/rest/reference/teams#list-team-projects">teams.list_projects_in_org</a>(org, team_slug, per_page, page): <em>List team projects</em></li>
+<li><a href="https://docs.github.com/rest/reference/teams#check-team-permissions-for-a-project">teams.check_permissions_for_project_in_org</a>(org, team_slug, project_id): <em>Check team permissions for a project</em></li>
+<li><a href="https://docs.github.com/rest/reference/teams#add-or-update-team-project-permissions">teams.add_or_update_project_permissions_in_org</a>(org, team_slug, project_id, permission): <em>Add or update team project permissions</em></li>
+<li><a href="https://docs.github.com/rest/reference/teams#remove-a-project-from-a-team">teams.remove_project_in_org</a>(org, team_slug, project_id): <em>Remove a project from a team</em></li>
+<li><a href="https://docs.github.com/rest/reference/teams#list-team-repositories">teams.list_repos_in_org</a>(org, team_slug, per_page, page): <em>List team repositories</em></li>
 <li><a href="https://docs.github.com/rest/reference/teams/#check-team-permissions-for-a-repository">teams.check_permissions_for_repo_in_org</a>(org, team_slug, owner, repo): <em>Check team permissions for a repository</em></li>
 <li><a href="https://docs.github.com/rest/reference/teams/#add-or-update-team-repository-permissions">teams.add_or_update_repo_permissions_in_org</a>(org, team_slug, owner, repo, permission): <em>Add or update team repository permissions</em></li>
 <li><a href="https://docs.github.com/rest/reference/teams/#remove-a-repository-from-a-team">teams.remove_repo_in_org</a>(org, team_slug, owner, repo): <em>Remove a repository from a team</em></li>
 <li><a href="https://docs.github.com/rest/reference/teams#list-idp-groups-for-a-team">teams.list_idp_groups_in_org</a>(org, team_slug): <em>List IdP groups for a team</em></li>
 <li><a href="https://docs.github.com/rest/reference/teams#create-or-update-idp-group-connections">teams.create_or_update_idp_group_connections_in_org</a>(org, team_slug, groups): <em>Create or update IdP group connections</em></li>
-<li><a href="https://docs.github.com/rest/reference/teams/#list-child-teams">teams.list_child_in_org</a>(org, team_slug, per_page, page): <em>List child teams</em></li>
+<li><a href="https://docs.github.com/rest/reference/teams#list-child-teams">teams.list_child_in_org</a>(org, team_slug, per_page, page): <em>List child teams</em></li>
 <li><a href="https://docs.github.com/rest/reference/teams/#get-a-team-legacy">teams.get_legacy</a>(team_id): <em>Get a team (Legacy)</em></li>
 <li><a href="https://docs.github.com/rest/reference/teams/#update-a-team-legacy">teams.update_legacy</a>(team_id, name, description, privacy, permission, parent_team_id): <em>Update a team (Legacy)</em></li>
 <li><a href="https://docs.github.com/rest/reference/teams/#delete-a-team-legacy">teams.delete_legacy</a>(team_id): <em>Delete a team (Legacy)</em></li>
@@ -827,19 +829,19 @@ nb_path: "50_fullapi.ipynb"
 <li><a href="https://docs.github.com/rest/reference/teams#list-idp-groups-for-a-team-legacy">teams.list_idp_groups_for_legacy</a>(team_id): <em>List IdP groups for a team (Legacy)</em></li>
 <li><a href="https://docs.github.com/rest/reference/teams#create-or-update-idp-group-connections-legacy">teams.create_or_update_idp_group_connections_legacy</a>(team_id, groups, synced_at): <em>Create or update IdP group connections (Legacy)</em></li>
 <li><a href="https://docs.github.com/rest/reference/teams/#list-child-teams-legacy">teams.list_child_legacy</a>(team_id, per_page, page): <em>List child teams (Legacy)</em></li>
-<li><a href="https://docs.github.com/rest/reference/teams/#list-teams-for-the-authenticated-user">teams.list_for_authenticated_user</a>(per_page, page): <em>List teams for the authenticated user</em></li>
+<li><a href="https://docs.github.com/rest/reference/teams#list-teams-for-the-authenticated-user">teams.list_for_authenticated_user</a>(per_page, page): <em>List teams for the authenticated user</em></li>
 </ul>
 <h2 id="users">users<a class="anchor-link" href="#users"> </a></h2><ul>
-<li><a href="https://docs.github.com/rest/reference/users/#get-the-authenticated-user">users.get_authenticated</a>(): <em>Get the authenticated user</em></li>
+<li><a href="https://docs.github.com/rest/reference/users#get-the-authenticated-user">users.get_authenticated</a>(): <em>Get the authenticated user</em></li>
 <li><a href="https://docs.github.com/rest/reference/users/#update-the-authenticated-user">users.update_authenticated</a>(name, email, blog, twitter_username, company, location, hireable, bio): <em>Update the authenticated user</em></li>
 <li><a href="https://docs.github.com/rest/reference/users#list-users-blocked-by-the-authenticated-user">users.list_blocked_by_authenticated</a>(): <em>List users blocked by the authenticated user</em></li>
 <li><a href="https://docs.github.com/rest/reference/users#check-if-a-user-is-blocked-by-the-authenticated-user">users.check_blocked</a>(username): <em>Check if a user is blocked by the authenticated user</em></li>
 <li><a href="https://docs.github.com/rest/reference/users#block-a-user">users.block</a>(username): <em>Block a user</em></li>
 <li><a href="https://docs.github.com/rest/reference/users#unblock-a-user">users.unblock</a>(username): <em>Unblock a user</em></li>
-<li><a href="https://docs.github.com/rest/reference/users#set-primary-email-visibility-for-the-authenticated-user">users.set_primary_email_visibility_for_authenticated</a>(email, visibility): <em>Set primary email visibility for the authenticated user</em></li>
+<li><a href="https://docs.github.com/rest/reference/users#set-primary-email-visibility-for-the-authenticated-user">users.set_primary_email_visibility_for_authenticated</a>(visibility): <em>Set primary email visibility for the authenticated user</em></li>
 <li><a href="https://docs.github.com/rest/reference/users#list-email-addresses-for-the-authenticated-user">users.list_emails_for_authenticated</a>(per_page, page): <em>List email addresses for the authenticated user</em></li>
-<li><a href="https://docs.github.com/rest/reference/users#add-an-email-address-for-the-authenticated-user">users.add_email_for_authenticated</a>(): <em>Add an email address for the authenticated user</em></li>
-<li><a href="https://docs.github.com/rest/reference/users#delete-an-email-address-for-the-authenticated-user">users.delete_email_for_authenticated</a>(): <em>Delete an email address for the authenticated user</em></li>
+<li><a href="https://docs.github.com/rest/reference/users#add-an-email-address-for-the-authenticated-user">users.add_email_for_authenticated</a>(emails): <em>Add an email address for the authenticated user</em></li>
+<li><a href="https://docs.github.com/rest/reference/users#delete-an-email-address-for-the-authenticated-user">users.delete_email_for_authenticated</a>(emails): <em>Delete an email address for the authenticated user</em></li>
 <li><a href="https://docs.github.com/rest/reference/users#list-followers-of-the-authenticated-user">users.list_followers_for_authenticated_user</a>(per_page, page): <em>List followers of the authenticated user</em></li>
 <li><a href="https://docs.github.com/rest/reference/users#list-the-people-the-authenticated-user-follows">users.list_followed_by_authenticated</a>(per_page, page): <em>List the people the authenticated user follows</em></li>
 <li><a href="https://docs.github.com/rest/reference/users#check-if-a-person-is-followed-by-the-authenticated-user">users.check_person_is_followed_by_authenticated</a>(username): <em>Check if a person is followed by the authenticated user</em></li>
@@ -854,13 +856,13 @@ nb_path: "50_fullapi.ipynb"
 <li><a href="https://docs.github.com/rest/reference/users#get-a-public-ssh-key-for-the-authenticated-user">users.get_public_ssh_key_for_authenticated</a>(key_id): <em>Get a public SSH key for the authenticated user</em></li>
 <li><a href="https://docs.github.com/rest/reference/users#delete-a-public-ssh-key-for-the-authenticated-user">users.delete_public_ssh_key_for_authenticated</a>(key_id): <em>Delete a public SSH key for the authenticated user</em></li>
 <li><a href="https://docs.github.com/rest/reference/users#list-public-email-addresses-for-the-authenticated-user">users.list_public_emails_for_authenticated</a>(per_page, page): <em>List public email addresses for the authenticated user</em></li>
-<li><a href="https://docs.github.com/rest/reference/users/#list-users">users.list</a>(since, per_page): <em>List users</em></li>
-<li><a href="https://docs.github.com/rest/reference/users/#get-a-user">users.get_by_username</a>(username): <em>Get a user</em></li>
+<li><a href="https://docs.github.com/rest/reference/users#list-users">users.list</a>(since, per_page): <em>List users</em></li>
+<li><a href="https://docs.github.com/rest/reference/users#get-a-user">users.get_by_username</a>(username): <em>Get a user</em></li>
 <li><a href="https://docs.github.com/rest/reference/users#list-followers-of-a-user">users.list_followers_for_user</a>(username, per_page, page): <em>List followers of a user</em></li>
 <li><a href="https://docs.github.com/rest/reference/users#list-the-people-a-user-follows">users.list_following_for_user</a>(username, per_page, page): <em>List the people a user follows</em></li>
 <li><a href="https://docs.github.com/rest/reference/users#check-if-a-user-follows-another-user">users.check_following_for_user</a>(username, target_user): <em>Check if a user follows another user</em></li>
 <li><a href="https://docs.github.com/rest/reference/users#list-gpg-keys-for-a-user">users.list_gpg_keys_for_user</a>(username, per_page, page): <em>List GPG keys for a user</em></li>
-<li><a href="https://docs.github.com/rest/reference/users/#get-contextual-information-for-a-user">users.get_context_for_user</a>(username, subject_type, subject_id): <em>Get contextual information for a user</em></li>
+<li><a href="https://docs.github.com/rest/reference/users#get-contextual-information-for-a-user">users.get_context_for_user</a>(username, subject_type, subject_id): <em>Get contextual information for a user</em></li>
 <li><a href="https://docs.github.com/rest/reference/users#list-public-keys-for-a-user">users.list_public_keys_for_user</a>(username, per_page, page): <em>List public keys for a user</em></li>
 </ul>
 

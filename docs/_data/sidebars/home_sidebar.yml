@@ -38,7 +38,7 @@ entries:
       url: build_lib.html
     - output: web,pdf
       title: Title
-      url: ghapi demo.html
+      url: ghapi_demo.html
     output: web
     title: ghapi
   output: web
