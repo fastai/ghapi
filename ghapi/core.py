@@ -12,6 +12,7 @@ import mimetypes,base64
 from inspect import signature,Parameter,Signature
 from urllib.request import Request
 from urllib.error import HTTPError
+from urllib.parse import quote
 from datetime import datetime,timedelta
 from pprint import pprint
 import os
@@ -102,6 +103,8 @@ class GhApi(_GhObj):
         if verb is None: verb = 'POST' if data else 'GET'
         headers = {**self.headers,**(headers or {})}
         if path[:7] not in ('http://','https:/'): path = GH_HOST+path
+        if route:
+            for k,v in route.items(): route[k] = quote(str(route[k]))
         res,self.recv_hdrs = urlsend(path, verb, headers=headers or None, debug=self.debug, return_headers=True,
                                      route=route or None, query=query or None, data=data or None)
         if 'X-RateLimit-Remaining' in self.recv_hdrs:
