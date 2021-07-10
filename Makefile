@@ -21,7 +21,9 @@ docs: $(SRC)
 test:
 	nbdev_test_nbs
 
-release: pypi conda_release
+release: pypi
+	sleep 1
+	fastrelease_conda_package --mambabuild --upload_user fastai
 	nbdev_bump_version
 
 conda_release:
