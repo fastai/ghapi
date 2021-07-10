@@ -2,6 +2,13 @@
 
 <!-- do not remove -->
 
+## 0.1.19
+
+### New Features
+
+- Remove need to URL-quote some parameters ([#54](https://github.com/fastai/ghapi/issues/54))
+
+
 ## 0.1.18
 
 ### Bugs Squashed
