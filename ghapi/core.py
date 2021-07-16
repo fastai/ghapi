@@ -188,7 +188,7 @@ EMPTY_TREE_SHA = '4b825dc642cb6eb9a060e54bf8d69288fbee4904'
 # Cell
 @patch
 def create_branch_empty(self:GhApi, branch):
-    t = api.git.create_tree(base_tree=EMPTY_TREE_SHA, tree = [dict(
+    t = self.git.create_tree(base_tree=EMPTY_TREE_SHA, tree = [dict(
         path='.dummy', content='ignore me', mode='100644', type='blob')])
     c = self.git.create_commit(f'create {branch}', t.sha)
     return self.git.create_ref(f'refs/heads/{branch}', c.sha)
@@ -228,10 +228,10 @@ def get_content(self:GhApi, path):
 @patch
 def update_contents(self:GhApi, path, message=None, content=None,
                     sha=None, branch=None, committer=None, author=None):
-    if sha is None: sha = api.list_files()[path].sha
+    if sha is None: sha = self.list_files()[path].sha
     if not isinstance(content,bytes): content = content.encode()
     content = base64.b64encode(content).decode()
-    return api.repos.create_or_update_file_contents(path, message, content=content,
+    return self.repos.create_or_update_file_contents(path, message, content=content,
         sha=sha, branch=branch, committer=committer, author=author)
 
 # Cell
