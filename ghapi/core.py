@@ -87,9 +87,11 @@ _docroot = 'https://docs.github.com/en/free-pro-team@latest/rest/reference/'
 
 # Cell
 class GhApi(_GhObj):
-    def __init__(self, owner=None, repo=None, token=None, debug=None, limit_cb=None, **kwargs):
+    def __init__(self, owner=None, repo=None, token=None, jwt_token=None, debug=None, limit_cb=None, **kwargs):
         self.headers = { 'Accept': 'application/vnd.github.v3+json' }
         token = token or os.getenv('GITHUB_TOKEN', None)
+        jwt_token = jwt_token or os.getenv('GITHUB_JWT_TOKEN', None)
+        if jwt_token: self.headers['Authorization'] = 'Bearer ' + jwt_token
         if token: self.headers['Authorization'] = 'token ' + token
         if owner: kwargs['owner'] = owner
         if repo:  kwargs['repo' ] = repo
