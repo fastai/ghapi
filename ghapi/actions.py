@@ -97,9 +97,9 @@ def create_workflow(name:str, event:Event, contexts:list=None, opersys='ubuntu',
 # Cell
 @call_parse
 def gh_create_workflow(
-    name:Param("Name of the workflow file", str),
-    event:Param("Event to listen for", str),
-    contexts:Param("Space-delimited extra contexts to include in `env` in addition to 'github'", str)=''
+    name:str,  # Name of the workflow file
+    event:str,  # Event to listen for
+    contexts:str=''  # Space-delimited extra contexts to include in `env` in addition to github
 ):
     "Supports `gh-create-workflow`, a CLI wrapper for `create_workflow`."
     create_workflow(name, Event[event], contexts.split())
