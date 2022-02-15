@@ -3,8 +3,8 @@
 __all__ = ['contexts', 'context_github', 'context_env', 'context_job', 'context_steps', 'context_runner',
            'context_secrets', 'context_strategy', 'context_matrix', 'context_needs', 'env_github', 'user_repo', 'Event',
            'create_workflow_files', 'fill_workflow_templates', 'env_contexts', 'def_pipinst', 'create_workflow',
-           'gh_create_workflow', 'example_payload', 'github_token', 'actions_output', 'actions_debug', 'actions_warn',
-           'actions_error', 'actions_group', 'actions_mask', 'set_git_user']
+           'gh_create_workflow', 'example_payload', 'github_token', 'actions_output', 'actions_debug', 'actions_notice',
+           'actions_warn', 'actions_error', 'actions_group', 'actions_mask', 'set_git_user']
 
 # Cell
 from fastcore.utils import *
@@ -126,6 +126,11 @@ def actions_output(name, value):
 def actions_debug(message):
     "Print the special `::debug` line for `message`"
     print(f"::debug::{message}")
+
+# Cell
+def actions_warn(message, details=''):
+    "Print the special `::notice` line for `message`"
+    print(f"::notice {details}::{message}")
 
 # Cell
 def actions_warn(message, details=''):
