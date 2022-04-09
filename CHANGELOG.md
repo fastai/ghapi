@@ -2,6 +2,17 @@
 
 <!-- do not remove -->
 
+## 0.1.20
+
+### New Features
+
+- add `create_gist` ([#129](https://github.com/fastai/ghapi/issues/129))
+
+### Bugs Squashed
+
+- `HTTP Error 422: Unprocessable Entity` returned for `issues.add_labels` in version `0.1.17` ([#69](https://github.com/fastai/ghapi/issues/69))
+
+
 ## 0.1.19
 
 ### New Features
