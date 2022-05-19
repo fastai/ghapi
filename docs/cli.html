@@ -38,7 +38,7 @@ nb_path: "10_cli.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>You can use <a href="/core.html#GhApi"><code>GhApi</code></a> via the command line, and can access nearly everything in the <a href="https://docs.github.com/en/free-pro-team@latest/rest">GitHub API</a>.</p>
+<p>You can use <a href="/core.html#GhApi"><code>GhApi</code></a> via the command line, and can access nearly everything in the <a href="https://docs.github.com/rest">GitHub API</a>.</p>
 <p>There are three commands provided. For most people, <a href="/cli.html#ghapi"><code>ghapi</code></a> will be the easiest to use. All three commands take the following parameters:</p>
 <ul>
 <li><code>--help</code>: list all parameters to this command and endpoint</li>
@@ -61,7 +61,7 @@ nb_path: "10_cli.ipynb"
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>To get started with the <a href="/cli.html#ghapi"><code>ghapi</code></a> command, first find the name of the operation you wish to perform. If you've used the Python API, then you already know the operation names - they're whatever you type in Python after "<code>api.</code>". To find the name of the operation you need, search the <a href="https://ghapi.fast.ai/fullapi.html">full API reference</a> which contains information about every endpoint in the entire GitHub API. For instance, if you want to work with GitHub Issues, then searching for "issues" on the full reference page will take you to <a href="https://ghapi.fast.ai/fullapi.html#issues">this section</a>.</p>
-<p>The first operation listed there is <a href="https://docs.github.com/en/free-pro-team@latest/rest/reference/issues#list-issues-assigned-to-the-authenticated-user">issues.list</a>, shown with a link to the official GitHub documentation, and a list of parameters that the command accepts. You'll see the official docs list some parameters, such as "<code>accept</code>", which aren't listed in the GhApi reference - that's because GhApi automatically set some parameters for you.</p>
+<p>The first operation listed there is <a href="https://docs.github.com/rest/reference/issues#list-issues-assigned-to-the-authenticated-user">issues.list</a>, shown with a link to the official GitHub documentation, and a list of parameters that the command accepts. You'll see the official docs list some parameters, such as "<code>accept</code>", which aren't listed in the GhApi reference - that's because GhApi automatically set some parameters for you.</p>
 <p>You'll also see that the parameter list on the official docs includes a column marked "<strong>in</strong>", which can be "header", "query", "path", or "body". The <a href="/cli.html#ghapi"><code>ghapi</code></a> command handles that distinction for you, so you can ignore it for now.</p>
 
 </div>
@@ -212,7 +212,7 @@ https://docs.github.com/rest/reference/git#get-a-reference
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>If you find the endpoint you want in the GitHub docs, rather than the GhApi reference, you'll see a <code>path</code> and a <code>verb</code> instead of an operation name. For example, here's the GitHub documentation for <a href="https://docs.github.com/en/free-pro-team@latest/rest/reference/git#get-a-reference">git.getref</a>. The white text on blue background section shows that the verb required is "<code>GET</code>". Next to that is the path, which is listed as "<code>/repos/{owner}/{repo}/git/ref/{ref}</code>".</p>
+<p>If you find the endpoint you want in the GitHub docs, rather than the GhApi reference, you'll see a <code>path</code> and a <code>verb</code> instead of an operation name. For example, here's the GitHub documentation for <a href="https://docs.github.com/rest/reference/git#get-a-reference">git.getref</a>. The white text on blue background section shows that the verb required is "<code>GET</code>". Next to that is the path, which is listed as "<code>/repos/{owner}/{repo}/git/ref/{ref}</code>".</p>
 <p>To call an endpoint when you have this information from the GitHub docs, use the <a href="/cli.html#ghpath"><code>ghpath</code></a> command. The arguments are exactly the same as <a href="/cli.html#ghapi"><code>ghapi</code></a>, except that instead of an operation name, you provide the path (which you can paste directly from the GitHub docs) and verb.</p>
 
 </div>

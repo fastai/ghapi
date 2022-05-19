@@ -48,10 +48,10 @@ nb_path: "01_actions.ipynb"
 <div class="highlight"><pre><span></span>env:
   CONTEXT_GITHUB: <span class="si">${</span><span class="p">{ toJson(github) </span><span class="si">}</span><span class="o">}</span>
 </pre></div>
-<p>This stores the full <a href="https://docs.github.com/en/free-pro-team@latest/actions/reference/context-and-expression-syntax-for-github-actions#github-context">github context</a>, which includes information such as the name of the current workflow being run, the GitHub access token, and so forth.</p>
+<p>This stores the full <a href="https://docs.github.com/actions/reference/context-and-expression-syntax-for-github-actions#github-context">github context</a>, which includes information such as the name of the current workflow being run, the GitHub access token, and so forth.</p>
 <p>As well as the <code>github</code> context, you can do that same thing for any of the other GitHub Actions contexts, which are:</p>
 <p><code>github</code> <code>env</code> <code>job</code> <code>steps</code> <code>runner</code> <code>secrets</code> <code>strategy</code> <code>matrix</code> <code>needs</code></p>
-<p>For instance, for the <a href="https://docs.github.com/en/free-pro-team@latest/actions/reference/workflow-syntax-for-github-actions#jobsjob_idneeds">needs</a> context, information about previous jobs specified in your <code>needs</code> clause, add this underneath your <code>CONTEXT_GITHUB</code> line:</p>
+<p>For instance, for the <a href="https://docs.github.com/actions/reference/workflow-syntax-for-github-actions#jobsjob_idneeds">needs</a> context, information about previous jobs specified in your <code>needs</code> clause, add this underneath your <code>CONTEXT_GITHUB</code> line:</p>
 <div class="highlight"><pre><span></span>CONTEXT_NEEDS: <span class="si">${</span><span class="p">{ toJson(needs) </span><span class="si">}</span><span class="o">}</span>
 </pre></div>
 <p>Note that here's no harm having entries that are not used -- GitHub Actions will set them to an empty dictionary by default.</p>
@@ -75,7 +75,7 @@ nb_path: "01_actions.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>GitHub also adds a number of <a href="https://docs.github.com/en/free-pro-team@latest/actions/reference/environment-variables#default-environment-variables"><code>GITHUB_*</code> environment variables</a> to all runners. These are available through the <a href="/actions.html#env_github"><code>env_github</code></a> <code>AttrDict</code>, with the <code>GITHUB_</code> prefix removed, and remainder converted to lowercase. For instance:</p>
+<p>GitHub also adds a number of <a href="https://docs.github.com/actions/reference/environment-variables#default-environment-variables"><code>GITHUB_*</code> environment variables</a> to all runners. These are available through the <a href="/actions.html#env_github"><code>env_github</code></a> <code>AttrDict</code>, with the <code>GITHUB_</code> prefix removed, and remainder converted to lowercase. For instance:</p>
 
 </div>
 </div>
@@ -689,7 +689,7 @@ steps:
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Details in the <a href="https://docs.github.com/en/free-pro-team@latest/actions/reference/workflow-commands-for-github-actions#setting-an-output-parameter">GitHub Documentation for <code>set-output</code></a>.</p>
+<p>Details in the <a href="https://docs.github.com/actions/reference/workflow-commands-for-github-actions#setting-an-output-parameter">GitHub Documentation for <code>set-output</code></a>.</p>
 
 </div>
 </div>
@@ -728,7 +728,7 @@ steps:
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Details in the <a href="https://docs.github.com/en/free-pro-team@latest/actions/reference/workflow-commands-for-github-actions#setting-a-debug-message">GitHub Documentation for <code>debug</code></a>. Note that you must create a secret named <code>ACTIONS_STEP_DEBUG</code> with the value true to see the debug messages set by this command in the log.</p>
+<p>Details in the <a href="https://docs.github.com/actions/reference/workflow-commands-for-github-actions#setting-a-debug-message">GitHub Documentation for <code>debug</code></a>. Note that you must create a secret named <code>ACTIONS_STEP_DEBUG</code> with the value true to see the debug messages set by this command in the log.</p>
 
 </div>
 </div>
@@ -767,7 +767,7 @@ steps:
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Details in the <a href="https://docs.github.com/en/free-pro-team@latest/actions/reference/workflow-commands-for-github-actions#setting-a-warning-message">GitHub Documentation for <code>warning</code></a>. For the optional <code>details</code>, you can provide comma-delimited file, line, and column information, e.g.: <code>file=app.js,line=1,col=5</code>.</p>
+<p>Details in the <a href="https://docs.github.com/actions/reference/workflow-commands-for-github-actions#setting-a-warning-message">GitHub Documentation for <code>warning</code></a>. For the optional <code>details</code>, you can provide comma-delimited file, line, and column information, e.g.: <code>file=app.js,line=1,col=5</code>.</p>
 
 </div>
 </div>
@@ -806,7 +806,7 @@ steps:
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Details in the <a href="https://docs.github.com/en/free-pro-team@latest/actions/reference/workflow-commands-for-github-actions#setting-an-error-message">GitHub Documentation for <code>error</code></a>. For the optional <code>details</code>, you can provide comma-delimited file, line, and column information, e.g.: <code>file=app.js,line=1,col=5</code>.</p>
+<p>Details in the <a href="https://docs.github.com/actions/reference/workflow-commands-for-github-actions#setting-an-error-message">GitHub Documentation for <code>error</code></a>. For the optional <code>details</code>, you can provide comma-delimited file, line, and column information, e.g.: <code>file=app.js,line=1,col=5</code>.</p>
 
 </div>
 </div>
@@ -878,7 +878,7 @@ steps:
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Details in the GitHub Documentation for <a href="https://docs.github.com/en/free-pro-team@latest/actions/reference/workflow-commands-for-github-actions#grouping-log-lines">grouping log lines</a>.</p>
+<p>Details in the GitHub Documentation for <a href="https://docs.github.com/actions/reference/workflow-commands-for-github-actions#grouping-log-lines">grouping log lines</a>.</p>
 
 </div>
 </div>
@@ -917,7 +917,7 @@ steps:
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Details in the <a href="https://docs.github.com/en/free-pro-team@latest/actions/reference/workflow-commands-for-github-actions#masking-a-value-in-log">GitHub Documentation for <code>add-mask</code></a>.</p>
+<p>Details in the <a href="https://docs.github.com/actions/reference/workflow-commands-for-github-actions#masking-a-value-in-log">GitHub Documentation for <code>add-mask</code></a>.</p>
 
 </div>
 </div>

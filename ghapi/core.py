@@ -83,7 +83,7 @@ class _GhVerbGroup(_GhObj):
     def _repr_markdown_(self): return "\n".join(f'- {v._repr_markdown_()}' for v in self.verbs)
 
 # Cell
-_docroot = 'https://docs.github.com/en/free-pro-team@latest/rest/reference/'
+_docroot = 'https://docs.github.com/rest/reference/'
 
 # Cell
 class GhApi(_GhObj):

@@ -298,7 +298,7 @@ nb_path: "00_core.ipynb"
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>GitHub has various <a href="https://docs.github.com/en/free-pro-team@latest/rest/overview/resources-in-the-rest-api#rate-limiting">rate limits</a> for their API. After each call, the response includes information about how many requests are remaining in the hourly quota. If you'd like to add alerts, or indications showing current quota usage, you can register a callback with <a href="/core.html#GhApi"><code>GhApi</code></a> by passing a callable to the <code>limit_cb</code> parameter. This callback will be called whenever the amount of quota used changes. It will be called with two arguments: the new quota remaining, and the total hourly quota.</p>
+<p>GitHub has various <a href="https://docs.github.com/rest/overview/resources-in-the-rest-api#rate-limiting">rate limits</a> for their API. After each call, the response includes information about how many requests are remaining in the hourly quota. If you'd like to add alerts, or indications showing current quota usage, you can register a callback with <a href="/core.html#GhApi"><code>GhApi</code></a> by passing a callable to the <code>limit_cb</code> parameter. This callback will be called whenever the amount of quota used changes. It will be called with two arguments: the new quota remaining, and the total hourly quota.</p>
 
 </div>
 </div>
@@ -454,37 +454,37 @@ nb_path: "00_core.ipynb"
 
 <div class="output_markdown rendered_html output_subarea output_execute_result">
 <ul>
-<li><a href="https://docs.github.com/en/free-pro-team@latest/rest/reference/actions">actions</a></li>
-<li><a href="https://docs.github.com/en/free-pro-team@latest/rest/reference/activity">activity</a></li>
-<li><a href="https://docs.github.com/en/free-pro-team@latest/rest/reference/apps">apps</a></li>
-<li><a href="https://docs.github.com/en/free-pro-team@latest/rest/reference/billing">billing</a></li>
-<li><a href="https://docs.github.com/en/free-pro-team@latest/rest/reference/checks">checks</a></li>
-<li><a href="https://docs.github.com/en/free-pro-team@latest/rest/reference/code-scanning">code_scanning</a></li>
-<li><a href="https://docs.github.com/en/free-pro-team@latest/rest/reference/codes-of-conduct">codes_of_conduct</a></li>
-<li><a href="https://docs.github.com/en/free-pro-team@latest/rest/reference/emojis">emojis</a></li>
-<li><a href="https://docs.github.com/en/free-pro-team@latest/rest/reference/enterprise-admin">enterprise_admin</a></li>
-<li><a href="https://docs.github.com/en/free-pro-team@latest/rest/reference/gists">gists</a></li>
-<li><a href="https://docs.github.com/en/free-pro-team@latest/rest/reference/git">git</a></li>
-<li><a href="https://docs.github.com/en/free-pro-team@latest/rest/reference/gitignore">gitignore</a></li>
-<li><a href="https://docs.github.com/en/free-pro-team@latest/rest/reference/interactions">interactions</a></li>
-<li><a href="https://docs.github.com/en/free-pro-team@latest/rest/reference/issues">issues</a></li>
-<li><a href="https://docs.github.com/en/free-pro-team@latest/rest/reference/licenses">licenses</a></li>
-<li><a href="https://docs.github.com/en/free-pro-team@latest/rest/reference/markdown">markdown</a></li>
-<li><a href="https://docs.github.com/en/free-pro-team@latest/rest/reference/meta">meta</a></li>
-<li><a href="https://docs.github.com/en/free-pro-team@latest/rest/reference/migrations">migrations</a></li>
-<li><a href="https://docs.github.com/en/free-pro-team@latest/rest/reference/oauth-authorizations">oauth_authorizations</a></li>
-<li><a href="https://docs.github.com/en/free-pro-team@latest/rest/reference/orgs">orgs</a></li>
-<li><a href="https://docs.github.com/en/free-pro-team@latest/rest/reference/packages">packages</a></li>
-<li><a href="https://docs.github.com/en/free-pro-team@latest/rest/reference/projects">projects</a></li>
-<li><a href="https://docs.github.com/en/free-pro-team@latest/rest/reference/pulls">pulls</a></li>
-<li><a href="https://docs.github.com/en/free-pro-team@latest/rest/reference/rate-limit">rate_limit</a></li>
-<li><a href="https://docs.github.com/en/free-pro-team@latest/rest/reference/reactions">reactions</a></li>
-<li><a href="https://docs.github.com/en/free-pro-team@latest/rest/reference/repos">repos</a></li>
-<li><a href="https://docs.github.com/en/free-pro-team@latest/rest/reference/scim">scim</a></li>
-<li><a href="https://docs.github.com/en/free-pro-team@latest/rest/reference/search">search</a></li>
-<li><a href="https://docs.github.com/en/free-pro-team@latest/rest/reference/secret-scanning">secret_scanning</a></li>
-<li><a href="https://docs.github.com/en/free-pro-team@latest/rest/reference/teams">teams</a></li>
-<li><a href="https://docs.github.com/en/free-pro-team@latest/rest/reference/users">users</a></li>
+<li><a href="https://docs.github.com/rest/reference/actions">actions</a></li>
+<li><a href="https://docs.github.com/rest/reference/activity">activity</a></li>
+<li><a href="https://docs.github.com/rest/reference/apps">apps</a></li>
+<li><a href="https://docs.github.com/rest/reference/billing">billing</a></li>
+<li><a href="https://docs.github.com/rest/reference/checks">checks</a></li>
+<li><a href="https://docs.github.com/rest/reference/code-scanning">code_scanning</a></li>
+<li><a href="https://docs.github.com/rest/reference/codes-of-conduct">codes_of_conduct</a></li>
+<li><a href="https://docs.github.com/rest/reference/emojis">emojis</a></li>
+<li><a href="https://docs.github.com/rest/reference/enterprise-admin">enterprise_admin</a></li>
+<li><a href="https://docs.github.com/rest/reference/gists">gists</a></li>
+<li><a href="https://docs.github.com/rest/reference/git">git</a></li>
+<li><a href="https://docs.github.com/rest/reference/gitignore">gitignore</a></li>
+<li><a href="https://docs.github.com/rest/reference/interactions">interactions</a></li>
+<li><a href="https://docs.github.com/rest/reference/issues">issues</a></li>
+<li><a href="https://docs.github.com/rest/reference/licenses">licenses</a></li>
+<li><a href="https://docs.github.com/rest/reference/markdown">markdown</a></li>
+<li><a href="https://docs.github.com/rest/reference/meta">meta</a></li>
+<li><a href="https://docs.github.com/rest/reference/migrations">migrations</a></li>
+<li><a href="https://docs.github.com/rest/reference/oauth-authorizations">oauth_authorizations</a></li>
+<li><a href="https://docs.github.com/rest/reference/orgs">orgs</a></li>
+<li><a href="https://docs.github.com/rest/reference/packages">packages</a></li>
+<li><a href="https://docs.github.com/rest/reference/projects">projects</a></li>
+<li><a href="https://docs.github.com/rest/reference/pulls">pulls</a></li>
+<li><a href="https://docs.github.com/rest/reference/rate-limit">rate_limit</a></li>
+<li><a href="https://docs.github.com/rest/reference/reactions">reactions</a></li>
+<li><a href="https://docs.github.com/rest/reference/repos">repos</a></li>
+<li><a href="https://docs.github.com/rest/reference/scim">scim</a></li>
+<li><a href="https://docs.github.com/rest/reference/search">search</a></li>
+<li><a href="https://docs.github.com/rest/reference/secret-scanning">secret_scanning</a></li>
+<li><a href="https://docs.github.com/rest/reference/teams">teams</a></li>
+<li><a href="https://docs.github.com/rest/reference/users">users</a></li>
 </ul>
 
 </div>
