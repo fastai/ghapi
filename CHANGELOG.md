@@ -2,6 +2,13 @@
 
 <!-- do not remove -->
 
+## 0.1.21
+
+### Bugs Squashed
+
+- fix `create_gist`
+
+
 ## 0.1.20
 
 ### New Features
