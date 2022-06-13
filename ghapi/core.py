@@ -132,11 +132,6 @@ class GhApi(_GhObj):
         return '\n'.join(f'## {gn}\n\n{group._repr_markdown_()}\n' for gn,group in sorted(self.groups.items()))
 
 # Cell
-@patch
-def create_gist(self:GhApi, description, content, filename='gist.txt', public=False):
-    return api.gists.create(description, public=public, files={filename: {"content": content}})
-
-# Cell
 def date2gh(dt:datetime)->str:
     "Convert `dt` (which is assumed to be in UTC time zone) to a format suitable for GitHub API operations"
     return f'{dt.replace(microsecond=0).isoformat()}Z'
@@ -150,6 +145,12 @@ def gh2date(dtstr:str)->datetime:
 def print_summary(req:Request):
     "Print `Request.summary` with the token (if any) removed"
     pprint(req.summary('Authorization'))
+
+# Cell
+@patch
+def create_gist(self:GhApi, description, content, filename='gist.txt', public=False):
+    "Create a gist containing a single file"
+    return self.gists.create(description, public=public, files={filename: {"content": content}})
 
 # Cell
 @patch

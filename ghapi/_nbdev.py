@@ -4,10 +4,10 @@ __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
 index = {"GH_HOST": "00_core.ipynb",
          "GhApi": "00_core.ipynb",
-         "GhApi.create_gist": "00_core.ipynb",
          "date2gh": "00_core.ipynb",
          "gh2date": "00_core.ipynb",
          "print_summary": "00_core.ipynb",
+         "GhApi.create_gist": "00_core.ipynb",
          "GhApi.delete_release": "00_core.ipynb",
          "GhApi.upload_file": "00_core.ipynb",
          "GhApi.create_release": "00_core.ipynb",
