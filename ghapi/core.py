@@ -4,6 +4,7 @@ __all__ = ['GH_HOST', 'GhApi', 'date2gh', 'gh2date', 'print_summary', 'EMPTY_TRE
 
 # Cell
 from fastcore.all import *
+from fastcore.net import urlsend
 from .metadata import funcs
 
 import mimetypes,base64
