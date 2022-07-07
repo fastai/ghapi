@@ -3,8 +3,7 @@
 __all__ = ['paged', 'parse_link_hdr', 'pages']
 
 # Cell
-from fastcore.utils import *
-from fastcore.foundation import *
+from fastcore.all import *
 from .core import *
 
 import re

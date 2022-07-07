@@ -14,9 +14,7 @@ __all__ = ['GhEvent', 'load_sample_events', 'save_sample_events', 'full_type', '
            'evt_emojis', 'description', 'emoji', 'text', 'described_evts']
 
 # Cell
-from fastcore.utils import *
-from fastcore.foundation import *
-from fastcore.meta import *
+from fastcore.all import *
 from .core import *
 from .page import *
 from .actions import *

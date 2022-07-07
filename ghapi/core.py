@@ -3,9 +3,7 @@
 __all__ = ['GH_HOST', 'GhApi', 'date2gh', 'gh2date', 'print_summary', 'EMPTY_TREE_SHA']
 
 # Cell
-from fastcore.utils import *
-from fastcore.foundation import *
-from fastcore.meta import *
+from fastcore.all import *
 from .metadata import funcs
 
 import mimetypes,base64
