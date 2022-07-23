@@ -234,13 +234,32 @@ def get_content(self:GhApi, path):
 
 # Cell
 @patch
-def update_contents(self:GhApi, path, message=None, content=None,
+def create_or_update_file(self:GhApi, path, message=None, content=None,
                     sha=None, branch=None, committer=None, author=None):
-    if sha is None: sha = self.list_files()[path].sha
     if not isinstance(content,bytes): content = content.encode()
     content = base64.b64encode(content).decode()
+    kwargs = {'sha':sha} if sha else {}
     return self.repos.create_or_update_file_contents(path, message, content=content,
-        sha=sha, branch=branch, committer=committer, author=author)
+        branch=branch, committer=committer, author=author, **kwargs)
+
+# Cell
+@patch
+def create_file(self:GhApi, path, message, content=None, branch=None, committer=None, author=None):
+    return self.create_or_update_file(path, message, content, branch=branch, committer=committer, author=author)
+
+# Cell
+@patch
+def delete_file(self:GhApi, path, message, sha=None, branch=None, committer=None, author=None):
+    if sha is None: sha = self.list_files()[path].sha
+    return self.repos.delete_file(path, message=message, sha=sha,
+                                  branch=branch, committer=committer, author=author)
+
+# Cell
+@patch
+def update_contents(self:GhApi, path, message, content, sha=None, branch=None, committer=None, author=None):
+    if sha is None: sha = self.list_files()[path].sha
+    return self.create_or_update_file(path, message, content,
+                                 sha=sha, branch=branch, committer=committer, author=author)
 
 # Cell
 @patch
