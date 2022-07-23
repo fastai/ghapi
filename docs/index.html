@@ -31,14 +31,14 @@ nb_path: "index.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><a href="/cli.html#ghapi"><code>ghapi</code></a> provides 100% always-updated coverage of the entire <a href="https://docs.github.com/en/free-pro-team@latest/rest">GitHub API</a>. Because we automatically convert the <a href="https://docs.github.com/en/free-pro-team@latest/rest/overview/openapi-description">OpenAPI spec</a> to a Pythonic API, <a href="/cli.html#ghapi"><code>ghapi</code></a> is always up to date with the latest changes to GitHub APIs. Furthermore, because this is all done dynamically, the entire package is only 35kB in size!</p>
+<p><a href="/cli.html#ghapi"><code>ghapi</code></a> provides 100% always-updated coverage of the entire <a href="https://docs.github.com/rest">GitHub API</a>. Because we automatically convert the <a href="https://docs.github.com/rest/overview/openapi-description">OpenAPI spec</a> to a Pythonic API, <a href="/cli.html#ghapi"><code>ghapi</code></a> is always up to date with the latest changes to GitHub APIs. Furthermore, because this is all done dynamically, the entire package is only 35kB in size!</p>
 <p>Using <a href="/cli.html#ghapi"><code>ghapi</code></a>, you can automate nearly anything that you can do through the GitHub web interface or through the <code>git</code> client, such as:</p>
 <ul>
-<li>Open, list, comment on, or modify <a href="https://guides.github.com/features/issues/">issues</a> or <a href="https://docs.github.com/en/free-pro-team@latest/github/collaborating-with-issues-and-pull-requests/about-pull-requests">pull requests</a></li>
-<li>Create, list, or modify <a href="https://git-scm.com/book/en/v2/Git-Basics-Tagging">git tags</a> or <a href="https://docs.github.com/en/free-pro-team@latest/github/administering-a-repository/managing-releases-in-a-repository">GitHub releases</a>, including uploading release assets</li>
-<li>Configure and run GitHub <a href="https://github.com/features/actions">Actions</a> and <a href="https://docs.github.com/en/free-pro-team@latest/developers/webhooks-and-events/about-webhooks">webhooks</a></li>
-<li>Set up GitHub <a href="https://docs.github.com/en/free-pro-team@latest/rest/reference/users">users</a> and <a href="https://docs.github.com/en/free-pro-team@latest/github/setting-up-and-managing-organizations-and-teams/about-organizations">organizations</a></li>
-<li>Manage your <a href="https://docs.github.com/en/free-pro-team@latest/rest/guides/delivering-deployments">deployments</a></li>
+<li>Open, list, comment on, or modify <a href="https://guides.github.com/features/issues/">issues</a> or <a href="https://docs.github.com/github/collaborating-with-issues-and-pull-requests/about-pull-requests">pull requests</a></li>
+<li>Create, list, or modify <a href="https://git-scm.com/book/en/v2/Git-Basics-Tagging">git tags</a> or <a href="https://docs.github.com/github/administering-a-repository/managing-releases-in-a-repository">GitHub releases</a>, including uploading release assets</li>
+<li>Configure and run GitHub <a href="https://github.com/features/actions">Actions</a> and <a href="https://docs.github.com/developers/webhooks-and-events/about-webhooks">webhooks</a></li>
+<li>Set up GitHub <a href="https://docs.github.com/rest/reference/users">users</a> and <a href="https://docs.github.com/github/setting-up-and-managing-organizations-and-teams/about-organizations">organizations</a></li>
+<li>Manage your <a href="https://docs.github.com/rest/guides/delivering-deployments">deployments</a></li>
 <li>...and much, much more.</li>
 </ul>
 <p>There are two ways to use <a href="/cli.html#ghapi"><code>ghapi</code></a>: either through Python, or from the command line. An overview of each is provided below.</p>
@@ -167,36 +167,36 @@ nb_path: "index.ipynb"
 
 <div class="output_markdown rendered_html output_subarea output_execute_result">
 <ul>
-<li><a href="https://docs.github.com/en/free-pro-team@latest/rest/reference/actions">actions</a></li>
-<li><a href="https://docs.github.com/en/free-pro-team@latest/rest/reference/activity">activity</a></li>
-<li><a href="https://docs.github.com/en/free-pro-team@latest/rest/reference/apps">apps</a></li>
-<li><a href="https://docs.github.com/en/free-pro-team@latest/rest/reference/billing">billing</a></li>
-<li><a href="https://docs.github.com/en/free-pro-team@latest/rest/reference/checks">checks</a></li>
-<li><a href="https://docs.github.com/en/free-pro-team@latest/rest/reference/code-scanning">code_scanning</a></li>
-<li><a href="https://docs.github.com/en/free-pro-team@latest/rest/reference/codes-of-conduct">codes_of_conduct</a></li>
-<li><a href="https://docs.github.com/en/free-pro-team@latest/rest/reference/emojis">emojis</a></li>
-<li><a href="https://docs.github.com/en/free-pro-team@latest/rest/reference/enterprise-admin">enterprise_admin</a></li>
-<li><a href="https://docs.github.com/en/free-pro-team@latest/rest/reference/gists">gists</a></li>
-<li><a href="https://docs.github.com/en/free-pro-team@latest/rest/reference/git">git</a></li>
-<li><a href="https://docs.github.com/en/free-pro-team@latest/rest/reference/gitignore">gitignore</a></li>
-<li><a href="https://docs.github.com/en/free-pro-team@latest/rest/reference/interactions">interactions</a></li>
-<li><a href="https://docs.github.com/en/free-pro-team@latest/rest/reference/issues">issues</a></li>
-<li><a href="https://docs.github.com/en/free-pro-team@latest/rest/reference/licenses">licenses</a></li>
-<li><a href="https://docs.github.com/en/free-pro-team@latest/rest/reference/markdown">markdown</a></li>
-<li><a href="https://docs.github.com/en/free-pro-team@latest/rest/reference/meta">meta</a></li>
-<li><a href="https://docs.github.com/en/free-pro-team@latest/rest/reference/migrations">migrations</a></li>
-<li><a href="https://docs.github.com/en/free-pro-team@latest/rest/reference/oauth-authorizations">oauth_authorizations</a></li>
-<li><a href="https://docs.github.com/en/free-pro-team@latest/rest/reference/orgs">orgs</a></li>
-<li><a href="https://docs.github.com/en/free-pro-team@latest/rest/reference/projects">projects</a></li>
-<li><a href="https://docs.github.com/en/free-pro-team@latest/rest/reference/pulls">pulls</a></li>
-<li><a href="https://docs.github.com/en/free-pro-team@latest/rest/reference/rate-limit">rate_limit</a></li>
-<li><a href="https://docs.github.com/en/free-pro-team@latest/rest/reference/reactions">reactions</a></li>
-<li><a href="https://docs.github.com/en/free-pro-team@latest/rest/reference/repos">repos</a></li>
-<li><a href="https://docs.github.com/en/free-pro-team@latest/rest/reference/scim">scim</a></li>
-<li><a href="https://docs.github.com/en/free-pro-team@latest/rest/reference/search">search</a></li>
-<li><a href="https://docs.github.com/en/free-pro-team@latest/rest/reference/secret-scanning">secret_scanning</a></li>
-<li><a href="https://docs.github.com/en/free-pro-team@latest/rest/reference/teams">teams</a></li>
-<li><a href="https://docs.github.com/en/free-pro-team@latest/rest/reference/users">users</a></li>
+<li><a href="https://docs.github.com/rest/reference/actions">actions</a></li>
+<li><a href="https://docs.github.com/rest/reference/activity">activity</a></li>
+<li><a href="https://docs.github.com/rest/reference/apps">apps</a></li>
+<li><a href="https://docs.github.com/rest/reference/billing">billing</a></li>
+<li><a href="https://docs.github.com/rest/reference/checks">checks</a></li>
+<li><a href="https://docs.github.com/rest/reference/code-scanning">code_scanning</a></li>
+<li><a href="https://docs.github.com/rest/reference/codes-of-conduct">codes_of_conduct</a></li>
+<li><a href="https://docs.github.com/rest/reference/emojis">emojis</a></li>
+<li><a href="https://docs.github.com/rest/reference/enterprise-admin">enterprise_admin</a></li>
+<li><a href="https://docs.github.com/rest/reference/gists">gists</a></li>
+<li><a href="https://docs.github.com/rest/reference/git">git</a></li>
+<li><a href="https://docs.github.com/rest/reference/gitignore">gitignore</a></li>
+<li><a href="https://docs.github.com/rest/reference/interactions">interactions</a></li>
+<li><a href="https://docs.github.com/rest/reference/issues">issues</a></li>
+<li><a href="https://docs.github.com/rest/reference/licenses">licenses</a></li>
+<li><a href="https://docs.github.com/rest/reference/markdown">markdown</a></li>
+<li><a href="https://docs.github.com/rest/reference/meta">meta</a></li>
+<li><a href="https://docs.github.com/rest/reference/migrations">migrations</a></li>
+<li><a href="https://docs.github.com/rest/reference/oauth-authorizations">oauth_authorizations</a></li>
+<li><a href="https://docs.github.com/rest/reference/orgs">orgs</a></li>
+<li><a href="https://docs.github.com/rest/reference/projects">projects</a></li>
+<li><a href="https://docs.github.com/rest/reference/pulls">pulls</a></li>
+<li><a href="https://docs.github.com/rest/reference/rate-limit">rate_limit</a></li>
+<li><a href="https://docs.github.com/rest/reference/reactions">reactions</a></li>
+<li><a href="https://docs.github.com/rest/reference/repos">repos</a></li>
+<li><a href="https://docs.github.com/rest/reference/scim">scim</a></li>
+<li><a href="https://docs.github.com/rest/reference/search">search</a></li>
+<li><a href="https://docs.github.com/rest/reference/secret-scanning">secret_scanning</a></li>
+<li><a href="https://docs.github.com/rest/reference/teams">teams</a></li>
+<li><a href="https://docs.github.com/rest/reference/users">users</a></li>
 </ul>
 
 </div>
@@ -355,7 +355,7 @@ nb_path: "index.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>To use <a href="/cli.html#ghapi"><code>ghapi</code></a> to access authenticated operations (other than when running through GitHub Actions), you will need a GitHub <a href="https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/creating-a-personal-access-token">personal access token</a>, which is a secret code used to access your account. If you don't have one, <a href="https://github.com/settings/tokens/new">click here</a> to create one. You'll be asked to enter a name -- choose anything you like, for instance "<em>ghapi</em>". You'll also be asked to choose "scopes"; this limits what you'll be able to do with the API using this token. If you're not sure, click "<em>repo</em>" "<em>gist</em>", "<em>notifications</em>", and "<em>workflow</em>". Then click "Generate Token" at the bottom of the screen, and copy the token (the long string of letters and numbers shown). You can easily do that by clicking the little clipboard icon next to the token.</p>
+<p>To use <a href="/cli.html#ghapi"><code>ghapi</code></a> to access authenticated operations (other than when running through GitHub Actions), you will need a GitHub <a href="https://docs.github.com/github/authenticating-to-github/creating-a-personal-access-token">personal access token</a>, which is a secret code used to access your account. If you don't have one, <a href="https://github.com/settings/tokens/new">click here</a> to create one. You'll be asked to enter a name -- choose anything you like, for instance "<em>ghapi</em>". You'll also be asked to choose "scopes"; this limits what you'll be able to do with the API using this token. If you're not sure, click "<em>repo</em>" "<em>gist</em>", "<em>notifications</em>", and "<em>workflow</em>". Then click "Generate Token" at the bottom of the screen, and copy the token (the long string of letters and numbers shown). You can easily do that by clicking the little clipboard icon next to the token.</p>
 <p>Rather than pasting that token into every script, it's easiest to save it as an environment variable. If you save it as <code>$GITHUB_TOKEN</code> then it will be most convenient, so add this to the end of your <code>.bashrc</code> or <code>.zshrc</code> file:</p>
 
 <pre><code>export GITHUB_TOKEN=xxx
@@ -454,7 +454,7 @@ nb_path: "index.ipynb"
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>You can use <a href="/core.html#GhApi"><code>GhApi</code></a> via the command line, and can access nearly everything in the <a href="https://docs.github.com/en/free-pro-team@latest/rest">GitHub API</a>. We provide an overview here of one of the command line programs, <a href="/cli.html#ghapi"><code>ghapi</code></a> -- see the full CLI docs page for details on all the programs available.</p>
+<p>You can use <a href="/core.html#GhApi"><code>GhApi</code></a> via the command line, and can access nearly everything in the <a href="https://docs.github.com/rest">GitHub API</a>. We provide an overview here of one of the command line programs, <a href="/cli.html#ghapi"><code>ghapi</code></a> -- see the full CLI docs page for details on all the programs available.</p>
 <p>We strongly recommend enabling tab completion for <a href="/cli.html#ghapi"><code>ghapi</code></a>, which you can do by placing the following command at the end of your <code>~/.bashrc</code> or <code>~/.zshrc</code> file:</p>
 <div class="highlight"><pre><span></span><span class="nb">eval</span> <span class="s2">&quot;</span><span class="k">$(</span>completion-ghapi --install<span class="k">)</span><span class="s2">&quot;</span>
 </pre></div>
