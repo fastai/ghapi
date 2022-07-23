@@ -2,7 +2,7 @@
 SHELL := /bin/bash
 SRC = $(wildcard ./*.ipynb)
 
-all: ghapi docs
+all: update ghapi docs
 
 ghapi: $(SRC)
 	nbdev_build_lib
@@ -37,3 +37,6 @@ dist: clean
 
 clean:
 	rm -rf dist
+
+update:
+	python examples/build.py

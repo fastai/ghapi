@@ -37,10 +37,10 @@ nb_path: "80_tutorial_actions.ipynb"
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><a href="https://docs.github.com/en/free-pro-team@latest/actions">GitHub Actions</a> help you automate tasks within your software development life cycle. GitHub say that:</p>
+<p><a href="https://docs.github.com/actions">GitHub Actions</a> help you automate tasks within your software development life cycle. GitHub say that:</p>
 <blockquote><p>"<em>GitHub Actions are event-driven, meaning that you can run a series of commands after a specified event has occurred. For example, every time someone creates a pull request for a repository, you can automatically run a command that executes a software testing script.</em>"</p>
 </blockquote>
-<p>They are a powerful system for automating many software development processes, and open source projects get unlimited compute hours for free! A sequence of steps in GitHub Actions are be combined together into a "workflow", which can furthermore contain multiple "jobs", which are run on multiple machines, with (if needed) multiple operating systems, in parallel. For more information, read GitHub's <a href="https://docs.github.com/en/free-pro-team@latest/actions/learn-github-actions/introduction-to-github-actions">Introduction to GitHub Actions</a>.
+<p>They are a powerful system for automating many software development processes, and open source projects get unlimited compute hours for free! A sequence of steps in GitHub Actions are be combined together into a "workflow", which can furthermore contain multiple "jobs", which are run on multiple machines, with (if needed) multiple operating systems, in parallel. For more information, read GitHub's <a href="https://docs.github.com/actions/learn-github-actions/introduction-to-github-actions">Introduction to GitHub Actions</a>.
 However, workflows can be difficult to create and debug, because:</p>
 <ul>
 <li>They run in a special environment which is difficult to replicate locally</li>
@@ -127,7 +127,7 @@ However, workflows can be difficult to create and debug, because:</p>
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>For information about all the fields in a <em>payload</em>, use the GitHub <a href="https://docs.github.com/en/free-pro-team@latest/developers/webhooks-and-events/webhook-events-and-payloads#pull_request">webhook payload</a> documentation. For instance, the docs tell us that the "action" field can be:</p>
+<p>For information about all the fields in a <em>payload</em>, use the GitHub <a href="https://docs.github.com/developers/webhooks-and-events/webhook-events-and-payloads#pull_request">webhook payload</a> documentation. For instance, the docs tell us that the "action" field can be:</p>
 <blockquote><p>"<em>opened, edited, closed, assigned, unassigned, review_requested, review_request_removed, ready_for_review, labeled, unlabeled, synchronize, locked, unlocked, or reopened</em>"</p>
 </blockquote>
 <p>Let's see what it contains for our example payload:</p>
@@ -369,7 +369,7 @@ However, workflows can be difficult to create and debug, because:</p>
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The payload will be available in the <a href="https://docs.github.com/en/free-pro-team@latest/actions/reference/context-and-expression-syntax-for-github-actions#github-context"><code>github</code> context</a>, which is provided automatically to you using the <code>context_github</code> variable. When running locally, an example github context will be used instead. (This example github context will not, in general, have the same payload as the event you're using, so use the <code>example payload</code> for that.)</p>
+<p>The payload will be available in the <a href="https://docs.github.com/actions/reference/context-and-expression-syntax-for-github-actions#github-context"><code>github</code> context</a>, which is provided automatically to you using the <code>context_github</code> variable. When running locally, an example github context will be used instead. (This example github context will not, in general, have the same payload as the event you're using, so use the <code>example payload</code> for that.)</p>
 <p>The <a href="/event.html"><code>event</code></a> contains the actual payload:</p>
 
 </div>
@@ -603,7 +603,7 @@ However, workflows can be difficult to create and debug, because:</p>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Sometimes, you need to join more than one <em>job</em> in a workflow. This isn't common, but one example it's absolutely needed is if you want to build software or run tests on multiple platforms, and then have some step that runs before or after all of them. For instance, building and releasing software that needs to be built on each platform requires one job to create a release, and then a separate job to do the builds and add artifacts to the release, since GitHub Actions runs all your steps in a job in a single platform. Furthermore, we need to set up <a href="https://docs.github.com/en/free-pro-team@latest/actions/learn-github-actions/managing-complex-workflows#creating-dependent-jobs">dependencies between jobs</a> using <code>needs</code>. <a href="/cli.html#ghapi"><code>ghapi</code></a> provides helpers to set up multi-job workflows with depedencies for you, which we'll show an example of here.</p>
+<p>Sometimes, you need to join more than one <em>job</em> in a workflow. This isn't common, but one example it's absolutely needed is if you want to build software or run tests on multiple platforms, and then have some step that runs before or after all of them. For instance, building and releasing software that needs to be built on each platform requires one job to create a release, and then a separate job to do the builds and add artifacts to the release, since GitHub Actions runs all your steps in a job in a single platform. Furthermore, we need to set up <a href="https://docs.github.com/actions/learn-github-actions/managing-complex-workflows#creating-dependent-jobs">dependencies between jobs</a> using <code>needs</code>. <a href="/cli.html#ghapi"><code>ghapi</code></a> provides helpers to set up multi-job workflows with depedencies for you, which we'll show an example of here.</p>
 <p>In this tutorial we're going to show how we created <a href="https://github.com/fastai/hugo-mathjax">hugo-mathjax</a>. The workflow in this project patches <a href="https://gohugo.io/">Hugo</a> to add <a href="https://www.mathjax.org/">Mathjax</a> support, then builds Mac, Ubuntu, and Windows versions of the software, creating a release which includes each of those builds as artifacts. It does the following:</p>
 <ul>
 <li>On a Ubuntu runner:<ul>
@@ -645,7 +645,7 @@ However, workflows can be difficult to create and debug, because:</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>This has some pieces we haven't seen before, so let's take a look at them now.</p>
-<p>The <code>prebuild</code> bool tells <a href="/cli.html#ghapi"><code>ghapi</code></a> to include a prebuild job (see <a href="/actions.html#create_workflow"><code>create_workflow</code></a> for the full workflow created). After you run the above, take a look at the YAML that was created, to see how it all works. We're going to need to modify the YAML, to add the <a href="https://docs.github.com/en/free-pro-team@latest/actions/reference/events-that-trigger-workflows#schedule">schedule</a> we want to run it on, using a <code>cron:</code> line. You can see the final YAML file <a href="https://github.com/fastai/hugo-mathjax/blob/master/.github/workflows/python.yml">here</a>.</p>
+<p>The <code>prebuild</code> bool tells <a href="/cli.html#ghapi"><code>ghapi</code></a> to include a prebuild job (see <a href="/actions.html#create_workflow"><code>create_workflow</code></a> for the full workflow created). After you run the above, take a look at the YAML that was created, to see how it all works. We're going to need to modify the YAML, to add the <a href="https://docs.github.com/actions/reference/events-that-trigger-workflows#schedule">schedule</a> we want to run it on, using a <code>cron:</code> line. You can see the final YAML file <a href="https://github.com/fastai/hugo-mathjax/blob/master/.github/workflows/python.yml">here</a>.</p>
 <p>The prebuild job calls a prebuild script using a Ubuntu runner. We'll create the prebuild script now.</p>
 <p>The script needs to get the current Hugo release tag:</p>
 

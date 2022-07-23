@@ -56,7 +56,7 @@ nb_path: "examples/create_examples.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">hooks_url</span> <span class="o">=</span> <span class="s1">&#39;https://docs.github.com/en/free-pro-team@latest/developers/webhooks-and-events/webhook-events-and-payloads&#39;</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">hooks_url</span> <span class="o">=</span> <span class="s1">&#39;https://docs.github.com/developers/webhooks-and-events/webhook-events-and-payloads&#39;</span>
 <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">urlread</span><span class="p">(</span><span class="n">hooks_url</span><span class="p">))</span>
 <span class="n">events</span> <span class="o">=</span> <span class="n">L</span><span class="p">(</span><span class="n">soup</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s1">&#39;li.ml-0&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">attrgot</span><span class="p">(</span><span class="s1">&#39;text&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">:]</span>
 <span class="c1"># As at 2020/01/12 the &#39;sponsor&#39; event has two examples</span>

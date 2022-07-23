@@ -2,15 +2,15 @@
 > A delightful and complete interface to GitHub's amazing API
 
 
-`ghapi` provides 100% always-updated coverage of the entire [GitHub API](https://docs.github.com/en/free-pro-team@latest/rest). Because we automatically convert the [OpenAPI spec](https://docs.github.com/en/free-pro-team@latest/rest/overview/openapi-description) to a Pythonic API, `ghapi` is always up to date with the latest changes to GitHub APIs. Furthermore, because this is all done dynamically, the entire package is only 35kB in size!
+`ghapi` provides 100% always-updated coverage of the entire [GitHub API](https://docs.github.com/rest). Because we automatically convert the [OpenAPI spec](https://docs.github.com/rest/overview/openapi-description) to a Pythonic API, `ghapi` is always up to date with the latest changes to GitHub APIs. Furthermore, because this is all done dynamically, the entire package is only 35kB in size!
 
 Using `ghapi`, you can automate nearly anything that you can do through the GitHub web interface or through the `git` client, such as:
 
-- Open, list, comment on, or modify [issues](https://guides.github.com/features/issues/) or [pull requests](https://docs.github.com/en/free-pro-team@latest/github/collaborating-with-issues-and-pull-requests/about-pull-requests)
-- Create, list, or modify [git tags](https://git-scm.com/book/en/v2/Git-Basics-Tagging) or [GitHub releases](https://docs.github.com/en/free-pro-team@latest/github/administering-a-repository/managing-releases-in-a-repository), including uploading release assets
-- Configure and run GitHub [Actions](https://github.com/features/actions) and [webhooks](https://docs.github.com/en/free-pro-team@latest/developers/webhooks-and-events/about-webhooks)
-- Set up GitHub [users](https://docs.github.com/en/free-pro-team@latest/rest/reference/users) and [organizations](https://docs.github.com/en/free-pro-team@latest/github/setting-up-and-managing-organizations-and-teams/about-organizations)
-- Manage your [deployments](https://docs.github.com/en/free-pro-team@latest/rest/guides/delivering-deployments)
+- Open, list, comment on, or modify [issues](https://guides.github.com/features/issues/) or [pull requests](https://docs.github.com/github/collaborating-with-issues-and-pull-requests/about-pull-requests)
+- Create, list, or modify [git tags](https://git-scm.com/book/en/v2/Git-Basics-Tagging) or [GitHub releases](https://docs.github.com/github/administering-a-repository/managing-releases-in-a-repository), including uploading release assets
+- Configure and run GitHub [Actions](https://github.com/features/actions) and [webhooks](https://docs.github.com/developers/webhooks-and-events/about-webhooks)
+- Set up GitHub [users](https://docs.github.com/rest/reference/users) and [organizations](https://docs.github.com/github/setting-up-and-managing-organizations-and-teams/about-organizations)
+- Manage your [deployments](https://docs.github.com/rest/guides/delivering-deployments)
 - ...and much, much more.
 
 There are two ways to use `ghapi`: either through Python, or from the command line. An overview of each is provided below.
@@ -54,36 +54,36 @@ api
 
 
 
-- [actions](https://docs.github.com/en/free-pro-team@latest/rest/reference/actions)
-- [activity](https://docs.github.com/en/free-pro-team@latest/rest/reference/activity)
-- [apps](https://docs.github.com/en/free-pro-team@latest/rest/reference/apps)
-- [billing](https://docs.github.com/en/free-pro-team@latest/rest/reference/billing)
-- [checks](https://docs.github.com/en/free-pro-team@latest/rest/reference/checks)
-- [code_scanning](https://docs.github.com/en/free-pro-team@latest/rest/reference/code-scanning)
-- [codes_of_conduct](https://docs.github.com/en/free-pro-team@latest/rest/reference/codes-of-conduct)
-- [emojis](https://docs.github.com/en/free-pro-team@latest/rest/reference/emojis)
-- [enterprise_admin](https://docs.github.com/en/free-pro-team@latest/rest/reference/enterprise-admin)
-- [gists](https://docs.github.com/en/free-pro-team@latest/rest/reference/gists)
-- [git](https://docs.github.com/en/free-pro-team@latest/rest/reference/git)
-- [gitignore](https://docs.github.com/en/free-pro-team@latest/rest/reference/gitignore)
-- [interactions](https://docs.github.com/en/free-pro-team@latest/rest/reference/interactions)
-- [issues](https://docs.github.com/en/free-pro-team@latest/rest/reference/issues)
-- [licenses](https://docs.github.com/en/free-pro-team@latest/rest/reference/licenses)
-- [markdown](https://docs.github.com/en/free-pro-team@latest/rest/reference/markdown)
-- [meta](https://docs.github.com/en/free-pro-team@latest/rest/reference/meta)
-- [migrations](https://docs.github.com/en/free-pro-team@latest/rest/reference/migrations)
-- [oauth_authorizations](https://docs.github.com/en/free-pro-team@latest/rest/reference/oauth-authorizations)
-- [orgs](https://docs.github.com/en/free-pro-team@latest/rest/reference/orgs)
-- [projects](https://docs.github.com/en/free-pro-team@latest/rest/reference/projects)
-- [pulls](https://docs.github.com/en/free-pro-team@latest/rest/reference/pulls)
-- [rate_limit](https://docs.github.com/en/free-pro-team@latest/rest/reference/rate-limit)
-- [reactions](https://docs.github.com/en/free-pro-team@latest/rest/reference/reactions)
-- [repos](https://docs.github.com/en/free-pro-team@latest/rest/reference/repos)
-- [scim](https://docs.github.com/en/free-pro-team@latest/rest/reference/scim)
-- [search](https://docs.github.com/en/free-pro-team@latest/rest/reference/search)
-- [secret_scanning](https://docs.github.com/en/free-pro-team@latest/rest/reference/secret-scanning)
-- [teams](https://docs.github.com/en/free-pro-team@latest/rest/reference/teams)
-- [users](https://docs.github.com/en/free-pro-team@latest/rest/reference/users)
+- [actions](https://docs.github.com/rest/reference/actions)
+- [activity](https://docs.github.com/rest/reference/activity)
+- [apps](https://docs.github.com/rest/reference/apps)
+- [billing](https://docs.github.com/rest/reference/billing)
+- [checks](https://docs.github.com/rest/reference/checks)
+- [code_scanning](https://docs.github.com/rest/reference/code-scanning)
+- [codes_of_conduct](https://docs.github.com/rest/reference/codes-of-conduct)
+- [emojis](https://docs.github.com/rest/reference/emojis)
+- [enterprise_admin](https://docs.github.com/rest/reference/enterprise-admin)
+- [gists](https://docs.github.com/rest/reference/gists)
+- [git](https://docs.github.com/rest/reference/git)
+- [gitignore](https://docs.github.com/rest/reference/gitignore)
+- [interactions](https://docs.github.com/rest/reference/interactions)
+- [issues](https://docs.github.com/rest/reference/issues)
+- [licenses](https://docs.github.com/rest/reference/licenses)
+- [markdown](https://docs.github.com/rest/reference/markdown)
+- [meta](https://docs.github.com/rest/reference/meta)
+- [migrations](https://docs.github.com/rest/reference/migrations)
+- [oauth_authorizations](https://docs.github.com/rest/reference/oauth-authorizations)
+- [orgs](https://docs.github.com/rest/reference/orgs)
+- [projects](https://docs.github.com/rest/reference/projects)
+- [pulls](https://docs.github.com/rest/reference/pulls)
+- [rate_limit](https://docs.github.com/rest/reference/rate-limit)
+- [reactions](https://docs.github.com/rest/reference/reactions)
+- [repos](https://docs.github.com/rest/reference/repos)
+- [scim](https://docs.github.com/rest/reference/scim)
+- [search](https://docs.github.com/rest/reference/search)
+- [secret_scanning](https://docs.github.com/rest/reference/secret-scanning)
+- [teams](https://docs.github.com/rest/reference/teams)
+- [users](https://docs.github.com/rest/reference/users)
 
 
 
@@ -144,7 +144,7 @@ api.git.get_ref(owner='fastai', repo='fastcore', ref='heads/master')
 
 
 
-To use `ghapi` to access authenticated operations (other than when running through GitHub Actions), you will need a GitHub [personal access token](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/creating-a-personal-access-token), which is a secret code used to access your account. If you don't have one, [click here](https://github.com/settings/tokens/new) to create one. You'll be asked to enter a name -- choose anything you like, for instance "*ghapi*". You'll also be asked to choose "scopes"; this limits what you'll be able to do with the API using this token. If you're not sure, click "*repo*" "*gist*", "*notifications*", and "*workflow*". Then click "Generate Token" at the bottom of the screen, and copy the token (the long string of letters and numbers shown). You can easily do that by clicking the little clipboard icon next to the token.
+To use `ghapi` to access authenticated operations (other than when running through GitHub Actions), you will need a GitHub [personal access token](https://docs.github.com/github/authenticating-to-github/creating-a-personal-access-token), which is a secret code used to access your account. If you don't have one, [click here](https://github.com/settings/tokens/new) to create one. You'll be asked to enter a name -- choose anything you like, for instance "*ghapi*". You'll also be asked to choose "scopes"; this limits what you'll be able to do with the API using this token. If you're not sure, click "*repo*" "*gist*", "*notifications*", and "*workflow*". Then click "Generate Token" at the bottom of the screen, and copy the token (the long string of letters and numbers shown). You can easily do that by clicking the little clipboard icon next to the token.
 
 Rather than pasting that token into every script, it's easiest to save it as an environment variable. If you save it as `$GITHUB_TOKEN` then it will be most convenient, so add this to the end of your `.bashrc` or `.zshrc` file:
 
@@ -191,7 +191,7 @@ api.issues.update(issue.number, state='closed')
 
 ## How to use - command line
 
-You can use `GhApi` via the command line, and can access nearly everything in the [GitHub API](https://docs.github.com/en/free-pro-team@latest/rest). We provide an overview here of one of the command line programs, `ghapi` -- see the full CLI docs page for details on all the programs available.
+You can use `GhApi` via the command line, and can access nearly everything in the [GitHub API](https://docs.github.com/rest). We provide an overview here of one of the command line programs, `ghapi` -- see the full CLI docs page for details on all the programs available.
 
 We strongly recommend enabling tab completion for `ghapi`, which you can do by placing the following command at the end of your `~/.bashrc` or `~/.zshrc` file:
 

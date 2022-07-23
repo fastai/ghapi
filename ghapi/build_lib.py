@@ -3,8 +3,7 @@
 __all__ = ['GH_OPENAPI_URL', 'build_funcs', 'GhMeta']
 
 # Cell
-from fastcore.utils import *
-from fastcore.foundation import *
+from fastcore.all import *
 
 import pprint
 # from json import loads

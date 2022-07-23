@@ -3,9 +3,7 @@
 __all__ = ['GH_HOST', 'GhApi', 'date2gh', 'gh2date', 'print_summary', 'EMPTY_TREE_SHA']
 
 # Cell
-from fastcore.utils import *
-from fastcore.foundation import *
-from fastcore.meta import *
+from fastcore.all import *
 from .metadata import funcs
 
 import mimetypes,base64
@@ -83,11 +81,11 @@ class _GhVerbGroup(_GhObj):
     def _repr_markdown_(self): return "\n".join(f'- {v._repr_markdown_()}' for v in self.verbs)
 
 # Cell
-_docroot = 'https://docs.github.com/en/free-pro-team@latest/rest/reference/'
+_docroot = 'https://docs.github.com/rest/reference/'
 
 # Cell
 class GhApi(_GhObj):
-    def __init__(self, owner=None, repo=None, token=None, jwt_token=None, debug=None, limit_cb=None, **kwargs):
+    def __init__(self, owner=None, repo=None, token=None, jwt_token=None, debug=None, limit_cb=None, gh_host=None, **kwargs):
         self.headers = { 'Accept': 'application/vnd.github.v3+json' }
         token = token or os.getenv('GITHUB_TOKEN', None)
         jwt_token = jwt_token or os.getenv('GITHUB_JWT_TOKEN', None)
@@ -99,12 +97,14 @@ class GhApi(_GhObj):
         self.func_dict = {f'{o.path}:{o.verb.upper()}':o for o in funcs_}
         self.groups = {k.replace('-','_'):_GhVerbGroup(k,v) for k,v in groupby(funcs_, 'tag').items()}
         self.debug,self.limit_cb,self.limit_rem = debug,limit_cb,5000
+        self.gh_host = gh_host or GH_HOST
 
     def __call__(self, path:str, verb:str=None, headers:dict=None, route:dict=None, query:dict=None, data=None):
         "Call a fully specified `path` using HTTP `verb`, passing arguments to `fastcore.core.urlsend`"
         if verb is None: verb = 'POST' if data else 'GET'
         headers = {**self.headers,**(headers or {})}
-        if path[:7] not in ('http://','https:/'): path = GH_HOST+path
+        if not path.startswith(('http://', 'https://')):
+            path = self.gh_host + path
         if route:
             for k,v in route.items(): route[k] = quote(str(route[k]))
         res,self.recv_hdrs = urlsend(path, verb, headers=headers or None, debug=self.debug, return_headers=True,
@@ -143,6 +143,12 @@ def gh2date(dtstr:str)->datetime:
 def print_summary(req:Request):
     "Print `Request.summary` with the token (if any) removed"
     pprint(req.summary('Authorization'))
+
+# Cell
+@patch
+def create_gist(self:GhApi, description, content, filename='gist.txt', public=False):
+    "Create a gist containing a single file"
+    return self.gists.create(description, public=public, files={filename: {"content": content}})
 
 # Cell
 @patch
@@ -228,13 +234,32 @@ def get_content(self:GhApi, path):
 
 # Cell
 @patch
-def update_contents(self:GhApi, path, message=None, content=None,
+def create_or_update_file(self:GhApi, path, message=None, content=None,
                     sha=None, branch=None, committer=None, author=None):
-    if sha is None: sha = self.list_files()[path].sha
     if not isinstance(content,bytes): content = content.encode()
     content = base64.b64encode(content).decode()
+    kwargs = {'sha':sha} if sha else {}
     return self.repos.create_or_update_file_contents(path, message, content=content,
-        sha=sha, branch=branch, committer=committer, author=author)
+        branch=branch, committer=committer, author=author, **kwargs)
+
+# Cell
+@patch
+def create_file(self:GhApi, path, message, content=None, branch=None, committer=None, author=None):
+    return self.create_or_update_file(path, message, content, branch=branch, committer=committer, author=author)
+
+# Cell
+@patch
+def delete_file(self:GhApi, path, message, sha=None, branch=None, committer=None, author=None):
+    if sha is None: sha = self.list_files()[path].sha
+    return self.repos.delete_file(path, message=message, sha=sha,
+                                  branch=branch, committer=committer, author=author)
+
+# Cell
+@patch
+def update_contents(self:GhApi, path, message, content, sha=None, branch=None, committer=None, author=None):
+    if sha is None: sha = self.list_files()[path].sha
+    return self.create_or_update_file(path, message, content,
+                                 sha=sha, branch=branch, committer=committer, author=author)
 
 # Cell
 @patch
