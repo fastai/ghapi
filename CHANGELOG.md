@@ -4,12 +4,15 @@
 
 ## 0.1.23
 
+### New Features
 
+- add `delete_file` and `create_file` ([#143](https://github.com/fastai/ghapi/issues/143))
+- Add a "Documentation" link to the sidebar on PyPI ([#106](https://github.com/fastai/ghapi/pull/106)), thanks to [@nedbat](https://github.com/nedbat)
+- Add support for media types ([#102](https://github.com/fastai/ghapi/pull/102)), thanks to [@lfdebrux](https://github.com/lfdebrux)
 
+### Bugs Squashed
 
-## 0.1.23
-
-
+- Fix links to GitHub docs ([#136](https://github.com/fastai/ghapi/pull/136)), thanks to [@hwine](https://github.com/hwine)
 
 
 ## 0.1.21
