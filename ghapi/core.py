@@ -107,15 +107,16 @@ class GhApi(_GhObj):
             path = self.gh_host + path
         if route:
             for k,v in route.items(): route[k] = quote(str(route[k]))
+        return_json = ('json' in headers['Accept'])
         res,self.recv_hdrs = urlsend(path, verb, headers=headers or None, debug=self.debug, return_headers=True,
-                                     route=route or None, query=query or None, data=data or None)
+                                     route=route or None, query=query or None, data=data or None, return_json=return_json)
         if 'X-RateLimit-Remaining' in self.recv_hdrs:
             newlim = self.recv_hdrs['X-RateLimit-Remaining']
             if self.limit_cb is not None and newlim != self.limit_rem:
                 self.limit_cb(int(newlim),int(self.recv_hdrs['X-RateLimit-Limit']))
             self.limit_rem = newlim
 
-        return dict2obj(res)
+        return dict2obj(res) if return_json else res
 
     def __dir__(self): return super().__dir__() + list(self.groups)
     def _repr_markdown_(self): return "\n".join(f"- [{o}]({_docroot + o.replace('_', '-')})" for o in sorted(self.groups))
