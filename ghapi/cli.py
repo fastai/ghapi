@@ -3,8 +3,7 @@
 __all__ = ['ghapi', 'ghpath', 'ghraw', 'completion_ghapi']
 
 # Cell
-from fastcore.utils import *
-from fastcore.foundation import *
+from fastcore.all import *
 import ghapi.core as gh,inspect
 from .core import *
 from collections import defaultdict

@@ -3,8 +3,7 @@
 __all__ = ['Scope', 'scope_str', 'GhDeviceAuth', 'github_auth_device']
 
 # Cell
-from fastcore.utils import *
-from fastcore.foundation import *
+from fastcore.all import *
 from .core import *
 
 import webbrowser,time
@@ -27,7 +26,7 @@ def scope_str(*scopes)->str:
     return ','.join(str(o) for o in scopes if o)
 
 # Cell
-_def_clientid = '771f3c3af93face45f52'
+_def_clientid = '71604a89b882ab8c8634'
 
 # Cell
 class GhDeviceAuth(GetAttrBase):

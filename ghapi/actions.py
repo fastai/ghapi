@@ -7,10 +7,7 @@ __all__ = ['contexts', 'context_github', 'context_env', 'context_job', 'context_
            'actions_error', 'actions_group', 'actions_mask', 'set_git_user']
 
 # Cell
-from fastcore.utils import *
-from fastcore.script import *
-from fastcore.foundation import *
-from fastcore.meta import *
+from fastcore.all import *
 from .core import *
 from .templates import *
 

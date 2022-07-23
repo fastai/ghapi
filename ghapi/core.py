@@ -3,9 +3,7 @@
 __all__ = ['GH_HOST', 'GhApi', 'date2gh', 'gh2date', 'print_summary', 'EMPTY_TREE_SHA']
 
 # Cell
-from fastcore.utils import *
-from fastcore.foundation import *
-from fastcore.meta import *
+from fastcore.all import *
 from .metadata import funcs
 
 import mimetypes,base64
@@ -132,11 +130,6 @@ class GhApi(_GhObj):
         return '\n'.join(f'## {gn}\n\n{group._repr_markdown_()}\n' for gn,group in sorted(self.groups.items()))
 
 # Cell
-@patch
-def create_gist(self:GhApi, description, content, filename='gist.txt', public=False):
-    return api.gists.create(description, public=public, files={filename: {"content": content}})
-
-# Cell
 def date2gh(dt:datetime)->str:
     "Convert `dt` (which is assumed to be in UTC time zone) to a format suitable for GitHub API operations"
     return f'{dt.replace(microsecond=0).isoformat()}Z'
@@ -150,6 +143,12 @@ def gh2date(dtstr:str)->datetime:
 def print_summary(req:Request):
     "Print `Request.summary` with the token (if any) removed"
     pprint(req.summary('Authorization'))
+
+# Cell
+@patch
+def create_gist(self:GhApi, description, content, filename='gist.txt', public=False):
+    "Create a gist containing a single file"
+    return self.gists.create(description, public=public, files={filename: {"content": content}})
 
 # Cell
 @patch
@@ -235,13 +234,32 @@ def get_content(self:GhApi, path):
 
 # Cell
 @patch
-def update_contents(self:GhApi, path, message=None, content=None,
+def create_or_update_file(self:GhApi, path, message=None, content=None,
                     sha=None, branch=None, committer=None, author=None):
-    if sha is None: sha = self.list_files()[path].sha
     if not isinstance(content,bytes): content = content.encode()
     content = base64.b64encode(content).decode()
+    kwargs = {'sha':sha} if sha else {}
     return self.repos.create_or_update_file_contents(path, message, content=content,
-        sha=sha, branch=branch, committer=committer, author=author)
+        branch=branch, committer=committer, author=author, **kwargs)
+
+# Cell
+@patch
+def create_file(self:GhApi, path, message, content=None, branch=None, committer=None, author=None):
+    return self.create_or_update_file(path, message, content, branch=branch, committer=committer, author=author)
+
+# Cell
+@patch
+def delete_file(self:GhApi, path, message, sha=None, branch=None, committer=None, author=None):
+    if sha is None: sha = self.list_files()[path].sha
+    return self.repos.delete_file(path, message=message, sha=sha,
+                                  branch=branch, committer=committer, author=author)
+
+# Cell
+@patch
+def update_contents(self:GhApi, path, message, content, sha=None, branch=None, committer=None, author=None):
+    if sha is None: sha = self.list_files()[path].sha
+    return self.create_or_update_file(path, message, content,
+                                 sha=sha, branch=branch, committer=committer, author=author)
 
 # Cell
 @patch
