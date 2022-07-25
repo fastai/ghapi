@@ -2,7 +2,7 @@
 .github/scripts/prebuild-create.py
 .github/workflows/create.yml
 sidebar.yml
-docs/
+_docs/
 .jekyll-cache/
 Gemfile.lock
 sample_evts.json.gz
