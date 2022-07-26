@@ -58,7 +58,10 @@ setuptools.setup(
     long_description = long_description,
     long_description_content_type = 'text/markdown',
     zip_safe = False,
-    entry_points = { 'console_scripts': cfg.get('console_scripts','').split() },
+    entry_points = {
+        'console_scripts': cfg.get('console_scripts','').split(),
+        'nbdev': [f'{cfg.get("lib_path")}={cfg.get("lib_path")}._modidx:d']
+    },
     project_urls = project_urls,
     **setup_cfg)
 
