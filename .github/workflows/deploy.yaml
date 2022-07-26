@@ -1,17 +1,9 @@
 name: Deploy to GitHub Pages
-
 on:
   push:
-    branches:
-      - master
+    branches: [master]
   workflow_dispatch:
-
 jobs:
   deploy:
-    name: Deploy to GitHub Pages
     runs-on: ubuntu-latest
-    steps:
-    - uses: fastai/workflows/quarto-ghp@master
-      with:
-        ghtoken: ${{ secrets.GITHUB_TOKEN }}
-
+    steps: [uses: fastai/workflows/quarto-ghp@master]
