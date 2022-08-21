@@ -6,6 +6,14 @@
 
 ### New Features
 
+- warn if no GitHub token found ([#145](https://github.com/fastai/ghapi/issues/145))
+- set `GITHUB_DEBUG=1` to print requests sent to GitHub
+
+
+## 1.0.0
+
+### New Features
+
 - add `delete_file` and `create_file` ([#143](https://github.com/fastai/ghapi/issues/143))
 - Add a "Documentation" link to the sidebar on PyPI ([#106](https://github.com/fastai/ghapi/pull/106)), thanks to [@nedbat](https://github.com/nedbat)
 - Add support for media types ([#102](https://github.com/fastai/ghapi/pull/102)), thanks to [@lfdebrux](https://github.com/lfdebrux)
