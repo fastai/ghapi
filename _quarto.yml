@@ -16,8 +16,6 @@ format:
 website:
   title: "ghapi"
   description: "A python client for the GitHub API"
-  execute: 
-    enabled: false
   twitter-card: true
   open-graph: true
   reader-mode: true

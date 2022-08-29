@@ -272,6 +272,6 @@ def enable_pages(self:GhApi, branch=None, path="/"):
     r = self.repos.get()
     branch = branch or r.default_branch
     source = {"branch": branch, "path": path}
-    if r.has_pages: return self.repos.update_information_about_pages_site(source=source)
+    if r.has_pages: return # self.repos.update_information_about_pages_site(source=source)
     if len(self.list_branches(branch))==0: self.create_branch_empty(branch)
     return self.repos.create_pages_site(source=source)
