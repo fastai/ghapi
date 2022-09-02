@@ -4,8 +4,9 @@
 __all__ = ['contexts', 'env_github', 'Event', 'def_pipinst', 'user_repo', 'create_workflow_files', 'fill_workflow_templates',
            'env_contexts', 'create_workflow', 'gh_create_workflow', 'example_payload', 'github_token', 'actions_output',
            'actions_debug', 'actions_warn', 'actions_error', 'actions_group', 'actions_mask', 'set_git_user',
-           'context_github', 'context_env', 'context_job', 'context_steps', 'context_runner', 'context_secrets',
-           'context_strategy', 'context_matrix', 'context_needs']
+           'PagesNotEnabled', 'PagesConfigError', 'enable_pages_actions', 'context_github', 'context_env',
+           'context_job', 'context_steps', 'context_runner', 'context_secrets', 'context_strategy', 'context_matrix',
+           'context_needs']
 
 # %% ../01_actions.ipynb 2
 from fastcore.all import *
@@ -159,3 +160,21 @@ def set_git_user(api=None):
         email = 'github-actions[bot]@users.noreply.github.com'
     run(f'git config --global user.email "{email}"')
     run(f'git config --global user.name  "{user}"')
+
+# %% ../01_actions.ipynb 53
+class PagesNotEnabled(Exception): pass
+class PagesConfigError(Exception): pass
+
+def enable_pages_actions(api):
+    from urllib.error import HTTPError
+    msg="Please enable GitHub Pages to publish from the root of the `gh-pages` branch per these instructions - https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site#publishing-from-a-branch"
+    try: res = api.enable_pages(branch='gh-pages')
+    except TokenNotAuthorized as e: raise e
+    except HTTPError: 
+        if api.repos.get().visibility == 'private': raise PagesNotEnabled(f'For security reasons, we cannot automatically enable GitHub Pages on private repos. {msg}')
+        else: raise PagesNotEnabled(f'Your repository does not have GitHub Pages enabled. {msg}') # enable_pages returns a string if pages exist.
+    else:
+        if res == 'has_pages': 
+            pgs = api.repos.get_pages() # will error if no pages exist
+            if pgs.build_type != 'legacy' or pgs.source.branch != 'gh-pages' or pgs.source.path != '/':
+                raise PagesConfigError(f'GitHub Pages not properly configured. {msg}')
