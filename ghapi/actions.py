@@ -161,7 +161,7 @@ def set_git_user(api=None):
     run(f'git config --global user.email "{email}"')
     run(f'git config --global user.name  "{user}"')
 
-# %% ../01_actions.ipynb 53
+# %% ../01_actions.ipynb 52
 class PagesNotEnabled(Exception): pass
 class PagesConfigError(Exception): pass
 
