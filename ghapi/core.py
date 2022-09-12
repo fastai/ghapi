@@ -90,13 +90,15 @@ def print_summary(req:Request):
 
 # %% ../00_core.ipynb 12
 class GhApi(_GhObj):
-    def __init__(self, owner=None, repo=None, token=None, jwt_token=None, debug=None, limit_cb=None, gh_host=None, **kwargs):
+    def __init__(self, owner=None, repo=None, token=None, jwt_token=None, debug=None, limit_cb=None, gh_host=None,
+                 authenticate=True, **kwargs):
         self.headers = { 'Accept': 'application/vnd.github.v3+json' }
-        token = token or os.getenv('GITHUB_TOKEN', None)
-        jwt_token = jwt_token or os.getenv('GITHUB_JWT_TOKEN', None)
-        if jwt_token: self.headers['Authorization'] = 'Bearer ' + jwt_token
-        elif token: self.headers['Authorization'] = 'token ' + token
-        else: warn('Neither GITHUB_TOKEN nor GITHUB_JWT_TOKEN found: running as unauthenticated')
+        if authenticate:
+            token = token or os.getenv('GITHUB_TOKEN', None)
+            jwt_token = jwt_token or os.getenv('GITHUB_JWT_TOKEN', None)
+            if jwt_token: self.headers['Authorization'] = 'Bearer ' + jwt_token
+            elif token: self.headers['Authorization'] = 'token ' + token
+            else: warn('Neither GITHUB_TOKEN nor GITHUB_JWT_TOKEN found: running as unauthenticated')
         if owner: kwargs['owner'] = owner
         if repo:  kwargs['repo' ] = repo
         funcs_ = L(funcs).starmap(_GhVerb, client=self, kwargs=kwargs)
