@@ -3,7 +3,7 @@
 d = { 'settings': { 'branch': 'master',
                 'doc_baseurl': '/',
                 'doc_host': 'https://ghapi.fast.ai',
-                'git_url': 'https://github.com/fastai/ghapi/tree/master/',
+                'git_url': 'https://github.com/fastai/ghapi',
                 'lib_path': 'ghapi'},
   'syms': { 'ghapi.actions': { 'ghapi.actions._create_file': ('actions.html#_create_file', 'ghapi/actions.py'),
                                'ghapi.actions._replace': ('actions.html#_replace', 'ghapi/actions.py'),
