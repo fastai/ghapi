@@ -2,6 +2,13 @@
 
 <!-- do not remove -->
 
+## 1.0.3
+
+### New Features
+
+- add `authenticate` arg which allows unauthenticated `GhApi` clients even if `GITHUB_TOKEN` is set ([#150](https://github.com/fastai/ghapi/pull/150)), thanks to [@seeM](https://github.com/seeM)
+
+
 ## 1.0.1
 
 ### New Features
