@@ -1,0 +1,9 @@
+project:
+  output-dir: _docs
+
+website:
+  title: "ghapi"
+  site-url: "https://ghapi.fast.ai/"
+  description: "A python client for the GitHub API"
+  repo-branch: master
+  repo-url: "https://github.com/fastai/ghapi"
