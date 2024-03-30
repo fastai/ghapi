@@ -17,8 +17,8 @@ _DOC_URL = 'https://docs.github.com/'
 
 # %% ../90_build_lib.ipynb 6
 _lu_type = dict(zip(
-    'NA string object array boolean integer'.split(),
-    map(PrettyString,'object str dict list bool int'.split())
+    'NA string object array boolean number integer'.split(),
+    map(PrettyString,'object str dict list bool number int'.split())
 ))
 
 def _detls(k,v):
