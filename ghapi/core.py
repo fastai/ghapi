@@ -56,7 +56,6 @@ class _GhVerb(_GhObj):
         d = list(self.data)
         flds = [o for o in self.route_ps+self.params+d if o not in kwargs]
         for a,b in zip(args,flds): kwargs[b]=a
-        kwargs = {k:v for k,v in kwargs.items() if v is not None}
         route_p,query_p,data_p = [{p:kwargs[p] for p in o if p in kwargs}
                                  for o in (self.route_ps,self.params,d)]
         return self.client(self.path, self.verb, headers=headers, route=route_p, query=query_p, data=data_p)
