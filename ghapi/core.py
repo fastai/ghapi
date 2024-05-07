@@ -107,7 +107,7 @@ class GhApi(_GhObj):
         self.debug,self.limit_cb,self.limit_rem = debug,limit_cb,5000
         self.gh_host = gh_host or GH_HOST
 
-    def __call__(self, path:str, verb:str=None, headers:dict=None, route:dict=None, query:dict=None, data=None):
+    def __call__(self, path:str, verb:str=None, headers:dict=None, route:dict=None, query:dict=None, data=None, timeout=None):
         "Call a fully specified `path` using HTTP `verb`, passing arguments to `fastcore.core.urlsend`"
         if verb is None: verb = 'POST' if data else 'GET'
         headers = {**self.headers,**(headers or {})}
@@ -118,7 +118,7 @@ class GhApi(_GhObj):
         return_json = ('json' in headers['Accept'])
         debug = self.debug if self.debug else print_summary if os.getenv('GHAPI_DEBUG') else None
         res,self.recv_hdrs = urlsend(path, verb, headers=headers or None, debug=debug, return_headers=True,
-                                     route=route or None, query=query or None, data=data or None, return_json=return_json)
+                                     route=route or None, query=query or None, data=data or None, return_json=return_json, timeout=timeout)
         if 'X-RateLimit-Remaining' in self.recv_hdrs:
             newlim = self.recv_hdrs['X-RateLimit-Remaining']
             if self.limit_cb is not None and newlim != self.limit_rem:
