@@ -9,6 +9,8 @@ format:
     theme: cosmo
     css: styles.css
     toc: true
+    keep-md: true
+  commonmark: default
 
 website:
   twitter-card: true
