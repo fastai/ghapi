@@ -2,6 +2,18 @@
 
 <!-- do not remove -->
 
+## 1.0.6
+
+### New Features
+
+- Automatically decode response based on path ([#183](https://github.com/fastai/ghapi/pull/183)), thanks to [@radam9](https://github.com/radam9)
+- Expose timeout [#174](https://github.com/fastai/ghapi/pull/174)), thanks to [@HarikrishnanBalagopal](https://github.com/HarikrishnanBalagopal)
+
+### Bugs Squashed
+
+- Github now requires branch, author, and committer in file update calls ([#184](https://github.com/fastai/ghapi/issues/184))
+- Remove the check which removes `None` values ([#171](https://github.com/fastai/ghapi/pull/171)), thanks to [@shreve](https://github.com/shreve)
+
 
 ## 1.0.3
 
