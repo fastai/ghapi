@@ -4,7 +4,7 @@ funcs = [('/', 'get', 'meta/root', 'GitHub API Root', 'rest/meta/meta#github-api
   'security-advisories/list-global-advisories',
   'List global security advisories',
   'rest/security-advisories/global-advisories#list-global-security-advisories',
-  ['ghsa_id', 'type', 'cve_id', 'ecosystem', 'severity', 'cwes', 'is_withdrawn', 'affects', 'published', 'updated', 'modified', 'before', 'after', 'direction', 'per_page', 'sort'],
+  ['ghsa_id', 'type', 'cve_id', 'ecosystem', 'severity', 'cwes', 'is_withdrawn', 'affects', 'published', 'updated', 'modified', 'epss_percentage', 'epss_percentile', 'before', 'after', 'direction', 'per_page', 'sort'],
   [],
   ''),
  ('/advisories/{ghsa_id}', 'get', 'security-advisories/get-global-advisory', 'Get a global security advisory', 'rest/security-advisories/global-advisories#get-a-global-security-advisory', [], [], ''),
